@@ -1,0 +1,23 @@
+.two_column .table table img[src*="24-2x"] {
+  width: auto;
+  height: 24px;
+  background-color: transparent;
+  display: inline;
+}
+
+.two_column .table table img[src*="18-2x"] {
+  width: auto;
+  height: 18px;
+  background-color: transparent;
+  display: inline;
+}
+
+/*---- Added zebra stripes to .table ----*/
+.table table {
+
+  // th {
+  //   background: $pe-color-moonlight;
+  //   border: 1px solid $pe-color-concrete;
+  //   font-size: 14px;
+  // }
+}

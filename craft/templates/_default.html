@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ pageTitle }} - Pearson UX Framework</title>
+    <link rel="stylesheet" href="/public/css/main.css">
+
+    <script src="{{ siteUrl }}node_modules/react/dist/react.min.js"></script>
+    <script src="{{ siteUrl }}node_modules/react-dom/dist/react-dom.min.js"></script>
+    <script src="{{ siteUrl }}node_modules/underscore/underscore-min.js" charset="utf-8"></script>
+    <script src="{{ siteUrl }}node_modules/fuzzysort/fuzzysort.js" charset="utf-8"></script>
+    <script src="{{ siteUrl }}node_modules/pearson-compounds/build/dist.compounds.js"></script>
+
+    <script type="text/javascript">
+      if (!document.getElementById('pe-icons-sprite')) {
+        var pe_ajax = new XMLHttpRequest()
+          , url = "{{ siteUrl }}node_modules/pearson-elements/assets/icons/p-icons-sprite-1.1.svg";
+        pe_ajax.open("GET", url, true);
+        pe_ajax.responseType = "document";
+        pe_ajax.onload = function(e) {
+          document.body.insertBefore(
+            pe_ajax.responseXML.documentElement,
+            document.body.childNodes[0]
+          );
+        }
+        pe_ajax.send();
+      }
+    </script>
+
+    {% include "_includes/searchData.html" %}
+    <script src="/public/js/search.js" charset="utf-8"></script>
+    <script src="/public/js/clippy-copy.js" charset="utf-8"></script>
+  </head>
+  <body>
+    {% block sidebar %}
+      {% include '_includes/sidebar' %}
+    {% endblock %}
+
+    {% block content %}
+      <p>Default content</p>
+    {% endblock %}
+  </body>
+</html>

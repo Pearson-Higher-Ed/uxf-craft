@@ -1,0 +1,120 @@
+<div class="sidebar{% if (narrowShow | default(false)) %} narrow-show{% endif %}">
+  <a href="{{ siteUrl }}/">
+    <header>
+      UX Framework
+
+      <button data-sidebar-closer="true">
+        <svg style="vertical-align:baseline"
+          aria-hidden="true"
+          focusable="false"
+          class="pe-icon--remove-lg-18">
+            <use xlink:href="#remove-lg-18"></use>
+        </svg>
+      </button>
+    </header>
+  </a>
+
+  <div class="sidebar-toc">
+    <ul>
+      {# <li>
+        UX Framework
+        <ul>
+          {% for lpage in learn_pages %}
+            <li {% if page.url == lpage.url %}class="selected"{% endif %}>
+              <a href="{{site.baseurl}}{{lpage.url}}">{% if lpage.shortname %}{{lpage.shortname}}{% else %}{{lpage.title}}{% endif %}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li {% if page.url == '/UIKit/' %}class="selected"{% endif %}>
+        <a href="{{site.basurl}}/UIKit">UI Kit</a>
+      </li>
+
+      <li {% if page.url == '/overview/' %}class="selected "{% endif %}>
+        <a href="{{site.baseurl}}/overview">Designer's Guide</a>
+      </li>
+
+      <li {% if page.url == '/getting-started-dev/' %}class="selected "{% endif %}>
+        <a href="{{site.baseurl}}/getting-started-dev">Developer's Guide</a>
+      </li> #}
+
+      <li>
+        Components
+        <ul>
+          {% for component in craft.entries.section('components').type('component') %}
+            <li {% if component.title == entry.title %}class="selected"{% endif %}>
+              <a href="{{ siteUrl }}{{ component.uri }}">
+                  {{ component.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% set invisible = invisible | default(false) %}
+
+<div class="ultimate-header {% if invisible %}invisible{% endif %}">
+  <div class="left">
+    <img class="burger" src="{{ siteUrl }}public/theme_assets/burger.svg"> {% if not invisible %}{{ entry.title }}{% endif %}
+  </div>
+
+  {% if not invisible %}
+    <div class="right">
+      <div class="search-container">
+        <input type="text" name="search" class="pe-textInput--basic" placeholder="Search for components..."autocomplete="off">
+        <svg role="img"
+             aria-labelledby="r2"
+             focusable="false"
+             class="pe-icon--search-sm-18">
+          <title id="r2">Search the component library</title>
+          <use xlink:href="#search-sm-18"></use>
+        </svg>
+        <div class="dropdown"></div>
+      </div>
+
+      <a href="{{ siteUrl }}/contact" class="contact">
+        <svg role="img"
+             style="vertical-align:baseline"
+             aria-labelledby="contact332"
+             focusable="false"
+             class="pe-icon--email-18">
+          <title id="contact332">Contact Us</title>
+          <use xlink:href="#email-18"></use>
+        </svg>
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<div class="overlay" data-sidebar-closer="true"></div>
+
+<script type="text/javascript">
+  {% if not invisible %}
+  initDropdown(document.querySelector('.ultimate-header .search-container'))
+  {% endif %}
+
+  var sidebar = document.querySelector('.sidebar')
+    , overlay = document.querySelector('.overlay');
+  var closeSidebar = function() {
+    sidebar.classList.remove('open')
+    overlay.classList.remove('open')
+  };
+  var openSidebar = function() {
+    sidebar.classList.add('open')
+    overlay.classList.add('open')
+  }
+
+  document.querySelector('.burger').addEventListener('click', function(event) {
+    openSidebar()
+  })
+
+  document.querySelectorAll('[data-sidebar-closer]').forEach(function(closer) {
+    closer.addEventListener('click', function(event) {
+      event.preventDefault()
+      closeSidebar()
+    })
+  });
+</script>

@@ -1,0 +1,43 @@
+.text.redlines {
+  td {
+    margin: 0;
+    padding: 0;
+  }
+
+  td:first-of-type {
+    @extend .pe-label, .pe-label--small;
+    width: 40%;
+  }
+
+  td + td {
+    @extend .pe-label;
+    padding-left: 26px;
+    width: 60%;
+    padding-bottom: 6px;
+
+    &:before {
+      content: "\2022";
+      font-size: 20px;
+      line-height: 18px;
+      vertical-align: middle;
+      margin-left: -20px;
+      margin-right: 8px;
+    }
+  }
+
+  tr {
+    padding-bottom: 10px;
+  }
+
+  td:first-of-type:not(:empty),
+  td:first-of-type:not(:empty) + td {
+    border-top: 1px solid #c7c7c7;
+    padding-top: 10px;
+  }
+
+  tr:first-of-type td:first-of-type,
+  tr:first-of-type td:first-of-type + td {
+    border-top: none;
+    padding: none;
+  }
+}

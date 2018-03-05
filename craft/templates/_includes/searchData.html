@@ -1,0 +1,14 @@
+<script type="text/javascript">
+  var componentData = [
+    {% for component in craft.entries.section('components').type('component') %}
+
+    {% set latestVersion = component.getChildren().find() | latestApproved %}
+
+    {
+      name: '{{ latestVersion.parent.title }}',
+      version: '{{ latestVersion.version }}',
+      url: '{{ latestVersion.url }}'
+    },
+    {% endfor %}
+  ]
+</script>

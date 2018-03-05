@@ -1,0 +1,21 @@
+&.changelog {
+
+  border-top: 2px solid $pe-color-alto;
+  padding-top: 60px;
+
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  ul {
+    @extend .pe-list, .pe-styled-lists--unordered;
+  }
+
+  ul + h3 {
+    margin-top: 24px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

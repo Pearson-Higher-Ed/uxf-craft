@@ -1,0 +1,13 @@
+# Craft recommended folders to ignore
+craft/storage/backups/
+craft/storage/runtime/
+craft/storage/userphotos/
+
+# OS files
+.DS_Store
+
+# JS related ignores
+node_modules/
+
+# User generated content
+assets/

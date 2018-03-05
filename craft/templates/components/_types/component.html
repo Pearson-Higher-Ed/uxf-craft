@@ -1,0 +1,7 @@
+{% extends "_default" %}
+{% set pageTitle = "boo" %}
+
+{% block content %}
+  {% set latest = (entry.getChildren().find() | latestApproved) %}
+  {% include '_includes/component_entry' with {'entry': latest} only %}
+{% endblock %}
