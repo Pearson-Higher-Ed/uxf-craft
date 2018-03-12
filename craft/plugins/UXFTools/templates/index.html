@@ -6,8 +6,12 @@
   <form method="post" action="" accept-charset="UTF-8">
     {{ getCsrfInput() }}
     <input type="hidden" name="action" value="uXFTools/componentIds/writeIds">
-    {# <input type="hidden" name="redirect" value="uxfTools/componentIds" #}
+    <input class="btn submit" type="submit" value="Write Parent IDs">
+  </form>
 
-    <input class="btn submit" type="submit" value="Write IDs">
+  <form method="post" action="" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="uXFTools/folderIds/writeIds">
+    <input class="btn submit" type="submit" value="Write Folder IDs">
   </form>
 {% endset %}
