@@ -1,0 +1,13 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Download component ids" | t %}
+
+{% set content %}
+  <form method="post" action="" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="uXFTools/componentIds/writeIds">
+    {# <input type="hidden" name="redirect" value="uxfTools/componentIds" #}
+
+    <input class="btn submit" type="submit" value="Write IDs">
+  </form>
+{% endset %}

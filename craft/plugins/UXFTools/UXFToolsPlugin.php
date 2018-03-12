@@ -19,7 +19,7 @@ class UXFToolsPlugin extends BasePlugin {
   }
 
   public function hasCpSection() {
-    return false;
+    return true;
   }
 
   public function addTwigExtension() {
