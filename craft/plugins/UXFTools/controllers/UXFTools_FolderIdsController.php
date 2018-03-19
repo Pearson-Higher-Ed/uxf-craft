@@ -6,7 +6,7 @@ class UXFTools_FolderIdsController extends BaseController {
     $this->requirePostRequest();
 
     $assets = new AssetsService();
-    $criteria = new FolderCriteriaModel(array("sourceId" => 1));
+    $criteria = new FolderCriteriaModel(array("sourceId" => 4));
     $folders = $assets->findFolders($criteria);
 
     // print_r("<pre>");
@@ -27,5 +27,19 @@ class UXFTools_FolderIdsController extends BaseController {
     }
 
     file_put_contents($path . '/folder_ids.json', $json);
+
+
+    // Now for sketch files
+    $criteria = new FolderCriteriaModel(array("sourceId" => 2));
+    $folders = $assets->findFolders($criteria);
+
+    $json = "{";
+    foreach ($folders as $folder) {
+      $json = $json . '"' . $folder->name . '": ' . $folder->id . ',';
+    }
+    $json = substr($json, 0, -1);
+    $json = $json . "}";
+
+    file_put_contents($path . '/folder_ids_sketch.json', $json);
   }
 }

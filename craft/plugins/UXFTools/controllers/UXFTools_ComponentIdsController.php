@@ -11,7 +11,7 @@ class UXFTools_ComponentIdsController extends BaseController {
 
     $json = "{";
     foreach ($criteria as $entry) {
-      $json = $json . '"' . $entry->title . '": ' . $entry->id . ',';
+      $json = $json . '"' . $entry->slug . '": ' . $entry->id . ',';
     }
     $json = substr($json, 0, -1);
     $json = $json . "}";
