@@ -1,6 +1,6 @@
 {% for row in block.features %}
   {% set feature = row.featureName %}
-  {% set feature_id %}{{ entry.parent.title | kebab }}--{{ feature }}{% endset %}
+  {% set feature_id %}{{ entry.parent.title | kebab }}--{{ feature | kebab }}{% endset %}
   <div class="feature" id="{{feature_id}}">
     {{feature}} <span id="{{feature_id}}-ddown"></span>
   </div>
@@ -20,7 +20,7 @@
           case 'Redlines':
             break;
           case 'Copy link':
-            copyToClipboard('#{{feature_id}}')
+            copyToClipboard('{{ entry.url }}#{{feature_id}}')
           default:
         }
       }
@@ -33,12 +33,13 @@
       )
     ]
 
-    {# {% if not page.no_redlines %}
+    {% if entry['no_redlines'] is defined and entry.no_redlines == true %}
+    {% else %}
       links.unshift(React.createElement(
         DropdownItem,
         {label: 'Redlines', type: 'link', url: redlineLink}
       ))
-    {% endif %} #}
+    {% endif %}
 
     var el = React.createElement(
       Dropdown,
