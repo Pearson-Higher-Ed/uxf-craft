@@ -8,28 +8,35 @@
  */
 
 return array(
+	'*' => array(
+		// Default Week Start Day (0 = Sunday, 1 = Monday...)
+		'defaultWeekStartDay' => 0,
 
-	// Base site URL
-	'siteUrl' => 'http://localhost:8888',
+		// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
+		'environmentVariables' => array(),
 
-	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-	'environmentVariables' => array(),
+		// Enable CSRF Protection (rec'd, will be enabled by default in Craft 3)
+		'enableCsrfProtection' => true,
 
-	// Default Week Start Day (0 = Sunday, 1 = Monday...)
-	'defaultWeekStartDay' => 0,
+		// Whether "index.php" should be visible in URLs (true, false, "auto")
+		'omitScriptNameInUrls' => 'auto',
 
-	// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
-	'enableCsrfProtection' => true,
+		'extraAllowedFileExtensions' => 'sketch'
+	),
 
-	// Whether "index.php" should be visible in URLs (true, false, "auto")
-	'omitScriptNameInUrls' => 'auto',
+	'localhost' => array(
+		// Base site URL
+		'siteUrl' => 'http://localhost:8888',
 
-	// Control Panel trigger word
-	'cpTrigger' => 'admin',
+		// Control Panel trigger word
+		'cpTrigger' => 'admin',
 
-	// Dev Mode (see https://craftcms.com/support/dev-mode)
-	'devMode' => true,
+		// Dev Mode (see https://craftcms.com/support/dev-mode)
+		'devMode' => true
+	),
 
-	'extraAllowedFileExtensions' => 'sketch'
+	'45.55.126.209' => array(
+		'siteUrl' => 'http://45.55.126.209'
+	)
 
 );
