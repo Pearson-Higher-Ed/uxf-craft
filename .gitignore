@@ -10,4 +10,4 @@ craft/storage/userphotos/
 node_modules/
 
 # User generated content
-assets/
+/assets/
