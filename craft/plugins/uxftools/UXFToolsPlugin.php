@@ -23,7 +23,7 @@ class UXFToolsPlugin extends BasePlugin {
   }
 
   public function addTwigExtension() {
-    Craft::import('plugins.UXFTools.twigextensions.UXFToolsTwigExtensions');
+    Craft::import('plugins.uxftools.twigextensions.UXFToolsTwigExtensions');
 
     return new UXFToolsTwigExtensions();
   }
