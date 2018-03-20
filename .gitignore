@@ -3,11 +3,15 @@ craft/storage/backups/
 craft/storage/runtime/
 craft/storage/userphotos/
 
+# Config files with passwords
+/craft/config/db.php
+/scripts/.env.sh
+
 # OS files
 .DS_Store
 
 # JS related ignores
-node_modules/
+/node_modules/
 
 # User generated content
 /assets/
