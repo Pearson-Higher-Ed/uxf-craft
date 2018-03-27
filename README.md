@@ -15,54 +15,140 @@ Use `{{ siteUrl }}desired/path/` (note no slash immediately after the base url).
 
 For entries just use `{{ entry.url }}` which already contains the base.
 
+## Deploying Craft updates
 
-### Deploying the project
+1. Make any changes to the templates, etc. Commit to the git repo.
 
-#### Setting up deploy process
+2. Run `git push live master`
 
-##### Remote git repo on droplet
-Following instructions in [this article][1] there is a bare git repo that lives at /var/repo/uxf-craft.git and which checks out the latest commit on master into the /var/www/html/ directory whenever it is pushed to.
+## Backing up the instance
 
-##### Installing dependencies
-After pushing Craft asked for the multibyte string php extension, which is installed with:
+For now we are using Digital Ocean backups. In the future it would be worth setting up the Craft Scripts thing to automatically backup to S3 or something.
+
+Reference: https://nystudio107.com/blog/mitigating-disaster-via-website-backups  
+Reference: https://github.com/nystudio107/craft-scripts
+
+## Configuring the Digital Ocean droplet
+
+1. Create a LAMP on 16.04 One-click app.
+2. Choose the desired size.
+3. Recommend configuring an SSH key.
+4. SSH into the droplet and install dependencies:
+
+  ```
+  sudo apt-get update
+  sudo apt-get install php-mbstring php-mcrypt php-curl npm nodejs-legacy
+  sudo systemctl restart apache2
+  ```
+
+5. Set the proper permissions:
+
+  ```
+  chown -R www-data:www-data /var/www/
+  chmod -R 770 /var/www/
+  chmod -R 774 /var/www/html/
+  ```
+
+  Reference: https://deploybot.com/guides/deploy-craft-cms-to-digitalocean
+
+6. Enable options:
+
+  ```
+  a2enmod rewrite
+  phpenmod mcrypt
+  service apache2 restart
+  ```
+
+7. Change GROUP BY behavior in MySQL to account for breaking change in MySQL 5.7.5+ by editing `/etc/mysql/my.cnf` to include the following lines at the end of the file:
+
+  ```
+  [mysqld]
+  sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+  ```
+
+  Reference: https://craftcms.stackexchange.com/questions/12084/getting-this-sql-error-group-by-incompatible-with-sql-mode-only-full-group-by
+
+8. Log into MySQL and create a database user. Note Digital Ocean stores the root MySQL password at `/root/.digitalocean_password`
+
+  ```
+  mysql -u root -p
+  ```
+
+  Then run the following queries:
+
+  ```
+  CREATE USER craftcms@localhost IDENTIFIED BY 'complex_password';
+  CREATE DATABASE craftcms;
+  GRANT ALL PRIVILEGES ON craftcms.* TO craftcms@localhost;
+  FLUSH PRIVILEGES;
+  exit
+  ```
+
+  And restart MySQL:
+
+  ```
+  service mysql restart
+  ```
+
+9. Recommend running `mysql_secure_installation`, at least with the options of removing the anonymous user, disallowing remote root access, and removing the test database. Don't forget to reload the privilege table as prompted to ensure changes take effect.
+
+10. Create the bare git repo that we will push to when we want to deploy.
+
+  ```
+  cd /var/
+  mkdir repo && cd repo
+  mkdir uxf-craft.git && cd uxf-craft.git
+  git init --bare
+
+  cd hooks/
+  touch post-receive
+  ```
+
+  Edit the `post-receive` file to contain:
+
+  ```
+  #!/bin/sh
+  git --work-tree=/var/www/html/ --git-dir=/var/repo/uxf-craft.git/ checkout -f
+  npm install --prefix /var/www/html/
+  ```
+
+  Then make it executable:
+
+  ```
+  chmod +x post-receive
+  ```
+
+  Reference: https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps
+
+11. Add the server repo as a remote to your local repo.
+
+  ```
+  git remote add live ssh://root@<droplet_ip_address>/var/repo/uxf-craft.git/
+  ```
+
+  To deploy the project run `git push live master`
+
+12. Add config files. Two config files are excluded from the git repo because they contain db passwords, `craft/config/db.php` and `scripts/.env.sh`. Edit these to contain the correct information then:
+
+  ```
+  scp craft/config/db.php root@<droplet_ip_address>:/var/www/html/craft/config/
+  scp scripts/.env.sh root@<droplet_ip_address>:/var/www/html/scripts/
+  ```
+
+13. Set change the user on craft files to take advantage of previously set up permissions.
 
 ```
-sudo apt-get update
-sudo apt-get install mbstring
-sudo apt-get install php-mcrypt
-sudo apt-get install php-curl
-sudo systemctl restart apache2 # Restart apache to take affect
+chown -R www-data:www-data /var/www/
 ```
 
-##### Setting permissions
-```
-chown -R www-data:www-data /var/www
-chmod -R 770 /var/www
-chmod -R 775 /var/www/html
-```
+14. Go to <droplet_ip_address>/admin and follow the prompts to complete the craft installation.
 
-##### Configuring DB
-Per [this article][2], MySQL 5.7.5+ needs to be configured differently.
+15. Go to the settings panel, click on plugins, and install the UXFToolsPlugin.
 
-Edit /etc/mysql/my.cnf to include the following lines:
-
-```
-[mysqld]
-sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
-```
-
-Then
-
-```
-service mysql restart
-```
-
-[1]: https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps
-
-[2]: https://craftcms.stackexchange.com/questions/12084/getting-this-sql-error-group-by-incompatible-with-sql-mode-only-full-group-by
+16. At this point you can follow the steps below to do a fresh import, or restore from a backup.
 
 
-### Exporting data from the github pages project
+## Exporting data from the github pages project
 
 1. Make sure to set up all of the fields, entries, assets, etc. in the Craft CMS. Especially make sure the asset fields point to the correct asset source if you have deleted/recreated them.
 
@@ -106,3 +192,5 @@ service mysql restart
   Note: ensure the sectionId and typeId are set correctly on lines 195 and 196.
 
 11. In sequential order, import the versions files with the SproutImport plugin.
+
+12. There may be a few errors about missing files and whatnot. I was generally able to go in and manually rename references to get this all to work. Check the sprout logs at craft/storage/runtime/logs/
