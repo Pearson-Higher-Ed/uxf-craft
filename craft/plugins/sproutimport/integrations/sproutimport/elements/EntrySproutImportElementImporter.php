@@ -47,6 +47,7 @@ class EntrySproutImportElementImporter extends BaseSproutImportElementImporter
 		}
 		catch (\Exception $e)
 		{
+			SproutImportPlugin::log($e, LogLevel::Error);
 			SproutImportPlugin::log($e->getMessage(), LogLevel::Error);
 
 			sproutImport()->addError($e->getMessage(), 'invalid-entry-model');
