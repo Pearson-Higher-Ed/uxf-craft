@@ -40,20 +40,20 @@
         {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
       </div>
 
-      {% case 'wide video' %}
+      {% case 'wideVideo' %}
       <div class="image wide">
-        <div class="media {% if item.border %}border{% endif %}">
-          <video src="{% if include.beta or include.in_dir %}../{% endif %}v{{page.version}}/{{item.src}}" loop controls/>
+        <div class="media {% if asset.border %}border{% endif %}">
+          <video src="{{ asset.url }}" loop controls/>
         </div>
-        {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
+        {% if asset.caption %}<div class="caption">{{ asset.caption | markdown }}</div>{% endif %}
       </div>
 
-      {% case 'narrow video' %}
+      {% case 'narrowVideo' %}
       <div class="image narrow">
-        <div class="media {% if item.border %}border{% endif %}">
-          <video src="{% if include.beta or include.in_dir %}../{% endif %}v{{page.version}}/{{item.src}}" loop controls/>
+        <div class="media {% if asset.border %}border{% endif %}">
+          <video src="{{ asset.url }}" loop controls/>
         </div>
-        {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
+        {% if asset.caption %}<div class="caption">{{ asset.caption | markdown }}</div>{% endif %}
       </div>
 
       {% case 'table' %}
