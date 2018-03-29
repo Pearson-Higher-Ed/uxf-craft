@@ -21,6 +21,22 @@ For entries just use `{{ entry.url }}` which already contains the base.
 
 2. Run `git push live master`
 
+## Syncing database changes
+
+Any control panel settings will be stored in the database. We use the production server as the canonical source for DB settings. You can sync them back to a local dev environment by running the following command:
+
+```
+./scripts/pull_db.sh
+```
+
+The production server will also serve as the canonical source for assets, which can be pulled down to local by running:
+
+```
+./scripts/pull_assets.sh
+```
+
+Reference: https://nystudio107.com/blog/database-asset-syncing-between-environments-in-craft-cms
+
 ## Backing up the instance
 
 For now we are using Digital Ocean backups. In the future it would be worth setting up the Craft Scripts thing to automatically backup to S3 or something.
