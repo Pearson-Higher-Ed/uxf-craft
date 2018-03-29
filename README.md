@@ -37,6 +37,11 @@ The production server will also serve as the canonical source for assets, which 
 
 Reference: https://nystudio107.com/blog/database-asset-syncing-between-environments-in-craft-cms
 
+## Third party services
+
+### Mailgun
+A free mailgun account is used to send account activation emails. It is connected through SMTP.
+
 ## Backing up the instance
 
 For now we are using Digital Ocean backups. In the future it would be worth setting up the Craft Scripts thing to automatically backup to S3 or something.
