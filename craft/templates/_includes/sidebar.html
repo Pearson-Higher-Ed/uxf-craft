@@ -42,7 +42,7 @@
         Components
         <ul>
           {% for component in craft.entries.section('components').type('component') %}
-            <li {% if component.title == entry.title %}class="selected"{% endif %}>
+            <li {% if component.title == (entry.title | default("")) %}class="selected"{% endif %}>
               <a href="{{ siteUrl }}{{ component.uri }}">
                   {{ component.title }}
               </a>
@@ -58,7 +58,7 @@
 
 <div class="ultimate-header {% if invisible %}invisible{% endif %}">
   <div class="left">
-    <img class="burger" src="{{ siteUrl }}public/theme_assets/burger.svg"> {% if not invisible %}{{ entry.title }}{% endif %}
+    <img class="burger" src="{{ siteUrl }}public/theme_assets/burger.svg"> {% if not invisible %}{{ entry.title | default(pageTitle) }}{% endif %}
   </div>
 
   {% if not invisible %}

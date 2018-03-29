@@ -1,6 +1,6 @@
 $baseurl: "{{site.baseurl}}";
 
-$pe-fonts-path: "./fonts/";
+$pe-fonts-path: "/public/fonts/";
 @import "../node_modules/pearson-elements/scss/elements";
 
 @import "utility";
@@ -17,6 +17,7 @@ $pe-fonts-path: "./fonts/";
 @import "status";
 @import "sidebar";
 @import "search";
+@import "register";
 
 html {
   font-size: 0.875rem;

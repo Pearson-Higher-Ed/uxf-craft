@@ -1,5 +1,5 @@
 {% extends "_default" %}
-{% set pageTitle = "boo" %}
+{% set pageTitle = entry.title %}
 
 {% block content %}
   {% set latest = (entry.getChildren().find() | latestApproved) %}
