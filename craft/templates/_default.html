@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{ pageTitle }} - Pearson UX Framework</title>
+    <title>{% if pageTitle is defined %}{{ pageTitle }} - {% endif %}Pearson UX Framework</title>
     <link rel="stylesheet" href="/public/css/main.css">
 
     <script src="{{ siteUrl }}node_modules/react/dist/react.min.js"></script>
