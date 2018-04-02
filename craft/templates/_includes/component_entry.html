@@ -144,7 +144,7 @@
     <h2 class="pe-title pe-bold" id="changelog">Changelog</h2>
     {% for change in entry.changelog %}
       {% if change.version != entry.version %}
-        <h3 class="pe-title"><a href="{{ siteUrl }}components/{{ entry.parent.title | kebab }}/v{{ change.version }}">{{ change.version }}</a></h3>
+        <h3 class="pe-title"><a href="{{ siteUrl }}c/{{ entry.parent.title | kebab }}/v{{ change.version }}">{{ change.version }}</a></h3>
       {% else %}
         <h3 class="pe-title">{{ change.version }}</h3>
       {% endif %}
