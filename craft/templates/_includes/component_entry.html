@@ -78,6 +78,9 @@
               <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
             {% endif %}
           {% endfor %}
+          {% for palette in entry.palettes %}
+            <li><a href="#{{ palette.paletteName | kebab }}">{{ palette.paletteName }}</a></li>
+          {% endfor %}
           <li><a href="#changelog">Changelog</a></li>
         </ul>
       </div>
@@ -132,6 +135,10 @@
       {% include '_includes/blocks/' ~ block.type %}
     </div>
   {% endfor %}
+
+  {% if entry.palettes is defined and entry.colors is defined %}
+    {% include '_includes/palettes' %}
+  {% endif %}
 
   <div class="block changelog">
     <h2 class="pe-title pe-bold" id="changelog">Changelog</h2>

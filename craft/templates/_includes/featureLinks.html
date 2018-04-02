@@ -1,5 +1,11 @@
-{% for row in block.features %}
-  {% set feature = row.featureName %}
+{% if block.features is defined %}
+  {% set features = block.features %}
+{% endif %}
+
+{% for feature in features %}
+  {% if block.features is defined %}
+    {% set feature = feature.featureName %}
+  {% endif %}
   {% set feature_id %}{{ entry.parent.title | kebab }}--{{ feature | kebab }}{% endset %}
   <div class="feature" id="{{feature_id}}">
     {{feature}} <span id="{{feature_id}}-ddown"></span>

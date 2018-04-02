@@ -433,7 +433,7 @@
             float: left;
 
             &.border {
-              border: 1px solid pe-color(hairline-gray);
+              border: 1px solid $pe-color-concrete;
             }
 
             & + p {
