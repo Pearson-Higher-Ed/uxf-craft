@@ -73,8 +73,9 @@
 
       <div class="toc">
         <ul>
+          {{ entry.type != "colorsVersion" }}
           {% for block in entry.blocks %}
-            {% if block.type == "sectionName" %}
+            {% if block.type == "sectionName" and entry.type != "colorsVersion" %}
               <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
             {% endif %}
           {% endfor %}
@@ -130,11 +131,13 @@
     </div>
   </div>
 
-  {% for block in entry.blocks %}
-    <div class="block">
-      {% include '_includes/blocks/' ~ block.type %}
-    </div>
-  {% endfor %}
+  {% if entry.type == 'version' %}
+    {% for block in entry.blocks %}
+      <div class="block">
+        {% include '_includes/blocks/' ~ block.type %}
+      </div>
+    {% endfor %}
+  {% endif %}
 
   {% if entry.palettes is defined and entry.colors is defined %}
     {% include '_includes/palettes' %}
