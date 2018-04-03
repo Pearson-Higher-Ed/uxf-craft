@@ -14,4 +14,10 @@
     <input type="hidden" name="action" value="uXFTools/folderIds/writeIds">
     <input class="btn submit" type="submit" value="Write Folder IDs">
   </form>
+
+  <form method="post" action="" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="uXFTools/colorIds/writeIds">
+    <input class="btn submit" type="submit" value="Write Color IDs">
+  </form>
 {% endset %}
