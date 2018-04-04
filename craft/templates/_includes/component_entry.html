@@ -73,7 +73,6 @@
 
       <div class="toc">
         <ul>
-          {{ entry.type != "colorsVersion" }}
           {% for block in entry.blocks %}
             {% if block.type == "sectionName" and entry.type != "colorsVersion" %}
               <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
