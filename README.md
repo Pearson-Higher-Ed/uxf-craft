@@ -58,7 +58,7 @@ Reference: https://github.com/nystudio107/craft-scripts
 
   ```
   sudo apt-get update
-  sudo apt-get install php-mbstring php-mcrypt php-curl npm nodejs-legacy
+  sudo apt-get install php-mbstring php-mcrypt php-curl php-xml npm nodejs-legacy
   sudo systemctl restart apache2
   ```
 
@@ -221,4 +221,4 @@ chown -R www-data:www-data /var/www/
   - Change all the color version entries to colorsVersion entry type
   - Use the third button in the UXF tools plugin to write the entry IDs for the colors entries.
   - Run `node --harmony ./exporter_colors.js` in the jekyll repo to create the `colors.json file`
-  - Use the Feed Me plugin to pull this file in and update the existing entries 
+  - Use the Feed Me plugin to pull this file in and update the existing entries
