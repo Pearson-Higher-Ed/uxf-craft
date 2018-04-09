@@ -12,6 +12,7 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
   public function getFilters() {
     return array(
       'latestApproved' => new Twig_Filter_Method($this, 'latestApproved'),
+      'groupByCategory' => new Twig_Filter_Method($this, 'groupBy')
     );
   }
   public function getFunctions() {
@@ -107,9 +108,18 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
     return $ratio;
   }
 
-    public function fourFiveContrast($a, $b) {
-      if ($a[0] == '#') $a = substr($a, 1);
-      if ($b[0] == '#') $b = substr($b, 1);
-      return $this->calculateLuminosityRatio($a, $b) >= 4.5;
+  public function fourFiveContrast($a, $b) {
+    if ($a[0] == '#') $a = substr($a, 1);
+    if ($b[0] == '#') $b = substr($b, 1);
+    return $this->calculateLuminosityRatio($a, $b) >= 4.5;
+  }
+
+  public function groupBy($items) {
+    $result = [];
+
+    foreach ($items as $item) {
+      $result[$item->category->label][] = $item;
     }
+    return $result;
+  }
 }
