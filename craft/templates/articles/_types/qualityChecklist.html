@@ -1,0 +1,184 @@
+{% extends "_default" %}
+
+{% set pageTitle = entry.title %}
+
+{% block content %}
+<div class="top-level-content quality">
+  <div class="parent">
+    <header>
+      <h1>{{ entry.title }}</h1>
+
+      <p>{{ entry.dateUpdated | date("M j, Y") }}</p>
+
+      <div class="tabs">
+        <a class="active tab-controller" data-target="design">Design</a>
+        <a class="tab-controller" data-target="development">Development</a>
+      </div>
+    </header>
+
+    {% set grouped = entry.designReqs | groupByCategory  %}
+    {% set devGrouped = entry.developmentReqs | groupByCategory %}
+
+    <div class="tab-pane active" data-target="design">
+      <div class="toc">
+        <ul>
+        {% for category, reqs in grouped %}
+          <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      <div class="reqs">
+        {% for category, reqs in grouped %}
+          <h2 id="{{ category | kebab }}">{{ category }}</h2>
+          {% for req in reqs %}
+            <div class="req">
+              <div class="header">
+                <div class="label">{{ req.category | first | upper }}{{ loop.index }}</div>
+
+                <div class="reqText">{{ req.requirementText }}</div>
+
+                {% if not req.explanation is empty %}
+                  <button type="button" class="pe-icon--btn">
+                    <svg role="img"
+                        aria-labelledby="r2"
+                        focusable="false"
+                        class="pe-icon--dropdown-open-sm-24">
+                      <title id="r2">Close dialog</title>
+                      <use xlink:href="#dropdown-open-sm-24"></use>
+                    </svg>
+                  </button>
+                {% endif %}
+              </div>
+
+              {% if not req.explanation is empty %}
+                <div class="explanation">
+                  {{ req.explanation }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </reqs>
+    </div>
+  </div>
+
+  <div class="tab-pane" data-target="development">
+    <div class="toc">
+      <ul>
+      {% for category, reqs in devGrouped %}
+        <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+
+    <div class="reqs">
+      {% for category, reqs in devGrouped %}
+        <h2 id="{{ category | kebab }}">{{ category }}</h2>
+        {% for req in reqs %}
+          <div class="req">
+            <div class="header">
+              <div class="label">{{ req.category | first | upper }}{{ loop.index }}</div>
+
+              <div class="reqText">{{ req.requirementText }}</div>
+
+              {% if not req.explanation is empty %}
+                <button type="button" class="pe-icon--btn">
+                  <svg role="img"
+                      aria-labelledby="r2"
+                      focusable="false"
+                      class="pe-icon--dropdown-open-sm-24">
+                    <title id="r2">Close dialog</title>
+                    <use xlink:href="#dropdown-open-sm-24"></use>
+                  </svg>
+                </button>
+              {% endif %}
+            </div>
+
+            {% if not req.explanation is empty %}
+              <div class="explanation">
+                {{ req.explanation }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </reqs>
+  </div>
+</div>
+
+<script>
+  var closeAllReqs = function() {
+    document.querySelectorAll('.req.open').forEach(function(exp) {
+      exp.classList.remove('open')
+    })
+  }
+  var buttons = document.querySelectorAll('.req .header button')
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      var isOpen = e.currentTarget
+                    .parentNode
+                    .parentNode
+                    .classList
+                    .contains('open')
+      closeAllReqs()
+      e.currentTarget.parentNode.parentNode.classList.toggle('open', !isOpen)
+    })
+  })
+</script>
+
+<script type="text/javascript">
+  var headings = document.querySelectorAll('.reqs h2')
+
+  window.addEventListener('scroll', function(e) {
+    var scrolledAmount = window.scrollY
+      , centerOffset = document.documentElement.clientHeight / 2
+      , topToCenter = scrolledAmount + centerOffset
+
+    var bestDelta = Number.MAX_SAFE_INTEGER
+    var bestID = ''
+    for (var i = 0; i < headings.length; i++) {
+      var heading = headings.item(i)
+        , distFromTop = heading.getBoundingClientRect().top + scrolledAmount
+        , delta = topToCenter - distFromTop
+
+      if (delta < bestDelta && delta > 0) {
+        bestDelta = delta
+        bestID = heading.id
+      }
+    }
+
+    document.querySelectorAll('.toc .active').forEach(function(x) {
+      x.classList.remove('active')
+    });
+
+    document
+      .querySelector('.toc a[href="#' + bestID + '"]')
+      .classList
+      .add('active')
+
+  });
+</script>
+
+<script type="text/javascript">
+
+document.querySelectorAll('.tab-controller').forEach(function(tab) {
+  tab.addEventListener('click', function(e) {
+    var target = e.currentTarget.dataset.target
+    document
+      .querySelectorAll('.tab-controller.active')
+      .forEach(function(t) { t.classList.remove('active') })
+    e.currentTarget.classList.add('active')
+
+    document
+      .querySelectorAll('.tab-pane')
+      .forEach(function(t) { t.classList.remove('active') })
+    document
+      .querySelector(`.tab-pane[data-target="${target}"]`)
+      .classList
+      .add('active')
+  })
+})
+
+</script>
+{% endblock %}

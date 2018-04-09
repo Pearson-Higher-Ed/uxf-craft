@@ -1,0 +1,212 @@
+.quality {
+
+  margin-top: 140px;
+  &:before {
+    content: ' ';
+    display: block;
+    border-bottom: 1px solid $pe-color-concrete;
+    width: 100%;
+    position: absolute;
+    top: 277px;
+    z-index: -1;
+  }
+
+  .parent {
+    @include make-grid-parent;
+    margin: 10px auto 0;
+
+    @include pe-responsive-breakpoint(md) {
+      width: 760px;
+    }
+
+    @include pe-responsive-breakpoint(lg) {
+      width: 960px;
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      width: 1150px;
+    }
+  }
+
+  header {
+    @include grid-offset(2);
+    margin-bottom: 80px;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 16px;
+      @extend .pe-label, .pe-label--small;
+      color: $pe-color-medium-gray;
+    }
+  }
+
+  .tabs {
+    margin-top: 40px;
+
+
+    a {
+      text-decoration: none;
+      color: $pe-color-medium-gray;
+      padding: 8px 0;
+      margin: 0 16px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        color: $pe-color-charcoal;
+        border-bottom: 3px solid $pe-color-charcoal;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .tab-pane {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .toc {
+    @include make-grid-child(2);
+    position: fixed;
+    top: 360px;
+    left: 50%;
+    margin-left: 1150px/2 * -1;
+
+    ul {
+      margin-top: 40px;
+      padding-bottom: 60px;
+      padding-left: 0;
+
+      & > ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      &, & ul {
+        list-style-type: none;
+      }
+
+      li + li,
+      li > ul {
+        margin-top: 16px;
+      }
+
+      & > li > ul {
+        @extend .pe-label, .pe-label--large;
+        padding: 0;
+      }
+
+
+      @extend .pe-label;
+
+      a {
+        text-decoration: none;
+        color: $pe-color-medium-gray;
+
+        &:hover {
+          color: $pe-color-ink-blue;
+          text-decoration: underline;
+        }
+
+        &.active {
+          @extend .pe-label--bold;
+          color: $pe-color-digital-pearson-blue;
+        }
+      }
+    }
+  }
+
+  .reqs {
+    margin-bottom: 200px;
+
+    @include pe-responsive-breakpoint(xl) {
+      @include make-grid-child(8);
+      margin: 0 auto 200px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .req + h2 {
+      margin-top: 80px;
+    }
+  }
+
+  .req {
+    border-top: 1px solid $pe-color-alto;
+    border-bottom: 1px solid $pe-color-alto;
+    padding: 18px 0;
+
+    & + .req {
+      border-top: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .label {
+      width: 34px;
+      height: 24px;
+      @extend .pe-label, .pe-label--bold, .pe-label--small;
+      text-align: center;
+      border-radius: 3px;
+      background-color: #FFF2CC;
+      line-height: 24px;
+      margin-right: 20px;
+    }
+
+    .reqText {
+      margin: 0;
+      flex-grow: 1;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    button {
+      color: $pe-color-medium-gray;
+      margin-right: 16px;
+    }
+
+    .explanation {
+      max-width: 660px;
+      margin-left: 54px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      display: none;
+
+      p {
+        @extend .pe-copy, .pe-copy--large;
+      }
+    }
+
+    &.open {
+      .explanation {
+        display: block;
+      }
+
+      button {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
