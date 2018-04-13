@@ -12,7 +12,8 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
   public function getFilters() {
     return array(
       'latestApproved' => new Twig_Filter_Method($this, 'latestApproved'),
-      'groupByCategory' => new Twig_Filter_Method($this, 'groupBy')
+      'groupByCategory' => new Twig_Filter_Method($this, 'groupBy'),
+      'iconsGroupByCategory' => new Twig_Filter_Method($this, 'iconsGroupBy')
     );
   }
   public function getFunctions() {
@@ -120,6 +121,19 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
     foreach ($items as $item) {
       $result[$item->category->label][] = $item;
     }
+    return $result;
+  }
+
+  public function iconsGroupBy($icons) {
+    $result = [];
+
+    foreach ($icons as $icon) {
+      $categories = $icon->categories->find();
+      foreach ($categories as $category) {
+        $result[$category->title][] = $icon;
+      }
+    }
+
     return $result;
   }
 }

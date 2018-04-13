@@ -1,0 +1,146 @@
+{% extends "_default" %}
+
+{% set pageTitle = entry.parent.title %}
+
+{% set iconsByCategory = entry.icons | iconsGroupByCategory %}
+
+{% block content %}
+
+{# <pre style="margin-top: 100px;">
+{{ dump(iconsByCategory) }}
+</pre> #}
+
+<div class="top-level-content icons">
+  <header>
+    <h1>{{ entry.parent.title }}</h1>
+    <p>{{ entry.version }}</p>
+  </header>
+
+  <div class="wrapper">
+    <div class="toc">
+      <ul>
+        {% for category, icons in iconsByCategory %}
+          <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% for category, icons in iconsByCategory %}
+      <div class="icons-container">
+        <h2 id="{{ category | kebab }}">{{ category }}</h2>
+        {% for icon in icons %}
+          <div class="icon">
+            <img src="{{ icon.sizes[0].url }}" width="36px" height="36px" />
+            <p>{{ icon.iconName }}</p>
+            <template>
+              <div class="icon-detail">
+                <div class="image">
+                  <img src="{{ icon.sizes[1].url }}" width="96px" height="96px" />
+                </div>
+                <div class="details">
+                  <h3>{{ icon.iconName }}</h3>
+                  <div class="description">
+                    {{ icon.iconDescription }}
+                  </div>
+                  <p>Categories: {% for category in icon.categories %}<a href="#{{ category.title | kebab }}">{{ category.title }}</a>{% if not loop.last %},{% endif %}{% endfor %}</p>
+                </div>
+                <div class="sizes">
+                  <div class="list">
+                    {% for size in icon.sizes %}
+                      <p><a href="{{ size.url }}" download><img src="{{ size.url }}" /> {{ size.title }}</a></p>
+                    {% endfor %}
+                  </div>
+                  <div class="close">
+                    <button type="button" class="pe-icon--btn">
+                      <svg role="img"
+                           aria-labelledby="r2"
+                           focusable="false"
+                           class="pe-icon--remove-sm-18">
+                        <title id="r2">Close dialog</title>
+                        <use xlink:href="#remove-sm-18"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        {% endfor %}
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+        <div class="icon">
+          <img src="https://www.fillmurray.com/36/36" />
+          <p>timer</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script type="text/javascript">
+  var removeAllDetails = function() {
+    document.querySelectorAll('.icon-detail').forEach(function(el){
+      el.remove()
+    })
+  }
+  var showThisDetail = function(el) {
+    var rowWidth = document
+      .querySelector('.icons-container')
+      .getBoundingClientRect()
+      .width
+    var iconWidth = el.getBoundingClientRect().width +
+                    (parseInt(window.getComputedStyle(el).marginLeft) * 2)
+
+    var iconsPerRow = Math.round(rowWidth / iconWidth)
+    var thisIndex = Array.from(el.parentNode.children).indexOf(el)
+    var targetIndex = Math.floor((thisIndex - 1) / iconsPerRow) * iconsPerRow
+    console.log(iconsPerRow, thisIndex, targetIndex)
+
+    var icons = document.querySelector('.icons-container')
+    console.log(el.querySelector('p'))
+    var detail = document.importNode(el.querySelector('template').content, true)
+    icons.insertBefore(detail, icons.children[targetIndex + 1])
+
+    document
+      .querySelector('.icon-detail .close')
+      .addEventListener('click', removeAllDetails)
+  }
+
+  document.querySelectorAll('.icon').forEach(function(ic) {
+    ic.addEventListener('click', function(e) {
+      removeAllDetails()
+      showThisDetail(ic)
+    })
+  })
+</script>
+{% endblock %}

@@ -1,23 +1,211 @@
-.two_column .table table img[src*="24-2x"] {
-  width: auto;
-  height: 24px;
-  background-color: transparent;
-  display: inline;
-}
+.icons {
+  header {
+    margin-top: 54px;
+    background-color: $pe-color-white;
 
-.two_column .table table img[src*="18-2x"] {
-  width: auto;
-  height: 18px;
-  background-color: transparent;
-  display: inline;
-}
+    height: 68px;
+    border-bottom: 1px solid $pe-color-alto;
+    display: flex;
+    align-items: baseline;
 
-/*---- Added zebra stripes to .table ----*/
-.table table {
+    h1 {
+      @extend .pe-page-title, .pe-page-title--small;
+      margin-left: 36px;
+      margin-top: 16px;
+    }
 
-  // th {
-  //   background: $pe-color-moonlight;
-  //   border: 1px solid $pe-color-concrete;
-  //   font-size: 14px;
-  // }
+    p {
+      @extend .pe-label, .pe-label--small;
+      color: $pe-color-medium-gray;
+      margin-left: 8px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+  }
+
+  .toc {
+    display: none;
+    margin-left: 36px;
+    width: 180px;
+    flex-shrink: 0;
+
+    @include pe-responsive-breakpoint(lg) {
+      display: block;
+    }
+
+    ul {
+      margin-top: 40px;
+      padding-bottom: 60px;
+      padding-left: 0;
+
+      & > ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      &, & ul {
+        list-style-type: none;
+      }
+
+      li + li,
+      li > ul {
+        margin-top: 16px;
+      }
+
+      & > li > ul {
+        @extend .pe-label, .pe-label--large;
+        padding: 0;
+      }
+
+
+      @extend .pe-label;
+
+      a {
+        text-decoration: none;
+        color: $pe-color-medium-gray;
+
+        &:hover {
+          color: $pe-color-ink-blue;
+          text-decoration: underline;
+        }
+
+        &.active {
+          @extend .pe-label--bold;
+          color: $pe-color-digital-pearson-blue;
+        }
+      }
+    }
+  }
+
+  .icons-container {
+    margin-left: 40px;
+    margin-right: 36px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $pe-color-concrete;
+
+    h2 {
+      @extend .pe-title;
+    }
+
+    .icon {
+      width: 80px;
+      height: 100px;
+      float: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 3px;
+      margin: 12px 16px;
+      padding: 0 8px 8px 8px;
+
+      &:hover {
+        background-color: $pe-color-alto;
+        cursor: pointer;
+
+        p {
+          color: $pe-color-charcoal;
+        }
+      }
+
+      img {
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 12px 0 0 0;
+        @extend .pe-label, .pe-label--small;
+        color: $pe-color-medium-gray;
+        text-align: center;
+      }
+    }
+
+    .icon-detail {
+      float: left;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      background-color: $pe-color-white;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.40);
+      border-radius: 3px;
+
+      .image {
+        margin: 20px;
+        padding: 20px;
+        background-color: $pe-color-white-gray;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        @include pe-responsive-breakpoint(lg) {
+          margin: 40px;
+          padding: 40px;
+        }
+      }
+
+      .details {
+        margin: 20px 0;
+        flex-grow: 1;
+
+        @include pe-responsive-breakpoint(lg) {
+          margin: 40px 0;
+        }
+
+        h3 {
+          @extend .pe-title, .pe-title--large, .pe-bold;
+          margin: 0;
+        }
+
+        .description {
+          margin-top: 16px;
+        }
+      }
+
+      .sizes {
+        margin-left: 40px;
+        width: 280px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        @include pe-responsive-breakpoint(xl) {
+          width: 300px;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          border-left: 1px solid $pe-color-concrete;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        }
+
+        .list {
+          margin-left: 40px;
+          margin-top: 40px;
+          float: left;
+        }
+
+        img {
+          vertical-align: middle;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+
+      .close {
+        float: right;
+        margin-top: 16px;
+        margin-right: 16px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
