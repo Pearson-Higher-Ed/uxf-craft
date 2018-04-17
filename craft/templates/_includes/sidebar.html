@@ -46,7 +46,7 @@
             <a href="{{ siteUrl }}{{ page.uri }}">{{ page.title }}</a>
           {% endif %}
           {% ifchildren %}
-            <ul>
+            <ul {% if 'Kit' in page.title %}style="display: none;"{% endif %}>
               {% children %}
             </ul>
           {% endifchildren %}
