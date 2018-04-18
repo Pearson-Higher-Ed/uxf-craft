@@ -168,6 +168,9 @@ chown -R www-data:www-data /var/www/
 
 16. At this point you can follow the steps below to do a fresh import, or restore from a backup.
 
+### Server notes
+You may need to increase the file upload size limit in php. This is likely in the php.ini file, don't forget to restart apache after changing it.
+
 
 ## Exporting data from the github pages project
 
