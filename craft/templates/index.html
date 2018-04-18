@@ -25,6 +25,13 @@
 
 {% block content %}
 
+{% set parent = craft.entries({
+  'section': 'articles',
+  'type': 'uiKitParent'
+}).first() %}
+
+{% set latestUiKit = parent.children.first() %}
+
 <div class="top-level-content narrow-show home">
   <div class="top">
     <div class="content">
@@ -49,11 +56,12 @@
 
   <div class="main-heroes">
     <div class="design-hero">
-      <h2>Design UI Kit 1.7.0</h2>
+      <h2>Design UI Kit {{ latestUiKit.version }}</h2>
 
-      <p>Updated on Jan. 21, 2018</p>
+      <p>Updated on {{ latestUiKit.postDate | date("M j, Y") }}</p>
       <p>Start working in Sketch with ready-made UI components such as colors, buttons, and more! To see how a component works and behaves, please refer to the usage guidelines on this site.</p>
 
+      {% include "_includes/uikit-download" %}
     </div>
 
     <div class="dev-hero">
@@ -68,9 +76,9 @@
   <section class="uikit">
     <div class="header">
       <h2>Components</h2>
-      <div class="button-container"><a href="{{ entry.uikitLink }}" target="_blank" class="pe-btn__primary--btn_large">View Fullscreen</a></div>
+      <div class="button-container"><a href="{{ latestUiKit.previewLink }}" target="_blank" class="pe-btn__primary--btn_large">View Fullscreen</a></div>
     </div>
-    <img src="{{ siteUrl }}{{ entry.uikitImage.first().url }}" alt="Components available in the library">
+    <img src="{{ latestUiKit.previewImage.first().url }}" alt="Components available in the library">
   </section>
 
   <section class="contact">

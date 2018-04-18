@@ -1,5 +1,5 @@
 <div class="sidebar{% if (narrowShow | default(false)) %} narrow-show{% endif %}">
-  <a href="{{ siteUrl }}/">
+  <a href="{{ siteUrl }}">
     <header>
       UX Framework
 
@@ -16,27 +16,6 @@
 
   <div class="sidebar-toc">
     <ul>
-      {# <li>
-        UX Framework
-        <ul>
-          {% for lpage in learn_pages %}
-            <li {% if page.url == lpage.url %}class="selected"{% endif %}>
-              <a href="{{site.baseurl}}{{lpage.url}}">{% if lpage.shortname %}{{lpage.shortname}}{% else %}{{lpage.title}}{% endif %}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-      <li {% if page.url == '/UIKit/' %}class="selected"{% endif %}>
-        <a href="{{site.basurl}}/UIKit">UI Kit</a>
-      </li>
-
-      <li {% if page.url == '/overview/' %}class="selected "{% endif %}>
-        <a href="{{site.baseurl}}/overview">Designer's Guide</a>
-      </li>
-
-      <li {% if page.url == '/getting-started-dev/' %}class="selected "{% endif %}>
-        <a href="{{site.baseurl}}/getting-started-dev">Developer's Guide</a>
-      </li> #}
 
       {% nav page in craft.entries.section('articles') %}
         <li {% if page.title == (entry.title | default("")) %}class="selected"{% endif %}>

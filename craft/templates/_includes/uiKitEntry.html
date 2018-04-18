@@ -8,7 +8,7 @@
         <a class="pe-btn--btn_xlarge" href="{{ entry.previewLink }}" target="_blank">Preview</a>
       </div>
 
-      <p>{{ entry.postDate }}</p>
+      <p>{{ entry.postDate | date("M j, Y") }}</p>
 
       {{ entry.changelog.first().changes }}
 
@@ -23,7 +23,7 @@
         {% else %}
         <h3><a href="{{ change.uiKitDownload.first().url }}">{{ change.version }}</a></h3>
 
-        <p>{{ change.postDate }}</p>
+        <p>{{ change.postDate | date("M j, Y") }}</p>
 
         {{ change.changelog.first().changes }}
         {% endif %}
