@@ -12,6 +12,7 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
   public function getFilters() {
     return array(
       'latestApproved' => new Twig_Filter_Method($this, 'latestApproved'),
+      'latestOverall' => new Twig_Filter_Method($this, 'latestOverall'),
       'groupByCategory' => new Twig_Filter_Method($this, 'groupBy'),
       'iconsGroupByCategory' => new Twig_Filter_Method($this, 'iconsGroupBy')
     );
@@ -66,6 +67,10 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
         return $sorted[$i];
       }
     }
+  }
+
+  public function latestOverall($versions) {
+    return $this->sortVersions($versions)[0];
   }
 
   // calculates the luminosity of an given RGB color

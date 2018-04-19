@@ -1,0 +1,12 @@
+{% extends "_default" %}
+
+{% set pageTitle = "Test" %}
+
+{% set entry = craft.entries({
+  slug: slug,
+  section: 'components'
+}).first().children.find() | latestOverall %}
+
+{% block content %}
+  {% include '_includes/component_entry' with {'entry': entry} only %}
+{% endblock %}
