@@ -31,10 +31,14 @@
       <div class="reqs">
         {% for category, reqs in grouped %}
           <h2 id="{{ category | kebab }}">{{ category }}</h2>
+          {% set index = loop.index %}
           {% for req in reqs %}
             <div class="req">
               <div class="header">
-                <div class="label">{{ req.category | first | upper }}{{ loop.index }}</div>
+                {% set categoryCodes= {
+                  'Usable and Effective': 'UE'
+                } %}
+                <div class="label color{{ index }}">{% if attribute(categoryCodes, category) is defined %}{{ attribute(categoryCodes, category) }}{% else %}{{ req.category | first | upper }}{% endif %}{{ loop.index }}</div>
 
                 <div class="reqText">{{ req.requirementText }}</div>
 
