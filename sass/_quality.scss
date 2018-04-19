@@ -1,18 +1,18 @@
 .quality {
-
   margin-top: 140px;
+  position: relative;
+
   &:before {
     content: ' ';
     display: block;
     border-bottom: 1px solid $pe-color-concrete;
     width: 100%;
     position: absolute;
-    top: 277px;
+    top: 137px;
     z-index: -1;
   }
 
   .parent {
-    @include make-grid-parent;
     margin: 10px auto 0;
 
     @include pe-responsive-breakpoint(md) {
@@ -74,6 +74,9 @@
 
   .tab-pane {
     display: none;
+    @include make-grid-parent;
+    margin-left: -20px;
+    margin-right: -20px;
 
     &.active {
       display: block;
@@ -81,11 +84,17 @@
   }
 
   .toc {
-    @include make-grid-child(2);
+    @include make-grid-child(2, 12, true);
+    padding-left: 20px;
+    padding-right: 20px;
     position: fixed;
     top: 360px;
     left: 50%;
     margin-left: 1150px/2 * -1;
+
+    @media (min-width: 1460px) {
+      margin-left: 1150px/2 * -1 + 120;
+    }
 
     ul {
       margin-top: 40px;
@@ -136,6 +145,8 @@
 
     @include pe-responsive-breakpoint(xl) {
       @include make-grid-child(8);
+      padding-left: 20px;
+      padding-right: 20px;
       margin: 0 auto 200px;
     }
 
