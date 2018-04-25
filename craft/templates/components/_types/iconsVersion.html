@@ -25,6 +25,7 @@
       </ul>
     </div>
 
+    <div class="icons">
     {% for category, icons in iconsByCategory %}
       <div class="icons-container">
         <h2 id="{{ category | kebab }}">{{ category }}</h2>
@@ -68,6 +69,7 @@
         {% endfor %}
       </div>
     {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -88,10 +90,8 @@
     var iconsPerRow = Math.round(rowWidth / iconWidth)
     var thisIndex = Array.from(el.parentNode.children).indexOf(el)
     var targetIndex = Math.floor((thisIndex - 1) / iconsPerRow) * iconsPerRow
-    console.log(iconsPerRow, thisIndex, targetIndex)
 
-    var icons = document.querySelector('.icons-container')
-    console.log(el.querySelector('p'))
+    var icons = el.parentNode
     var detail = document.importNode(el.querySelector('template').content, true)
     icons.insertBefore(detail, icons.children[targetIndex + 1])
 

@@ -79,11 +79,17 @@
     }
   }
 
+  .icons {
+    flex-grow: 1;
+  }
+
   .icons-container {
     margin-left: 40px;
     margin-right: 36px;
     padding-bottom: 60px;
+    margin-bottom: 60px;
     border-bottom: 1px solid $pe-color-concrete;
+    @include clearfix;
 
     h2 {
       @extend .pe-title;
