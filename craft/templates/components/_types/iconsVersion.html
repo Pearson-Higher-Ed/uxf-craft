@@ -80,6 +80,7 @@
     })
   }
   var showThisDetail = function(el) {
+    console.log('hey')
     var rowWidth = document
       .querySelector('.icons-container')
       .getBoundingClientRect()
@@ -87,11 +88,11 @@
     var iconWidth = el.getBoundingClientRect().width +
                     (parseInt(window.getComputedStyle(el).marginLeft) * 2)
 
-    var iconsPerRow = Math.round(rowWidth / iconWidth)
-    var thisIndex = Array.from(el.parentNode.children).indexOf(el)
-    var targetIndex = Math.floor((thisIndex - 1) / iconsPerRow) * iconsPerRow
+    console.log(rowWidth, iconWidth)
 
-    console.log(targetIndex, thisIndex, iconsPerRow)
+    var iconsPerRow = Math.floor(rowWidth / iconWidth)
+    var thisIndex = Array.from(el.parentNode.children).indexOf(el) - 1
+    var targetIndex = Math.floor((thisIndex - 1) / iconsPerRow) * iconsPerRow
 
     var icons = el.parentNode
     var detail = document.importNode(el.querySelector('template').content, true)
