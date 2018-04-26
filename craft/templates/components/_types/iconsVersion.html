@@ -31,12 +31,12 @@
         <h2 id="{{ category | kebab }}">{{ category }}</h2>
         {% for icon in icons %}
           <div class="icon">
-            <img src="{{ icon.sizes[0].url }}" width="36px" height="36px" />
+            <img src="{{ icon.sizes[0].url }}" height="36px" />
             <p>{{ icon.iconName }}</p>
             <template>
               <div class="icon-detail">
                 <div class="image">
-                  <img src="{{ icon.sizes[1].url }}" width="96px" height="96px" />
+                  <img src="{{ icon.sizes[1].url }}" height="96px" />
                 </div>
                 <div class="details">
                   <h3>{{ icon.iconName }}</h3>
@@ -80,15 +80,12 @@
     })
   }
   var showThisDetail = function(el) {
-    console.log('hey')
     var rowWidth = document
       .querySelector('.icons-container')
       .getBoundingClientRect()
       .width
     var iconWidth = el.getBoundingClientRect().width +
                     (parseInt(window.getComputedStyle(el).marginLeft) * 2)
-
-    console.log(rowWidth, iconWidth)
 
     var iconsPerRow = Math.floor(rowWidth / iconWidth)
     var thisIndex = Array.from(el.parentNode.children).indexOf(el) - 1
