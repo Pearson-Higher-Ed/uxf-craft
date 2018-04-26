@@ -84,12 +84,16 @@
   }
 
   .icons-container {
-    margin-left: 40px;
-    margin-right: 36px;
+    margin: 0 16px 60px 16px;
     padding-bottom: 60px;
     margin-bottom: 60px;
     border-bottom: 1px solid $pe-color-concrete;
     @include clearfix;
+
+    @include pe-responsive-breakpoint(lg) {
+      margin-left: 40px;
+      margin-right: 36px;
+    }
 
     h2 {
       @extend .pe-title;
@@ -103,8 +107,13 @@
       flex-direction: column;
       align-items: center;
       border-radius: 3px;
-      margin: 12px 16px;
-      padding: 0 8px 8px 8px;
+      margin: 12px 4px;
+      padding: 0 4px 8px 4px;
+
+      @include pe-responsive-breakpoint(md) {
+        margin: 12px 16px;
+        padding: 0 8px 8px 8px;
+      }
 
       &:hover,
       &.active {
@@ -138,6 +147,11 @@
       background-color: $pe-color-white;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.40);
       border-radius: 3px;
+      flex-wrap: wrap;
+
+      @include pe-responsive-breakpoint(lg) {
+        flex-wrap: nowrap;
+      }
 
       .image {
         margin: 20px;
@@ -145,6 +159,15 @@
         background-color: $pe-color-white-gray;
         flex-grow: 0;
         flex-shrink: 0;
+        order: 1;
+
+        img {
+          height: 48px;
+
+          @include pe-responsive-breakpoint(md) {
+            height: 96px;
+          }
+        }
 
         @include pe-responsive-breakpoint(lg) {
           margin: 40px;
@@ -153,8 +176,15 @@
       }
 
       .details {
-        margin: 20px 0;
+        margin: 20px;
         flex-grow: 1;
+        order: 3;
+        width: 100%;
+
+        @include pe-responsive-breakpoint(md) {
+          width: auto;
+          order: 2;
+        }
 
         @include pe-responsive-breakpoint(lg) {
           margin: 40px 0;
@@ -171,27 +201,38 @@
       }
 
       .sizes {
-        margin-left: 40px;
-        width: 280px;
-        flex-grow: 0;
+        flex-grow: 1;
         flex-shrink: 0;
+        order: 2;
+        width: 40%;
+
+        @include pe-responsive-breakpoint(md) {
+          margin-left: 40px;
+          width: 280px;
+          flex-grow: 0;
+          order: 3;
+
+          &:before {
+            content: '';
+            display: block;
+            border-left: 1px solid $pe-color-concrete;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+          }
+        }
+
         @include pe-responsive-breakpoint(xl) {
           width: 300px;
         }
 
-        &:before {
-          content: '';
-          display: block;
-          border-left: 1px solid $pe-color-concrete;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-        }
-
         .list {
-          margin-left: 40px;
           margin-top: 40px;
           float: left;
+
+          @include pe-responsive-breakpoint(md) {
+            margin-left: 40px;
+          }
         }
 
         img {
