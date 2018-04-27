@@ -117,16 +117,15 @@
       exp.classList.remove('open')
     })
   }
-  var buttons = document.querySelectorAll('.req .header button')
-  buttons.forEach(function(button) {
-    button.addEventListener('click', function(e) {
+  var headers = document.querySelectorAll('.req .header')
+  headers.forEach(function(header) {
+    header.addEventListener('click', function(e) {
       var isOpen = e.currentTarget
-                    .parentNode
                     .parentNode
                     .classList
                     .contains('open')
-      closeAllReqs()
-      e.currentTarget.parentNode.parentNode.classList.toggle('open', !isOpen)
+      // closeAllReqs()
+      e.currentTarget.parentNode.classList.toggle('open', !isOpen)
     })
   })
 </script>
