@@ -26,14 +26,14 @@
       <div class="toc">
         <ul>
         {% for category, reqs in grouped %}
-          <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
+          <li><a href="#{{ category | kebab }}-design">{{ category }}</a></li>
         {% endfor %}
         </ul>
       </div>
 
       <div class="reqs">
         {% for category, reqs in grouped %}
-          <h2 id="{{ category | kebab }}">{{ category }}</h2>
+          <h2 id="{{ category | kebab }}-design">{{ category }}</h2>
           {% set index = loop.index %}
           {% for req in reqs %}
             <div class="req">
@@ -74,14 +74,14 @@
     <div class="toc">
       <ul>
       {% for category, reqs in devGrouped %}
-        <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
+        <li><a href="#{{ category | kebab }}-dev">{{ category }}</a></li>
       {% endfor %}
       </ul>
     </div>
 
     <div class="reqs">
       {% for category, reqs in devGrouped %}
-        <h2 id="{{ category | kebab }}">{{ category }}</h2>
+        <h2 id="{{ category | kebab }}-dev">{{ category }}</h2>
         {% for req in reqs %}
           <div class="req">
             <div class="header">
@@ -134,21 +134,18 @@
 </script>
 
 <script type="text/javascript">
-  var headings = document.querySelectorAll('.reqs h2')
-
   window.addEventListener('scroll', function(e) {
-    var scrolledAmount = window.scrollY
-      , centerOffset = document.documentElement.clientHeight / 2
-      , topToCenter = scrolledAmount + centerOffset
+    var headings = document.querySelectorAll('.active .reqs h2')
+      , target = 160
 
-    var bestDelta = Number.MAX_SAFE_INTEGER
+    var bestDelta = Number.MIN_SAFE_INTEGER
     var bestID = ''
     for (var i = 0; i < headings.length; i++) {
       var heading = headings.item(i)
-        , distFromTop = heading.getBoundingClientRect().top + scrolledAmount
-        , delta = topToCenter - distFromTop
+        , distFromTop = heading.getBoundingClientRect().top
+        , delta = distFromTop - target
 
-      if (delta < bestDelta && delta > 0) {
+      if (delta > bestDelta && delta < 0) {
         bestDelta = delta
         bestID = heading.id
       }
@@ -158,6 +155,7 @@
       x.classList.remove('active')
     });
 
+    console.log(bestID)
     document
       .querySelector('.tab-pane.active .toc a[href="#' + bestID + '"]')
       .classList
