@@ -8,6 +8,11 @@
     display: flex;
     align-items: baseline;
 
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
     h1 {
       @extend .pe-page-title, .pe-page-title--small;
       margin-left: 36px;
@@ -23,6 +28,7 @@
 
   .wrapper {
     display: flex;
+    margin-top: 160px;
   }
 
   .toc {
@@ -30,6 +36,7 @@
     margin-left: 36px;
     width: 180px;
     flex-shrink: 0;
+    position: fixed;
 
     @include pe-responsive-breakpoint(lg) {
       display: block;
@@ -81,6 +88,10 @@
 
   .icons {
     flex-grow: 1;
+
+    @include pe-responsive-breakpoint(lg) {
+      margin-left: 180px;
+    }
   }
 
   .icons-container {
@@ -97,6 +108,8 @@
 
     h2 {
       @extend .pe-title;
+      padding-top: 160px;
+      margin-top: -160px;
     }
 
     .icon {
