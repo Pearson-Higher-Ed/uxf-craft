@@ -36,7 +36,7 @@
           <h2 id="{{ category | kebab }}-design">{{ category }}</h2>
           {% set index = loop.index %}
           {% for req in reqs %}
-            <div class="req">
+            <div class="req{% if not req.explanation is empty %} detailed{% endif %}">
               <div class="header">
                 {% set categoryCodes= {
                   'Usable and Effective': 'UE'
