@@ -5,15 +5,10 @@
 {% set iconsByCategory = entry.icons | iconsGroupByCategory %}
 
 {% block content %}
-
-{# <pre style="margin-top: 100px;">
-{{ dump(iconsByCategory) }}
-</pre> #}
-
 <div class="top-level-content icons">
   <header>
     <h1>{{ entry.parent.title }}</h1>
-    <p>{{ entry.version }}</p>
+    <p>v{{ entry.version }} &bull; {{ entry.postDate | date("M j, Y") }}</p>
   </header>
 
   <div class="wrapper">

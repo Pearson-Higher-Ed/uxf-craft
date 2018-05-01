@@ -90,7 +90,8 @@
     flex-grow: 1;
 
     @include pe-responsive-breakpoint(lg) {
-      margin-left: 180px;
+      margin-left: 220px;
+      margin-right: 36px;
     }
   }
 
@@ -102,14 +103,16 @@
     @include clearfix;
 
     @include pe-responsive-breakpoint(lg) {
-      margin-left: 40px;
-      margin-right: 36px;
+      margin-left: -16px;
+      margin-right: -16px;
     }
 
     h2 {
       @extend .pe-title;
       padding-top: 160px;
       margin-top: -160px;
+      margin-left: 16px;
+      margin-right: 16px;
     }
 
     .icon {

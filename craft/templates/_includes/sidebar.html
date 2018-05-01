@@ -52,7 +52,7 @@
 
 <div class="ultimate-header {% if invisible %}invisible{% endif %}">
   <div class="left">
-    <img class="burger" src="{{ siteUrl }}public/theme_assets/burger.svg"> {% if not invisible %}{{ entry.title | default(pageTitle) }}{% endif %}
+    <img class="burger" src="{{ siteUrl }}public/theme_assets/burger.svg"> {% if not invisible %}{{ headerTitle | default(pageTitle) }}{% endif %}
   </div>
 
   {% if not invisible %}
