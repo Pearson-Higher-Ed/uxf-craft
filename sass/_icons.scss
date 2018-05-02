@@ -6,16 +6,39 @@
     height: 68px;
     border-bottom: 1px solid $pe-color-alto;
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    justify-content: space-between;
 
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
 
+    @media (min-width: 1460px) {
+      left: 240px;
+    }
+
+    .left {
+      margin-left: 36px;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .right {
+      margin-right: 36px;
+      display: flex;
+      align-items: center;
+
+      a:first-of-type {
+        @extend .pe-label, .pe-label--large, .pe-label--bold;
+        color: $pe-color-medium-gray;
+        text-decoration: none;
+        margin-right: 28px;
+      }
+    }
+
     h1 {
       @extend .pe-page-title, .pe-page-title--small;
-      margin-left: 36px;
       margin-top: 16px;
     }
 
@@ -269,6 +292,83 @@
         button {
           cursor: pointer;
         }
+      }
+    }
+  }
+
+  .text {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 120px;
+
+    padding-top: 180px;
+    margin-top: -180px;
+
+    max-width: 800px;
+
+    @include pe-responsive-breakpoint(lg) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    h2 {
+      @extend .pe-title;
+    }
+
+    h3 {
+      @extend .pe-title, .pe-title--small;
+      margin-bottom: 12px;
+    }
+    * + h3 { margin-top: 40px; }
+    h1 + h3,
+    h2 + h3 { margin-top: 6px; }
+
+    h4 {
+      @extend .pe-label, .pe-label--large;
+    }
+    h5 {
+      @extend .pe-label, .pe-label--bold;
+    }
+
+    ul {
+      @extend .pe-list, .pe-styled-lists--unordered;
+
+      ul {
+        @extend .pe-list, .pe-styled-lists--unordered;
+      }
+
+      ol {
+        @extend .pe-list, .pe-styled-lists--ordered;
+      }
+
+      & + p {
+        margin-top: 12px;
+      }
+    }
+
+    ol {
+      @extend .pe-list, .pe-styled-lists--ordered;
+
+      ol {
+        @extend .pe-list, .pe-styled-lists--ordered;
+      }
+
+      ul {
+        @extend .pe-list, .pe-styled-lists--unordered;
+      }
+
+      & + p {
+        margin-top: 12px;
+      }
+    }
+
+    .pe-list {
+      li p + p:last-child {
+        margin-bottom: 18px;
+      }
+
+      ol p + p:last-child {
+        margin-bottom: 18px;
       }
     }
   }

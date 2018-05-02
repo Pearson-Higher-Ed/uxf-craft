@@ -3,5 +3,10 @@
 
 {% block content %}
   {% set latest = (entry.getChildren().find() | latestApproved) %}
-  {% include '_includes/component_entry' with {'entry': latest} only %}
+
+  {% if 'icons' in (entry.title | lower) %}
+    {% include 'components/_types/iconsVersion' with {'entry': latest} only %}
+  {% else %}
+    {% include '_includes/component_entry' with {'entry': latest} only %}
+  {% endif %}
 {% endblock %}

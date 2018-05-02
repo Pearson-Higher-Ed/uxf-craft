@@ -7,8 +7,14 @@
 {% block content %}
 <div class="top-level-content icons">
   <header>
-    <h1>{{ entry.parent.title }}</h1>
-    <p>v{{ entry.version }} &bull; {{ entry.postDate | date("M j, Y") }}</p>
+    <div class="left">
+      <h1>{{ entry.parent.title }}</h1>
+      <p>v{{ entry.version }} &bull; {{ entry.postDate | date("M j, Y") }}</p>
+    </div>
+    <div class="right">
+      <a href="#how-to-use">How to Use</a>
+      {% include "_includes/uikit-download" %}
+    </div>
   </header>
 
   <div class="wrapper">
@@ -64,6 +70,9 @@
         {% endfor %}
       </div>
     {% endfor %}
+      <div class="text" id="how-to-use">
+        {{ entry.iconText }}
+      </div>
     </div>
   </div>
 </div>
