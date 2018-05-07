@@ -178,10 +178,12 @@
 
     .icon-detail {
       float: left;
-      width: 100%;
+      width: calc(100% - 32px);
       position: relative;
       display: flex;
       justify-content: space-between;
+      margin-left: 16px;
+      margin-right: 16px;
 
       background-color: $pe-color-white;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.40);
