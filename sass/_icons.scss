@@ -3,37 +3,65 @@
     margin-top: 54px;
     background-color: $pe-color-white;
 
-    height: 68px;
     border-bottom: 1px solid $pe-color-alto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
+    z-index: 100;
+
+    @include pe-responsive-breakpoint(md) {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
 
     @media (min-width: 1460px) {
       left: 240px;
     }
 
     .left {
-      margin-left: 36px;
       display: flex;
       align-items: baseline;
+      margin-left: 10px;
+      margin-bottom: 20px;
+      margin-top: 40px;
+
+      @include pe-responsive-breakpoint(md) {
+        margin-left: 28px;
+      }
+
+      @include pe-responsive-breakpoint(lg) {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0 0 0 8px;
+      }
     }
 
     .right {
-      margin-right: 36px;
       display: flex;
       align-items: center;
+      margin-left: 10px;
+      margin-bottom: 20px;
 
-      a:first-of-type {
+      @include pe-responsive-breakpoint(md) {
+        margin-right: 28px;
+      }
+
+      a {
         @extend .pe-label, .pe-label--large, .pe-label--bold;
         color: $pe-color-medium-gray;
         text-decoration: none;
         margin-right: 28px;
+        flex-shrink: 0;
       }
     }
 
@@ -51,7 +79,11 @@
 
   .wrapper {
     display: flex;
-    margin-top: 160px;
+    margin-top: 228px;
+
+    @include pe-responsive-breakpoint(md) {
+      margin-top: 188px;
+    }
   }
 
   .toc {
@@ -119,7 +151,6 @@
   }
 
   .icons-container {
-    margin: 0 16px 60px 16px;
     padding-bottom: 60px;
     margin-bottom: 60px;
     border-bottom: 1px solid $pe-color-concrete;
@@ -134,8 +165,8 @@
       @extend .pe-title;
       padding-top: 160px;
       margin-top: -160px;
-      margin-left: 16px;
-      margin-right: 16px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
 
     .icon {
@@ -146,7 +177,7 @@
       flex-direction: column;
       align-items: center;
       border-radius: 3px;
-      margin: 12px 4px;
+      margin: 12px 8px;
       padding: 0 4px 8px 4px;
 
       @include pe-responsive-breakpoint(md) {
@@ -182,49 +213,102 @@
       position: relative;
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       margin-left: 16px;
       margin-right: 16px;
+
+      box-sizing: border-box;
 
       background-color: $pe-color-white;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.40);
       border-radius: 3px;
       flex-wrap: wrap;
 
+      @include pe-responsive-breakpoint(md) {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 0;
+          display: block;
+          order: 3;
+        }
+      }
+
       @include pe-responsive-breakpoint(lg) {
         flex-wrap: nowrap;
       }
 
-      .image {
-        margin: 20px;
-        padding: 20px;
-        background-color: $pe-color-white-gray;
-        flex-grow: 0;
-        flex-shrink: 0;
-        order: 1;
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 44px;
+        height: 44px;
 
-        img {
-          height: 48px;
+        button {
+          cursor: pointer;
+          padding: 16px 16px 6px 6px;
+        }
+      }
+
+      .image-zone {
+        order: 1;
+        display: flex;
+        align-items: center;
+        margin: 20px 20px 0 20px;
+
+        @include pe-responsive-breakpoint(md) {
+          margin: 40px 40px 0 40px;
+        }
+
+        .image {
+          width: 40px;
+          height: 40px;
+          background-color: $pe-color-white-gray;
+          flex-grow: 0;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
 
           @include pe-responsive-breakpoint(md) {
-            height: 96px;
+            width: 80px;
+            height: 80px;
+          }
+
+          @include pe-responsive-breakpoint(lg) {
+            margin: 40px 48px 40px 40px;
+            padding: 40px;
+          }
+
+          img {
+            height: 24px;
+
+            @include pe-responsive-breakpoint(md) {
+              height: 48px;
+            }
           }
         }
 
-        @include pe-responsive-breakpoint(lg) {
-          margin: 40px;
-          padding: 40px;
+        h3 {
+          margin: 0;
+          margin-left: 12px;
+
+          @include pe-responsive-breakpoint(md) {
+            display: none;
+          }
         }
       }
 
       .details {
-        margin: 20px;
         flex-grow: 1;
-        order: 3;
+        order: 2;
         width: 100%;
+        margin: 0 20px 0 20px;
 
         @include pe-responsive-breakpoint(md) {
           width: auto;
-          order: 2;
+          margin: 40px 40px 0 0;
         }
 
         @include pe-responsive-breakpoint(lg) {
@@ -234,6 +318,11 @@
         h3 {
           @extend .pe-title, .pe-title--large, .pe-bold;
           margin: 0;
+          display: none;
+
+          @include pe-responsive-breakpoint(md) {
+            display: block;
+          }
         }
 
         .description {
@@ -244,23 +333,15 @@
       .sizes {
         flex-grow: 1;
         flex-shrink: 0;
-        order: 2;
-        width: 40%;
+        order: 3;
+        position: relative;
+
+        border-top: 1px solid $pe-color-concrete;
+        padding: 20px;
 
         @include pe-responsive-breakpoint(md) {
-          margin-left: 40px;
-          width: 280px;
-          flex-grow: 0;
-          order: 3;
-
-          &:before {
-            content: '';
-            display: block;
-            border-left: 1px solid $pe-color-concrete;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-          }
+          margin-top: 28px;
+          padding-left: 160px;
         }
 
         @include pe-responsive-breakpoint(xl) {
@@ -268,11 +349,40 @@
         }
 
         .list {
-          margin-top: 40px;
-          float: left;
+          display: table;
+          width: 100%;
 
-          @include pe-responsive-breakpoint(md) {
-            margin-left: 40px;
+          a {
+            display: table-row;
+
+            & + a div {
+              padding-top: 16px;
+            }
+
+            div {
+              display: table-cell;
+
+              &:nth-of-type(1) {
+                width: 40px;
+              }
+
+              &:nth-of-type(3) {
+                display: none;
+
+                @include pe-responsive-breakpoint(md) {
+                  display: block;
+
+                  button {
+                    background: none;
+                    border: none;
+                  }
+                }
+              }
+
+              pre {
+                margin: 0;
+              }
+            }
           }
         }
 
@@ -283,16 +393,6 @@
         a {
           text-decoration: none;
           color: inherit;
-        }
-      }
-
-      .close {
-        float: right;
-        margin-top: 16px;
-        margin-right: 16px;
-
-        button {
-          cursor: pointer;
         }
       }
     }

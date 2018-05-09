@@ -12,8 +12,8 @@
       <p>v{{ entry.version }} &bull; {{ entry.postDate | date("M j, Y") }}</p>
     </div>
     <div class="right">
+      <a href-"#">Request Icon</a>
       <a href="#how-to-use">How to Use</a>
-      {% include "_includes/uikit-download" %}
     </div>
   </header>
 
@@ -36,8 +36,23 @@
             <p>{{ icon.iconName }}</p>
             <template>
               <div class="icon-detail">
-                <div class="image">
-                  <img src="{{ icon.sizes[1].url }}" height="96px" />
+                <div class="close">
+                  <button type="button" class="pe-icon--btn">
+                    <svg role="img"
+                         aria-labelledby="r2"
+                         focusable="false"
+                         class="pe-icon--remove-sm-18">
+                      <title id="r2">Close dialog</title>
+                      <use xlink:href="#remove-sm-18"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="image-zone">
+                  <div class="image">
+                    <img src="{{ icon.sizes[1].url }}" />
+                  </div>
+                  <h3 class="pe-title pe-title--small pe-bold">{{ icon.iconName }}</h3>
                 </div>
                 <div class="details">
                   <h3>{{ icon.iconName }}</h3>
@@ -49,19 +64,24 @@
                 <div class="sizes">
                   <div class="list">
                     {% for size in icon.sizes %}
-                      <p><a href="{{ size.url }}" download><img src="{{ size.url }}" /> {{ size.title | lower | kebab }}</a></p>
+                      <a href="{{ size.url }}" download>
+                        <div>
+                          <img src="{{ size.url }}" />
+                        </div>
+                        <div>
+                          <pre>{{ size.title | lower | kebab }}</pre>
+                        </div>
+                        <div>
+                          <svg style="vertical-align:baseline"
+aria-hidden="true"
+focusable="false"
+class="pe-icon--download-18">
+<use xlink:href="#download-18"></use>
+</svg>
+                          SVG
+                        </div>
+                      </a>
                     {% endfor %}
-                  </div>
-                  <div class="close">
-                    <button type="button" class="pe-icon--btn">
-                      <svg role="img"
-                           aria-labelledby="r2"
-                           focusable="false"
-                           class="pe-icon--remove-sm-18">
-                        <title id="r2">Close dialog</title>
-                        <use xlink:href="#remove-sm-18"></use>
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>
