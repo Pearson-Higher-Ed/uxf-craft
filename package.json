@@ -2,9 +2,8 @@
   "name": "UXF-Craft",
   "private": true,
   "dependencies": {
+    "@pearson-components/elements-sdk": "^1.12.0",
     "fuzzysort": "^1.0.3",
-    "pearson-compounds": "^0.13.0",
-    "pearson-elements": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "underscore": "^1.8.3"

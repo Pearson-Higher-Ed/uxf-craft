@@ -9,12 +9,12 @@
     <script src="{{ siteUrl }}node_modules/react-dom/dist/react-dom.min.js"></script>
     <script src="{{ siteUrl }}node_modules/underscore/underscore-min.js" charset="utf-8"></script>
     <script src="{{ siteUrl }}node_modules/fuzzysort/fuzzysort.js" charset="utf-8"></script>
-    <script src="{{ siteUrl }}node_modules/pearson-compounds/build/dist.compounds.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@pearson-components/elements-sdk@1.6.1/build/dist.elements-sdk.js"></script>
 
     <script type="text/javascript">
       if (!document.getElementById('pe-icons-sprite')) {
         var pe_ajax = new XMLHttpRequest()
-          , url = "{{ siteUrl }}node_modules/pearson-elements/assets/icons/p-icons-sprite-1.1.svg";
+          , url = "{{ siteUrl }}node_modules/@pearson-components/elements-sdk/src/styles/assets/icons/p-icons-sprite-1.1.svg";
         pe_ajax.open("GET", url, true);
         pe_ajax.responseType = "document";
         pe_ajax.onload = function(e) {
