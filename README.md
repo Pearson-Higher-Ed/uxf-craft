@@ -76,6 +76,7 @@ Reference: https://github.com/nystudio107/craft-scripts
 
   ```
   a2enmod rewrite
+  a2enmod ssl
   phpenmod mcrypt
   service apache2 restart
   ```
@@ -112,6 +113,8 @@ Reference: https://github.com/nystudio107/craft-scripts
   ```
 
 9. Recommend running `mysql_secure_installation`, at least with the options of removing the anonymous user, disallowing remote root access, and removing the test database. Don't forget to reload the privilege table as prompted to ensure changes take effect.
+
+9. Install SSL certificates by following these instructions: https://www.digitalocean.com/community/tutorials/how-to-install-an-ssl-certificate-from-a-commercial-certificate-authority
 
 10. Create the bare git repo that we will push to when we want to deploy.
 
