@@ -234,8 +234,12 @@
         }
       }
 
-      @include pe-responsive-breakpoint(lg) {
+      @include pe-responsive-breakpoint(xl) {
         flex-wrap: nowrap;
+
+        &:before {
+          display: none;
+        }
       }
 
       .close {
@@ -261,6 +265,10 @@
           margin: 40px 40px 0 40px;
         }
 
+        @include pe-responsive-breakpoint(xl) {
+          margin-bottom: 40px;
+        }
+
         .image {
           width: 40px;
           height: 40px;
@@ -277,8 +285,8 @@
           }
 
           @include pe-responsive-breakpoint(lg) {
-            margin: 40px 48px 40px 40px;
-            padding: 40px;
+            width: 160px;
+            height: 160px;
           }
 
           img {
@@ -286,6 +294,10 @@
 
             @include pe-responsive-breakpoint(md) {
               height: 48px;
+            }
+
+            @include pe-responsive-breakpoint(lg) {
+              height: 96px;
             }
           }
         }
@@ -311,8 +323,8 @@
           margin: 40px 40px 0 0;
         }
 
-        @include pe-responsive-breakpoint(lg) {
-          margin: 40px 0;
+        @include pe-responsive-breakpoint(xl) {
+          margin: 40px 472px 40px 0;
         }
 
         h3 {
@@ -342,10 +354,28 @@
         @include pe-responsive-breakpoint(md) {
           margin-top: 28px;
           padding-left: 160px;
+          padding-right: 60px;
+        }
+
+        @include pe-responsive-breakpoint(lg) {
+          padding-left: 240px;
         }
 
         @include pe-responsive-breakpoint(xl) {
-          width: 300px;
+          border-top: none;
+          border-left: 1px solid $pe-color-concrete;
+          width: 440px;
+          flex-grow: 0;
+
+          padding-left: 32px;
+          padding-right: 48px;
+          padding-top: 28px;
+          margin: 0;
+
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
         }
 
         .list {
@@ -361,9 +391,12 @@
 
             div {
               display: table-cell;
+              color: $pe-color-medium-gray;
 
               &:nth-of-type(1) {
-                width: 40px;
+                width: 28px;
+                padding-right: 12px;
+                text-align: center;
               }
 
               &:nth-of-type(3) {
@@ -371,10 +404,13 @@
 
                 @include pe-responsive-breakpoint(md) {
                   display: block;
+                  text-align: right;
 
-                  button {
-                    background: none;
-                    border: none;
+                  svg {
+                    position: relative;
+                    top: 2px;
+                    margin-right: 8px;
+                    color: $pe-color-medium-gray;
                   }
                 }
               }

@@ -62,6 +62,7 @@
                   <p>Categories: {% for category in icon.categories %}<a href="#{{ category.title | kebab }}">{{ category.title }}</a>{% if not loop.last %},{% endif %}{% endfor %}</p>
                 </div>
                 <div class="sizes">
+                  <p>Prefer the 18px size as a default</p>
                   <div class="list">
                     {% for size in icon.sizes %}
                       <a href="{{ size.url }}" download>
@@ -73,11 +74,11 @@
                         </div>
                         <div>
                           <svg style="vertical-align:baseline"
-aria-hidden="true"
-focusable="false"
-class="pe-icon--download-18">
-<use xlink:href="#download-18"></use>
-</svg>
+                               aria-hidden="true"
+                               focusable="false"
+                               class="pe-icon--download-18">
+                            <use xlink:href="#download-18"></use>
+                          </svg>
                           SVG
                         </div>
                       </a>
