@@ -22,6 +22,28 @@
     }
   }
 
+  .back2top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(37, 37, 37, 0.8);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      color: $pe-color-white;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  }
+
   .inline-toc {
     @extend .pe-title, .pe-bold;
     margin-top: 36px;
