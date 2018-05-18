@@ -19,5 +19,5 @@
  */
 
 return array(
-
+  'nightly/(?P<component>[\s\S]+)' => 'components/_nightlyEntry'
 );

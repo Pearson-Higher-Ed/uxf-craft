@@ -14,7 +14,9 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
       'latestApproved' => new Twig_Filter_Method($this, 'latestApproved'),
       'latestOverall' => new Twig_Filter_Method($this, 'latestOverall'),
       'groupByCategory' => new Twig_Filter_Method($this, 'groupBy'),
-      'iconsGroupByCategory' => new Twig_Filter_Method($this, 'iconsGroupBy')
+      'iconsGroupByCategory' => new Twig_Filter_Method($this, 'iconsGroupBy'),
+      'hasNightly' => new Twig_Filter_Method($this, 'hasNightly'),
+      'getNightly' => new Twig_Filter_Method($this, 'getNightly')
     );
   }
   public function getFunctions() {
@@ -24,6 +26,14 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
   }
 
   private function sortVersions($versions) {
+    $versions = array_filter($versions, function($v) {
+      if (strtolower($v['version']) == 'nightly') {
+        return false;
+      } else {
+        return true;
+      }
+    });
+
     usort($versions, function($a, $b) {
       // ['1.0.0', 'beta.1']
       $a_segs = explode('-', $a['version']);
@@ -140,5 +150,28 @@ class UXFToolsTwigExtensions extends \Twig_Extension {
     }
 
     return $result;
+  }
+
+  public function hasNightly($components) {
+    if (!is_array($components)) {
+      $components = $components->find();
+    }
+    return array_filter($components, function($c) {
+      foreach ($c->children as $child) {
+        if (strtolower($child->version) == 'nightly') {
+          return true;
+        }
+      }
+      return false;
+    });
+  }
+
+  public function getNightly($versions) {
+    foreach ($versions as $version) {
+      if (strtolower($version->version) == 'nightly') {
+        return $version;
+      }
+    }
+    return false;
   }
 }

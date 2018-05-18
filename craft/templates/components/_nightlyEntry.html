@@ -1,0 +1,14 @@
+{% set entry = craft.entries.section('components').type('component').slug(component|lower).first() %}
+
+{% extends "_default" %}
+{% set pageTitle = entry.title %}
+
+{% block sidebar %}
+  {% include "_includes/nightlySidebar" %}
+{% endblock %}
+
+{% block content %}
+  {% set latest = (entry.getChildren().find() | getNightly) %}
+
+  {% include '_includes/component_entry' with {'entry': latest} only %}
+{% endblock %}
