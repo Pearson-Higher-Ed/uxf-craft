@@ -11,7 +11,7 @@
   {% set latest = (entry.getChildren().find() | getNightly) %}
 
   {% if 'icons' in (entry.title | lower) %}
-    {% include 'components/_types/iconsVersion' with {'entry': latest} only %}
+    {% include '_includes/icons_entry' with {'entry': latest} only %}
   {% else %}
     {% include '_includes/component_entry' with {'entry': latest} only %}
   {% endif %}
