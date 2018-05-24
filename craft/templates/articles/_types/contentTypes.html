@@ -38,6 +38,10 @@
       {% endfor %}
     </div>
 
+    <div class="intro">
+      {{ entry.contentTypesIntro }}
+    </div>
+
     {% for example in entry.contentExamples %}
       {% switch example.type %}
 
@@ -86,6 +90,12 @@
 <script type="text/javascript">
   document.querySelector('.back2top').addEventListener('click', function(e) {
     window.scrollTo({top: 0, behavior: 'smooth'})
+  })
+</script>
+
+<script type="text/javascript">
+  document.querySelectorAll('.dosdonts .card a').forEach(function(a) {
+    a.removeAttribute('href')
   })
 </script>
 {% endblock %}
