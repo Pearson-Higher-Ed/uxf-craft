@@ -45,6 +45,10 @@
 .ultimate-header.nightly {
   background-image: linear-gradient(0deg, #15293C 30%, #000000 92%);
 
+  &.invisible {
+    background: none;
+  }
+
   .back-container {
     float: right;
 
