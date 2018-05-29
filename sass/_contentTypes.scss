@@ -1,4 +1,4 @@
-.content-types {
+.top-level-content.content-types {
   margin: 94px 10px 0 10px;
 
   @include pe-responsive-breakpoint(sm) {
@@ -73,7 +73,7 @@
       display: block;
       position: fixed;
 
-      top: 260px;
+      top: 220px;
       left: 50%;
       margin-left: 960px/2 * -1;
     }
@@ -110,9 +110,13 @@
   }
 
   .intro {
-    @extend .pe-copy;
+    @extend .pe-copy, .pe-copy--large;
     margin-top: 60px;
     margin-bottom: 80px;
+
+    p {
+      @extend .pe-copy, .pe-copy--large;
+    }
   }
 
   .main {
@@ -126,6 +130,11 @@
 
     ol {
       @extend .pe-list, .pe-styled-lists--ordered;
+    }
+
+    &.main ul li,
+    &.main ol li {
+      @extend .pe-copy, .pe-copy--large;
     }
   }
 
