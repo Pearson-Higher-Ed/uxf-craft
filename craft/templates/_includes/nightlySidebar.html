@@ -41,7 +41,7 @@
         <ul>
           {% for component in craft.entries.section('components').type('component') | hasNightly %}
             <li {% if component.title == (entry.title | default("")) %}class="selected"{% endif %}>
-              <a href="{{ siteUrl }}{{ component.uri }}">
+              <a href="{{ siteUrl }}nightly/{{ component.slug }}">
                   {{ component.title }}
               </a>
             </li>
