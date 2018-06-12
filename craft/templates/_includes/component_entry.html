@@ -17,7 +17,7 @@
     <div class="buttons">
       {% include '_includes/uikit-download' %}
 
-      {% if entry['implementation'] is defined %}
+      {% if entry['implementation'] is defined and entry['implementation'] is not empty %}
         <a href="{{ entry.implementation }}" class="pe-btn__primary--btn_large code">
           <svg style="vertical-align: baseline;"
                aria-hidden="true"
@@ -44,7 +44,7 @@
       <div class="buttons">
         {% include '_includes/uikit-download.html' %}
 
-        {% if entry['implementation'] is defined %}
+        {% if entry['implementation'] is defined and entry['implementation'] is not empty %}
           <a href="{{ entry.implementation }}" class="pe-btn__primary--btn_large code">
             <svg style="vertical-align: baseline;"
                  aria-hidden="true"
