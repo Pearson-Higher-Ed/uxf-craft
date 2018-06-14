@@ -19,6 +19,8 @@
         {% for category, icons in iconsByCategory %}
           <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
         {% endfor %}
+          <li class="divider"><a href="#how-to-use">How to Use</a></li>
+          <li><a href="#changelog">Changelog</a></li>
       </ul>
     </div>
 
@@ -89,6 +91,21 @@
     {% endfor %}
       <div class="text" id="how-to-use">
         {{ entry.iconText }}
+      </div>
+
+      <div class="block changelog">
+        <h2 class="pe-title pe-bold" id="changelog">Changelog</h2>
+        {% for change in entry.changelog %}
+          {% if change.version != entry.version %}
+            <h3 class="pe-title"><a href="{{ siteUrl }}c/{{ entry.parent.title | kebab }}/v{{ change.version }}">{{ change.version }}</a></h3>
+          {% else %}
+            <h3 class="pe-title">{{ change.version }}</h3>
+          {% endif %}
+          {% if change.changeAuthor.first() %}
+            <p class="pe-label pe-label--small">{{ change.changeAuthor.first().fullName }}</p>
+          {% endif %}
+          {{ change.changes }}
+        {% endfor %}
       </div>
     </div>
   </div>
