@@ -2,6 +2,11 @@
   border-top: 2px solid $pe-color-alto;
   padding-top: 60px;
 
+  h2 {
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+
   h2:before {
     display: block;
     content: " ";
