@@ -35,12 +35,20 @@
       <li>
         Components
         <ul>
-          {% for component in craft.entries.section('components').type('component') %}
-            <li {% if component.title == (entry.title | default("")) %}class="selected"{% endif %}>
-              <a href="{{ siteUrl }}{{ component.uri }}">
-                  {{ component.title }}
-              </a>
-            </li>
+          {% for component in craft.entries({
+            section: 'components',
+            type: 'component',
+            with: ['children']
+          }) %}
+            {% if component.children | length != 1 or
+               (component.children[0].version | lower) != 'nightly' %}
+
+              <li {% if component.title == (entry.title | default("")) %}class="selected"{% endif %}>
+                <a href="{{ siteUrl }}{{ component.uri }}">
+                    {{ component.title }}
+                </a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </li>
