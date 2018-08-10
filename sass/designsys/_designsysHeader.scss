@@ -1,0 +1,23 @@
+.ds-ultimate-header {
+    // background: url('/public/theme_assets/ds-header-bg.svg') center top fixed;
+    // background-size: cover;
+    // overflow: hidden;
+    a.selected {
+        border-bottom: 2px solid $pe-color-charcoal;
+    }
+    top: 0;
+    z-index: 20;
+    span, a, button {
+        color: $pe-color-charcoal;
+    }
+    background-color: $pe-color-white;
+}
+.ds-ultimate-header.text-white {
+    background-color: transparent;
+    span, a, button {
+        color: $pe-color-white;
+    }
+    a.selected {
+        border-bottom-color: $pe-color-white;
+    }
+}

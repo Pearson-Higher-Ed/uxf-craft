@@ -1,0 +1,66 @@
+.ds-sidebar {
+  top:10rem;
+  z-index: 10;
+
+  @media (min-width: 1px) {
+    left: 10px; } 
+  @media (min-width: 480px) {
+    left: 20px; } 
+  @media (min-width: 1024px) {
+    left: 40px;
+  }
+  @media (min-width: 1220px) {
+    left: calc(50% - 570px);
+  }
+
+  a {
+    color: $pe-color-charcoal;
+    transition: all 0.5s;
+  }
+  .main-level {
+    &>li.active {
+      &>a {
+        font-weight: 600;
+        &::before {
+            content: "•";
+            margin-left: -1rem;
+            margin-right: .5rem;
+        }
+      }
+    }
+  }
+
+  .sub-level{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.9s ease-out;
+    border-left: 1px solid $pe-color-alto;
+    a {
+      color: $pe-color-medium-gray;
+    }
+    li.active {
+      a {
+        font-weight: 600;
+        color: $pe-color-charcoal;
+      }
+    }
+  }
+}
+
+.ds-sidebar.text-white {
+  a, .sub-level a, .sub-level li.active a {
+    color: $pe-color-white;
+  }
+
+  .sub-level{
+    border-left-color: rgba(255, 255, 255, .7);
+    a {
+      opacity: .7;
+    }
+    li.active {
+      a {
+        opacity: 1;
+      }
+  }
+}
+}

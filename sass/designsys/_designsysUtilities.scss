@@ -1,0 +1,59 @@
+.font-pd {
+    font-family: 'Playfair Display', serif;
+}
+.ds-group-title {
+    font-size: 5rem;
+}
+.ds-section-title {
+    font-size: 2.57rem;
+    color: $ds-purple;
+}
+.nonedec {
+    text-decoration: none;
+}
+
+.ds-grid {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 36px;
+    @mixin colGap($bp, $gap) {
+        @media(max-width: $bp) {
+            grid-column-gap: $gap;
+        }
+    }
+    @include colGap(1024px, 20px);
+    @include colGap(768px, 12px);
+    @include colGap(480px, 8px);
+}
+.ds-container {
+    width: 100%;
+    max-width: 1140px;
+    @mixin xmargin($bp, $margin) {
+        @media(min-width: $bp) {
+            margin-right: $margin;
+            margin-left: $margin;
+        }
+    }
+    @include xmargin(1px, 10px);
+    @include xmargin(480px, 20px);
+    @include xmargin(1024px, 40px);
+    @include xmargin(1220px, auto);
+}
+
+@mixin colse($a, $b) {
+    grid-column-start: $a;
+    grid-column-end: $b;
+}
+
+@mixin rowse($a, $b) {
+    grid-row-start: $a;
+    grid-row-end: $b;
+}
+
+.ds-col-12 {
+    @include colse(1, 13);
+}
+.ds-center-main {
+    @include colse(3, 11);
+}
