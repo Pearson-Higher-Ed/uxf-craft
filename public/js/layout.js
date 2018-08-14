@@ -1,7 +1,7 @@
 var activeScreen = function() {
     for (var n = 0; n <7; n++) {
        if ($('.ds-layout-screen'+n).hasClass('on-screen')) {
-           return n;
+           return [n, $('.ds-layout-screen'+n)];
        }
     }
 };
@@ -15,6 +15,23 @@ function pauseEvent(){
     },2000);
  }
 
+$(document).ready(function() {
+    
+    var fillTheGrid = function(timeInter, numArray) {
+        setTimeout(function() {
+            console.log(numArray);
+            $.each(numArray, function(index, item){
+                $('.ds-layout-screen1 .ds-layout-grid:nth-child('+ item +')').addClass('ds-grid-fill'+item);
+            });
+        }, timeInter);
+    };
+
+    fillTheGrid(10, [2, 8, 10, 12]);
+    fillTheGrid(200, [4, 6]);
+    fillTheGrid(400, [1, 3, 5, 7]);
+    fillTheGrid(600, [9, 11]);
+
+});
 $(window).on('mousewheel', function(event) {
 
     if (!isMoving) {
@@ -23,14 +40,32 @@ $(window).on('mousewheel', function(event) {
     } 
     
     function processScroll() {
-        console.log(new Date().getTime().toString());
-        var scroll = event.deltaY;
-        console.log(scroll);
+        //console.log(new Date().getTime().toString());
+        var scroll = event.deltaY, number = activeScreen()[0], screen = activeScreen()[1];
 
-        if (scroll < 0) {
-            var activeNoA = activeScreen();
-            console.log('activeA'+activeNoA);
-            switch(activeNoA) {
+        if (screen.height() > $(window).height()) {
+            console.log("longer screen detected");
+            if (scroll < 0) {
+                if (screen.scrollTop() == (screen.scrollHeight - screen.height())){
+                    scrollUp(number);
+                }
+            } else {
+                if (screen.scrollTop() == 0){
+                    console.log(screen.scrollTop());
+                    scrollDown(number);
+                }
+            }
+            
+        } else {
+            if (scroll < 0) {
+                scrollUp(number);
+            } else {
+                scrollDown(number);
+            }
+        }
+
+        function scrollUp(activeNo) {
+            switch(activeNo) {
                 case 1:
                     screen2Up();
                     break;
@@ -48,11 +83,11 @@ $(window).on('mousewheel', function(event) {
                     break;
                 default:
                     return false;
-            }  
-        } else {
-            var activeNoB = activeScreen();
-            console.log('activeB'+activeNoB);
-            switch(activeNoB) {
+            } 
+        }
+
+        function scrollDown(activeNo) {
+            switch(activeNo) {
                 case 2:
                     screen2Down();
                     break;
@@ -86,7 +121,7 @@ var screen2Up = function () {
     }, 500);
     setTimeout(function(){
         $(".ds-layout-screen2 .ds-center-main").animate({marginTop: "140px"}, "slow", "swing");
-        $(".ds-sidebar .sub-level").addClass("mt-3");
+        $(".ds-sidebar .sub-level").addClass("dmt-2");
         $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
         onScreen(1, 2);
     }, 1200); 
@@ -98,7 +133,7 @@ var screen2Down = function () {
     $(".ds-layout-screen2 .ds-center-main").animate({marginTop: "200px"});
 
     setTimeout(function(){
-        $(".ds-sidebar .sub-level").removeClass("mt-3");
+        $(".ds-sidebar .sub-level").removeClass("dmt-2");
         $(".ds-sidebar .sub-level").css('max-height', "0");
         $(".ds-sidebar").addClass("text-white");
         $('.ds-layout-cover').animate({top: "15vh", opacity: 1});
@@ -129,14 +164,14 @@ var screen3Up = function() {
 
     setTimeout(function(){
         $(".ds-whsp-rect").animate({height: "258px"});
-        $('.ds-whsp-rect1').removeClass('mr-2');
+        $('.ds-whsp-rect1').removeClass('dmr-1');
         $('.ds-whsp-rect:nth-child(2)').css('grid-column-end','10');
-        $('.ds-whsp-rect3').removeClass('ml-2');
+        $('.ds-whsp-rect3').removeClass('dml-1');
         $('.ds-whsp-rect:last-child').css('grid-column-start','15');
-        $('.ds-whsp-rect21').removeClass('mb-1');
-        $('.ds-whsp-rect21').addClass('mb-2');
-        $('.ds-whsp-rect22').removeClass('mt-1');
-        $('.ds-whsp-rect22').addClass('mt-2');
+        $('.ds-whsp-rect21').removeClass('smb-1');
+        $('.ds-whsp-rect21').addClass('dmb-1');
+        $('.ds-whsp-rect22').removeClass('dmt-1');
+        $('.ds-whsp-rect22').addClass('dmt-1');
     }, 1000); 
 };
 
@@ -151,26 +186,22 @@ var screen3Down = function() {
 var screen4Up = function() {
     console.log('screen4Up called');
 
-    whiteMenu(true);
-
     screenUpDis(3);
     screenUpShow(4);
 
-    setTimeout(function(){
-        $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "140px"});
-    }, 500); 
+    // setTimeout(function(){
+    //     $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "140px"});
+    // }, 500); 
 
-    setTimeout(function(){
-        $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "60px"});
-    }, 1000); 
+    // setTimeout(function(){
+    //     $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "60px"});
+    // }, 1000); 
 
     onScreen(3, 4);
 };
 
 var screen4Down = function() {
     console.log('screen4Down called');
-
-    whiteMenu(false);
     
     screenDownShow(3);
     screenDownDis(4);
@@ -181,8 +212,6 @@ var screen4Down = function() {
 var screen5Up = function() {
     console.log('screen5Up called');
 
-    whiteMenu(false);
-
     screenUpDis(4);
     screenUpShow(5);
 
@@ -191,8 +220,6 @@ var screen5Up = function() {
 
 var screen5Down = function() {
     console.log('screen5Down called');
-
-    whiteMenu(true);
 
     screenDownShow(4);
     screenDownDis(5);

@@ -1,0 +1,32 @@
+<div class="ds-bp-table bg-white smb-5">
+    <h4 class="pe-title--small pe-bold d-flex justify-content-between border-bottom">
+        <button aria-controls="{{ id }}" aria-expanded="true">{{ btn }}</button>
+        <svg role="img"
+            focusable="false"
+            aria-label="open"
+            class="pe-icon--dropdown-close-sm-24">
+            <use xlink:href="#dropdown-close-sm-24"></use>
+        </svg>
+    </h4>
+    <div class="panel" id="{{ id }}" aria-hidden="false">
+        <table>
+            <thead>
+                <tr>
+                    {% for item in tablehead %}
+                    <th class="pe-label pe-label--secondary">{{ item.th }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in tablebody %}
+                <tr class="border-bottom">
+                    <th class="pe-label">{{ item.th }}</th>
+                    <td class="pe-label">{{ item.td1 }}</td>
+                    <td class="pe-label">{{ item.td2 }}</td>
+                    </th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

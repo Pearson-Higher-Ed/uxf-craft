@@ -31,8 +31,10 @@
         </div>
         <div class="ds-grid position-absolute">
             <div class="ds-center-main">
-                <h2 class="font-pd ds-section-title mb-4">Overview</h2>
-                <p class="pe-title">The layout of your designs should always be aesthetically pleasing and open. A clean, simple, and spacious layout invites users in and makes it easy for them to take action.</p>
+                {% include '_includes/designSys/shared/levelTwo' with 
+                    {'name': 'Overview', 
+                    'desc': 'The layout of your designs should always be aesthetically pleasing and open. A clean, simple, and spacious layout invites users in and makes it easy for them to take action.'
+                } %}
             </div>
         </div>
     </div>

@@ -1,8 +1,5 @@
 .ds-ultimate-header {
-    // background: url('/public/theme_assets/ds-header-bg.svg') center top fixed;
-    // background-size: cover;
-    // overflow: hidden;
-    a.selected {
+    li.selected {
         border-bottom: 2px solid $pe-color-charcoal;
     }
     top: 0;
@@ -17,7 +14,7 @@
     span, a, button {
         color: $pe-color-white;
     }
-    a.selected {
+    li.selected {
         border-bottom-color: $pe-color-white;
     }
 }

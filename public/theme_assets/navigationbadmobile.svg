@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="382" viewBox="0 0 180 382">
+  <defs>
+    <linearGradient id="navigationbadmobile-a" x1="0%" x2="98.038%" y1="37.719%" y2="37.719%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(0 105)">
+      <rect width="179" height="276" x=".5" y=".5" fill="#F5F5F5" stroke="#E9E9E9"/>
+      <rect width="162.37" height="220" x="8.326" y="41.5" fill="#FFF" stroke="#D9D9D9" rx="4"/>
+    </g>
+    <rect width="179" height="105" x=".5" y=".5" fill="#FFF" stroke="#E9E9E9"/>
+    <ellipse cx="161.25" cy="15.184" fill="#E9E9E9" rx="6.25" ry="6.184"/>
+    <ellipse cx="139.25" cy="15.184" fill="#E9E9E9" rx="6.25" ry="6.184"/>
+    <rect width="151.5" height="14" x="14" y="46" fill="#E9E9E9"/>
+    <rect width="49.91" height="6" x="13" y="85" fill="#898989" rx="3"/>
+    <rect width="49.91" height="6" x="72" y="85" fill="#633FC5" rx="3"/>
+    <rect width="44" height="6" x="132" y="85" fill="#898989" rx="3"/>
+    <rect width="40" height="12" x="13" y="10" fill="#E9E9E9"/>
+    <rect width="40" height="33" x="139" y="72" fill="url(#navigationbadmobile-a)"/>
+    <g transform="translate(13 117)">
+      <rect width="59.06" height="6" fill="#633FC5" rx="3"/>
+      <rect width="59.06" height="6" x="70" fill="#898989" rx="3"/>
+      <rect width="59.06" height="6" y="14" fill="#898989" rx="3"/>
+    </g>
+  </g>
+</svg>
