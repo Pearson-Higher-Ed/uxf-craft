@@ -46,11 +46,15 @@ $(window).on('mousewheel', function(event) {
         if (screen.height() > $(window).height()) {
             console.log("longer screen detected");
             if (scroll < 0) {
-                if (screen.scrollTop() == (screen.scrollHeight - screen.height())){
+                console.log("up scroll");
+                console.log('scrollh' + $(window).height());
+                console.log('h' + screen.height());
+                console.log($(window).scrollTop());
+                if ($(window).scrollTop() > (screen.height()-$(window).height())){
                     scrollUp(number);
                 }
             } else {
-                if (screen.scrollTop() == 0){
+                if ($(window).scrollTop() == 0){
                     console.log(screen.scrollTop());
                     scrollDown(number);
                 }
@@ -157,7 +161,7 @@ var screen3Up = function() {
             $(".ds-layout-screen3 .ds-layout-grid:nth-child("+ h +")").animate({height: "100vh"});
         });
         for (m = 3; m <11; m++) {
-            $(".ds-layout-screen3 .ds-layout-grid:nth-child("+ m + ")").animate({height: "60vh"});
+            $(".ds-layout-screen3 .ds-layout-grid:nth-child("+ m + ")").animate({height: "70vh"});
         }
         onScreen(2, 3);
     }, 500); 
@@ -195,8 +199,8 @@ var screen4Up = function() {
 
     // setTimeout(function(){
     //     $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "60px"});
-    // }, 1000); 
-
+    // }, 1000);
+    
     onScreen(3, 4);
 };
 
@@ -266,6 +270,7 @@ var screenDownShow = function(num) {
     screen.removeClass("d-none");
     //if (num==2) {
         screen.animate({top: 53 + "px"}, "slow", "swing");
+        screen.animate({top: -100 + "vh"}, "slow", "swing");
     //} else {
     //    screen.animate({top: 106 + "px"}, "slow", "swing");
     //} 
@@ -274,9 +279,10 @@ var screenDownShow = function(num) {
 var screenUpShow = function(num) {
     var screen = getScreen(num);
     screen.removeClass("d-none");
-    screen.addClass("position-absolute");
+    //screen.addClass("position-absolute");
     //if (num==2) {
         screen.animate({top: 53 + "px"}, "slow", "swing");
+        screen.animate({top: -100 + "vh"}, "slow", "swing");
     //} else {
     //    screen.animate({top: 106 + "px"}, "slow", "swing");
     //}
@@ -286,7 +292,8 @@ var screenUpShow = function(num) {
 
 var screenUpDis = function(num) {
     var screen = getScreen(num);
-    screen.animate({top: "-100vh"}, "slow");
+    //screen.animate({top: "-100vh"}, "slow");
+    screen.animate({top: "-200vh"}, "slow");
     setTimeout(function(){
         screen.addClass('d-none');
     }, 1200);

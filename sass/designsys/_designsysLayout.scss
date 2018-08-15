@@ -1,14 +1,14 @@
 @import "designsysColors";
 @import "designsysUtilities";
 
-.parallax-main {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
+// .parallax-main {
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     height: 100vh;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+// }
 
 .ds-grid-borderL {
     border-left-width: 1px;
@@ -99,8 +99,9 @@
 
 .ds-layout-screen2 {
     background-color: $pe-color-white-gray;
-    height: calc(100vh - 53px);
-    top: 100vh;
+    height: 100vh;
+    //top: 100vh;
+    z-index: 2;
     .position-absolute {
         top: 0;
     }
@@ -164,8 +165,9 @@
 }
 
 .ds-layout-screen3 {
-    height: calc(100vh - 53px);
-    top: 100vh;
+    height: 100vh;
+    //top: 100vh;
+    z-index: 2;
     .position-absolute {
         top: 0;
     }
@@ -220,6 +222,7 @@
 }
 
 .ds-layout-screen4 {
+    z-index: 2;
     .position-absolute {
         top: 0; 
     }
@@ -240,11 +243,8 @@
         th {
             font-weight: 400;
         }
-        thead th {
-            padding: 0 40px;
-        }
-        tbody tr th, tbody tr td {
-            padding: 36px 40px;
+        thead th:not(:first-child) {
+            width: 96px;
         }
 
         button {
@@ -255,6 +255,7 @@
 }
 
 .ds-layout-screen5 {
+    z-index: 2;
     h3 {
         margin-top: 80px;
     }
@@ -285,4 +286,8 @@
             background-color: $ds-blue;
         }
     }
+}
+
+.ds-layout-screen6 {
+    z-index: 2;
 }

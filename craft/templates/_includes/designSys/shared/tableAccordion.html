@@ -1,12 +1,13 @@
 <div class="ds-bp-table bg-white smb-5">
-    <h4 class="pe-title--small pe-bold d-flex justify-content-between border-bottom">
-        <button aria-controls="{{ id }}" aria-expanded="true">{{ btn }}</button>
-        <svg role="img"
+    <h4 class="pe-title--small pe-bold dpb-2 dmb-2 border-bottom">
+        <button class="w-100 d-flex justify-content-between bp-table-btn" aria-controls="{{ id }}" aria-expanded="true">{{ btn }}
+            <svg role="img"
             focusable="false"
             aria-label="open"
             class="pe-icon--dropdown-close-sm-24">
             <use xlink:href="#dropdown-close-sm-24"></use>
-        </svg>
+            </svg>
+        </button>
     </h4>
     <div class="panel" id="{{ id }}" aria-hidden="false">
         <table>
@@ -19,10 +20,11 @@
             </thead>
             <tbody>
                 {% for item in tablebody %}
-                <tr class="border-bottom">
-                    <th class="pe-label">{{ item.th }}</th>
-                    <td class="pe-label">{{ item.td1 }}</td>
-                    <td class="pe-label">{{ item.td2 }}</td>
+                <tr>
+                    <th class="pe-label--large p-1">{{ item.th }}<span class="pe-label--secondary">{{ item.thspan }}</span></th>
+                    {% for it in item.cell %}
+                    <td class="pe-label--large p-1 text-center">{{ it.td }}</td>
+                    {% endfor %}
                     </th>
                 </tr>
                 {% endfor %}
