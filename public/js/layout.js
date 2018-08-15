@@ -12,14 +12,13 @@ function pauseEvent(){
     isMoving = true;
     setTimeout(function() {
         isMoving=false;
-    },2000);
+    }, 1500);
  }
 
 $(document).ready(function() {
     
     var fillTheGrid = function(timeInter, numArray) {
         setTimeout(function() {
-            console.log(numArray);
             $.each(numArray, function(index, item){
                 $('.ds-layout-screen1 .ds-layout-grid:nth-child('+ item +')').addClass('ds-grid-fill'+item);
             });
@@ -30,10 +29,10 @@ $(document).ready(function() {
     fillTheGrid(200, [4, 6]);
     fillTheGrid(400, [1, 3, 5, 7]);
     fillTheGrid(600, [9, 11]);
-    console.log($(window).height());
-    console.log($('main').height());
-    console.log($('.ds-layout-screen1').height());
-    console.log($('.parallax-main').height());
+    console.log('window height ' + $(window).height());
+    console.log('main height ' + $('main').height());
+    console.log('screen1 height ' + $('.ds-layout-screen1').height());
+    console.log('parallax height ' + $('.parallax-main').height());
 
 });
 
@@ -41,25 +40,23 @@ $(window).on('mousewheel', function(event) {
 
     if (!isMoving) {
         processScroll();
-        pauseEvent();
-    } 
+    }
     
     function processScroll() {
-        //console.log(new Date().getTime().toString());
         var scroll = event.deltaY, number = activeScreen()[0], screen = activeScreen()[1];
 
         if (screen.height() > $(window).height()) {
             console.log("longer screen detected");
             if (scroll < 0) {
-                console.log("up scroll");
-                console.log('scrollh' + $(window).height());
-                console.log('h' + screen.height());
-                console.log($(window).scrollTop());
-                if ($(window).scrollTop() > (screen.height()-$(window).height())){
+                var nextAnchor = $('#layoutScreen' + (number+1)).offset().top;
+                if ($(window).scrollTop() >= (nextAnchor - $(window).height() - 53)){
                     scrollUp(number);
                 }
             } else {
-                if ($(window).scrollTop() == 0){
+                var thisAnchor = $('#layoutScreen' + number).offset().top;
+                console.log(thisAnchor);
+                console.log($(window).scrollTop());
+                if ($(window).scrollTop() <= thisAnchor){
                     console.log($(window).scrollTop());
                     scrollDown(number);
                 }
@@ -74,6 +71,7 @@ $(window).on('mousewheel', function(event) {
         }
 
         function scrollUp(activeNo) {
+            pauseEvent();
             switch(activeNo) {
                 case 1:
                     screen2Up();
@@ -96,6 +94,7 @@ $(window).on('mousewheel', function(event) {
         }
 
         function scrollDown(activeNo) {
+            pauseEvent();
             switch(activeNo) {
                 case 2:
                     screen2Down();
@@ -121,15 +120,16 @@ $(window).on('mousewheel', function(event) {
 
 var screen2Up = function () {
     console.log('screen2Up called');
-
     $('.ds-layout-cover').animate({top: "10vh", opacity: 0});
     
     setTimeout(function(){
         $(".parallax-main").removeClass("d-none");
-        screenUpShow(2);
+        var toppos = - $(window).height();
+        $(".parallax-main").animate({top: toppos}, "slow", "swing");
         $(".ds-sidebar").removeClass("text-white");
     }, 500);
     setTimeout(function(){
+        $(window).scrollTop(0);
         $(".ds-layout-screen2 .ds-center-main").animate({marginTop: "140px"}, "slow", "swing");
         $(".ds-sidebar .sub-level").addClass("dmt-2");
         $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
@@ -140,7 +140,6 @@ var screen2Up = function () {
 
 var screen2Down = function () {
     console.log('screen2Down called');
-
     $(".ds-layout-screen2 .ds-center-main").animate({marginTop: "200px"});
 
     setTimeout(function(){
@@ -150,6 +149,7 @@ var screen2Down = function () {
         $('.ds-layout-cover').animate({top: "15vh", opacity: 1});
         $(".parallax-main").animate({top: "100vh"}, "slow", "swing");
         $(".parallax-main").addClass("d-none");
+        $(window).scrollTop(0);
         onScreen(2, 1);
     }, 500);
     console.log($(window).scrollTop());
@@ -159,7 +159,8 @@ var screen3Up = function() {
     console.log('screen3Up called');
 
     $(".ds-ultimate-header").removeClass('text-white');
-    screenUpShow(3);
+    
+    scrollScreen(3);
 
     setTimeout(function(){
         var m, fullHeight = [1, 2, 11, 12];
@@ -176,9 +177,9 @@ var screen3Up = function() {
 
     setTimeout(function(){
         $(".ds-whsp-rect").animate({height: "258px"});
-        $('.ds-whsp-rect1').removeClass('dmr-1');
+        $('.ds-whsp-rect:nth-child(2)').removeClass('dpr-1');
         $('.ds-whsp-rect:nth-child(2)').css('grid-column-end','10');
-        $('.ds-whsp-rect3').removeClass('dml-1');
+        $('.ds-whsp-rect:last-child').removeClass('dpl-1');
         $('.ds-whsp-rect:last-child').css('grid-column-start','15');
         $('.ds-whsp-rect21').removeClass('smb-1');
         $('.ds-whsp-rect21').addClass('dmb-1');
@@ -192,22 +193,23 @@ var screen3Up = function() {
 var screen3Down = function() {
     console.log('screen3Down called');
     $(".ds-ultimate-header").addClass('text-white');
-    screenDownShow(2);
+    scrollScreen(2);
     onScreen(3, 2);
 };
 
 var screen4Up = function() {
     console.log('screen4Up called');
 
-    screenUpShow(4);
-    
+    scrollScreen(4);
+    centerMainPos(4);
+
     onScreen(3, 4);
 };
 
 var screen4Down = function() {
     console.log('screen4Down called');
     
-    screenDownShow(3);
+    scrollScreen(3);
 
     onScreen(4, 3);
 };
@@ -215,15 +217,15 @@ var screen4Down = function() {
 var screen5Up = function() {
     console.log('screen5Up called');
 
-    screenUpShow(5);
-
+    scrollScreen(5);
+    centerMainPos(5);
     onScreen(4, 5);
 };
 
 var screen5Down = function() {
     console.log('screen5Down called');
 
-    screenDownShow(4);
+    scrollScreen(4);
     
     onScreen(5, 4);
 };
@@ -231,15 +233,16 @@ var screen5Down = function() {
 var screen6Up = function() {
     console.log('screen6Up called');
 
-    screenUpShow(6);
-
+    scrollScreen(6);
+    centerMainPos(6);
+    
     onScreen(5, 6);
 };
 
 var screen6Down = function() {
     console.log('screen6Down called');
 
-    screenDownShow(5);
+    scrollScreen(5);
     
     onScreen(6, 5);
 };
@@ -254,16 +257,17 @@ var getScreen = function(num) {
     return screen;
 };
 
-var screenDownShow = function(num) {
-    var toppos = - $(window).height() * (num - 1);
-    $(window).scrollTop(0);
-    $(".parallax-main").animate({top: toppos}, "slow", "swing");
+var scrollScreen = function(num) {
+    var scrollTo = '#layoutScreen' + num; // retrieve the hash using .attr()
+    $('html, body').animate({
+        scrollTop: $(scrollTo).offset().top
+    }, 500);
 };
 
-var screenUpShow = function(num) {
-    var toppos = (53 - $(window).height()) * (num - 1);
-    $(window).scrollTop(0);
-    $(".parallax-main").animate({top: toppos}, "slow", "swing");
+var centerMainPos = function(num) {
+    setTimeout(function(){
+        $(".ds-layout-screen" + num + " .ds-center-main").animate({marginTop: "100px"}, "slow", "swing");
+    }, 500);
 };
 
 

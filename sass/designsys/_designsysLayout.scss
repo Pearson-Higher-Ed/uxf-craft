@@ -29,6 +29,12 @@
     background: url('/public/theme_assets/ds-gradient-bg.svg') center center fixed;
     background-size: cover;
 }
+
+%centermainpos {
+    .ds-center-main {
+        margin-top: 200px;
+    }
+}
 .ds-layout-screen1 {
     @extend %purpleGradientBG;
     z-index: 1;
@@ -166,7 +172,6 @@
 
 .ds-layout-screen3 {
     height: 100vh;
-    //top: 100vh;
     z-index: 2;
     .position-absolute {
         top: 0;
@@ -228,9 +233,12 @@
     }
     background-color: $pe-color-white-gray;
 
-    // .ds-center-main {
-    //     margin: 200px 0 50px 0;
-    // }
+    @extend %centermainpos;
+
+    .ds-fixgrid-video {
+        height: 210px;
+        background-color: $pe-color-alto;
+    }
 
     .img-center {
         display: block;
@@ -256,8 +264,14 @@
 
 .ds-layout-screen5 {
     z-index: 2;
-    h3 {
-        margin-top: 80px;
+    @extend %centermainpos;
+
+    .ds-spacing-demobg {
+        background-color:#fff;
+        background-image: linear-gradient($pe-color-concrete 1px, transparent 1px),
+        linear-gradient(90deg, $pe-color-concrete 1px, transparent 1px);
+        background-size:10px 10px, 10px 10px;
+        background-position:-2px -2px, -2px -2px;
     }
 
     @mixin spacingDemo($i) {
@@ -290,4 +304,8 @@
 
 .ds-layout-screen6 {
     z-index: 2;
+    @extend %centermainpos;
+    figure {
+        margin: 0;
+    }
 }
