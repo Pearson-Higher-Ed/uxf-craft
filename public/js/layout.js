@@ -30,8 +30,13 @@ $(document).ready(function() {
     fillTheGrid(200, [4, 6]);
     fillTheGrid(400, [1, 3, 5, 7]);
     fillTheGrid(600, [9, 11]);
+    console.log($(window).height());
+    console.log($('main').height());
+    console.log($('.ds-layout-screen1').height());
+    console.log($('.parallax-main').height());
 
 });
+
 $(window).on('mousewheel', function(event) {
 
     if (!isMoving) {
@@ -55,7 +60,7 @@ $(window).on('mousewheel', function(event) {
                 }
             } else {
                 if ($(window).scrollTop() == 0){
-                    console.log(screen.scrollTop());
+                    console.log($(window).scrollTop());
                     scrollDown(number);
                 }
             }
@@ -120,6 +125,7 @@ var screen2Up = function () {
     $('.ds-layout-cover').animate({top: "10vh", opacity: 0});
     
     setTimeout(function(){
+        $(".parallax-main").removeClass("d-none");
         screenUpShow(2);
         $(".ds-sidebar").removeClass("text-white");
     }, 500);
@@ -129,6 +135,7 @@ var screen2Up = function () {
         $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
         onScreen(1, 2);
     }, 1200); 
+    console.log($(window).scrollTop());
 };
 
 var screen2Down = function () {
@@ -141,16 +148,17 @@ var screen2Down = function () {
         $(".ds-sidebar .sub-level").css('max-height', "0");
         $(".ds-sidebar").addClass("text-white");
         $('.ds-layout-cover').animate({top: "15vh", opacity: 1});
-        screenDownDis(2);
+        $(".parallax-main").animate({top: "100vh"}, "slow", "swing");
+        $(".parallax-main").addClass("d-none");
         onScreen(2, 1);
     }, 500);
+    console.log($(window).scrollTop());
 };
 
 var screen3Up = function() {
     console.log('screen3Up called');
 
     $(".ds-ultimate-header").removeClass('text-white');
-    screenUpDis(2);
     screenUpShow(3);
 
     setTimeout(function(){
@@ -177,29 +185,21 @@ var screen3Up = function() {
         $('.ds-whsp-rect22').removeClass('dmt-1');
         $('.ds-whsp-rect22').addClass('dmt-1');
     }, 1000); 
+
+    console.log($(window).scrollTop());
 };
 
 var screen3Down = function() {
     console.log('screen3Down called');
     $(".ds-ultimate-header").addClass('text-white');
     screenDownShow(2);
-    screenDownDis(3);
     onScreen(3, 2);
 };
 
 var screen4Up = function() {
     console.log('screen4Up called');
 
-    screenUpDis(3);
     screenUpShow(4);
-
-    // setTimeout(function(){
-    //     $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "140px"});
-    // }, 500); 
-
-    // setTimeout(function(){
-    //     $(".ds-layout-screen4 .ds-center-main").animate({marginTop: "60px"});
-    // }, 1000);
     
     onScreen(3, 4);
 };
@@ -208,7 +208,6 @@ var screen4Down = function() {
     console.log('screen4Down called');
     
     screenDownShow(3);
-    screenDownDis(4);
 
     onScreen(4, 3);
 };
@@ -216,7 +215,6 @@ var screen4Down = function() {
 var screen5Up = function() {
     console.log('screen5Up called');
 
-    screenUpDis(4);
     screenUpShow(5);
 
     onScreen(4, 5);
@@ -226,7 +224,6 @@ var screen5Down = function() {
     console.log('screen5Down called');
 
     screenDownShow(4);
-    screenDownDis(5);
     
     onScreen(5, 4);
 };
@@ -234,7 +231,6 @@ var screen5Down = function() {
 var screen6Up = function() {
     console.log('screen6Up called');
 
-    screenUpDis(5);
     screenUpShow(6);
 
     onScreen(5, 6);
@@ -244,7 +240,6 @@ var screen6Down = function() {
     console.log('screen6Down called');
 
     screenDownShow(5);
-    screenDownDis(6);
     
     onScreen(6, 5);
 };
@@ -259,45 +254,18 @@ var getScreen = function(num) {
     return screen;
 };
 
-var screenDownDis = function(num) {
-    var screen = getScreen(num);
-    screen.animate({top: "100vh"});
-    screen.addClass("d-none");
-};
-
 var screenDownShow = function(num) {
-    var screen = getScreen(num);
-    screen.removeClass("d-none");
-    //if (num==2) {
-        screen.animate({top: 53 + "px"}, "slow", "swing");
-        screen.animate({top: -100 + "vh"}, "slow", "swing");
-    //} else {
-    //    screen.animate({top: 106 + "px"}, "slow", "swing");
-    //} 
+    var toppos = - $(window).height() * (num - 1);
+    $(window).scrollTop(0);
+    $(".parallax-main").animate({top: toppos}, "slow", "swing");
 };
 
 var screenUpShow = function(num) {
-    var screen = getScreen(num);
-    screen.removeClass("d-none");
-    //screen.addClass("position-absolute");
-    //if (num==2) {
-        screen.animate({top: 53 + "px"}, "slow", "swing");
-        screen.animate({top: -100 + "vh"}, "slow", "swing");
-    //} else {
-    //    screen.animate({top: 106 + "px"}, "slow", "swing");
-    //}
+    var toppos = (53 - $(window).height()) * (num - 1);
+    $(window).scrollTop(0);
+    $(".parallax-main").animate({top: toppos}, "slow", "swing");
 };
 
-// var screenToTop = function() 
-
-var screenUpDis = function(num) {
-    var screen = getScreen(num);
-    //screen.animate({top: "-100vh"}, "slow");
-    screen.animate({top: "-200vh"}, "slow");
-    setTimeout(function(){
-        screen.addClass('d-none');
-    }, 1200);
-};
 
 var whiteMenu = function(bol) {
     if (bol) {

@@ -34,6 +34,7 @@
     z-index: 1;
     padding-top: 53px;
     height: 100vh;
+    box-sizing: border-box;
     .position-fixed {
         top: 15vh;
         z-index: 2;
@@ -99,8 +100,7 @@
 
 .ds-layout-screen2 {
     background-color: $pe-color-white-gray;
-    height: 100vh;
-    //top: 100vh;
+    height: calc(100vh - 53px);
     z-index: 2;
     .position-absolute {
         top: 0;
