@@ -1,0 +1,80 @@
+<div class="ds-layout-screen4 w-100">
+    <div class="ds-container ds-grid">
+        <div class="ds-center-main">
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'Grid / Structure', 
+                'desc': 'Stay in the lines. Using grids gives your designs a uniform shape and structure and keeps everything within the same margins. Grids also help you arrange the hierarchy, keep everything aligned, and create consistent patterns.'
+            } %}
+            <div class="dmt-6 dmt-8">
+            </div>
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'Breakpoints', 
+                'desc': 'Stay in the lines. Using grids gives your designs a uniform shape and structure and keeps everything within the same margins. Grids also help you arrange the hierarchy, keep everything aligned, and create consistent patterns.'
+            } %}
+            <img class="img-center dmy-6" src="/public/theme_assets/devices.svg"/>
+    {% include '_includes/designSys/shared/tableAccordion' with 
+    {'id': 'small4col', 
+                'btn': 'Small: 4 columns',
+                'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
+                'tablebody': [
+                    {
+                        'th': 'Small phone ',
+                        'thspan': '(max width: 367)',
+                        'cell': [{'td': '320'}, {'td': '16'}, {'td': '56'}]
+                    },
+                    {
+                        'th': 'Standard phone ',
+                        'thspan': '(max width: 447)',
+                        'cell': [{'td': '368'}, {'td': '16'}, {'td': '72'}]
+                    },
+                    {
+                        'th': 'Large phone ',
+                        'thspan': '(max width: 591)',
+                        'cell': [{'td': '448'}, {'td': '16'}, {'td': '92'}]
+                }]
+            } %}
+    {% include '_includes/designSys/shared/tableAccordion' with 
+    {'id': 'med8col', 
+            'btn': 'Medium: 8 columns',
+            'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
+            'tablebody': [
+                    {
+                        'th': 'Small tablet ',
+                        'thspan': '(max width: 727)',
+                        'cell': [{'td': '592'}, {'td': '16'}, {'td': '56'}]
+                    },
+                    {
+                        'th': 'Standard tablet ',
+                        'thspan': '(max width: 887)',
+                        'cell': [{'td': '728'}, {'td': '16'}, {'td': '64'}]
+                    }]
+        }
+    %}
+    {% include '_includes/designSys/shared/tableAccordion' with 
+    {'id': 'lar12col', 
+        'btn': 'Large: 12 columns',
+        'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
+        'tablebody': [
+                {
+                    'th': 'Large tablet ',
+                    'thspan': '(max width: 983)',
+                    'cell': [{'td': '888'}, {'td': '24'}, {'td': '48'}]
+                },
+                {
+                    'th': 'Small desktop ',
+                    'thspan': '(max width: 1079)',
+                    'cell': [{'td': '984'}, {'td': '24'}, {'td': '56'}]
+                }, {
+                    'th': 'Small desktop ',
+                    'thspan': '(max width: 1175)',
+                    'cell': [{'td': '1080'}, {'td': '24'}, {'td': '64'}]
+                }, {
+                    'th': 'Large desktop ',
+                    'thspan': '(max width: 1280)',
+                    'cell': [{'td': '1176'}, {'td': '24'}, {'td': '72'}]
+                }]
+    }
+    %}
+        </div>
+    </div>
+</div>
