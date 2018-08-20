@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     top: 0;
-    z-index: 100;
+    z-index: 20;
 
     @include pe-responsive-breakpoint(md) {
       display: flex;
