@@ -1,0 +1,37 @@
+<div class="ds-screen9 bg-white-gray w-100">
+    <a class="ds-hidden-anchor" href="#dsScreen" id="dsScreen9">dsScreen9</a>
+    <div class="ds-container ds-grid">
+        <div class='ds-main ds-main-content'>
+            {% include '_includes/designSys/shared/levelTwo' with 
+                {   'color': 'text-purple',
+                    'name': 'Patterns', 
+                    'desc': 'After choosing the page frame, you’re ready to create the layout pattern in the content area. To get started, you can use one of the standard layout patterns for the content area.'
+            } %}
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'Single column', 
+                'desc': 'A narrow single column creates one centralized block that can be effective for focusing users on a single action. The hierarchy in this pattern is typically sequential, from top to bottom.'
+            } %}
+            <div class='d-flex justify-content-between dmy-6'>
+                <img src="/public/theme_assets/singleCol00.svg"/>
+                <img src="/public/theme_assets/singleCol01.svg"/>
+                <img src="/public/theme_assets/singleCol02.svg"/>
+            </div>
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'Multiple column', 
+                'desc': 'A multiple column pattern groups columns into blocks and uses gutters and spacing to separate those blocks. This pattern can be effective for presenting multiple views on a single page. The hierarchy can be conveyed by block size, block placement, or visual enhancements.'
+            } %}
+            <div class='d-flex justify-content-center dmy-6'>
+                <img class='dmr-3' src="/public/theme_assets/multiCol00.svg"/>
+                <img class='dml-3' src="/public/theme_assets/multiCol01.svg"/>
+            </div>
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'Modular', 
+                'desc': 'A modular pattern subdivides a page both vertically and horizontally into a grid of modules. This can be effective when you need to display many, equally-weighted items at once.'
+            } %}
+            <div class='d-flex justify-content-center dmy-6'>
+                <img class='dmr-3' src="/public/theme_assets/modular00.svg"/>
+                <img class='dml-3' src="/public/theme_assets/modular01.svg"/>
+            </div>
+        </div>
+    </div>
+</div>

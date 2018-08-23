@@ -1,7 +1,7 @@
-<div class="ds-layout-screen4 w-100">
-    <a class="ds-hidden-anchor" href="#layoutScreen5" id="layoutScreen4">layoutScreen4</a>
+<div class="ds-screen4 bg-white-gray w-100">
+    <a class="ds-hidden-anchor" href="#dsScreen5" id="dsScreen4">dsScreen4</a>
     <div class="ds-container ds-grid">
-        <div class="ds-center-main">
+        <div class="ds-main ds-main-content dmb-10">
             {% include '_includes/designSys/shared/levelThree' with 
                 {'name': 'Grid / Structure', 
                 'desc': 'Stay in the lines. Using grids gives your designs a uniform shape and structure and keeps everything within the same margins. Grids also help you arrange the hierarchy, keep everything aligned, and create consistent patterns.'
@@ -13,10 +13,10 @@
                 {'name': 'Breakpoints', 
                 'desc': 'Stay in the lines. Using grids gives your designs a uniform shape and structure and keeps everything within the same margins. Grids also help you arrange the hierarchy, keep everything aligned, and create consistent patterns.'
             } %}
-            <div class="w-100 text-center dmy-6">
-                <img src="/public/theme_assets/devices.svg"/>
+            <div class="ds-fixgrid-video w-100 dmy-6">
+                placeholder
             </div>
-    {% include '_includes/designSys/shared/tableAccordion' with 
+    {% include '_includes/designSys/atoms/tableAccordion' with 
     {'id': 'small4col', 
                 'btn': 'Small: 4 columns',
                 'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
@@ -37,7 +37,7 @@
                         'cell': [{'td': '448'}, {'td': '16'}, {'td': '92'}]
                 }]
             } %}
-    {% include '_includes/designSys/shared/tableAccordion' with 
+    {% include '_includes/designSys/atoms/tableAccordion' with 
     {'id': 'med8col', 
             'btn': 'Medium: 8 columns',
             'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
@@ -54,7 +54,7 @@
                     }]
         }
     %}
-    {% include '_includes/designSys/shared/tableAccordion' with 
+    {% include '_includes/designSys/atoms/tableAccordion' with 
     {'id': 'lar12col', 
         'btn': 'Large: 12 columns',
         'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],

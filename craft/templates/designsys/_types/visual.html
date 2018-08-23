@@ -1,2 +1,10 @@
 {% extends "_default" %}
 {% set pageTitle = "Visual" %}
+
+{% block sidebar %}
+  {% include '_includes/designSys/shared/designsysSidebar' %}
+{% endblock %}
+
+{% block content %}
+  {% include '_includes/visual_entry' %}
+{% endblock %}

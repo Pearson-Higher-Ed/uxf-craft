@@ -1,0 +1,35 @@
+.accordion-button {
+    cursor: pointer;
+    svg {
+        margin-top: 6px;
+    }
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+%transi {
+    transition: transform 0.5s ease-in-out;
+}
+
+.accordion-right {
+    transform:translateX(-5px);
+    @extend %transi;
+}
+
+.accordion-left {
+    transform: translateX(5px);
+    @extend %transi;
+}
+
+.ds-animate {
+    .accordion-right {
+        transform:translateX(0px);
+    }
+    .accordion-left {
+        transform: translateX(0px);
+    }
+}

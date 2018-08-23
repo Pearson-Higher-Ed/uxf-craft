@@ -1,9 +1,11 @@
-<div class="ds-layout-screen6 bg-white w-100">
-    <a class="ds-hidden-anchor" href="#layoutScreen7" id="layoutScreen6">layoutScreen6</a>
+<div class="ds-screen6 bg-white w-100">
+    <a class="ds-hidden-anchor" href="#dsScreen7" id="dsScreen6">dsScreen6</a>
     <div class="ds-container ds-grid">
-        <div class="ds-center-main">
-            <h3 class="pe-title--large pe-bold dmb-3">Navigation</h3>
-            <p class="pe-title dmb-3">A simple navigation structure reduces cognitive load and allows users to focus on completing tasks instead of navigating. To provide a consistent way for users to move into and around Pearson products, we’ve devised three page frames that have the primary navigation built in.</p>
+        <div class="ds-main ds-main-content">
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'Navigation', 
+                'desc': 'A simple navigation structure reduces cognitive load and allows users to focus on completing tasks instead of navigating. To provide a consistent way for users to move into and around Pearson products, we&apos;ve devised three page frames that have the primary navigation built in.'
+            } %}
             <div class="d-flex align-items-center dmt-6">
                 <img src="/public/theme_assets/wrong.svg"/>
                 <p class="pe-title--small dmb-0 dml-2">Avoid creating multiple layers of navigation, it does not make for a good mobile experience.</p>
@@ -39,7 +41,7 @@
                 </figure>
             </div>
             <p class="pe-label--large dmt-8">Simple and small screen optimized.</p>
-            <div class="d-flex justify-content-between dmt-6">
+            <div class="d-flex justify-content-between dmy-6">
                 <img src="/public/theme_assets/navigationsmall00.svg"/>
                 <img src="/public/theme_assets/navigationsmall01.svg"/>
                 <img src="/public/theme_assets/navigationsmall02.svg"/>
