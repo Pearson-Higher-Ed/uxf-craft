@@ -15,6 +15,92 @@ function pauseEvent(){
     }, 1500);
 }
 
+function scrollUp(n) {
+    disableScroll();
+    pauseEvent();
+    switch(n) {
+        case 1:
+            screen2Up();
+            break;
+        case 2:
+            scrollScreen(3, true);
+            if ($('.ds-screen3').hasClass('ds-layout')) {
+                additionalAni(3, true);
+            }
+            break;
+        case 3:
+            scrollScreen(4, true);
+            if ($('.ds-screen3').hasClass('ds-layout')) {
+                additionalAni(3, false);
+            }
+            break;
+        case 4:
+            scrollScreen(5, true);
+            break;
+        case 5:
+            scrollScreen(6, true);
+            if ($('.ds-screen6').hasClass('ds-visual')) {
+                additionalAni(6, true);
+            }
+            break;
+        case 6:
+            scrollScreen(7, true);
+            break;
+        case 7:
+            scrollScreen(8, true);
+            break;
+        case 8:
+            scrollScreen(9, true);
+            break;
+        default:
+            return false;
+    } 
+}
+
+function scrollDown(n) {
+    disableScroll();
+    pauseEvent();
+    switch(n) {
+        case 2:
+            screen2Down();
+            break;
+        case 3:
+            scrollScreen(2, false);
+            break;
+        case 4:
+            scrollScreen(3, false);
+            if ($('.ds-screen3').hasClass('ds-layout')) {
+                additionalAni(3, true);
+            }
+            break;
+        case 5:
+            scrollScreen(4, false);
+            break;
+        case 6:
+            scrollScreen(5, false);
+            if ($('.ds-screen6').hasClass('ds-visual')) {
+                additionalAni(6, false);
+            }
+            break;
+        case 7:
+            scrollScreen(6, false);
+            break;
+        case 8:
+            scrollScreen(7, false);
+            break;
+        case 9:
+            scrollScreen(8, false);
+            break;
+        default:
+            return false;
+    }
+}
+
+
+$(document).ready(function() {
+    disableScroll();
+});
+
  $(window).on('mousewheel', function(event) {
 
     if (!isMoving) {
@@ -26,19 +112,17 @@ function pauseEvent(){
 
         if (screen.height() > $(window).height()) {
             console.log("longer screen detected");
+            enableScroll();
             if (scroll < 0) {
-                if ($('#dsScreen' + (number+1)).length != 0) {
+                if ($('#dsScreen' + (number+1))[0]) {
                     var nextAnchor = $('#dsScreen' + (number+1)).offset().top;
-                    if ($(window).scrollTop() >= (nextAnchor - $(window).height() - 53)){
+                    if ($('html, body').scrollTop() >= (nextAnchor - $(window).height())){
                         scrollUp(number);
                     }
                 }
             } else {
                 var thisAnchor = $('#dsScreen' + number).offset().top;
-                console.log(thisAnchor);
-                console.log($(window).scrollTop());
-                if ($(window).scrollTop() <= thisAnchor){
-                    console.log($(window).scrollTop());
+                if ($('html, body').scrollTop() <= thisAnchor){
                     scrollDown(number);
                 }
             }
@@ -51,81 +135,6 @@ function pauseEvent(){
             }
         }
 
-        function scrollUp(n) {
-            pauseEvent();
-            switch(n) {
-                case 1:
-                    screen2Up();
-                    break;
-                case 2:
-                    scrollScreen(3, true);
-                    if ($('.ds-screen3').hasClass('ds-layout')) {
-                        additionalAni(3, true);
-                    }
-                    break;
-                case 3:
-                    scrollScreen(4, true);
-                    if ($('.ds-screen3').hasClass('ds-layout')) {
-                        additionalAni(3, false);
-                    }
-                    break;
-                case 4:
-                    scrollScreen(5, true);
-                    break;
-                case 5:
-                    scrollScreen(6, true);
-                    if ($('.ds-screen6').hasClass('ds-visual')) {
-                        additionalAni(6, true);
-                    }
-                    break;
-                case 6:
-                    scrollScreen(7, true);
-                    break;
-                case 7:
-                    scrollScreen(8, true);
-                    break;
-                case 8:
-                    scrollScreen(9, true);
-                    break;
-                default:
-                    return false;
-            } 
-        }
-
-        function scrollDown(n, s) {
-            pauseEvent();
-            switch(n) {
-                case 2:
-                    screen2Down();
-                    break;
-                case 3:
-                    scrollScreen(2, false);
-                    break;
-                case 4:
-                    scrollScreen(3, false);
-                    if ($('.ds-screen3').hasClass('ds-layout')) {
-                        additionalAni(3, true);
-                    }
-                    break;
-                case 5:
-                    scrollScreen(4, false);
-                    break;
-                case 6:
-                    scrollScreen(5, false);
-                    if ($('.ds-screen6').hasClass('ds-visual')) {
-                        additionalAni(6, false);
-                    }
-                    break;
-                case 7:
-                    scrollScreen(6, false);
-                    break;
-                case 8:
-                    scrollScreen(7, false);
-                    break;
-                default:
-                    return false;
-            }
-        }
     }
 });
 
@@ -137,7 +146,7 @@ var screen2Up = function () {
         $(".parallax-main").removeClass("d-none");
         var toppos = - $(window).height();
         $(".parallax-main").animate({top: toppos}, "slow", "swing");
-        $(".ds-sidebar").removeClass("text-white");
+        whiteMenu(false);
     }, 500);
     setTimeout(function(){
         $(window).scrollTop(0);
@@ -146,10 +155,7 @@ var screen2Up = function () {
         $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
         onScreen(1, 2);
     }, 1200); 
-    console.log($(window).scrollTop());
-    if ($('.ds-screen2').hasClass('ds-visual')) {
-        additionalAni(2, true);
-    }
+
 };
 
 var screen2Down = function () {
@@ -159,18 +165,14 @@ var screen2Down = function () {
     setTimeout(function(){
         $(".ds-sidebar .sub-level").removeClass("dmt-2");
         $(".ds-sidebar .sub-level").css('max-height', "0");
-        $(".ds-sidebar").addClass("text-white");
+        whiteMenu(true);
         $('.ds-screen-cover').animate({top: "15vh", opacity: 1});
         $(".parallax-main").animate({top: "100vh"}, "slow", "swing");
         $(".parallax-main").addClass("d-none");
         $(window).scrollTop(0);
         onScreen(2, 1);
     }, 500);
-    console.log($(window).scrollTop());
-
-    if ($('.ds-screen2').hasClass('ds-visual')) {
-        additionalAni(2, false);
-    }
+    
 };
 
 var scrollScreen = function(num, bol) {
@@ -181,11 +183,16 @@ var scrollScreen = function(num, bol) {
     } else {
         upordown = num + 1;
     }
-    $(".ds-screen" + upordown + " .ds-main-content").animate({marginTop: "200px"});
+    //$(".ds-screen" + upordown + " .ds-main-content").animate({marginTop: "200px"});
+    $(".ds-screen" + upordown + " .ds-main-content").css('margin-top', '200px');
 
+    console.log('anchor pos before'+$(scrollTo).offset().top);
     $('html, body').animate({
         scrollTop: $(scrollTo).offset().top
-    }, 500);
+    }, 300, function() {
+        console.log('anchor pos after'+$(scrollTo).offset().top);
+        console.log('body top'+$('html, body').scrollTop());
+    });
     
     setTimeout(function(){
         $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, "slow", "swing");
@@ -200,6 +207,7 @@ var onScreen = function(rm, ad) {
     $(".ds-screen" + ad).addClass('on-screen');
 };
 
+//change menu and side bar color
 var whiteMenu = function(bol) {
     if (bol) {
         $(".ds-ultimate-header").addClass('text-white');
@@ -210,6 +218,7 @@ var whiteMenu = function(bol) {
     }
 };
 
+//additional animation dispatcher
 var additionalAni = function(num, bol) {
     if (num === 2) {
         if (bol === true) { //up scroll
@@ -234,6 +243,7 @@ var additionalAni = function(num, bol) {
     }
 };
 
+//additional animations
 var layoutScreen3Show = function() {
     $(".ds-ultimate-header").removeClass('text-white');
 
@@ -281,3 +291,40 @@ var layoutScreen3Dis = function() {
     $('.ds-whsp-rect22').addClass('dmt-1');
     $('.ds-whsp-rect22').removeClass('dmt-1');
 };
+
+//prevent and enable default scroll behavior
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function disableScroll() {
+    console.log('disabled');
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+    console.log('abled');
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null; 
+    window.onwheel = null; 
+    window.ontouchmove = null;  
+    document.onkeydown = null;  
+}

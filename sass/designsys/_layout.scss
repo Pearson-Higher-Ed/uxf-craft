@@ -165,7 +165,8 @@
     }
 
     .ds-screen3 {
-        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
         z-index: 2;
         .position-absolute {
             top: 0;
