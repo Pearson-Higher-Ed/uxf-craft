@@ -1,2 +1,49 @@
 {% extends "_default" %}
 {% set pageTitle = "Visual" %}
+
+{% block sidebar %}
+  {% include '_includes/designSys/shared/designsysSidebar' with
+  {
+    'mainLevel': [{
+      'href': 'dsScreen2',
+      'label': 'Colors',
+      'subLevel': [{
+        'href':'dsScreen3',
+        'label': 'Global system palette'
+      }, {
+        'href':'dsScreen4',
+        'spacing': true,
+        'label': 'Natual palette'
+      }, {
+        'href':'dsScreen5',
+        'spacing': true,
+        'label': 'Conditional palette'
+      }, {
+        'href':'dsScreen6',
+        'spacing': true,
+        'label': 'Theme palette'
+      }, {
+        'href':'dsScreen7',
+        'spacing': true,
+        'label': 'Color combining'
+      }, {
+        'href':'dsScreen8',
+        'spacing': true,
+        'label': 'Accessibility'
+      }]
+    }, {
+      'href': 'dsScreen9',
+      'label': 'Typography'
+    }, {
+      'href': 'dsScreen10',
+      'label': 'Icons'
+    }, {
+      'href': 'dsScreen11',
+      'label': 'Illustrations'
+    }]
+  } %}
+{% endblock %}
+
+{% block content %}
+  {% include '_includes/visual_entry' %}
+{% endblock %}

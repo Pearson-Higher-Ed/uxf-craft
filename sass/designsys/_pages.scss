@@ -1,0 +1,9 @@
+.ds-main-content {
+    margin-top: 200px;
+}
+
+@for $i from 2 through 15 {
+    .ds-screen#{$i} {
+        z-index: 2;
+    }
+}

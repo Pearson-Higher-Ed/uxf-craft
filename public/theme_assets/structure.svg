@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="674" height="437" viewBox="0 0 674 437">
+  <defs>
+    <rect id="structure-b" width="353" height="56" x="221" y="136" rx="4"/>
+    <filter id="structure-a" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="structure-d" width="353" height="56" x="221" y="208" rx="4"/>
+    <filter id="structure-c" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="structure-f" width="353" height="56" x="221" y="280" rx="4"/>
+    <filter id="structure-e" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <path id="structure-h" d="M226,352 L571,352 C573.209139,352 575,353.790861 575,356 L575,403.6 C575,406.030053 573.030053,408 570.6,408 L226.4,408 C223.969947,408 222,406.030053 222,403.6 L222,356 C222,353.790861 223.790861,352 226,352 Z"/>
+    <filter id="structure-g" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
+    <rect width="551" height="319" x=".5" y=".5" fill="#EEE" stroke="#E9E9E9" transform="translate(121 116)"/>
+    <g transform="translate(121)">
+      <rect width="552" height="107" fill="#633FC5" stroke="#D9D9D9"/>
+      <rect width="177.181" height="19.77" x="186.779" y="46.769" fill="#FFF" rx="9.885"/>
+      <rect width="59.06" height="8" x="139.53" y="88.308" fill="#FFF" rx="4"/>
+      <rect width="59.06" height="8" x="210.403" y="88.308" fill="#FFF" rx="4"/>
+      <rect width="59.06" height="8" x="281.275" y="88.308" fill="#FFF" rx="4"/>
+      <rect width="59.06" height="8" x="352.148" y="88.308" fill="#FFF" rx="4"/>
+      <g fill="#FFF" transform="translate(17 9)">
+        <rect width="70.744" height="17.5" x=".686" y=".75" rx="8.75"/>
+        <ellipse cx="505.471" cy="9.5" rx="8.843" ry="8.75"/>
+        <ellipse cx="481.89" cy="9.5" rx="8.843" ry="8.75"/>
+      </g>
+    </g>
+    <g transform="translate(7 45)">
+      <rect width="92" height="28" fill="#DA0474" rx="4"/>
+      <polygon fill="#DA0474" points="85 14 91 8 97 14 91 20"/>
+      <text fill="#FFF" font-family="OpenSans-Semibold, Open Sans" font-size="12" font-weight="500">
+        <tspan x="14" y="18">Page frame</tspan>
+      </text>
+    </g>
+    <g transform="translate(0 229)">
+      <rect width="100" height="28" fill="#DA0474" rx="4"/>
+      <polygon fill="#DA0474" points="93 14 99 8 105 14 99 20"/>
+      <text fill="#FFF" font-family="OpenSans-Semibold, Open Sans" font-size="12" font-weight="500">
+        <tspan x="12" y="18">Content area</tspan>
+      </text>
+    </g>
+    <use fill="#000" filter="url(#structure-a)" xlink:href="#structure-b"/>
+    <use fill="#FFF" xlink:href="#structure-b"/>
+    <use fill="#000" filter="url(#structure-c)" xlink:href="#structure-d"/>
+    <use fill="#FFF" xlink:href="#structure-d"/>
+    <g>
+      <use fill="#000" filter="url(#structure-e)" xlink:href="#structure-f"/>
+      <use fill="#FFF" xlink:href="#structure-f"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#structure-g)" xlink:href="#structure-h"/>
+      <use fill="#FFF" xlink:href="#structure-h"/>
+    </g>
+  </g>
+</svg>

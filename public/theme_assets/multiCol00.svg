@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="216" height="240" viewBox="0 0 216 240">
+  <defs>
+    <rect id="multicol00-b" width="40" height="32" x="44" y="13" rx="2"/>
+    <filter id="multicol00-a" width="132.5%" height="140.6%" x="-16.2%" y="-17.2%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="multicol00-d" width="40" height="32" x="88" y="13" rx="2"/>
+    <filter id="multicol00-c" width="132.5%" height="140.6%" x="-16.2%" y="-17.2%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="multicol00-f" width="40" height="32" x="132" y="13" rx="2"/>
+    <filter id="multicol00-e" width="132.5%" height="140.6%" x="-16.2%" y="-17.2%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="multicol00-h" width="128" height="149" x="44" y="73"/>
+    <filter id="multicol00-g" width="110.2%" height="108.7%" x="-5.1%" y="-3.7%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="216" height="240" fill="#EEE"/>
+    <rect width="216" height="56" y="1" fill="#D9D9D9"/>
+    <use fill="#000" filter="url(#multicol00-a)" xlink:href="#multicol00-b"/>
+    <use fill="#FFF" xlink:href="#multicol00-b"/>
+    <use fill="#000" filter="url(#multicol00-c)" xlink:href="#multicol00-d"/>
+    <use fill="#FFF" xlink:href="#multicol00-d"/>
+    <g>
+      <use fill="#000" filter="url(#multicol00-e)" xlink:href="#multicol00-f"/>
+      <use fill="#FFF" xlink:href="#multicol00-f"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#multicol00-g)" xlink:href="#multicol00-h"/>
+      <use fill="#FFF" xlink:href="#multicol00-h"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
-<a class="ds-hidden-anchor" href="#layoutScreen3" id="layoutScreen2">layoutScreen2</a>
-<div class="ds-layout-screen2 w-100">
+<a class="ds-hidden-anchor" href="#dsScreen3" id="dsScreen2">dsScreen2</a>
+<div class="ds-screen2 bg-white-gray w-100">
     <div class="ds-container position-relative h-100">
         <div class="ds-grid h-100">
             <div class="ds-layout-grid ds-grid-borderR">
@@ -31,10 +31,11 @@
             <div class="ds-layout-grid ds-grid-border"></div>
         </div>
         <div class="ds-grid position-absolute">
-            <div class="ds-center-main">
+            <div class="ds-main ds-main-content">
                 {% include '_includes/designSys/shared/levelTwo' with 
-                    {'name': 'Overview', 
-                    'desc': 'The layout of your designs should always be aesthetically pleasing and open. A clean, simple, and spacious layout invites users in and makes it easy for them to take action.'
+                    {   'color': 'text-purple',
+                        'name': 'Overview', 
+                        'desc': 'The layout of your designs should always be aesthetically pleasing and open. A clean, simple, and spacious layout invites users in and makes it easy for them to take action.'
                 } %}
             </div>
         </div>

@@ -1,0 +1,13 @@
+{% block content %}
+{% include '_includes/designSys/shared/designsysHeader' %}
+<main class='ds-visual-page'>
+    {% include '_includes/designSys/visual/00-cover' %}
+    <div class="parallax-main position-relative d-none">
+    {% include '_includes/designSys/visual/01-color' %}
+    {% include '_includes/designSys/visual/02-type' %}
+    </div>
+</main>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/jquery-mousewheel/jquery.mousewheel.js" charset="utf-8"></script>
+<script src="/public/js/pageScroll.js" charset="utf-8"></script>
+{% endblock %}
