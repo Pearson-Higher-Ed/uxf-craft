@@ -1,22 +1,16 @@
 <div class="ds-sidebar position-fixed text-white">
     <div class="toc">
         <ul class="pe-list--unstyled main-level dml-2">
-        {% for block in entry.blocks %}
-            {% if block.type == "sectionName" %}
-            <li><a class="nonedec" href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
+        {% for item in mainLevel %}
+        <li class="dmt-2"><a href="#{{ item.href }}" class="nonedec">{{ item.label }}</a>
+            {% if item.subLevel is defined  %}
+            <ul class="pe-list--unstyled sub-level">
+                {% for it in item.subLevel %}
+                <li{% if it.spacing is defined %} class="dmt-1"{% endif %}><a href="#{{ it.href }}" class="nonedec">{{ it.label }}</a>
+                {% endfor %}
+            </ul>
             {% endif %}
         {% endfor %}
-        <li class="active dmt-2"><a href="#changelog" class="nonedec">Overview</a>
-            <ul class="pe-list--unstyled sub-level">
-                <li><a href="#changelog" class="nonedec">Whitespace</a></li>
-                <li class="dmt-1"><a href="#changelog" class="nonedec">Grid</a></li>
-                <li class="dmt-1"><a href="#changelog" class="nonedec">Screen sizes</a></li>
-                <li class="active dmt-1"><a href="#changelog" class="nonedec">Spacing</a></li>
-                <li class="dmt-1"><a href="#changelog" class="nonedec">Navigation</a></li>
-            </ul>
-        </li>
-        <li class="dmt-2"><a href="#changelog" class="nonedec">Structure</a></li>
-        <li class="dmt-2"><a href="#changelog" class="nonedec">Patterns</a></li>
         </ul>
     </div>
 </div>

@@ -1,5 +1,5 @@
 var activeScreen = function() {
-    for (var n = 0; n < 10; n++) {
+    for (var n = 0; n < 16; n++) {
        if ($('.ds-screen'+n).hasClass('on-screen')) {
            return [n, $('.ds-screen'+n)];
        }
@@ -39,18 +39,36 @@ function scrollUp(n) {
             break;
         case 5:
             scrollScreen(6, true);
-            if ($('.ds-screen6').hasClass('ds-visual')) {
-                additionalAni(6, true);
-            }
             break;
         case 6:
             scrollScreen(7, true);
+            if ($('.ds-screen7').hasClass('ds-visual')) {
+                additionalAni(6, true);
+            }
             break;
         case 7:
             scrollScreen(8, true);
             break;
         case 8:
             scrollScreen(9, true);
+            break;
+        case 9:
+            scrollScreen(10, true);
+            break;
+        case 10:
+            scrollScreen(11, true);
+            break;
+        case 11:
+            scrollScreen(12, true);
+            break;
+        case 12:
+            scrollScreen(13, true);
+            break;
+        case 13:
+            scrollScreen(14, true);
+            break;
+        case 14:
+            scrollScreen(15, true);
             break;
         default:
             return false;
@@ -78,18 +96,36 @@ function scrollDown(n) {
             break;
         case 6:
             scrollScreen(5, false);
-            if ($('.ds-screen6').hasClass('ds-visual')) {
-                additionalAni(6, false);
-            }
             break;
         case 7:
             scrollScreen(6, false);
+            if ($('.ds-screen7').hasClass('ds-visual')) {
+                additionalAni(6, false);
+            }
             break;
         case 8:
             scrollScreen(7, false);
             break;
         case 9:
             scrollScreen(8, false);
+            break;
+        case 10:
+            scrollScreen(9, false);
+            break;
+        case 11:
+            scrollScreen(10, false);
+            break;
+        case 12:
+            scrollScreen(11, false);
+            break;
+        case 13:
+            scrollScreen(12, false);
+            break;
+        case 14:
+            scrollScreen(13, false);
+            break;
+        case 15:
+            scrollScreen(14, false);
             break;
         default:
             return false;
@@ -151,8 +187,9 @@ var screen2Up = function () {
     setTimeout(function(){
         $(window).scrollTop(0);
         $(".ds-screen2 .ds-main-content").animate({marginTop: "140px"}, "slow", "swing");
-        $(".ds-sidebar .sub-level").addClass("dmt-2");
-        $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
+        // $(".ds-sidebar .sub-level").addClass("dmt-2");
+        // $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
+        activeMenu(false, 2);
         onScreen(1, 2);
     }, 1200); 
 
@@ -163,8 +200,9 @@ var screen2Down = function () {
     $(".ds-screen2 .ds-main-content").animate({marginTop: "200px"});
 
     setTimeout(function(){
-        $(".ds-sidebar .sub-level").removeClass("dmt-2");
-        $(".ds-sidebar .sub-level").css('max-height', "0");
+        // $(".ds-sidebar .sub-level").removeClass("dmt-2");
+        // $(".ds-sidebar .sub-level").css('max-height', "0");
+        activeMenu(2, false);
         whiteMenu(true);
         $('.ds-screen-cover').animate({top: "15vh", opacity: 1});
         $(".parallax-main").animate({top: "100vh"}, "slow", "swing");
@@ -198,6 +236,7 @@ var scrollScreen = function(num, bol) {
         $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, "slow", "swing");
     }, 800);
     setTimeout(function(){
+        activeMenu(upordown, num);
         onScreen(upordown, num);
     }, 1000);
 };
@@ -215,6 +254,26 @@ var whiteMenu = function(bol) {
     } else {
         $(".ds-ultimate-header").removeClass('text-white');
         $(".ds-sidebar").removeClass('text-white');
+    }
+};
+
+var activeMenu = function(dis, show) {
+    if (dis) {
+        // if ($('.ds-sidebar a[href="#dsScreen'+ show +'"]').parent().is(':first-child')) {
+
+        // } else {
+
+        // }
+        //console.log($('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parents().hasClass('sub-level'));
+        if ($('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parents().hasClass('sub-level')) {
+            $('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parent().removeClass('active');
+        } 
+        if (!$('.ds-sidebar a[href="#dsScreen'+ show +'"]').parents().hasClass('sub-level')) {
+            $('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parents().removeClass('active');
+        } 
+    }
+    if (show) {
+        $('.ds-sidebar a[href="#dsScreen'+ show +'"]').parent().addClass('active');
     }
 };
 

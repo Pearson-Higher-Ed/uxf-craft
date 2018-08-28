@@ -92,7 +92,7 @@
         }
     }
     
-    .ds-screen6 {
+    .ds-screen7 {
         .xl-title {
             font-size: 64px;
             line-height: 86px;
@@ -127,6 +127,25 @@
         
             .ds-main {
                 margin-top: 100px;
+            }
+        }
+    }
+
+    .ds-fontweight-demo {
+        div {
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        div:first-child {
+            p:first-child {
+                font-size: 6rem;
+                line-height: 7rem;
+            }
+        }
+        div:last-child {
+            p:first-child {
+                font-size: 6rem;
+                line-height: 7rem;
             }
         }
     }

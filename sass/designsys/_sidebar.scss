@@ -19,6 +19,10 @@
   }
   .main-level {
     &>li.active {
+      .sub-level {
+        margin-top: 16px;
+        max-height: 10em;
+      }
       &>a {
         font-weight: 600;
         &::before {
@@ -37,6 +41,7 @@
   }
 
   .sub-level{
+    margin-top: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.9s ease-out;

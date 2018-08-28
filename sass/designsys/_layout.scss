@@ -101,7 +101,6 @@
 
     .ds-screen2 {
         height: calc(100vh - 53px);
-        z-index: 2;
         .position-absolute {
             top: 0;
         }
@@ -167,7 +166,6 @@
     .ds-screen3 {
         height: 100vh;
         overflow: hidden;
-        z-index: 2;
         .position-absolute {
             top: 0;
         }
@@ -221,8 +219,7 @@
         }
     }
 
-    .ds-screen4 {
-        z-index: 2;
+    .ds-screen4, .ds-screen5 {
         .position-absolute {
             top: 0; 
         }
@@ -248,9 +245,7 @@
         }
     }
 
-    .ds-screen5 {
-        z-index: 2;
-
+    .ds-screen6 {
         @mixin spacingDemo($i, $list) {
             @each $m, $n in $list {
                 div:nth-child(#{$m}) {
@@ -281,14 +276,9 @@
         }
     }
 
-    .ds-screen6 {
-        z-index: 2;
+    .ds-screen7 {
         figure {
             margin: 0;
         }
-    }
-
-    .ds-screen7 {
-        z-index: 2;
     }
 }
