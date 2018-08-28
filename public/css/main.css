@@ -3203,7 +3203,7 @@ input[type="checkbox"] ~ span {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 100; }
+  z-index: 20; }
   @media (min-width: 768px) {
     .icons header {
       display: flex;
