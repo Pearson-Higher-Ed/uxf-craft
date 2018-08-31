@@ -1,11 +1,3 @@
-var activeScreen = function() {
-    for (var n = 0; n < 16; n++) {
-       if ($('.ds-screen'+n).hasClass('on-screen')) {
-           return [n, $('.ds-screen'+n)];
-       }
-    }
-};
-
 var isMoving = false;
 
 function pauseEvent(){
@@ -144,16 +136,30 @@ $(document).ready(function() {
     }
     
     function processScroll() {
-        var scroll = event.deltaY, number = activeScreen()[0], screen = activeScreen()[1];
+        var scroll = event.deltaY, screen = $('[class$="on-screen"]');
+        var number = parseInt(screen.find('a.ds-hidden-anchor').attr('id').slice(8));
 
         if (screen.height() > $(window).height()) {
+            //var doScroll = false;
+
             console.log("longer screen detected");
             enableScroll();
+
             if (scroll < 0) {
                 if ($('#dsScreen' + (number+1))[0]) {
                     var nextAnchor = $('#dsScreen' + (number+1)).offset().top;
                     if ($('html, body').scrollTop() >= (nextAnchor - $(window).height())){
                         scrollUp(number);
+                        // disableScroll();
+                        // if (doScroll == true) {
+                        //     scrollUp(number);
+                        //     console.log('doscroll');
+                        // } else {
+                        //     console.log('doscroll set true');
+                        //     setTimeout(function(){
+                        //         doScroll = true;
+                        //     }, 100); 
+                        // }
                     }
                 }
             } else {
@@ -189,7 +195,7 @@ var screen2Up = function () {
         $(".ds-screen2 .ds-main-content").animate({marginTop: "140px"}, "slow", "swing");
         // $(".ds-sidebar .sub-level").addClass("dmt-2");
         // $(".ds-sidebar .sub-level").animate({maxHeight: "200px"});
-        activeMenu(false, 2);
+        activeMenu(2);
         onScreen(1, 2);
     }, 1200); 
 
@@ -197,12 +203,10 @@ var screen2Up = function () {
 
 var screen2Down = function () {
     console.log('screen2Down called');
-    $(".ds-screen2 .ds-main-content").animate({marginTop: "200px"});
+    //$(".ds-screen2 .ds-main-content").animate({marginTop: "200px"});
 
     setTimeout(function(){
-        // $(".ds-sidebar .sub-level").removeClass("dmt-2");
-        // $(".ds-sidebar .sub-level").css('max-height', "0");
-        activeMenu(2, false);
+        $('.ds-sidebar li').removeClass('active');
         whiteMenu(true);
         $('.ds-screen-cover').animate({top: "15vh", opacity: 1});
         $(".parallax-main").animate({top: "100vh"}, "slow", "swing");
@@ -222,12 +226,13 @@ var scrollScreen = function(num, bol) {
         upordown = num + 1;
     }
     //$(".ds-screen" + upordown + " .ds-main-content").animate({marginTop: "200px"});
-    $(".ds-screen" + upordown + " .ds-main-content").css('margin-top', '200px');
+    //$(".ds-screen" + upordown + " .ds-main-content").css('margin-top', '200px');
 
     console.log('anchor pos before'+$(scrollTo).offset().top);
     $('html, body').animate({
         scrollTop: $(scrollTo).offset().top
     }, 300, function() {
+        window.location.hash = scrollTo;
         console.log('anchor pos after'+$(scrollTo).offset().top);
         console.log('body top'+$('html, body').scrollTop());
     });
@@ -236,7 +241,7 @@ var scrollScreen = function(num, bol) {
         $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, "slow", "swing");
     }, 800);
     setTimeout(function(){
-        activeMenu(upordown, num);
+        activeMenu(num);
         onScreen(upordown, num);
     }, 1000);
 };
@@ -257,24 +262,9 @@ var whiteMenu = function(bol) {
     }
 };
 
-var activeMenu = function(dis, show) {
-    if (dis) {
-        // if ($('.ds-sidebar a[href="#dsScreen'+ show +'"]').parent().is(':first-child')) {
-
-        // } else {
-
-        // }
-        //console.log($('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parents().hasClass('sub-level'));
-        if ($('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parents().hasClass('sub-level')) {
-            $('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parent().removeClass('active');
-        } 
-        if (!$('.ds-sidebar a[href="#dsScreen'+ show +'"]').parents().hasClass('sub-level')) {
-            $('.ds-sidebar a[href="#dsScreen'+ dis +'"]').parents().removeClass('active');
-        } 
-    }
-    if (show) {
-        $('.ds-sidebar a[href="#dsScreen'+ show +'"]').parent().addClass('active');
-    }
+var activeMenu = function(show) {
+    $('.ds-sidebar li').removeClass('active');
+    $('a[href="#dsScreen'+show+'"]').parents('li').addClass('active');
 };
 
 //additional animation dispatcher
