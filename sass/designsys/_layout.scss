@@ -100,7 +100,7 @@
     }
 
     .ds-screen2 {
-        height: calc(100vh - 53px);
+        height: 100vh;
         .position-absolute {
             top: 0;
         }
@@ -280,5 +280,37 @@
         figure {
             margin: 0;
         }
+    }
+
+    .ds-screen8 {
+        .flex-column {
+            img {
+                opacity: 0;
+            }
+            .ds-scale-animation {
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+            }
+        }
+    }
+}
+
+.ds-scale-animation {
+    animation: scale 0.8s 1;
+    animation-delay: 0.5s;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1, 1);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+        animation-timing-function: ease-out;
+    }
+    100% { 
+        transform: scale(1, 1);
+        animation-timing-function: ease-out;
     }
 }

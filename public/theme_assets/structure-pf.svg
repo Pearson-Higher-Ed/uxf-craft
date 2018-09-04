@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="97" height="28" viewBox="0 0 97 28">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="92" height="28" fill="#DA0474" rx="4"/>
+    <polygon fill="#DA0474" points="85 14 91 8 97 14 91 20"/>
+    <text fill="#FFF" font-family="OpenSans-Semibold, Open Sans" font-size="12" font-weight="500">
+      <tspan x="14" y="18">Page frame</tspan>
+    </text>
+  </g>
+</svg>
