@@ -10,117 +10,20 @@ function pauseEvent(){
 function scrollUp(n) {
     disableScroll();
     pauseEvent();
-    switch(n) {
-        case 1:
-            screen2Up();
-            break;
-        case 2:
-            scrollScreen(3, true);
-            if ($('.ds-screen3').hasClass('ds-layout')) {
-                additionalAni(3, true);
-            }
-            break;
-        case 3:
-            scrollScreen(4, true);
-            if ($('.ds-screen3').hasClass('ds-layout')) {
-                additionalAni(3, false);
-            }
-            break;
-        case 4:
-            scrollScreen(5, true);
-            break;
-        case 5:
-            scrollScreen(6, true);
-            break;
-        case 6:
-            scrollScreen(7, true);
-            if ($('.ds-screen7').hasClass('ds-visual')) {
-                additionalAni(6, true);
-            }
-            break;
-        case 7:
-            scrollScreen(8, true);
-            break;
-        case 8:
-            scrollScreen(9, true);
-            break;
-        case 9:
-            scrollScreen(10, true);
-            break;
-        case 10:
-            scrollScreen(11, true);
-            break;
-        case 11:
-            scrollScreen(12, true);
-            break;
-        case 12:
-            scrollScreen(13, true);
-            break;
-        case 13:
-            scrollScreen(14, true);
-            break;
-        case 14:
-            scrollScreen(15, true);
-            break;
-        default:
-            return false;
-    } 
+    if (n === 1) {
+        screen2Up(); 
+    } else {
+        scrollScreen(n+1, true);
+    }
 }
 
 function scrollDown(n) {
     disableScroll();
     pauseEvent();
-    switch(n) {
-        case 2:
-            screen2Down();
-            break;
-        case 3:
-            scrollScreen(2, false);
-            break;
-        case 4:
-            scrollScreen(3, false);
-            if ($('.ds-screen3').hasClass('ds-layout')) {
-                additionalAni(3, true);
-            }
-            break;
-        case 5:
-            scrollScreen(4, false);
-            break;
-        case 6:
-            scrollScreen(5, false);
-            break;
-        case 7:
-            scrollScreen(6, false);
-            if ($('.ds-screen7').hasClass('ds-visual')) {
-                additionalAni(6, false);
-            }
-            break;
-        case 8:
-            scrollScreen(7, false);
-            break;
-        case 9:
-            scrollScreen(8, false);
-            break;
-        case 10:
-            scrollScreen(9, false);
-            break;
-        case 11:
-            scrollScreen(10, false);
-            break;
-        case 12:
-            scrollScreen(11, false);
-            break;
-        case 13:
-            scrollScreen(12, false);
-            break;
-        case 14:
-            scrollScreen(13, false);
-            break;
-        case 15:
-            scrollScreen(14, false);
-            break;
-        default:
-            return false;
+    if (n === 2) {
+        screen2Down(); 
+    } else {
+        scrollScreen(n-1, false);
     }
 }
 
@@ -244,6 +147,13 @@ var scrollScreen = function(num, bol) {
         activeMenu(num);
         onScreen(upordown, num);
     }, 1000);
+
+    //check if additional animation is needed
+    let screenwani = [3, 4, 6, 7, 8];
+    if (screenwani.includes(num)) {
+        console.log('includes additional' + num);
+        additionalAni(num);
+    }
 };
 
 var onScreen = function(rm, ad) {
@@ -268,27 +178,40 @@ var activeMenu = function(show) {
 };
 
 //additional animation dispatcher
-var additionalAni = function(num, bol) {
-    if (num === 2) {
-        if (bol === true) { //up scroll
-            $(".ds-ultimate-header").removeClass('text-white');
-        } else {
-            $(".ds-ultimate-header").addClass('text-white');
-        }
-    }
-    if (num === 3) {
-        if (bol === true) { //up scroll
-            layoutScreen3Show();
-        } else {
-            layoutScreen3Dis();
-        }
-    }
-    if (num === 6) {
-        if (bol === true) { //up scroll
-            $(".ds-sidebar").addClass('text-white');
-        } else {
-            $(".ds-sidebar").removeClass('text-white');
-        }
+var additionalAni = function(num) {
+    switch(num) {
+        case 3:
+            if ($('.ds-screen3').hasClass('ds-layout')) {
+                layoutScreen3Show();
+            }
+            break;
+        case 4:
+            if ($('.ds-screen3').hasClass('ds-layout')) {
+                layoutScreen3Dis();
+            }
+            break;
+        case 6:
+            if ($('.ds-screen7').hasClass('ds-visual')) {
+                $(".ds-sidebar").removeClass('text-white');
+            }
+            break;
+        case 7:
+            if ($('.ds-screen7').hasClass('ds-visual')) {
+                $(".ds-sidebar").addClass('text-white');
+            }
+            break;
+        case 8:
+            if ($('.ds-screen8').hasClass('ds-layout')) {
+                setTimeout(function(){
+                    $('.ds-screen8 .tag1').addClass('ds-scale-animation');
+                }, 1000);
+                setTimeout(function(){
+                    $('.ds-screen8 .tag2').addClass('ds-scale-animation');
+                }, 1500);
+            }
+            break;
+        default:
+            return false;
     }
 };
 

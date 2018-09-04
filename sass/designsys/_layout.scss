@@ -281,10 +281,23 @@
             margin: 0;
         }
     }
+
+    .ds-screen8 {
+        .flex-column {
+            img {
+                opacity: 0;
+            }
+            .ds-scale-animation {
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+            }
+        }
+    }
 }
 
 .ds-scale-animation {
-    animation: scale 1s 1; 
+    animation: scale 0.8s 1;
+    animation-delay: 0.5s;
 }
 
 @keyframes scale {
@@ -296,7 +309,7 @@
         transform: scale(1.2, 1.2);
         animation-timing-function: ease-out;
     }
-    100% {
+    100% { 
         transform: scale(1, 1);
         animation-timing-function: ease-out;
     }
