@@ -106,6 +106,8 @@
             background-size: cover;
             .position-absolute {
                 top: 0;
+                left: 0;
+                right: 0;
                 z-index: 1;
                 p:nth-child(4) {
                     opacity: 0.1;

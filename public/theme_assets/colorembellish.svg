@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <g fill="none">
+    <circle cx="12" cy="12" r="12" fill="#E9E9E9"/>
+    <circle cx="44" cy="12" r="12" fill="#E9E9E9"/>
+    <circle cx="76" cy="12" r="12" fill="#E9E9E9"/>
+    <circle cx="108" cy="12" r="12" fill="#E9E9E9"/>
+    <circle cx="12" cy="44" r="12" fill="#E9E9E9"/>
+    <circle cx="44" cy="44" r="12" fill="#E9E9E9"/>
+    <circle cx="108" cy="44" r="12" fill="#E9E9E9"/>
+    <circle cx="12" cy="76" r="12" fill="#E9E9E9"/>
+    <circle cx="44" cy="76" r="12" fill="#E9E9E9"/>
+    <circle cx="76" cy="76" r="12" fill="#E9E9E9"/>
+    <circle cx="108" cy="76" r="12" fill="#E9E9E9"/>
+    <circle cx="12" cy="108" r="12" fill="#E9E9E9"/>
+    <circle cx="44" cy="108" r="12" fill="#E9E9E9"/>
+    <circle cx="76" cy="108" r="12" fill="#E9E9E9"/>
+    <circle cx="108" cy="108" r="12" fill="#E9E9E9"/>
+    <rect width="22" height="22" x="65" y="33" fill="#633FC5" rx="2"/>
+  </g>
+</svg>
