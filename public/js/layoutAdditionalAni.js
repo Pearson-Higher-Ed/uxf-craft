@@ -1,6 +1,5 @@
 //additional animations
 var layoutScreen3Show = function() {
-    $(".ds-ultimate-header").removeClass('text-white');
 
     setTimeout(function(){
         var m, fullHeight = [1, 2, 11, 12];
@@ -23,9 +22,7 @@ var layoutScreen3Show = function() {
         $('.ds-whsp-rect21').addClass('dmb-1');
         $('.ds-whsp-rect22').removeClass('dmt-1');
         $('.ds-whsp-rect22').addClass('dmt-1');
-    }, 1000); 
-
-    console.log($(window).scrollTop());
+    }, 1000);
 };
 
 var layoutScreen3Dis = function() {
@@ -45,4 +42,35 @@ var layoutScreen3Dis = function() {
     $('.ds-whsp-rect21').removeClass('dmb-1');
     $('.ds-whsp-rect22').addClass('dmt-1');
     $('.ds-whsp-rect22').removeClass('dmt-1');
+};
+
+var followingAdditionlAni = function(num) {
+    var sections = [];
+    var n = num.toString();
+    for (var i = 1; i < 4; i ++) {
+        if ($("#dsSection" + n + i).length) {
+            sections[i-1] = $("#dsSection" + n + i).offset().top - 700;
+        }
+    }
+    
+    var interval1 = setInterval(function() {
+        if ( sections[0] <= $('html, body').scrollTop()) {
+            followingAni(num, false, 1);
+            clearInterval(interval1); 
+        }
+    }, 100);
+
+    var interval2 = setInterval(function() {
+        if ( sections[1] <= $('html, body').scrollTop() && $('html, body').scrollTop() < sections[2]) {
+            followingAni(num, false, 2); 
+            clearInterval(interval2);
+        }
+    }, 100);
+
+    var interval3 = setInterval(function() {
+        if ( sections[2] <= $('html, body').scrollTop()) {
+            followingAni(num, false, 3); 
+            clearInterval(interval3);
+        }
+    }, 100);
 };

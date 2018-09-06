@@ -2,7 +2,7 @@ $('.ds-sidebar a').click(function() {
     $('.ds-sidebar li').removeClass('active');
     $(this).parents('li').addClass('active');
 
-    var num = $(this).attr('href').slice(9);
+    var num = parseInt($(this).attr('href').slice(9));
 
     if ($('.parallax-main').hasClass('d-none')) {
         $('.parallax-main').removeClass('d-none');

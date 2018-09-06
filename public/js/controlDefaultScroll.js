@@ -16,17 +16,17 @@ function preventDefaultForScrollKeys(e) {
 }
 
 function disableScroll() {
-    console.log('disabled');
-  if (window.addEventListener) // older FF
-      window.addEventListener('DOMMouseScroll', preventDefault, false);
-  window.onwheel = preventDefault; // modern standard
-  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-  window.ontouchmove  = preventDefault; // mobile
-  document.onkeydown  = preventDefaultForScrollKeys;
+    //console.log('disabled');
+    if (window.addEventListener) // older FF
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.onwheel = preventDefault; // modern standard
+    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    window.ontouchmove  = preventDefault; // mobile
+    document.onkeydown  = preventDefaultForScrollKeys;
 }
 
 function enableScroll() {
-    console.log('abled');
+    //console.log('abled');
     if (window.removeEventListener)
         window.removeEventListener('DOMMouseScroll', preventDefault, false);
     window.onmousewheel = document.onmousewheel = null; 

@@ -1,50 +1,59 @@
-<div class="ds-screen7 dmb-10 bg-white w-100">
+<div class="ds-screen7 ds-layout bg-white w-100">
     <a class="ds-hidden-anchor" href="#dsScreen8" id="dsScreen7">dsScreen7</a>
-    <div class="ds-container ds-grid">
-        <div class="ds-main ds-main-content">
+    <div class="ds-container ds-grid dmb-10">
+        <div class="ds-main ds-main-content dmb-10">
             {% include '_includes/designSys/shared/levelThree' with 
                 {'name': 'Navigation', 
                 'desc': 'A simple navigation structure reduces cognitive load and allows users to focus on completing tasks instead of navigating. To provide a consistent way for users to move into and around Pearson products, we&apos;ve devised three page frames that have the primary navigation built in.'
             } %}
-            <div class="d-flex align-items-center dmb-6 ds-following-content level1">
+            <div class="d-flex align-items-center dmb-6 screen-following-content single level1">
                 <img src="/public/theme_assets/wrong.svg"/>
                 <p class="pe-title--small dmb-0 dml-2">Avoid creating multiple layers of navigation, it does not make for a good mobile experience.</p>
             </div>
-            <div class="d-flex justify-content-between ds-following-content level2 multi">
-                <img class='dmt-6 part1' src="/public/theme_assets/navigationbaddesktop.svg"/>
-                <img class='dmt-6 part2' src="/public/theme_assets/navigationbadmobile.svg"/>
+            <div class="d-flex justify-content-between screen-following-content level2 multi">
+                <img class='part1' src="/public/theme_assets/navigationbaddesktop.svg"/>
+                <img class='part2' src="/public/theme_assets/navigationbadmobile.svg"/>
             </div>
-            <div class="d-flex align-items-center dmt-8">
-                <img src="/public/theme_assets/right.svg"/>
-                <p class="pe-label--large dmb-0 dml-2">Simplify and leverage the primary content area to place relational actions and utilize secondary frames to present users requested content (task driven). This keeps the user focused and in context to their primary task.</p>
+            <div class='ds-section1'>
+                <a class="ds-hidden-anchor" href="#dsSection72" id="dsSection71">dsSection71</a>
+                <div class="d-flex align-items-center section-following-content single level1">
+                    <img src="/public/theme_assets/right.svg"/>
+                    <p class="pe-label--large dmb-0 dml-2">Simplify and leverage the primary content area to place relational actions and utilize secondary frames to present users requested content (task driven). This keeps the user focused and in context to their primary task.</p>
+                </div>
+                <div class="d-flex justify-content-between dmt-6 section-following-content level2 multi">
+                    <figure class='part1'>
+                        <figcaption class="pe-label--secondary pe-label text-center dmb-2">Parent</figcaption>
+                        <img src="/public/theme_assets/navigationparent00.svg"/>
+                    </figure>
+                    <img src="/public/theme_assets/rightarrow.svg"/>
+                    <figure class='part2'>
+                        <figcaption class="pe-label--secondary pe-label text-center dmb-2">Child</figcaption>
+                        <img src="/public/theme_assets/navigationchild00.svg"/> 
+                    </figure>
+                </div>
             </div>
-            <div class="d-flex justify-content-between dmt-6">
-                <figure>
-                    <figcaption class="pe-label--secondary pe-label text-center dmb-2">Parent</figcaption>
-                    <img src="/public/theme_assets/navigationparent00.svg"/>
-                </figure>
-                <img src="/public/theme_assets/rightarrow.svg"/>
-                <figure>
-                    <figcaption class="pe-label--secondary pe-label text-center dmb-2">Child</figcaption>
-                    <img src="/public/theme_assets/navigationchild00.svg"/> 
-                </figure>
+            <div class='ds-section2'>
+                <a class="ds-hidden-anchor" href="#dsSection73" id="dsSection72">dsSection72</a>
+                <div class="d-flex justify-content-between dmt-5 section-following-content level1 multi"> 
+                    <figure class='part1'>
+                        <figcaption class="pe-label--secondary pe-label text-center dmb-2">Parent</figcaption>
+                        <img src="/public/theme_assets/navigationparent01.svg"/>
+                    </figure>
+                    <img src="/public/theme_assets/rightarrow.svg"/>
+                    <figure class='part2'>
+                        <figcaption class="pe-label--secondary pe-label text-center dmb-2">Child</figcaption>
+                        <img src="/public/theme_assets/navigationchild01.svg"/>
+                    </figure>
+                </div>
             </div>
-            <div class="d-flex justify-content-between dmt-5">
-                <figure>
-                    <figcaption class="pe-label--secondary pe-label text-center dmb-2">Parent</figcaption>
-                    <img src="/public/theme_assets/navigationparent01.svg"/>
-                </figure>
-                <img src="/public/theme_assets/rightarrow.svg"/>
-                <figure>
-                    <figcaption class="pe-label--secondary pe-label text-center dmb-2">Child</figcaption>
-                    <img src="/public/theme_assets/navigationchild01.svg"/>
-                </figure>
-            </div>
-            <p class="pe-label--large dmt-8">Simple and small screen optimized.</p>
-            <div class="d-flex justify-content-between dmy-6">
-                <img src="/public/theme_assets/navigationsmall00.svg"/>
-                <img src="/public/theme_assets/navigationsmall01.svg"/>
-                <img src="/public/theme_assets/navigationsmall02.svg"/>
+            <div class='ds-section3'>
+                <a class="ds-hidden-anchor" href="#dsSection7" id="dsSection73">dsSection73</a>
+                <p class="pe-label--large section-following-content level1 single">Simple and small screen optimized.</p>
+                <div class="d-flex justify-content-between dmy-6 section-following-content level2 multi">
+                    <img class='part1' src="/public/theme_assets/navigationsmall00.svg"/>
+                    <img class='part2' src="/public/theme_assets/navigationsmall01.svg"/>
+                    <img class='part3' src="/public/theme_assets/navigationsmall02.svg"/>
+                </div>
             </div>
         </div>
     </div>

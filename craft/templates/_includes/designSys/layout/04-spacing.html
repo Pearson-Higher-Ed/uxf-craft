@@ -1,36 +1,41 @@
-<div class="ds-screen6 dmb-10 bg-white w-100">
+<div class="ds-screen6 bg-white w-100 ds-layout">
     <a class="ds-hidden-anchor" href="#dsScreen7" id="dsScreen6" aria-hidden="true" tabindex="-1">dsScreen6</a>
-    <div class="ds-container ds-grid">
-        <div class="ds-main ds-main-content">
+    <div class="ds-container ds-grid dmb-10">
+        <div class="ds-main ds-main-content dmb-10">
             {% include '_includes/designSys/shared/levelThree' with 
                 {'name': 'Spacing', 
                 'desc': 'To make user actions clear, provide just the right amount of space between UI elements.'
             } %}
-            <div class='ds-following-content level1'>
+            <div class='screen-following-content single level1'>
                 {% include '_includes/designSys/shared/levelFour' with 
                     {'name': 'Default increments', 
                     'desc': 'Use <b>8 pixel</b> increments to create larger spatial differences when positioning components on a page.'
                 } %}
             </div>
-            <div class="d-flex justify-content-between align-items-end ds-spacing-demo8 dpb-6 dmb-6 border-bottom ds-following-content level2">
+            <div class="d-flex justify-content-between align-items-end ds-spacing-demo8 dpb-6 dmb-6 border-bottom screen-following-content single level2">
                 <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
             </div>
-            <div class="bg-pattern-grid dpy-4 text-center dmb-7 ds-following-content level3">
+            <div class="bg-pattern-grid dpy-4 text-center dmb-7 screen-following-content single level3">
                 <img class="img-fluid" src="/public/theme_assets/spacing00.png"/>
             </div>
-            {% include '_includes/designSys/shared/levelFour' with 
-                {'name': 'Small space increments', 
-                'desc': 'Use <b>4 pixel</b> increments for smaller, more refined spacing situations, specifically within the context of a component'
-            } %}
-            <div class="d-flex justify-content-center align-items-end ds-spacing-demo4 dpb-6 dmy-6 border-bottom">
-                <div class='dmr-4'></div>
-                <div class='dmr-4'></div>
-                <div class='dmr-4'></div>
-                <div class='dmr-4'></div>
-                <div></div>
-            </div>
-            <div class="bg-pattern-grid dpy-4 text-center">
-                <img class="img-fluid" src="/public/theme_assets/spacing01.png"/>
+            <div class='ds-section1'>
+                <a class="ds-hidden-anchor" href="#dsSection" id="dsSection61">dsSection61</a>
+                <div class='section-following-content level1 single'>
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {'name': 'Small space increments', 
+                    'desc': 'Use <b>4 pixel</b> increments for smaller, more refined spacing situations, specifically within the context of a component'
+                } %}
+                </div>
+                <div class="d-flex justify-content-center align-items-end ds-spacing-demo4 dpb-6 dmy-6 border-bottom section-following-content level2 single">
+                    <div class='dmr-4'></div>
+                    <div class='dmr-4'></div>
+                    <div class='dmr-4'></div>
+                    <div class='dmr-4'></div>
+                    <div></div>
+                </div>
+                <div class="bg-pattern-grid dpy-4 text-center">
+                    <img class="img-fluid" src="/public/theme_assets/spacing01.png"/>
+                </div>
             </div>
         </div>
     </div>

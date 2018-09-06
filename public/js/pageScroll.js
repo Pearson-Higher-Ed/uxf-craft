@@ -22,7 +22,7 @@ $(document).ready(function() {
         var number = parseInt(screen.find('a.ds-hidden-anchor').attr('id').slice(8));
 
         if (screen.height() > $(window).height()) {
-            console.log("longer screen detected");
+            //console.log("longer screen detected");
             enableScroll();
 
             if (scroll < 0) {
@@ -120,20 +120,24 @@ var scrollScreen = function(num, bol) {
 };
 
 var screenAnimation = function(num) {
+    console.log('screen animation'+num);
+    $('[class^="ds-screen"]').removeClass('on-screen');
+    $('.ds-screen' + num).addClass('on-screen');
+
     setTimeout(function(){
         $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, "slow", "swing");
-    }, 500);
+    }, 300);
     setTimeout(function(){
         activeMenu(num);
-        $('[class^="ds-screen"]').removeClass('on-screen');
-        $('.ds-screen' + num).addClass('on-screen');
-    }, 700);
+    }, 500);
 
-    followingAni(num);
-
+    if ($(".ds-screen" + num).has(".screen-following-content").length) {
+        followingAni(num, true);
+    }
     //check if additional animation is needed
     let screenwani = [3, 4, 6, 7, 8];
     if (screenwani.includes(num)) {
+        console.log('screen additional animation'+num);
         additionalAni(num);
     }
 };
@@ -154,31 +158,30 @@ var activeMenu = function(show) {
     $('a[href="#dsScreen'+show+'"]').parents('li').addClass('active');
 };
 
-var followingAni = function(num) {
-    if ($(".ds-screen" + num).has(".ds-following-content").length) {
-        for (var i=1; i<4; i++) {
-            ani(i);
-        }
+var followingAni = function(screennum, isScreen, sectionnum) {
+    var prefix = isScreen ? '.ds-screen'+ screennum : '.ds-screen'+ screennum + ' .ds-section' + sectionnum;
+    var target = isScreen ? ' .screen-following-content.level' : ' .section-following-content.level';
+    ani(1);
+    if ($(prefix + target + 2).length) {
+        ani(2);
     }
 
     function ani(i) {
-        console.log('followingAni' + i);
-        if (!$(".ds-screen" + num + " .ds-following-content.level" + i).hasClass('multi')) {
+        if ($(prefix + target + i).hasClass('single')) {
             setTimeout(function(){
-                $(".ds-screen" + num + " .ds-following-content.level" + i).animate({marginTop: "48px"}, "slow", "swing");
-            }, 700 + (i - 1) * 100);
-        } else {
-            setTimeout(function(){
-                $(".ds-screen" + num + " .ds-following-content.level" + i + " .part1").animate({marginTop: "0px"}, "slow", "swing");
-            }, 700 + (i - 1) * 100);
-            setTimeout(function(){
-                $(".ds-screen" + num + " .ds-following-content.level" + i + " .part2").animate({marginTop: "0px"}, "slow", "swing");
-            }, 800 + (i - 1) * 100);
-            if ($(".ds-screen" + num + " .ds-following-content.level" + i + " .part3").length) {
-                setTimeout(function(){
-                    $(".ds-screen" + num + " .ds-following-content.level" + i + " .part3").animate({marginTop: "0px"}, "slow", "swing");
-                }, 900 + (i - 1) * 100);
+                $(prefix + target + i).animate({marginTop: "48px"}, "slow", "swing");
+            }, 700 + (i - 1) * 150);
+        } else if ($(prefix + target + i).hasClass('multi')) {
+            partAni(1);
+            partAni(2);
+            if ($(prefix + target + i + " .part3").length) {
+                partAni(3);
             }
+        }
+        function partAni(m) {
+            setTimeout(function(){
+                $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, "slow", "swing");
+            }, 700 + (m - 1) * 100 + (i - 1) * 150);
         }
     }
 };
