@@ -70,6 +70,20 @@ $grid-breakpoints: (
     text-decoration: none;
 }
 
+.h-100vh {
+  min-height: 100vh;
+}
+
+.screen-following-content.single, .section-following-content.single{
+  margin-top: 100px;
+}
+
+.screen-following-content.multi, .section-following-content.multi {
+  .part1, .part2, .part3 {
+    margin-top: 48px;
+  } 
+}
+
 .ds-hidden-anchor {
   display: block;
   height: 0;

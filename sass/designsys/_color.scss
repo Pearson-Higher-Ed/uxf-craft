@@ -104,8 +104,11 @@
         .ds-type-bg {
             background: url('/public/theme_assets/typebg.svg') center center fixed;
             background-size: cover;
+            min-height: 644px;
             .position-absolute {
                 top: 0;
+                left: 0;
+                right: 0;
                 z-index: 1;
                 p:nth-child(4) {
                     opacity: 0.1;

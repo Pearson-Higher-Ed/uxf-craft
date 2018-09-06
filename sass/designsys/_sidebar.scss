@@ -51,7 +51,7 @@
       color: $pe-color-medium-gray;
     }
     li.active {
-      a {
+      &>a {
         font-weight: 600;
         color: $pe-color-charcoal;
       }
@@ -70,7 +70,7 @@
       opacity: 0.7;
     }
     li.active {
-      a {
+      &>a {
         opacity: 1;
         &::before {
           background-color: $pe-color-white;
