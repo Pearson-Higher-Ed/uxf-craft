@@ -53,9 +53,26 @@ $grid-breakpoints: (
 .font-pd {
     font-family: 'Playfair Display', serif;
 }
+
+.pe-label--single {
+  font-size: 1rem;
+  line-height: 1.29rem;
+}
+
+.pe-label--multi {
+  font-size: 1rem;
+  line-height: 1.43rem;
+}
+
+.pe-title--small-new {
+  font-size: 1.29rem;
+  line-height: 1.71rem;
+}
+
 .ds-group-title {
     font-size: 5rem;
 }
+
 .ds-section-title {
     font-size: 2.57rem;
 }
@@ -63,9 +80,11 @@ $grid-breakpoints: (
 .text-purple {
   color: $ds-purple;
 }
+
 .text-darkblue {
   color: $ds-dark-blue;
 }
+
 .nonedec {
     text-decoration: none;
 }

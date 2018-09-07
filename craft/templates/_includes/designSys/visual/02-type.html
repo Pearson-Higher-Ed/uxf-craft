@@ -37,11 +37,64 @@
     <div class='bg-white'>
         <div class='ds-container ds-grid'>
             <div class='ds-main dmy-6'>
-                {% include '_includes/designSys/shared/levelThree' with 
+                <div class='dmb-6'>
+                    {% include '_includes/designSys/shared/levelThree' with 
+                        {
+                            'name': 'Font styles', 
+                            'desc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et mauris sed turpis accumsan hendrerit. Quisque vestibulum eget sem non dapibus. Donec posuere, ante ut cursus elementum, nunc dolor suscipit sapien, eget condimentum felis massa non massa.'
+                    } %}
+                </div>
+                {% include '_includes/designSys/atoms/fontStyle' with 
                     {
-                        'name': 'Font styles', 
-                        'desc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et mauris sed turpis accumsan hendrerit. Quisque vestibulum eget sem non dapibus. Donec posuere, ante ut cursus elementum, nunc dolor suscipit sapien, eget condimentum felis massa non massa.'
-                } %}
+                    'title': 'TITLE STYLE',
+                    'tablebody': [{
+                            'class': 'pe-title--large dpb-6',
+                            'td': '24px / 28px'
+                        }]
+                    } 
+                %}
+                {% include '_includes/designSys/atoms/fontStyle' with 
+                    {
+                    'title': 'HEADING STYLES',
+                    'tablebody': [
+                        {
+                            'class': 'pe-title',
+                            'td': '20px / 26px'
+                        },
+                        {
+                            'class': 'pe-title--small-new dpb-6',
+                            'td': '18px / 24px'
+                        }]
+                    } 
+                %}
+                {% include '_includes/designSys/atoms/fontStyle' with 
+                    {
+                    'title': 'BODY COPY STYLES',
+                    'tablebody': [
+                        {
+                            'class': 'pe-label--large',
+                            'td': '16px / 20px'
+                        },
+                        {
+                            'class': 'pe-label--single',
+                            'td': 'Single-Line | 14px / 18px'
+                        },
+                        {
+                            'class': 'pe-label--multi dpb-6',
+                            'td': 'Multi-Line | 14px / 20px'
+                    }]
+                    } 
+                %}
+                {% include '_includes/designSys/atoms/fontStyle' with 
+                    {
+                    'title': 'META DATA STYLE',
+                    'tablebody': [
+                        {
+                            'class': 'pe-label--small dpb-6',
+                            'td': '12px / 16px'
+                        }]
+                    } 
+                %}
             </div>
         </div>
     </div>
