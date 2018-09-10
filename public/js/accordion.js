@@ -1,7 +1,6 @@
 $('.accordion-button').click(function() {
     var id = $(this).attr('aria-controls');
     var totoalh = $('#' + id)[0].scrollHeight;
-    console.log($('#' + id)[0].scrollHeight);
     if ($(this).attr('aria-expanded') == 'false') {
         $(this).attr('aria-expanded', 'true');
         $(this).addClass('ds-animate');

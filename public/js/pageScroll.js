@@ -57,17 +57,17 @@ var onScreen = function(rm, ad) {
 
 var screen2Up = function () {
     console.log('screen2Up called');
-    $('.ds-screen-cover').animate({top: "10vh", opacity: 0});
+    $('.ds-screen-cover').animate({top: "10vh", opacity: 0}, 800, "easeOutSine");
     
     setTimeout(function(){
         $(".parallax-main").removeClass("d-none");
         var toppos = - $(window).height();
-        $(".parallax-main").animate({top: toppos}, "slow", "swing");
+        $(".parallax-main").animate({top: toppos}, 800, "easeOutSine");
         whiteMenu(false);
     }, 500);
     setTimeout(function(){
         $(window).scrollTop(0);
-        $(".ds-screen2 .ds-main-content").animate({marginTop: "140px"}, "slow", "swing");
+        $(".ds-screen2 .ds-main-content").animate({marginTop: "140px"}, 800, "easeOutSine");
         activeMenu(2);
         onScreen(1, 2);
     }, 1200); 
@@ -78,8 +78,8 @@ var screen2Down = function () {
     setTimeout(function(){
         $('.ds-sidebar li').removeClass('active');
         whiteMenu(true);
-        $('.ds-screen-cover').animate({top: "15vh", opacity: 1});
-        $(".parallax-main").animate({top: "100vh"}, "slow", "swing");
+        $('.ds-screen-cover').animate({top: "15vh", opacity: 1}, 800, "easeOutSine");
+        $(".parallax-main").animate({top: "100vh"}, 800, "easeOutSine");
         $(".parallax-main").addClass("d-none");
         $(window).scrollTop(0);
         onScreen(2, 1);
@@ -109,7 +109,7 @@ var scrollScreen = function(num, bol) {
         //console.log('anchor pos before'+$(scrollTo).offset().top);
         $('html, body').animate({
             scrollTop: $(scrollTo).offset().top
-        }, 300, function() {
+        }, 800, "easeOutSine", function() {
             window.location.hash = scrollTo;
             //console.log('anchor pos after'+$(scrollTo).offset().top);
             //console.log('body top'+$('html, body').scrollTop());
@@ -125,7 +125,7 @@ var screenAnimation = function(num) {
     $('.ds-screen' + num).addClass('on-screen');
 
     setTimeout(function(){
-        $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, "slow", "swing");
+        $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, 800, "easeOutSine");
     }, 300);
     setTimeout(function(){
         activeMenu(num);
@@ -169,7 +169,7 @@ var followingAni = function(screennum, isScreen, sectionnum) {
     function ani(i) {
         if ($(prefix + target + i).hasClass('single')) {
             setTimeout(function(){
-                $(prefix + target + i).animate({marginTop: "48px"}, "slow", "swing");
+                $(prefix + target + i).animate({marginTop: "48px"}, 800, "easeOutSine");
             }, 700 + (i - 1) * 150);
         } else if ($(prefix + target + i).hasClass('multi')) {
             partAni(1);
@@ -180,7 +180,7 @@ var followingAni = function(screennum, isScreen, sectionnum) {
         }
         function partAni(m) {
             setTimeout(function(){
-                $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, "slow", "swing");
+                $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, 800, "easeOutSine");
             }, 700 + (m - 1) * 100 + (i - 1) * 150);
         }
     }

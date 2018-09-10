@@ -5,15 +5,15 @@ var layoutScreen3Show = function() {
         var m, fullHeight = [1, 2, 11, 12];
         $(".ds-sidebar").removeClass("text-white");
         fullHeight.forEach(function(h) {
-            $(".ds-screen3 .ds-layout-grid:nth-child("+ h +")").animate({height: "100vh"});
+            $(".ds-screen3 .ds-layout-grid:nth-child("+ h +")").animate({height: "100vh"}, 800, "easeOutSine");
         });
         for (m = 3; m <11; m++) {
-            $(".ds-screen3 .ds-layout-grid:nth-child("+ m + ")").animate({height: "70vh"});
+            $(".ds-screen3 .ds-layout-grid:nth-child("+ m + ")").animate({height: "70vh"}, 800, "easeOutSine");
         }
     }, 500); 
 
     setTimeout(function(){
-        $(".ds-whsp-rect").animate({height: "258px"});
+        $(".ds-whsp-rect").animate({height: "258px"}, 800, "easeOutSine");
         $('.ds-whsp-rect:nth-child(2)').removeClass('dpr-1');
         $('.ds-whsp-rect:nth-child(2)').css('grid-column-end','10');
         $('.ds-whsp-rect:last-child').removeClass('dpl-1');
