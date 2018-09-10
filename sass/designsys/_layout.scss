@@ -33,7 +33,6 @@
     .ds-screen1 {
         @extend %purpleGradientBG;
         z-index: 1;
-        padding-top: 53px;
         height: 100vh;
         box-sizing: border-box;
         .position-fixed {
@@ -45,58 +44,62 @@
             @include colse(4, 10);
         }
 
-        %fromend {
-            border-image: linear-gradient(to top, #ffffff, rgba(0, 0, 0, 0)) 1 100%;
-        }
-        
-        %noend {
-            border-image: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, .2) 50%, rgba(0, 0, 0, 0) 80%);
-            border-image-slice: 1;
-        }
-
-        @mixin gridBorder($n, $h, $bbol) {
+        @mixin gridBorderSimple($n, $h) {
             .ds-layout-grid:nth-child(#{$n}) {
                 .ds-grid-border {
-                    height: $h;
-                    @if $bbol {
-                        @extend  %fromend;
-                    } @else {
-                        @extend  %noend;
-                    }
+                    border-image: linear-gradient(to bottom, transparent $h, #ffffff 100%);
+                    border-image-slice: 1;
                 }
             }
         }
 
-        @include gridBorder(1, 54%, true);
-        @include gridBorder(2, 64%, true);
-        @include gridBorder(3, 30%, true);
-        @include gridBorder(5, 30%, false);
-        @include gridBorder(10, 40%, false);
-        @include gridBorder(12, 100%, false);
-
-        .ds-layout-grid:nth-child(7) {
-            border-image: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, .2) 30%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 70%,rgba(255, 255, 255, .2) 80%, rgba(0, 0, 0, 0) 90%);
-            border-image-slice: 1;
-        }
-
-        @mixin gridFill($n, $fill) {
-            .ds-grid-fill#{$n} {
-                background: linear-gradient($fill);
+        @mixin gridBorderNoEnd($n, $s, $m, $e) {
+            .ds-layout-grid:nth-child(#{$n}) {
+                .ds-grid-border {
+                    border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) $s, rgba(255, 255, 255, .3) $m, rgba(0, 0, 0, 0) $e);
+                    border-image-slice: 1;
+                }
             }
         }
 
-        @include gridFill(1, (to bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(2, (to bottom, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(3, (to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 80%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(4, (to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05) 80%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(5, (to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.1) 80%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(6, (to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05) 80%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(7, (to bottom, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 80%));
-        @include gridFill(8, (to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 80%));
-        @include gridFill(9, (to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05) 80%, rgba(255, 255, 255, 0) 100%));
-        @include gridFill(10, (to bottom, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 80%));
-        @include gridFill(11, (to bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0) 80%));
-        @include gridFill(12, (to bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 80%));
+        @include gridBorderSimple(1, 46%);
+        @include gridBorderSimple(2, 36%);
+        @include gridBorderSimple(3, 70%);
+        @include gridBorderNoEnd(5, 10%, 20%, 30%);
+        @include gridBorderNoEnd(10, 5%, 15%, 25%);
+        @include gridBorderNoEnd(12, 30%, 45%, 60%);
+
+        .ds-layout-grid:nth-child(7) {
+            .ds-grid-border {
+            border-image: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, .3) 25%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 70%,rgba(255, 255, 255, .3) 80%, rgba(0, 0, 0, 0) 90%);
+            border-image-slice: 1;
+            }
+        }
+
+        @mixin gridFill($n, $fill, $op) {
+            .ds-grid-fill#{$n} {
+                background-image: linear-gradient($fill);
+                opacity: 0;
+                transition: opacity 0.8s ease-out;
+            }
+
+            .ds-grid-opacity#{$n} {
+                opacity: $op;
+            }
+        }
+
+        @include gridFill(1, (to bottom, transparent 30%, white 75%, transparent 100%), 0.1);
+        @include gridFill(2, (to bottom, transparent 20%, white 75%, transparent 100%), 0.1);
+        @include gridFill(3, (to bottom, transparent 0%, white 20%, transparent 30%, transparent 50%, white 80%, transparent 100%), 0.1);
+        @include gridFill(4, (to bottom, transparent 0%, white 20%, transparent 30%, transparent 50%, white 80%, transparent 100%), 0.05);
+        @include gridFill(5, (to bottom, transparent 0%, white 20%, transparent 30%, transparent 50%, white 80%, transparent 100%), 0.1);
+        @include gridFill(6, (to bottom, transparent 0%, white 10%, transparent 20%, transparent 50%, white 80%, transparent 100%), 0.05);
+        @include gridFill(7, (to bottom, transparent 5%, white 20%, transparent 25%, transparent 40%, white 60%, transparent 80%), 0.1);
+        @include gridFill(8, (to bottom, transparent 0%, white 20%, transparent 30%, transparent 40%, white 60%, transparent 80%), 0.1);
+        @include gridFill(9, (to bottom, transparent 0%, white 20%, transparent 30%, transparent 50%, white 80%, transparent 100%), 0.05);
+        @include gridFill(10, (to bottom, transparent 5%, white 20%, transparent 25%, transparent 40%, white 60%, transparent 80%), 0.1);
+        @include gridFill(11, (to bottom, transparent 30%, white 50%, transparent 80%), 0.03);
+        @include gridFill(12, (to bottom, transparent 30%, white 50%, transparent 80%), 0.1);
     }
 
     .ds-screen2 {
@@ -284,7 +287,7 @@
             }
             .ds-scale-animation {
                 opacity: 1;
-                transition: opacity 0.5s ease-out;
+                transition: opacity 0.8s ease-out;
             }
         }
     }
