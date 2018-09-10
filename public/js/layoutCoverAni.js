@@ -3,7 +3,7 @@ $(document).ready(function() {
     var fillTheGrid = function(timeInter, numArray) {
         setTimeout(function() {
             $.each(numArray, function(index, item){
-                $('.ds-screen1 .ds-layout-grid:nth-child('+ item +')').addClass('ds-grid-fill'+item);
+                $('.ds-screen1 .ds-grid-fill'+item).addClass('ds-grid-opacity'+item);
             });
         }, timeInter);
     };

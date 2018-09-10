@@ -180,7 +180,7 @@ var followingAni = function(screennum, isScreen, sectionnum) {
         }
         function partAni(m) {
             setTimeout(function(){
-                $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, 800, "easeOutSine");
+                $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, 500, "easeOutSine");
             }, 700 + (m - 1) * 100 + (i - 1) * 150);
         }
     }
