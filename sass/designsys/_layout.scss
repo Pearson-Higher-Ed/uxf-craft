@@ -1,14 +1,6 @@
 @import "color-variables";
 @import "utilities";
 
-// .parallax-main {
-//     position: relative;
-//     top: 0;
-//     left: 0;
-//     height: 100vh;
-//     overflow-x: hidden;
-//     overflow-y: scroll;
-// }
 .ds-layout-page {
     .ds-grid-borderL {
         border-left-width: 1px;
@@ -65,13 +57,13 @@
         @include gridBorderSimple(1, 46%);
         @include gridBorderSimple(2, 36%);
         @include gridBorderSimple(3, 70%);
-        @include gridBorderNoEnd(5, 10%, 20%, 30%);
+        @include gridBorderNoEnd(5, 1%, 15%, 30%);
         @include gridBorderNoEnd(10, 5%, 15%, 25%);
         @include gridBorderNoEnd(12, 30%, 45%, 60%);
 
         .ds-layout-grid:nth-child(7) {
             .ds-grid-border {
-            border-image: linear-gradient(to top, rgba(0, 0, 0, 0) 20%, rgba(255, 255, 255, .3) 25%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 70%,rgba(255, 255, 255, .3) 80%, rgba(0, 0, 0, 0) 90%);
+            border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(255, 255, 255, .3) 20%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 40%,rgba(255, 255, 255, .3) 60%, rgba(0, 0, 0, 0) 70%);
             border-image-slice: 1;
             }
         }
