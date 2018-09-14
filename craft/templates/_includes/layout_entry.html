@@ -1,8 +1,10 @@
 {% block content %}
 {% include '_includes/designSys/shared/designsysHeader' %}
 <main class='ds-layout-page'>
+    <section class='scroll-panel'>
     {% include '_includes/designSys/layout/00-cover' %}
-    <div class="parallax-main position-relative d-none">
+    </section>
+    <section class='scroll-panel'>
     {% include '_includes/designSys/layout/01-overview' %}
     {% include '_includes/designSys/layout/02-whitespace' %}
     {% include '_includes/designSys/layout/03-grid' %}
@@ -10,10 +12,26 @@
     {% include '_includes/designSys/layout/05-navigation' %}
     {% include '_includes/designSys/layout/06-structure' %}
     {% include '_includes/designSys/layout/07-patterns' %}
-    </div>
+    </section>
 </main>
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="/node_modules/jquery-mousewheel/jquery.mousewheel.js" charset="utf-8"></script>
+<!--
+<script src="/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/minified/plugins/animation.velocity.min.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js" charset="utf-8"></script>
+
+<script src="/public/js/require.js" charset="utf-8"></script>
+
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.velocity.js" charset="utf-8"></script>
+-->
+
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js" charset="utf-8"></script>
+
 <script src="/public/js/jQueryEasingPlugin.js" charset="utf-8"></script>
 <script src="/public/js/layoutCoverAni.js" charset="utf-8"></script>
 <script src="/public/js/controlDefaultScroll.js" charset="utf-8"></script>

@@ -1,14 +1,20 @@
 {% block content %}
 {% include '_includes/designSys/shared/designsysHeader' %}
 <main class='ds-visual-page'>
+    <section class='scroll-panel'>
     {% include '_includes/designSys/visual/00-cover' %}
-    <div class="parallax-main position-relative d-none">
+    </section>
+    <section class='scroll-panel'>
     {% include '_includes/designSys/visual/01-color' %}
     {% include '_includes/designSys/visual/02-type' %}
-    </div>
+    </section>
 </main>
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="/node_modules/jquery-mousewheel/jquery.mousewheel.js" charset="utf-8"></script>
+
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js" charset="utf-8"></script>
+
 <script src="/public/js/jQueryEasingPlugin.js" charset="utf-8"></script>
 <script src="/public/js/controlDefaultScroll.js" charset="utf-8"></script>
 <script src="/public/js/visualAdditionalAni.js" charset="utf-8"></script>

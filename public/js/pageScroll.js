@@ -1,135 +1,101 @@
-var isMoving = false;
-
-function pauseEvent(){
-    isMoving = true;
-    setTimeout(function() {
-        isMoving=false;
-    }, 1200);
-}
-
 $(document).ready(function() {
-    disableScroll();
-});
+   var controller = new ScrollMagic.Controller({
+       globalSceneOptions: {
+           triggerHook: 'onLeave'
+       }
+   });
+   var slides  = $('section.scroll-panel');
+   var screens = $('a[id^="dsScreen"]');
+   var LevelOneScenes = [];
+   var LevelTwoScenes = [];
+   var inter1;
+   
+   for (var i = 0; i < slides.length; i++) {
+        LevelOneScenes[i] = new ScrollMagic.Scene({
+           triggerElement: slides[i]
+       })
+       .setPin(slides[i])
+       .addIndicators()
+       .addTo(controller);
+   }
 
- $(window).on('mousewheel', function(event) {
+   for  (var m = 1; m < screens.length; m++) {
+        LevelTwoScenes[m] = new ScrollMagic.Scene({
+            triggerElement: screens[m]
+        })
+        .addIndicators()
+        .addTo(controller);
+   }
 
-    if (!isMoving) {
-        processScroll();
-    }
-    
-    function processScroll() {
-        var scroll = event.deltaY, screen = $('[class$="on-screen"]');
-        var number = parseInt(screen.find('a.ds-hidden-anchor').attr('id').slice(8));
+    LevelOneScenes[0].on("enter", function (event) {
+        coverAnimation();
+    });
 
-        if (screen.height() > $(window).height()) {
-            //console.log("longer screen detected");
-            enableScroll();
+    LevelOneScenes[1].on("enter", function (event) {
+        LevelOneScenes[1].remove();
+    });
 
-            if (scroll < 0) {
-                if ($('#dsScreen' + (number+1))[0]) {
-                    var nextAnchor = $('#dsScreen' + (number+1)).offset().top;
-                    if ($('html, body').scrollTop() >= (nextAnchor - $(window).height())){
-                        scrollScreen(number, true);
-                    }
-                }
-            } else {
-                var thisAnchor = $('#dsScreen' + number).offset().top;
-                if ($('html, body').scrollTop() <= thisAnchor){
-                    scrollScreen(number, false);
-                }
-            }
-            
-        } else {
-            if (scroll < 0) {
-                scrollScreen(number, true);
-            } else {
-                scrollScreen(number, false);
-            }
-        }
-
-    }
-});
-
-var onScreen = function(rm, ad) {
-    $(".ds-screen" + rm).removeClass('on-screen');
-    $(".ds-screen" + ad).addClass('on-screen');
-};
-
-var screen2Up = function () {
-    console.log('screen2Up called');
-    $('.ds-screen-cover').animate({top: "10vh", opacity: 0}, 800, "easeOutSine");
-    
-    setTimeout(function(){
-        $(".parallax-main").removeClass("d-none");
-        var toppos = - $(window).height();
-        $(".parallax-main").animate({top: toppos}, 800, "easeOutSine");
+    LevelTwoScenes[1].on("enter", function (event) {
+        clearInterval(inter1);
         whiteMenu(false);
-    }, 500);
-    setTimeout(function(){
-        $(window).scrollTop(0);
-        $(".ds-screen2 .ds-main-content").animate({marginTop: "140px"}, 800, "easeOutSine");
-        activeMenu(2);
-        onScreen(1, 2);
-    }, 1200); 
+        screenAnimation(2);
+    });
 
-};
-
-var screen2Down = function () {
-    setTimeout(function(){
-        $('.ds-sidebar li').removeClass('active');
-        whiteMenu(true);
-        $('.ds-screen-cover').animate({top: "15vh", opacity: 1}, 800, "easeOutSine");
-        $(".parallax-main").animate({top: "100vh"}, 800, "easeOutSine");
-        $(".parallax-main").addClass("d-none");
-        $(window).scrollTop(0);
-        onScreen(2, 1);
-    }, 500); 
-};
-
-var scrollScreen = function(num, bol) {
-    disableScroll();
-    pauseEvent();
-    if (bol) {
-        if (num === 1) {
-            screen2Up(); 
+    LevelTwoScenes[1].on("leave", function (event) {
+        if (event.target.controller().info('scrollDirection') === 'REVERSE') {
+            whiteMenu(true);
+            coverAnimation();
+            $('.ds-sidebar li').removeClass('active');
         } else {
-            scrollAnimation(num + 1);
+            console.log('clearinterval');
+            clearInterval(inter1);
         }
-    } else {
-        if (num === 2) {
-            screen2Down(); 
+    });
+
+    for  (var n = 2; n < screens.length; n++) {
+        if (n === screens.length - 1) {
+            transitionAni(n, true);
         } else {
-            scrollAnimation(num - 1);
+            transitionAni(n, false);
         }
     }
 
-    function scrollAnimation(n) {
-        var scrollTo = '#dsScreen' + n;
-    
-        //console.log('anchor pos before'+$(scrollTo).offset().top);
-        $('html, body').animate({
-            scrollTop: $(scrollTo).offset().top
-        }, 800, "easeOutSine", function() {
-            window.location.hash = scrollTo;
-            //console.log('anchor pos after'+$(scrollTo).offset().top);
-            //console.log('body top'+$('html, body').scrollTop());
+    function transitionAni(num, bol) {
+        LevelTwoScenes[num].on("enter", function (event) {
+            screenAnimation(num+1);
+            if (bol === true) {
+                LevelOneScenes[0].removePin(slides[0]);
+            }
         });
-    
-        screenAnimation(n);
+        LevelTwoScenes[num].on("leave", function (event) {
+            if (event.target.controller().info('scrollDirection') === 'REVERSE') {
+                activeMenu(num);
+                if (bol === true) {
+                    LevelOneScenes[0].setPin(slides[0]);
+                }
+            }
+        });
     }
-};
+
+    function coverAnimation() {
+        var windowheight = $(window).height();
+    
+        inter1 = setInterval(function(){
+            $('.ds-screen-cover').css('opacity', (windowheight/2-controller.scrollPos())/(windowheight/2));
+            if (controller.scrollPos() >= (windowheight - 160)) {
+                $(".ds-sidebar").removeClass('text-white');
+            } else {
+                $(".ds-sidebar").addClass('text-white');
+            }
+        }, 80);
+    }
+});
 
 var screenAnimation = function(num) {
-    console.log('screen animation'+num);
-    $('[class^="ds-screen"]').removeClass('on-screen');
-    $('.ds-screen' + num).addClass('on-screen');
-
-    setTimeout(function(){
-        $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "100px"}, 800, "easeOutSine");
-    }, 300);
+    $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "140px", opacity: 1}, 800, "easeOutSine");
     setTimeout(function(){
         activeMenu(num);
-    }, 500);
+    }, 300);
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
         followingAni(num, true);
