@@ -1,0 +1,24 @@
+{% block content %}
+{% include '_includes/designSys/shared/designsysHeader' %}
+<main class='ds-visual-page'>
+    <section class='scroll-panel'>
+    {% include '_includes/designSys/visual_dup/00-cover' %}
+    </section>
+    <section class='scroll-panel'>
+    {% include '_includes/designSys/visual_dup/01-color' %}
+    {% include '_includes/designSys/visual_dup/02-type' %}
+    </section>
+</main>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js" charset="utf-8"></script>
+
+<script src="/public/js/jQueryEasingPlugin.js" charset="utf-8"></script>
+<script src="/public/js/controlDefaultScroll.js" charset="utf-8"></script>
+<script src="/public/js/visualAdditionalAni.js" charset="utf-8"></script>
+<script src="/public/js/additionalAni.js" charset="utf-8"></script>
+<script src="/public/js/pageScroll_dup.js" charset="utf-8"></script>
+<script src="/public/js/menu_dup.js" charset="utf-8"></script>
+{% endblock %}
