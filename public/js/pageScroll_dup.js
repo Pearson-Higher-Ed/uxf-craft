@@ -15,7 +15,6 @@ $(document).ready(function() {
            triggerElement: slides[i]
        })
        .setPin(slides[i])
-       .addIndicators()
        .addTo(controller);
    }
 
@@ -23,7 +22,6 @@ $(document).ready(function() {
         LevelTwoScenes[m] = new ScrollMagic.Scene({
             triggerElement: screens[m]
         })
-        .addIndicators()
         .addTo(controller);
    }
 
