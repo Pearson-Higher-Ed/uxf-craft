@@ -134,7 +134,7 @@ var followingAni = function(screennum, isScreen, sectionnum) {
         if ($(prefix + target + i).hasClass('single')) {
             setTimeout(function(){
                 $(prefix + target + i).animate({marginTop: "48px"}, 800, "easeOutSine");
-            }, 700 + (i - 1) * 150);
+            }, 300 + (i - 1) * 150);
         } else if ($(prefix + target + i).hasClass('multi')) {
             partAni(1);
             partAni(2);
@@ -145,7 +145,7 @@ var followingAni = function(screennum, isScreen, sectionnum) {
         function partAni(m) {
             setTimeout(function(){
                 $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, 500, "easeOutSine");
-            }, 700 + (m - 1) * 100 + (i - 1) * 150);
+            }, 300 + (m - 1) * 100 + (i - 1) * 150);
         }
     }
 };
