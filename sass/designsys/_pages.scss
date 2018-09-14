@@ -1,6 +1,10 @@
 .ds-main-content {
-    margin-top: 280px;
-    opacity: 0.5;
+    margin-top: 200px;
+}
+
+section.scroll-panel .ds-main-content {
+        margin-top: 280px;
+        opacity: 0.5;
 }
 
 @for $i from 2 through 15 {

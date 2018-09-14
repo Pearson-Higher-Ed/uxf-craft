@@ -1,0 +1,66 @@
+{% extends "_default" %}
+{% set pageTitle = "Layout" %}
+
+{% block sidebar %}
+  {% include '_includes/designSys/shared/designsysSidebar' with
+  {
+    'mainLevel': [{
+      'href': 'dsScreen2',
+      'label': 'Overview',
+      'subLevel': [{
+        'href':'dsScreen3',
+        'label': 'WhiteSpace'
+      }, {
+        'href':'dsScreen4',
+        'spacing': true,
+        'label': 'Grids'
+      }, {
+        'href':'dsScreen5',
+        'spacing': true,
+        'label': 'Breakpoints'
+      }, {
+        'href':'dsScreen6',
+        'spacing': true,
+        'label': 'Spacing'
+      }, {
+        'href':'dsScreen7',
+        'spacing': true,
+        'label': 'Navigation'
+      }]
+    }, {
+      'href': 'dsScreen8',
+      'label': 'Structure',
+      'subLevel': [{
+        'href':'dsScreen9',
+        'label': 'Primary page frame'
+      }, {
+        'href':'dsScreen10',
+        'spacing': true,
+        'label': 'Secondary page frame'
+      }, {
+        'href':'dsScreen11',
+        'spacing': true,
+        'label': 'Modal page frame'
+      }]
+    }, {
+      'href': 'dsScreen12',
+      'label': 'Patterns',
+      'subLevel': [{
+        'href':'dsScreen13',
+        'label': 'Single column'
+      }, {
+        'href':'dsScreen14',
+        'spacing': true,
+        'label': 'Multiple column'
+      }, {
+        'href':'dsScreen15',
+        'spacing': true,
+        'label': 'Modular'
+      }]
+    }]
+  } %}
+{% endblock %}
+
+{% block content %}
+  {% include '_includes/layout_dup_entry' %}
+{% endblock %}

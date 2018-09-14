@@ -98,7 +98,7 @@ $grid-breakpoints: (
 }
 
 .screen-following-content.multi, .section-following-content.multi {
-  .part1, .part2, .part3 {
+  .part1, .parst2, .part3 {
     margin-top: 48px;
   } 
 }
@@ -107,6 +107,11 @@ $grid-breakpoints: (
   display: block;
   height: 0;
   overflow: hidden;
+  margin-bottom: 53px;
+}
+
+section.scroll-panel .ds-hidden-anchor{
+  margin-bottom: 0;
 }
 
 .pe-normal {
