@@ -1,0 +1,62 @@
+.ds-images {
+  @extend .ds-container, .ds-grid;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  .image-grid {
+    @include component-main;
+
+    .title {
+      @extend .pe-label, .pe-label--large, .pe-bold;
+    }
+
+    .caption, .caption p {
+      @extend .pe-label, .pe-label--large;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+  }
+
+  &.images-right {
+    .image {
+      display: flex;
+      align-items: center;
+
+      & + .image {
+        margin-top: 24px;
+      }
+
+      img {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &.images-centered {
+    .image-grid {
+      margin: 0 -12px;
+    }
+
+    .image {
+      display: table;
+      float: left;
+      margin: 0 12px;
+    }
+
+    .title, .caption {
+      display: table-caption;
+      text-align: center;
+    }
+
+    .caption {
+      caption-side: bottom;
+    }
+  }
+}

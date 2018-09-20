@@ -1,0 +1,25 @@
+{% extends "_default" %}
+
+{% set pageTitle = "Test" %}
+
+{% includeCssFile "https://fonts.googleapis.com/css?family=Playfair+Display:700" first %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block content %}
+<div class="ds">
+  <div class="intro">
+    <h1>{{ entry.title }}</h1>
+    <div>
+      {{ entry.introduction }}
+    </div>
+  </div>
+
+  {% for chunk in entry.dsComponentContent %}
+    <div class="chunk">
+      {% include '_includes/chunks/' ~ chunk.type %}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
