@@ -1,17 +1,11 @@
 {% block content %}
 {% include '_includes/designSys/shared/designsysHeader' %}
-<main class='ds-layout-page'>
+<main class='ds-components-page'>
     <section class='scroll-panel'>
-    {% include '_includes/designSys/layout_dup/00-cover' %}
+    {% include '_includes/designSys/components/00-cover' %}
     </section>
-    <section class='scroll-panel'>
-    {% include '_includes/designSys/layout_dup/01-overview' %}
-    {% include '_includes/designSys/layout_dup/02-whitespace' %}
-    {% include '_includes/designSys/layout_dup/03-grid' %}
-    {% include '_includes/designSys/layout_dup/04-spacing' %}
-    {% include '_includes/designSys/layout_dup/05-navigation' %}
-    {% include '_includes/designSys/layout_dup/06-structure' %}
-    {% include '_includes/designSys/layout_dup/07-patterns' %}
+    <section class='scroll-panel bg-white'>
+    {% include '_includes/designSys/components/01-buttons' %}
     </section>
 </main>
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
@@ -33,9 +27,6 @@
 <script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js" charset="utf-8"></script>
 
 <script src="/public/js/jQueryEasingPlugin.js" charset="utf-8"></script>
-<script src="/public/js/layoutCoverAni.js" charset="utf-8"></script>
-<script src="/public/js/controlDefaultScroll.js" charset="utf-8"></script>
-<script src="/public/js/layoutAdditionalAni.js" charset="utf-8"></script>
 <script src="/public/js/additionalAni.js" charset="utf-8"></script>
 <script src="/public/js/pageScroll_dup.js" charset="utf-8"></script>
 <script src="/public/js/accordion.js" charset="utf-8"></script>

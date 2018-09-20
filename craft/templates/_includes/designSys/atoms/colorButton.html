@@ -1,0 +1,8 @@
+<div class='d-flex flex-wrap dmt-6'>
+    {% for item in buttoncolor %}
+    <div class='d-flex w-50 dmb-5'>
+        <button class="{{ item.class }}">Button</button>
+        <p class='pe-label--large dmb-0 dml-2'><span class='pe-bold'>{{ item.color }}</span><br>{{ item.hex }}</p>
+    </div>
+    {% endfor %}
+</div>

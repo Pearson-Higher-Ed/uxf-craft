@@ -50,6 +50,11 @@ $grid-breakpoints: (
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 
+.accordion-button {
+  background-color: transparent;
+  border: 0;
+}
+
 .font-pd {
     font-family: 'Playfair Display', serif;
 }
