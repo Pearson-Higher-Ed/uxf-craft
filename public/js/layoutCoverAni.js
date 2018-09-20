@@ -8,8 +8,8 @@ $(document).ready(function() {
         }, timeInter);
     };
 
-    fillTheGrid(10, [2, 8, 10, 12]);
-    fillTheGrid(200, [4, 6]);
-    fillTheGrid(400, [1, 3, 5, 7]);
-    fillTheGrid(600, [9, 11]);
+    fillTheGrid(200, [2, 8, 10, 12]);
+    fillTheGrid(400, [4, 6]);
+    fillTheGrid(600, [1, 3, 5, 7]);
+    fillTheGrid(800, [9, 11]);
 });
