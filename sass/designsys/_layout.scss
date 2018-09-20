@@ -16,14 +16,12 @@
         @extend .ds-grid-borderR;
         @extend .ds-grid-borderL;
     }
-
-    %purpleGradientBG {
-        background: url('/public/theme_assets/ds-gradient-bg.svg') center center fixed;
-        background-size: cover;
-    }
  
     .ds-screen1 {
-        @extend %purpleGradientBG;
+        background-image: url('/public/theme_assets/texturepurple.png'), linear-gradient(302deg, #895b9a, $ds-dark-purple), linear-gradient(56deg, rgba(242, 229, 241, 0), rgba(242, 229, 241, 0.4));
+        background-position: center bottom, center center;
+        background-size: cover, cover;
+        background-repeat: no-repeat, no-repeat;
         z-index: 1;
         height: 100vh;
         box-sizing: border-box;
