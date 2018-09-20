@@ -1,6 +1,6 @@
-<div class="ds-bp-table ds-shadow bg-white smb-5">
+<div class='border rounded dmt-6'>
     <h4 class="pe-title--small pe-bold dpy-3 dpx-4 dmb-0">
-        <button class="w-100 d-flex justify-content-between accordion-button ds-animate" aria-controls="{{ id }}" aria-expanded="true">{{ btn }}
+        <button class="w-100 d-flex justify-content-between accordion-button ds-animate" aria-controls="{{ id }}" aria-expanded="true">Redlines
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="7" viewBox="0 0 12 7">
                 <g fill="none" fill-rule="evenodd" transform="translate(-6 -9)">
                     <rect width="24" height="24"/>
@@ -11,24 +11,8 @@
         </button>
     </h4>
     <div class="accordion-panel dpx-3" id="{{ id }}" aria-hidden="false">
-        <table class='border-top'>
-            <thead>
-                <tr>
-                    {% for item in tablehead %}
-                    <th class="pe-label pe-label--secondary pe-normal dpt-3">{{ item.th }}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in tablebody %}
-                <tr>
-                    <th class="pe-label--large p-1 pe-normal">{{ item.th }}<span class="pe-label--secondary">{{ item.thspan }}</span></th>
-                    {% for it in item.cell %}
-                    <td class="pe-label--large p-1 text-center">{{ it.td }}</td>
-                    {% endfor %}
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class='border-top'>
+            <img class='img-fluid mx-auto d-block smy-7' src='{{ source }}'>
+        </div>
     </div>
 </div>

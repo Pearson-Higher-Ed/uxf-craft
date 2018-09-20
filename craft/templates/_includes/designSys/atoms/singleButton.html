@@ -1,0 +1,12 @@
+<div class='dmt-4'>
+{% for item in singlebutton %}
+<div class='d-flex align-items-center dmb-3'>
+    <button type='button' class='{{ item.class }}'{{item.additional}}>
+        {{ item.name}}
+    </button>
+    <p class='pe-label--large dmb-0 dml-2'>
+        {{ item.text}}
+    </p>
+</div>
+{% endfor %}
+</div>
