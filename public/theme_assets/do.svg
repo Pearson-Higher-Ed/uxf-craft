@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Visual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Components" transform="translate(-308.000000, -4529.000000)">
+            <g id="labels" transform="translate(246.000000, 4387.000000)">
+                <g id="example" transform="translate(0.000000, 90.000000)">
+                    <g id="Group-9" transform="translate(62.000000, 52.000000)">
+                        <rect id="24-bounds-copy" transform="translate(14.000000, 14.000000) rotate(-270.000000) translate(-14.000000, -14.000000) " x="2" y="2" width="24" height="24"></rect>
+                        <circle id="Oval-3-Copy" fill="#038238" opacity="0.2" transform="translate(14.000000, 14.000000) rotate(-270.000000) translate(-14.000000, -14.000000) " cx="14" cy="14" r="14"></circle>
+                        <circle id="Oval-2-Copy" fill="#038238" transform="translate(14.000000, 14.000000) rotate(-270.000000) translate(-14.000000, -14.000000) " cx="14" cy="14" r="10"></circle>
+                        <path d="M18.2794817,16.7695408 L17.3207926,17.7087458 L15.2758562,19.6980554 C15.070032,19.8996965 14.8008772,20 14.5317225,20 C14.2625677,20 13.993413,19.8996965 13.7886443,19.6980554 C13.3769958,19.2958072 13.3769958,18.6433172 13.7886443,18.241069 L15.8335807,16.2517595 L9.80873633,10.7586724 C9.39708789,10.3564243 9.39708789,9.7039343 9.80873633,9.30168613 C10.2193293,8.89943796 10.8853553,8.89943796 11.2959483,9.30168613 L17.3207926,14.7947732 L18.2794817,15.7339783 C18.5756277,16.0241054 18.5713768,16.4835781 18.2794817,16.7695408 Z" id="check-copy" fill="#FFFFFF" transform="translate(14.000000, 14.500000) rotate(-270.000000) translate(-14.000000, -14.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

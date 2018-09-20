@@ -15,3 +15,5 @@ craft/storage/userphotos/
 
 # User generated content
 /assets/
+/ds/images/*
+!/ds/images/.gitkeep
