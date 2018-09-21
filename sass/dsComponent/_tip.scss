@@ -1,0 +1,22 @@
+.tip {
+  @extend .ds-grid, .ds-container;
+
+  .content {
+    @include component-main;
+    position: relative;
+  }
+
+  font-size: 18px;
+  line-height: 24px;
+
+  p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  img {
+    position: absolute;
+    left: -32px;
+    top: 1px;
+  }
+}

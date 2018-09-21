@@ -560,7 +560,7 @@ kbd {
   font-family: "Open Sans", Calibri, Tahoma, sans-serif; }
 
 .pe-copy, .top-level-content.home .top p, .article p, .spec p, .spec .reqs .req .item::before, .side-toc .main-content p, .side-toc .main-content ul, .side-toc .main-content ol, .contact .table_substitute p, .status p, .status ul.top, .quality .req .explanation p, .top-level-content.content-types .intro, .top-level-content.content-types .intro p, .top-level-content.content-types .main.main ul li,
-.top-level-content.content-types .main.main ol li, .top-level-content.content-types .example h3, .top-level-content.content-types .example .description > p, .top-level-content.content-types .example .dosdonts .card p, .top-level-content.content-types .example .dosdonts .caption {
+.top-level-content.content-types .main.main ol li, .top-level-content.content-types .example h3, .top-level-content.content-types .example .description > p, .top-level-content.content-types .example .dosdonts .card p, .top-level-content.content-types .example .dosdonts .caption, .ds .intro > div, .ds .intro p {
   font-size: 1rem;
   line-height: 1.57143rem;
   color: #252525; }
@@ -574,7 +574,7 @@ kbd {
   color: #252525; }
 
 .pe-copy--large, .pe-heading-level6, h6, header h5 + .subtitle, .top-level-content.home .top p, .contact .table_substitute p, .status p, .status ul.top, .top-level-content.content-types .intro, .top-level-content.content-types .intro p, .top-level-content.content-types .main.main ul li,
-.top-level-content.content-types .main.main ol li, .top-level-content.content-types .example h3, .top-level-content.content-types .example .description > p {
+.top-level-content.content-types .main.main ol li, .top-level-content.content-types .example h3, .top-level-content.content-types .example .description > p, .ds .intro > div, .ds .intro p {
   font-size: 1.14286rem;
   line-height: 1.71429rem;
   color: #252525; }
@@ -608,7 +608,7 @@ kbd {
   font-weight: lighter;
   color: #252525; }
 
-.pe-title, .pe-heading-level3, h3, header h2 + .subtitle, .pe-heading-level4, h4, header h3 + .subtitle, .icons .icons-container h2, .icons .icons-container .icon-detail .details h3, .icons .text h2, .icons .text h3, .top-level-content.home .top .pearson, .top-level-content.home .colors .palettes h3, .article article #markdown-toc, .article h2, .article h3, .block.overview .toc ul, .block .two_column .text h3, .block .two_column .content .text-content h3, .block .two_column .content .text-content h4, .spec h2, .side-toc .main-content h1, .side-toc .main-content h2, .side-toc .main-content h3, .status h2, .status h3, .top-level-content.content-types h1, .top-level-content.content-types .inline-toc, .top-level-content.content-types .example h2, .top-level-content.content-types .example .dosdonts .name {
+.pe-title, .pe-heading-level3, h3, header h2 + .subtitle, .pe-heading-level4, h4, header h3 + .subtitle, .icons .icons-container h2, .icons .icons-container .icon-detail .details h3, .icons .text h2, .icons .text h3, .top-level-content.home .top .pearson, .top-level-content.home .colors .palettes h3, .article article #markdown-toc, .article h2, .article h3, .block.overview .toc ul, .block .two_column .text h3, .block .two_column .content .text-content h3, .block .two_column .content .text-content h4, .spec h2, .side-toc .main-content h1, .side-toc .main-content h2, .side-toc .main-content h3, .status h2, .status h3, .top-level-content.content-types h1, .top-level-content.content-types .inline-toc, .top-level-content.content-types .example h2, .top-level-content.content-types .example .dosdonts .name, .ds .ds-heading h2 {
   font-size: 1.42857rem;
   line-height: 1.85714rem;
   font-weight: normal;
@@ -631,11 +631,11 @@ kbd {
   color: #6A7070; }
 
 .pe-label, .js-tag, .icons header .right a, .icons header p, .icons .toc ul > li > ul, .icons .toc ul, .icons .icons-container .icon p, .icons .text h4, .icons .text h5, .top-level-content.home .colors .heading a, .top-level-content.home .colors .palettes .swatch + div,
-.top-level-content.home .colors .palettes .swatch + div + div, .article section.toc, .article article #markdown-toc > li > ul, .article h4, .block .two_column .text h4, .block .two_column .text h5, .block .two_column .text dl dt, .block .two_column .text dl dd, .block .two_column .content .caption, .block .two_column .content .caption p, .block .two_column .content .text-content h5, .block .swatches table tr, .block .pe-style-table th, .block .pe-style-table td, .block .text.redlines td:first-of-type, .block .text.redlines td + td, .spec .reqs h3, .side-toc .main-content h4, .banner, .status table thead .status-description, .ultimate-header.nightly .back-container .title, .ultimate-header.nightly .back-container .link, .search-container .dropdown .result h5, .search-container .dropdown .result p, .quality header p, .quality .toc ul > li > ul, .quality .toc ul, .quality .req .label, .top-level-content.content-types .toc, .top-level-content.content-types .example .dosdonts .card h4 {
+.top-level-content.home .colors .palettes .swatch + div + div, .article section.toc, .article article #markdown-toc > li > ul, .article h4, .block .two_column .text h4, .block .two_column .text h5, .block .two_column .text dl dt, .block .two_column .text dl dd, .block .two_column .content .caption, .block .two_column .content .caption p, .block .two_column .content .text-content h5, .block .swatches table tr, .block .pe-style-table th, .block .pe-style-table td, .block .text.redlines td:first-of-type, .block .text.redlines td + td, .spec .reqs h3, .side-toc .main-content h4, .banner, .status table thead .status-description, .ultimate-header.nightly .back-container .title, .ultimate-header.nightly .back-container .link, .search-container .dropdown .result h5, .search-container .dropdown .result p, .quality header p, .quality .toc ul > li > ul, .quality .toc ul, .quality .req .label, .top-level-content.content-types .toc, .top-level-content.content-types .example .dosdonts .card h4, .ds .ds-images .image-grid .title, .ds .ds-images .image-grid .caption, .ds .ds-images .image-grid .caption p, .ds .ds-dosAndDonts .heading {
   font-size: 1rem;
   line-height: 1.28571rem; }
   .pe-label.pe-label--inverse, .pe-label--inverse.js-tag, .icons header .right a.pe-label--inverse, .icons header p.pe-label--inverse, .icons .toc ul.pe-label--inverse, .icons .icons-container .icon p.pe-label--inverse, .icons .text h4.pe-label--inverse, .icons .text h5.pe-label--inverse, .top-level-content.home .colors .heading a.pe-label--inverse, .top-level-content.home .colors .palettes .swatch + div.pe-label--inverse,
-  .top-level-content.home .colors .palettes .swatch + div + div.pe-label--inverse, .article section.pe-label--inverse.toc, .article article #markdown-toc > li > ul.pe-label--inverse, .article h4.pe-label--inverse, .block .two_column .text h4.pe-label--inverse, .block .two_column .text h5.pe-label--inverse, .block .two_column .text dl dt.pe-label--inverse, .block .two_column .text dl dd.pe-label--inverse, .block .two_column .content .pe-label--inverse.caption, .block .two_column .content .caption p.pe-label--inverse, .block .two_column .content .text-content h5.pe-label--inverse, .block .swatches table tr.pe-label--inverse, .block .pe-style-table th.pe-label--inverse, .block .pe-style-table td.pe-label--inverse, .block .text.redlines td.pe-label--inverse:first-of-type, .block .text.redlines td + td.pe-label--inverse, .spec .reqs h3.pe-label--inverse, .side-toc .main-content h4.pe-label--inverse, .pe-label--inverse.banner, .status table thead .pe-label--inverse.status-description, .ultimate-header.nightly .back-container .pe-label--inverse.title, .ultimate-header.nightly .back-container .pe-label--inverse.link, .search-container .dropdown .result h5.pe-label--inverse, .search-container .dropdown .result p.pe-label--inverse, .quality header p.pe-label--inverse, .quality .toc ul.pe-label--inverse, .quality .req .pe-label--inverse.label, .top-level-content.content-types .pe-label--inverse.toc, .top-level-content.content-types .example .dosdonts .card h4.pe-label--inverse {
+  .top-level-content.home .colors .palettes .swatch + div + div.pe-label--inverse, .article section.pe-label--inverse.toc, .article article #markdown-toc > li > ul.pe-label--inverse, .article h4.pe-label--inverse, .block .two_column .text h4.pe-label--inverse, .block .two_column .text h5.pe-label--inverse, .block .two_column .text dl dt.pe-label--inverse, .block .two_column .text dl dd.pe-label--inverse, .block .two_column .content .pe-label--inverse.caption, .block .two_column .content .caption p.pe-label--inverse, .block .two_column .content .text-content h5.pe-label--inverse, .block .swatches table tr.pe-label--inverse, .block .pe-style-table th.pe-label--inverse, .block .pe-style-table td.pe-label--inverse, .block .text.redlines td.pe-label--inverse:first-of-type, .block .text.redlines td + td.pe-label--inverse, .spec .reqs h3.pe-label--inverse, .side-toc .main-content h4.pe-label--inverse, .pe-label--inverse.banner, .status table thead .pe-label--inverse.status-description, .ultimate-header.nightly .back-container .pe-label--inverse.title, .ultimate-header.nightly .back-container .pe-label--inverse.link, .search-container .dropdown .result h5.pe-label--inverse, .search-container .dropdown .result p.pe-label--inverse, .quality header p.pe-label--inverse, .quality .toc ul.pe-label--inverse, .quality .req .pe-label--inverse.label, .top-level-content.content-types .pe-label--inverse.toc, .top-level-content.content-types .example .dosdonts .card h4.pe-label--inverse, .ds .ds-images .image-grid .pe-label--inverse.title, .ds .ds-images .image-grid .pe-label--inverse.caption, .ds .ds-images .image-grid .caption p.pe-label--inverse, .ds .ds-dosAndDonts .pe-label--inverse.heading {
     color: #FFFFFF; }
 
 .pe-label--secondary.pe-label--inverse {
@@ -646,7 +646,7 @@ kbd {
   font-size: 0.85714rem;
   line-height: 1.14286rem; }
 
-.pe-label--large, .icons header .right a, .icons .toc ul > li > ul, .icons .text h4, .top-level-content.home .colors .heading a, .article article #markdown-toc > li > ul, .article h4, .block .two_column .text h4, .block .two_column .content .text-content h5, .side-toc .main-content h4, .ultimate-header.nightly .back-container .title, .search-container .dropdown .result h5, .quality .toc ul > li > ul {
+.pe-label--large, .icons header .right a, .icons .toc ul > li > ul, .icons .text h4, .top-level-content.home .colors .heading a, .article article #markdown-toc > li > ul, .article h4, .block .two_column .text h4, .block .two_column .content .text-content h5, .side-toc .main-content h4, .ultimate-header.nightly .back-container .title, .search-container .dropdown .result h5, .quality .toc ul > li > ul, .ds .ds-images .image-grid .title, .ds .ds-images .image-grid .caption, .ds .ds-images .image-grid .caption p {
   font-size: 1.14286rem;
   line-height: 1.42857rem; }
 
@@ -660,7 +660,10 @@ kbd {
 .top-level-content.content-types .inline-toc,
 .top-level-content.content-types .example h2,
 .top-level-content.content-types .example .dosdonts .name,
-.top-level-content.content-types .example .dosdonts .card h4 {
+.top-level-content.content-types .example .dosdonts .card h4,
+.ds .ds-heading h2,
+.ds .ds-text h3,
+.ds .ds-images .image-grid .title {
   font-weight: 600; }
 
 .pe-list, .icons .text ul, .icons .text ul ul, .icons .text ul ol, .icons .text ol, .icons .text ol ol, .icons .text ol ul, .article ul, .article ul ul, .article ul ol, .article ol, .article ol ol, .article ol ul, .block.overview .tagline ul, .block.overview .tagline ul ul, .block.overview .tagline ul ol, .block.overview .tagline ol, .block.overview .tagline ol ol, .block.overview .tagline ol ul, .block.overview .usage_guidelines ul, .block.overview .usage_guidelines ul ul, .block.overview .usage_guidelines ul ol, .block.overview .usage_guidelines ol, .block.overview .usage_guidelines ol ol, .block.overview .usage_guidelines ol ul, .block .two_column .text ul, .block .two_column .text ul ul, .block .two_column .text ul ol, .block .two_column .text ol, .block .two_column .text ol ol, .block .two_column .text ol ul, .block .two_column .content .text-content ul, .block .two_column .content .text-content ul ul, .block .two_column .content .text-content ul ol, .block .two_column .content .text-content ol, .block .two_column .content .text-content ol ol, .block .two_column .content .text-content ol ul, .block.changelog ul, .spec .reqs .req .explanation ul, .side-toc .main-content ul, .side-toc .main-content ol, .contact .table_substitute ul, .status ul, .top-level-content.content-types .main ul, .top-level-content.content-types .main ol {
@@ -6677,83 +6680,83 @@ section.scroll-panel .ds-hidden-anchor {
 .ds-shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
 
-.ds-grid {
+.ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
   box-sizing: border-box;
   display: grid; }
   @media (min-width: 319px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(4, 56px);
       grid-column-gap: 16px; } }
   @media (min-width: 367px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(4, 72px);
       grid-column-gap: 16px; } }
   @media (min-width: 447px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(4, 92px);
       grid-column-gap: 16px; } }
   @media (min-width: 591px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(8, 56px);
       grid-column-gap: 16px; } }
   @media (min-width: 727px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(8, 64px);
       grid-column-gap: 24px; } }
   @media (min-width: 887px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 48px);
       grid-column-gap: 24px; } }
   @media (min-width: 983px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 56px);
       grid-column-gap: 24px; } }
   @media (min-width: 1079px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 64px);
       grid-column-gap: 24px; } }
   @media (min-width: 1175px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 72px);
       grid-column-gap: 24px; } }
 
-.ds-container {
+.ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
   box-sizing: border-box;
   margin: 0 auto; }
   @media (min-width: 319px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 320px;
       padding: 0 16px; } }
   @media (min-width: 367px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 368px;
       padding: 0 16px; } }
   @media (min-width: 447px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 448px;
       padding: 0 16px; } }
   @media (min-width: 591px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 592px;
       padding: 0 16px; } }
   @media (min-width: 727px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 728px;
       padding: 0 24px; } }
   @media (min-width: 887px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 888px;
       padding: 0 24px; } }
   @media (min-width: 983px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 984px;
       padding: 0 24px; } }
   @media (min-width: 1079px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 1080px;
       padding: 0 24px; } }
   @media (min-width: 1175px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 1176px;
       padding: 0 24px; } }
 
@@ -11032,83 +11035,83 @@ section.scroll-panel .ds-hidden-anchor {
 .ds-shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
 
-.ds-grid {
+.ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
   box-sizing: border-box;
   display: grid; }
   @media (min-width: 319px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(4, 56px);
       grid-column-gap: 16px; } }
   @media (min-width: 367px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(4, 72px);
       grid-column-gap: 16px; } }
   @media (min-width: 447px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(4, 92px);
       grid-column-gap: 16px; } }
   @media (min-width: 591px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(8, 56px);
       grid-column-gap: 16px; } }
   @media (min-width: 727px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(8, 64px);
       grid-column-gap: 24px; } }
   @media (min-width: 887px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 48px);
       grid-column-gap: 24px; } }
   @media (min-width: 983px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 56px);
       grid-column-gap: 24px; } }
   @media (min-width: 1079px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 64px);
       grid-column-gap: 24px; } }
   @media (min-width: 1175px) {
-    .ds-grid {
+    .ds-grid, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       grid-template-columns: repeat(12, 72px);
       grid-column-gap: 24px; } }
 
-.ds-container {
+.ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
   box-sizing: border-box;
   margin: 0 auto; }
   @media (min-width: 319px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 320px;
       padding: 0 16px; } }
   @media (min-width: 367px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 368px;
       padding: 0 16px; } }
   @media (min-width: 447px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 448px;
       padding: 0 16px; } }
   @media (min-width: 591px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 592px;
       padding: 0 16px; } }
   @media (min-width: 727px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 728px;
       padding: 0 24px; } }
   @media (min-width: 887px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 888px;
       padding: 0 24px; } }
   @media (min-width: 983px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 984px;
       padding: 0 24px; } }
   @media (min-width: 1079px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 1080px;
       padding: 0 24px; } }
   @media (min-width: 1175px) {
-    .ds-container {
+    .ds-container, .ds .intro, .ds .ds-heading, .ds .ds-text, .ds .ds-images, .ds .ds-dosAndDonts, .ds .tip {
       width: 1176px;
       padding: 0 24px; } }
 
@@ -13858,7 +13861,7 @@ section.scroll-panel .ds-hidden-anchor {
       height: 86px;
       overflow-y: hidden;
       word-wrap: break-word; }
-  .ds-visual-page .ds-screen7 .ds-type-bg .ds-container {
+  .ds-visual-page .ds-screen7 .ds-type-bg .ds-container, .ds-visual-page .ds-screen7 .ds-type-bg .ds .intro, .ds .ds-visual-page .ds-screen7 .ds-type-bg .intro, .ds-visual-page .ds-screen7 .ds-type-bg .ds .ds-heading, .ds .ds-visual-page .ds-screen7 .ds-type-bg .ds-heading, .ds-visual-page .ds-screen7 .ds-type-bg .ds .ds-text, .ds .ds-visual-page .ds-screen7 .ds-type-bg .ds-text, .ds-visual-page .ds-screen7 .ds-type-bg .ds .ds-images, .ds .ds-visual-page .ds-screen7 .ds-type-bg .ds-images, .ds-visual-page .ds-screen7 .ds-type-bg .ds .ds-dosAndDonts, .ds .ds-visual-page .ds-screen7 .ds-type-bg .ds-dosAndDonts, .ds-visual-page .ds-screen7 .ds-type-bg .ds .tip, .ds .ds-visual-page .ds-screen7 .ds-type-bg .tip {
     z-index: 2; }
 
 .ds-visual-page .ds-fontweight-demo div {
@@ -14211,6 +14214,187 @@ section.scroll-panel .ds-hidden-anchor {
 
 .ds-components-page div [class$='--btn_small'], .ds-components-page a [class$='--btn_small'] {
   line-height: 32px !important; }
+
+body {
+  background-color: #FFFFFF !important; }
+
+@media (min-width: 319px) {
+  .ds .intro > * {
+    grid-column-start: 1;
+    grid-column-end: 5; } }
+
+@media (min-width: 591px) {
+  .ds .intro > * {
+    grid-column-start: 1;
+    grid-column-end: 9; } }
+
+@media (min-width: 887px) {
+  .ds .intro > * {
+    grid-column-start: 3;
+    grid-column-end: 11; } }
+
+.ds .intro > h1 {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 38px;
+  margin: 0;
+  padding: 0; }
+
+.ds .intro > div {
+  margin: 16px 0 0 0;
+  padding: 0 0 40px 0;
+  border-bottom: 1px solid #D9D9D9; }
+
+.ds .ds-heading {
+  margin-top: 64px;
+  margin-bottom: 16px; }
+  .ds .ds-heading h2 {
+    margin: 0;
+    padding: 0; }
+    @media (min-width: 319px) {
+      .ds .ds-heading h2 {
+        grid-column-start: 1;
+        grid-column-end: 5; } }
+    @media (min-width: 591px) {
+      .ds .ds-heading h2 {
+        grid-column-start: 1;
+        grid-column-end: 9; } }
+    @media (min-width: 887px) {
+      .ds .ds-heading h2 {
+        grid-column-start: 3;
+        grid-column-end: 11; } }
+
+.ds .ds-text {
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 24px; }
+  @media (min-width: 319px) {
+    .ds .ds-text > * {
+      grid-column-start: 1;
+      grid-column-end: 5; } }
+  @media (min-width: 591px) {
+    .ds .ds-text > * {
+      grid-column-start: 1;
+      grid-column-end: 9; } }
+  @media (min-width: 887px) {
+    .ds .ds-text > * {
+      grid-column-start: 3;
+      grid-column-end: 11; } }
+  .ds .ds-text p, .ds .ds-text h3 {
+    font-size: 18px;
+    line-height: 24px; }
+
+.ds .ds-images {
+  margin-top: 32px;
+  margin-bottom: 32px; }
+  @media (min-width: 319px) {
+    .ds .ds-images .image-grid {
+      grid-column-start: 1;
+      grid-column-end: 5; } }
+  @media (min-width: 591px) {
+    .ds .ds-images .image-grid {
+      grid-column-start: 1;
+      grid-column-end: 9; } }
+  @media (min-width: 887px) {
+    .ds .ds-images .image-grid {
+      grid-column-start: 3;
+      grid-column-end: 11; } }
+  .ds .ds-images .image-grid p {
+    margin: 0;
+    padding: 0; }
+  .ds .ds-images .image-grid p + p {
+    margin-top: 12px; }
+  .ds .ds-images.images-right .image {
+    display: flex;
+    align-items: center; }
+    .ds .ds-images.images-right .image + .image {
+      margin-top: 24px; }
+    .ds .ds-images.images-right .image img {
+      margin-right: 12px; }
+  .ds .ds-images.images-centered .image-grid {
+    margin: 0 -12px; }
+  .ds .ds-images.images-centered .image {
+    display: table;
+    float: left;
+    margin: 0 12px; }
+  .ds .ds-images.images-centered .title, .ds .ds-images.images-centered .caption {
+    display: table-caption;
+    text-align: center; }
+  .ds .ds-images.images-centered .caption {
+    caption-side: bottom; }
+
+.ds .ds-dosAndDonts {
+  margin: 0 auto; }
+  .ds .ds-dosAndDonts .grid {
+    background-image: url("/public/theme_assets/f6_grid.png");
+    background-size: 84px 84px;
+    margin: 24px 0; }
+    @media (min-width: 319px) {
+      .ds .ds-dosAndDonts .grid {
+        grid-column-start: 1;
+        grid-column-end: 5; } }
+    @media (min-width: 591px) {
+      .ds .ds-dosAndDonts .grid {
+        grid-column-start: 1;
+        grid-column-end: 9; } }
+    @media (min-width: 887px) {
+      .ds .ds-dosAndDonts .grid {
+        grid-column-start: 3;
+        grid-column-end: 11; } }
+  .ds .ds-dosAndDonts .card {
+    margin: 32px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); }
+    .ds .ds-dosAndDonts .card::after {
+      display: block;
+      clear: both;
+      content: ""; }
+  .ds .ds-dosAndDonts .dos, .ds .ds-dosAndDonts .donts {
+    display: table-cell;
+    width: 50%; }
+  .ds .ds-dosAndDonts .donts {
+    border-left: 1px solid #E9E9E9; }
+  .ds .ds-dosAndDonts .heading {
+    padding: 24px 32px;
+    border-bottom: 1px solid #E9E9E9; }
+    .ds .ds-dosAndDonts .heading img {
+      vertical-align: middle;
+      margin-right: 8px; }
+  .ds .ds-dosAndDonts .content {
+    padding: 16px 32px 40px;
+    color: #6A7070; }
+    .ds .ds-dosAndDonts .content ul, .ds .ds-dosAndDonts .content ol {
+      line-height: 20px;
+      padding: 0;
+      margin: 0;
+      padding-left: 20px; }
+
+.ds .tip {
+  font-size: 18px;
+  line-height: 24px; }
+  .ds .tip .content {
+    position: relative; }
+    @media (min-width: 319px) {
+      .ds .tip .content {
+        grid-column-start: 1;
+        grid-column-end: 5; } }
+    @media (min-width: 591px) {
+      .ds .tip .content {
+        grid-column-start: 1;
+        grid-column-end: 9; } }
+    @media (min-width: 887px) {
+      .ds .tip .content {
+        grid-column-start: 3;
+        grid-column-end: 11; } }
+  .ds .tip p {
+    font-size: 18px;
+    line-height: 24px; }
+  .ds .tip img {
+    position: absolute;
+    left: -32px;
+    top: 1px; }
 
 html {
   font-size: 0.875rem; }

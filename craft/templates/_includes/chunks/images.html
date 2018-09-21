@@ -1,0 +1,21 @@
+<div class="ds-images images-{{ chunk.layoutType }}">
+  <div class="image-grid">
+    {% for image in chunk.images %}
+      <div class="image">
+        {% switch chunk.layoutType %}
+          {% case "right" %}
+          <img srcset="{{ image.url }} 2x">
+          <div class="text">
+            <div class="title">{{ image.imageTitle }}</div>
+            <div class="caption">{{ image.imageCaption }}</div>
+          </div>
+
+          {% default %}
+          <div class="title">{{ image.imageTitle }}</div>
+          <img srcset="{{ image.url }} 2x">
+          <div class="caption">{{ image.imageCaption }}</div>
+        {% endswitch %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
