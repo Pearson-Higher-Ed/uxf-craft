@@ -17,4 +17,21 @@
   h3 {
     @extend .pe-bold;
   }
+
+  ul.checks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      background: url("/public/theme_assets/do.svg");
+      background-repeat: no-repeat;
+      padding-left: 44px;
+      min-height: 28px;
+    }
+
+    li + li {
+      margin-top: 16px;
+    }
+  }
 }
