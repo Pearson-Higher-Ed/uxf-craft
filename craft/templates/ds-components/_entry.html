@@ -17,9 +17,7 @@
   </div>
 
   {% for chunk in entry.dsComponentContent %}
-    <div class="chunk">
-      {% include '_includes/chunks/' ~ chunk.type %}
-    </div>
+    {% include '_includes/chunks/' ~ chunk.type %}
   {% endfor %}
 </div>
 {% endblock %}
