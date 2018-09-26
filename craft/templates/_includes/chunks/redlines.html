@@ -1,0 +1,15 @@
+{% if loop.first or entry.dsComponentContent[loop.index0-1].type != 'redlines' %}
+<div class="ds-redlines">
+  <div class="redline-container">
+    <div class="heading">Redlines</div>
+{% endif %}
+
+    <div class="explanation">{{ chunk.redlineExplanation }}</div>
+    <div class="spec-image">
+      <img srcset="{{ chunk.redlineImage.first().url }} 2x">
+    </div>
+
+{% if loop.last or entry.dsComponentContent[loop.index0+1].type != 'redlines' %}
+  </div>
+</div>
+{% endif %}
