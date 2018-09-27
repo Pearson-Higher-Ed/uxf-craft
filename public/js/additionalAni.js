@@ -1,9 +1,9 @@
 //additional animation dispatcher
 var additionalAni = function(num) {
     switch(num) {
-        case 3:
-            if ($('.ds-screen3').hasClass('ds-layout')) {
-                layoutScreen3Show();
+        case 2:
+            if ($('.ds-screen2').hasClass('ds-layout')) {
+                layoutScreen2Show();
             }
             break;
         // case 4:

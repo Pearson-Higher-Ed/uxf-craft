@@ -1,14 +1,31 @@
 .ds-main-content {
-    margin-top: 200px;
+    margin-top: 20px;
 }
 
-section.scroll-panel .ds-main-content {
-        margin-top: 280px;
-        opacity: 0.5;
-}
+// section.scroll-panel .ds-main-content {
+//         margin-top: 20px;
+//         opacity: 0.5;
+// }
 
 @for $i from 2 through 15 {
     .ds-screen#{$i} {
+        z-index: 2;
+        .position-absolute {
+            top: 0;
+        }
+    }
+}
+
+.ds-screen1 {
+    background-position: bottom center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    height: 100vh;
+    box-sizing: border-box;
+
+    .position-fixed {
+        top: 30vh;
         z-index: 2;
     }
 }

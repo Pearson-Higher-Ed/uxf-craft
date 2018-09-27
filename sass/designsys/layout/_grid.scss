@@ -1,0 +1,159 @@
+@import "../color-variables";
+@import "../utilities";
+
+.ds-layout-page {
+    .ds-grid-borderL {
+        border-left-width: 1px;
+        border-left-style: solid; 
+    }
+
+    .ds-grid-borderR {
+        border-right-width: 1px;
+        border-right-style: solid;
+    }
+
+    .ds-grid-border {
+        @extend .ds-grid-borderR;
+        @extend .ds-grid-borderL;
+    }
+
+    // .ds-screen3 {
+    //     height: 100vh;
+    //     overflow: hidden;
+    //     .position-absolute {
+    //         top: 0;
+    //     }
+    //     .ds-layout-grid {
+    //         @extend .ds-grid-border;
+    //         border-color: $pe-color-alto;
+    //         height: 0;
+    //     }
+
+    //     .ds-whsp-grid {
+    //         box-sizing: border-box;
+    //         display: grid;
+    //         @mixin colSet($bp, $colSum, $col, $gap) {
+    //             @media(min-width: $bp) {
+    //                 grid-template-columns: repeat($colSum - 1, $col $gap) $col;
+    //             }
+    //         }
+    //         @include colSet(319px, 4, 56px, 16px);
+    //         @include colSet(367px, 4, 72px, 16px);
+    //         @include colSet(447px, 4, 92px, 16px);
+    //         @include colSet(591px, 8, 56px, 16px);
+    //         @include colSet(727px, 8, 64px, 24px);
+    //         @include colSet(887px, 12, 48px, 24px);
+    //         @include colSet(983px, 12, 56px, 24px);
+    //         @include colSet(1079px, 12, 64px, 24px);
+    //         @include colSet(1175px, 12, 72px, 24px); 
+
+    //         .ds-whsp-content { 
+    //             @include colse(5, 20);
+    //             margin: 200px 0 80px 0;
+    //         }
+
+    //         .ds-demo-rect {
+    //             background-color: $pe-color-white-gray;
+    //             border: 1px solid $pe-color-medium-gray;
+    //         }
+
+    //         .ds-whsp-rect {
+    //             height: 376px;
+    //             margin-bottom: 100px;
+    //             &:nth-child(2) {
+    //                 @include colse(5, 11);
+    //             }
+    //             &:nth-child(3) {
+    //                 @include colse(11, 14);
+    //             }
+    //             &:last-child {
+    //                 @include colse(14, 20);
+    //             }
+    //         }
+    //     }
+    // }
+
+    .ds-bp-table {
+        thead th:not(:first-child) {
+            width: 96px;
+        }
+    }
+
+        @mixin spacingDemo($i, $list) {
+            @each $m, $n in $list {
+                div:nth-child(#{$m}) {
+                    width: $n * $i + 0px;
+                    height: $n * $i + 0px;
+                    &::after {
+                        content: '#{$n * $i}';
+                        position: relative;
+                        top: $n * $i + $i + 0px;
+                        left: 0.5 * $n * $i - 0.5 * $i - 1px;
+                    }
+                }
+            }
+        }
+        $spacing8: (1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10);
+        $spacing4: (1: 1, 2: 3, 3: 5, 4: 7, 5: 9);
+        .ds-spacing-demo8 {
+            @include spacingDemo(8, $spacing8);
+        }
+        .ds-spacing-demo4 {
+            @include spacingDemo(4, $spacing4);
+        }
+        .ds-spacing-demo4, .ds-spacing-demo8 {
+            div {
+                background-color: $pe-color-digital-pearson-blue;
+            }
+        }
+
+    .ds-screen6 {
+        figure {
+            margin: 0;
+        }
+    }
+
+    .ds-screen7 {
+        .flex-column {
+            img {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.ds-scale-animation {
+    opacity: 1;
+    transition: opacity 0.8s ease-out;
+}
+
+.ds-scale-animation {
+    animation: scale 0.8s 1;
+    animation-delay: 0.5s;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1, 1);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+        animation-timing-function: ease-out;
+    }
+    100% { 
+        transform: scale(1, 1);
+        animation-timing-function: ease-out;
+    }
+}
+
+#spaceIncrement {
+    background-color:#fff;
+    width:100%;
+    height:100%;
+    display:block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    text-align: center;
+    opacity: 1;
+}

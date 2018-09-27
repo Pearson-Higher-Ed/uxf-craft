@@ -1,15 +1,7 @@
 .ds-visual-page {
     .ds-screen1 {
-        background: url('/public/theme_assets/visual-bg.png') bottom center fixed;
-        background-size: cover;
-        z-index: 1;
+        background-image: url('/public/theme_assets/visual-bg.png');
         padding-top: 53px;
-        height: 100vh;
-        box-sizing: border-box;
-        .position-fixed {
-            top: 15vh;
-            z-index: 2;
-        }
     }
     
     .ds-color-card {

@@ -22,7 +22,8 @@ $(document).ready(function() {
         LevelTwoScenes[m] = new ScrollMagic.Scene({
             triggerElement: screens[m]
         })
-        .addTo(controller);
+        .addTo(controller)
+        .addIndicators();
    }
 
     LevelOneScenes[0].on("enter", function (event) {
@@ -41,7 +42,6 @@ $(document).ready(function() {
 
     LevelTwoScenes[1].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
-            whiteMenu(true);
             coverAnimation();
             $('.ds-sidebar li').removeClass('active');
         } else {
@@ -90,14 +90,14 @@ $(document).ready(function() {
 });
 
 var screenAnimation = function(num) {
-    $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "140px", opacity: 1}, 800, "easeOutSine");
+    $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "0px", opacity: 1}, 800, "easeOutSine");
     activeMenu(num);
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
         followingAni(num, true);
     }
     //check if additional animation is needed
-    let screenwani = [3, 4, 6, 7, 8];
+    let screenwani = [2, 4, 6, 7, 8];
     if (screenwani.includes(num)) {
         console.log('screen additional animation'+num);
         additionalAni(num);
@@ -107,10 +107,8 @@ var screenAnimation = function(num) {
 //change menu and side bar color
 var whiteMenu = function(bol) {
     if (bol) {
-        $(".ds-ultimate-header").addClass('text-white');
         $(".ds-sidebar").addClass('text-white');
     } else {
-        $(".ds-ultimate-header").removeClass('text-white');
         $(".ds-sidebar").removeClass('text-white');
     }
 };
