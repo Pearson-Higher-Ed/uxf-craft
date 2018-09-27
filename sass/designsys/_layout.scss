@@ -16,22 +16,6 @@
         @extend .ds-grid-borderR;
         @extend .ds-grid-borderL;
     }
- 
-    .ds-screen1::after {
-        content: "";
-        background: url('/public/theme_assets/texturepurplemini.png');
-        background-position: center bottom;
-        background-size: cover;
-        background-repeat: no-repeat;
-        opacity: 0.5;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        z-index: -1; 
-    }
 
     .ds-screen1 {
         background-image: linear-gradient(302deg, #895b9a, $ds-dark-purple), linear-gradient(56deg, rgba(242, 229, 241, 0), rgba(242, 229, 241, 0.4));
@@ -264,16 +248,16 @@
         $spacing4: (1: 1, 2: 3, 3: 5, 4: 7, 5: 9);
         .ds-spacing-demo8 {
             @include spacingDemo(8, $spacing8);
-            div {
-                background-color: $ds-purple;
-            }
         }
         .ds-spacing-demo4 {
             @include spacingDemo(4, $spacing4);
+        }
+        .ds-spacing-demo4, .ds-spacing-demo8 {
             div {
-                background-color: $ds-blue;
+                background-color: $pe-color-digital-pearson-blue;
             }
         }
+        
     }
 
     .ds-screen7 {
@@ -313,4 +297,15 @@
         transform: scale(1, 1);
         animation-timing-function: ease-out;
     }
+}
+
+#spaceIncrement {
+    background-color:#fff;
+    width:100%;
+    height:100%;
+    display:block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    text-align: center;
+    opacity: 1;
 }

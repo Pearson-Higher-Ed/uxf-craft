@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="382" viewBox="0 0 180 382">
+<svg xmlns="http://www.w3.org/2000/svg" width="162" height="344" viewBox="0 0 162 344">
   <defs>
     <linearGradient id="navigationsmall00-a" x1="0%" x2="98.038%" y1="37.719%" y2="37.719%">
       <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
@@ -6,25 +6,25 @@
     </linearGradient>
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <g transform="translate(0 105)">
-      <rect width="179" height="276" x=".5" y=".5" fill="#F5F5F5" stroke="#E9E9E9"/>
-      <g transform="translate(10 16)">
-        <rect width="159" height="99" x=".5" y=".5" fill="#FFF" stroke="#D9D9D9" rx="4"/>
-        <rect width="90" height="6" x="35" y="72" fill="#633FC5" rx="3"/>
+    <g transform="translate(0 94.555)">
+      <rect width="161.1" height="248.545" x=".45" y=".45" fill="#EEE" stroke="#E9E9E9" stroke-width=".9"/>
+      <g transform="translate(9 14.408)">
+        <rect width="143.1" height="89.152" x=".45" y=".45" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+        <rect width="81" height="5.403" x="31.5" y="64.838" fill="#047A9C" rx="2.702"/>
       </g>
-      <g transform="translate(10 126)">
-        <rect width="159" height="99" x=".5" y=".5" fill="#FFF" stroke="#D9D9D9" rx="4"/>
-        <rect width="90" height="6" x="35" y="72" fill="#633FC5" rx="3"/>
+      <g transform="translate(9 113.466)">
+        <rect width="143.1" height="89.152" x=".45" y=".45" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+        <rect width="81" height="5.403" x="31.5" y="64.838" fill="#047A9C" rx="2.702"/>
       </g>
     </g>
-    <rect width="179" height="105" x=".5" y=".5" fill="#FFF" stroke="#E9E9E9"/>
-    <ellipse cx="161.25" cy="15.184" fill="#E9E9E9" rx="6.25" ry="6.184"/>
-    <ellipse cx="139.25" cy="15.184" fill="#E9E9E9" rx="6.25" ry="6.184"/>
-    <rect width="151.5" height="17.77" x="14" y="42" fill="#E9E9E9"/>
-    <rect width="49.91" height="6" x="13" y="85" fill="#898989" rx="3"/>
-    <rect width="49.91" height="6" x="72" y="85" fill="#633FC5" rx="3"/>
-    <rect width="44" height="6" x="132" y="85" fill="#898989" rx="3"/>
-    <rect width="40" height="12" x="13" y="10" fill="#E9E9E9"/>
-    <rect width="76" height="33" x="103" y="72" fill="url(#navigationsmall00-a)"/>
+    <rect width="161.1" height="94.555" x=".45" y=".45" fill="#FFF" stroke="#E9E9E9" stroke-width=".9"/>
+    <ellipse cx="145.125" cy="13.674" fill="#E9E9E9" rx="5.625" ry="5.569"/>
+    <ellipse cx="125.325" cy="13.674" fill="#E9E9E9" rx="5.625" ry="5.569"/>
+    <rect width="136.35" height="16.002" x="12.6" y="37.822" fill="#E9E9E9"/>
+    <rect width="44.919" height="5.403" x="11.7" y="76.545" fill="#898989" rx="2.702"/>
+    <rect width="44.919" height="5.403" x="64.8" y="76.545" fill="#047A9C" rx="2.702"/>
+    <rect width="39.6" height="5.403" x="118.8" y="76.545" fill="#898989" rx="2.702"/>
+    <rect width="36" height="10.806" x="11.7" y="9.005" fill="#E9E9E9"/>
+    <rect width="68.4" height="29.717" x="92.7" y="64.838" fill="url(#navigationsmall00-a)"/>
   </g>
 </svg>

@@ -1,10 +1,10 @@
 {% set invisible = invisible | default(false) %}
   
-<div class="ds-ultimate-header position-fixed w-100 text-white{% if invisible %} invisible{% endif %}">
+<div class="ds-ultimate-header position-fixed w-100{% if invisible %} invisible{% endif %}">
     <div class="ds-container">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                {% if not invisible %}<span class="pe-title pe-bold">Design System</span>{% endif %}
+                {% if not invisible %}<img class="" src='/node_modules/@pearson-components/elements-sdk/src/styles/assets/images/PearsonLogo.svg'>{% endif %}
             </div>
     
             {% if not invisible %}

@@ -91,9 +91,7 @@ $(document).ready(function() {
 
 var screenAnimation = function(num) {
     $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "140px", opacity: 1}, 800, "easeOutSine");
-    setTimeout(function(){
-        activeMenu(num);
-    }, 300);
+    activeMenu(num);
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
         followingAni(num, true);
