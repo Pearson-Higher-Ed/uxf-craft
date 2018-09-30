@@ -1,6 +1,6 @@
 .ds-redlines {
   @extend .ds-grid, .ds-container;
-  margin: 0 auto;
+  margin: 42px auto;
 
   .redline-container {
     border: 1px solid $pe-color-alto;
@@ -66,8 +66,8 @@
   }
 
   .spec-image {
-    // @include bps(887px, 6, 11);
     grid-column: 4 / 9;
+    position: relative;
 
     background-image: url("/public/theme_assets/f6_grid.png");
     background-size: 84px 84px;
@@ -77,6 +77,11 @@
     align-items: center;
 
     padding: 16px;
+
+    span {
+      display: inline-block;
+      position: absolute;
+    }
   }
 
   .spec-image + .explanation,

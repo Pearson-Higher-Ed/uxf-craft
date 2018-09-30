@@ -1,15 +1,20 @@
 {% if loop.first or entry.dsComponentContent[loop.index0-1].type != 'redlines' %}
-<div class="ds-redlines">
-  <div class="redline-container">
-    <div class="heading">Redlines</div>
+<div class="chunk">
+  <div class="ds-redlines">
+    <div class="redline-container">
+      <div class="heading">Redlines</div>
 {% endif %}
 
-    <div class="explanation">{{ chunk.redlineExplanation }}</div>
-    <div class="spec-image">
-      <img srcset="{{ chunk.redlineImage.first().url }} 2x">
-    </div>
+      <div class="explanation">{{ chunk.redlineExplanation }}</div>
+      <div class="spec-image">
+        {% set image = chunk.redlineImage.first() %}
+        {% if image %}
+          <img srcset="{{ image.url }} 2x">
+        {% endif %}
+      </div>
 
 {% if loop.last or entry.dsComponentContent[loop.index0+1].type != 'redlines' %}
+    </div>
   </div>
 </div>
 {% endif %}
