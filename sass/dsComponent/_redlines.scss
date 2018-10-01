@@ -18,9 +18,10 @@
   }
 
   .explanation {
-    width: 33.333%;
+    width: 40%;
     float: left;
     clear: both;
+    padding-right: 24px;
 
     h3 {
       @extend .pe-label, .pe-bold;
@@ -54,7 +55,7 @@
   }
 
   .spec-image {
-    width: 66.667%;
+    width: 60%;
     position: relative;
     float: left;
 
