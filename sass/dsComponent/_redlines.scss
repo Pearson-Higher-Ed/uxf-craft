@@ -5,34 +5,26 @@
   .redline-container {
     border: 1px solid $pe-color-alto;
     border-radius: 4px;
-    @extend .ds-grid;
-    @mixin colSet($bp, $colSum, $col, $gap) {
-        @media(min-width: $bp) {
-            grid-template-columns: repeat($colSum, $col);
-            grid-column-gap: $gap;
-        }
-    }
-    @include colSet(1079px, 8, 64px, 24px);
-    @include colSet(1175px, 8, 72px, 24px);
     @include component-main;
-
-    padding: 16px;
-    margin: -16px;
+    padding: 24px 32px;
 
     .heading {
-      margin: 24px 32px;
       padding-bottom: 24px;
+      margin-bottom: 32px;
       border-bottom: 1px solid $pe-color-alto;
-      grid-column: 1 / 9
+
+      @extend .pe-title, .pe-title--small, .pe-bold;
     }
   }
 
   .explanation {
-    // @include bps(887px, 3, 6);
-    grid-column: 1 / 4;
+    width: 33.333%;
+    float: left;
+    clear: both;
 
     h3 {
-      @extend .pe-title, .pe-title--small, .pe-bold;
+      @extend .pe-label, .pe-bold;
+      margin-bottom: 20px;
     }
 
     ol {
@@ -45,17 +37,13 @@
         counter-increment: redline-counter;
 
         &:before {
-          content: counter(redline-counter);
-          color: white;
-          @extend .pe-label;
+          content: counter(redline-counter)".";
+          @extend .pe-label, .pe-bold;
           display: inline-block;
-          text-align: center;
+          text-align: left;
           line-height: 20px;
-          background-color: #E010BD;
-          border-radius: 100px;
           width: 20px;
           height: 20px;
-          margin-right: 8px;
         }
 
         & + li {
@@ -66,8 +54,9 @@
   }
 
   .spec-image {
-    grid-column: 4 / 9;
+    width: 66.667%;
     position: relative;
+    float: left;
 
     background-image: url("/public/theme_assets/f6_grid.png");
     background-size: 84px 84px;
