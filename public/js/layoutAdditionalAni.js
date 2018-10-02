@@ -1,19 +1,14 @@
 //additional animations
-var layoutScreen3Show = function() {
+var layoutScreen2Show = function() {
+
+    // setTimeout(function(){
+    //     for (var m = 1; m < 9; m++) {
+    //         $(".ds-screen2 .ds-layout-grid:nth-child("+ m + ")").animate({height: "70vh"}, 800, "easeOutSine");
+    //     }
+    // }, 500); 
 
     setTimeout(function(){
-        var m, fullHeight = [1, 2, 11, 12];
-        $(".ds-sidebar").removeClass("text-white");
-        fullHeight.forEach(function(h) {
-            $(".ds-screen3 .ds-layout-grid:nth-child("+ h +")").animate({height: "100vh"}, 800, "easeOutSine");
-        });
-        for (m = 3; m <11; m++) {
-            $(".ds-screen3 .ds-layout-grid:nth-child("+ m + ")").animate({height: "70vh"}, 800, "easeOutSine");
-        }
-    }, 500); 
-
-    setTimeout(function(){
-        $(".ds-whsp-rect").animate({height: "258px"}, 800, "easeOutSine");
+        $(".ds-whsp-rect").animate({height: "258px", opacity: '0.5'}, 800, "easeOutSine");
         $('.ds-whsp-rect:nth-child(2)').removeClass('dpr-1');
         $('.ds-whsp-rect:nth-child(2)').css('grid-column-end','10');
         $('.ds-whsp-rect:last-child').removeClass('dpl-1');
@@ -22,18 +17,15 @@ var layoutScreen3Show = function() {
         $('.ds-whsp-rect21').addClass('dmb-1');
         $('.ds-whsp-rect22').removeClass('dmt-1');
         $('.ds-whsp-rect22').addClass('dmt-1');
-    }, 1000);
+    }, 100);
 };
 
 var layoutScreen3Dis = function() {
-    var m, fullHeight = [1, 2, 11, 12];
-    fullHeight.forEach(function(h) {
-        $(".ds-screen3 .ds-layout-grid:nth-child("+ h +")").css('height', '0');
-    });
-    for (m = 3; m <11; m++) {
-        $(".ds-screen3 .ds-layout-grid:nth-child("+ m + ")").css('height', '0');
+    for (var m = 1; m < 9; m++) {
+        $(".ds-screen2 .ds-layout-grid:nth-child("+ m + ")").css('height', '0');
     }
     $(".ds-whsp-rect").css('height', '376px');
+    $(".ds-whsp-rect").css('opacity', '1');
     $('.ds-whsp-rect:nth-child(2)').addClass('dpr-1');
     $('.ds-whsp-rect:nth-child(2)').css('grid-column-end','11');
     $('.ds-whsp-rect:last-child').addClass('dpl-1');
@@ -73,4 +65,11 @@ var followingAdditionlAni = function(num) {
             clearInterval(interval3);
         }
     }, 100);
+};
+
+var playVideo = function(id) {
+    var video = document.getElementById(id);
+    video.muted = true;
+    video.play();
+    setTimeout(function(){ video.pause(); }, 24000);
 };

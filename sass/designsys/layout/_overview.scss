@@ -1,0 +1,122 @@
+@import "../color-variables";
+@import "../utilities";
+
+.ds-layout-page {
+    .ds-grid-borderL {
+        border-left-width: 1px;
+        border-left-style: solid; 
+    }
+
+    .ds-grid-borderR {
+        border-right-width: 1px;
+        border-right-style: solid;
+    }
+
+    .ds-grid-border {
+        @extend .ds-grid-borderR;
+        @extend .ds-grid-borderL;
+    }
+
+    .ds-screen2 {
+        height: 835px !important;
+        %gradientBorderBottom {
+            border-image: linear-gradient(to bottom, $ds-dark-purple, rgba(0, 0, 0, 0)) 1 100%;
+        }
+        %gradientBorderTop {
+            border-image: linear-gradient(to top, $ds-dark-purple, rgba(0, 0, 0, 0)) 1 100%;
+        }
+
+        @mixin topBottom($bol) {
+            @if $bol {
+                @extend %gradientBorderTop;
+            } @else {
+                @extend %gradientBorderBottom;
+            }
+        }
+        @mixin gridBorder($n, $h1, $h2, $bol) {
+            .ds-layout-grid:nth-child(#{$n}) {
+                height: $h1;
+                @include topBottom($bol);
+                @if $h2 {
+                    &>div {
+                        height: $h2;
+                        @include topBottom($bol);
+                    }
+                }
+            }
+        }
+
+        @include gridBorder(1, 40%, false, false);
+        @include gridBorder(2, 80%, 80%, false);
+        @include gridBorder(3, 10%, false, false);
+        @include gridBorder(4, 8%, false, false);
+        @include gridBorder(6, 15%, 80%, true);
+        @include gridBorder(7, 16%, 60%, true);
+        @include gridBorder(8, 20%, 80%, true);
+
+        .ds-layout-grid:nth-child(4) {
+            @include colse(6, 7);
+        }
+
+        .ds-layout-grid:nth-child(5) {
+            border-image: linear-gradient(to bottom, $ds-dark-purple 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, $ds-dark-purple 100%);
+            border-image-slice: 1;
+        .ds-grid-borderR {
+            border-image: linear-gradient(to bottom, $ds-dark-purple 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 90%, $ds-dark-purple 100%);
+            border-image-slice: 1;
+            }
+        }
+
+        .ds-layout-grid:nth-child(9), .ds-layout-grid:nth-child(10) {
+            height: 100%; 
+            border-color: $ds-dark-purple;
+        }
+
+        .ds-layout-grid {
+            @extend .ds-grid-border;
+            border-color: $pe-color-alto;
+            height: 0;
+        }
+
+        .ds-whsp-grid {
+            box-sizing: border-box;
+            display: grid;
+            @mixin colSet($bp, $colSum, $col, $gap) {
+                @media(min-width: $bp) {
+                    grid-template-columns: repeat($colSum - 1, $col $gap) $col;
+                }
+            }
+            @include colSet(319px, 4, 56px, 16px);
+            @include colSet(367px, 4, 72px, 16px);
+            @include colSet(447px, 4, 92px, 16px);
+            @include colSet(591px, 8, 56px, 16px);
+            @include colSet(727px, 8, 64px, 24px);
+            @include colSet(887px, 12, 48px, 24px);
+            @include colSet(983px, 12, 56px, 24px);
+            @include colSet(1079px, 12, 64px, 24px);
+            @include colSet(1175px, 12, 72px, 24px); 
+
+            .ds-whsp-content { 
+                @include colse(5, 20);
+            }
+
+            .ds-demo-rect {
+                background-color: $pe-color-white-gray;
+                border: 1px solid $pe-color-medium-gray;
+            }
+
+            .ds-whsp-rect {
+                height: 376px;
+                &:nth-child(2) {
+                    @include colse(5, 11);
+                }
+                &:nth-child(3) {
+                    @include colse(11, 14);
+                }
+                &:last-child {
+                    @include colse(14, 20);
+                }
+            }
+        }
+    }
+}

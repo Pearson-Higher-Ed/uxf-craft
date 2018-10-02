@@ -1,5 +1,5 @@
 .ds-sidebar {
-  top:10rem;
+  top:120px;
   z-index: 10;
 
   @media (min-width: 1px) {
@@ -78,4 +78,20 @@
       }
   }
 }
+}
+
+.ds-feedback {
+  bottom:10rem;
+  z-index: 10;
+
+  @media (min-width: 1px) {
+    right: 10px; } 
+  @media (min-width: 480px) {
+    right: 20px; } 
+  @media (min-width: 1024px) {
+    right: 40px;
+  }
+  @media (min-width: 1220px) {
+    right: calc(50% - 570px);
+  }
 }

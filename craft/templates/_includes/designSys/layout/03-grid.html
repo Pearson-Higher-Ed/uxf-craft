@@ -1,21 +1,28 @@
-<section class="ds-screen4 bg-white-gray w-100">
-    <a class="ds-hidden-anchor" href="#dsScreen5" id="dsScreen4">dsScreen4</a>
+<section class="ds-screen3 bg-white-gray w-100 ds-layout position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'id': 'dsMenuScreen3' } 
+    %}
     <div class="ds-container ds-grid">
         <div class="ds-main ds-main-content dmb-10">
             {% include '_includes/designSys/shared/levelThree' with 
                 {'name': 'Grids', 
-                'desc': 'A fixed grid is utilized in this design system, it relies on fluid margins to keep content unchanging within each breakpoint range'
+                'desc': 'We use fixed grids which allow margins to be fluid while keeping content unchanged within each breakpoint range.'
             } %}
-            <div class="w-100 dmt-6 dmb-8">
-                <video class='w-100' controls autoplay muted loop>
+            <div class="w-100 dmt-6">
+                <video class='w-100' id='grid-video' controls autoplay muted loop>
                     <source src="/public/theme_assets/Fixed_grid_Fluid_margins_v3.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
     </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'later-anchors', 'id': 'dsScreen4' } 
+    %}
 </section>
-<section class="ds-screen5 bg-white-gray w-100">
-    <a class="ds-hidden-anchor" href="#dsScreen6" id="dsScreen5">dsScreen5</a>
+<section class="ds-screen4 bg-white-gray w-100 ds-layout position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'id': 'dsMenuScreen4' } 
+    %}
     <div class="ds-container ds-grid">
         <div class="ds-main ds-main-content dmb-10">
             {% include '_includes/designSys/shared/levelThree' with 
@@ -23,14 +30,14 @@
                 'desc': 'Breakpoints are the points at which your layout will respond when your design appears on different screen sizes.'
             } %}
             <div class="w-100 dmy-6">
-                <video class='w-100' controls autoplay muted loop>
+                <video class='w-100' id='bp-video' controls autoplay muted loop>
                     <source src="/public/theme_assets/Breakpoints_v2.mp4" type="video/mp4">
                 </video>
             </div>
     {% include '_includes/designSys/atoms/tableAccordion' with 
     {'id': 'small4col', 
                 'btn': 'Small: 4 columns',
-                'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
+                'tablehead': [{'th':'Screen size(pixels)'}, {'th': 'Total width'}, {'th': 'Gutter width'},  {'th':'Column width'}],
                 'tablebody': [
                     {
                         'th': 'Small phone ',
@@ -52,7 +59,7 @@
     {% include '_includes/designSys/atoms/tableAccordion' with 
     {'id': 'med8col', 
             'btn': 'Medium: 8 columns',
-            'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
+            'tablehead': [{'th':'Screen size(pixels)'}, {'th': 'Total width'}, {'th': 'Gutter width'},  {'th':'Column width'}],
             'tablebody': [
                     {
                         'th': 'Small tablet ',
@@ -69,7 +76,7 @@
     {% include '_includes/designSys/atoms/tableAccordion' with 
     {'id': 'lar12col', 
         'btn': 'Large: 12 columns',
-        'tablehead': [{'th':'Screen size'}, {'th': 'Total width'}, {'th': 'Gutter size'},  {'th':'Column size'}],
+        'tablehead': [{'th':'Screen size(pixels)'}, {'th': 'Total width'}, {'th': 'Gutter width'},  {'th':'Column width'}],
         'tablebody': [
                 {
                     'th': 'Large tablet ',
@@ -93,4 +100,7 @@
     %}
         </div>
     </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'later-anchors', 'id': 'dsScreen5' } 
+    %}
 </section>

@@ -1,5 +1,10 @@
-<section class="ds-screen2 bg-white-gray w-100">
-    <a class="ds-hidden-anchor" href="#dsScreen3" id="dsScreen2">dsScreen2</a>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'id': 'dsScreen2' } 
+%}
+<section class="ds-screen2 bg-white w-100 ds-layout position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'id': 'dsMenuScreen2' } 
+    %}
     <div class="ds-container position-relative h-100">
         <div class="ds-grid h-100">
             <div class="ds-layout-grid ds-grid-borderR">
@@ -30,14 +35,31 @@
             <div class="ds-layout-grid ds-grid-border"></div>
             <div class="ds-layout-grid ds-grid-border"></div>
         </div>
-        <div class="ds-grid position-absolute">
-            <div class="ds-main ds-main-content">
+        <div class="ds-whsp-grid position-absolute">
+            <div class="ds-whsp-content ds-main-content dmb-10">
                 {% include '_includes/designSys/shared/levelTwo' with 
                     {   'color': 'text-purple',
                         'name': 'Overview', 
                         'desc': 'The layout of your designs should always be aesthetically pleasing and open. A clean, simple, and spacious layout invites users in and makes it easy for them to take action.'
                 } %}
+                {% include '_includes/designSys/shared/levelThree' with 
+                    {'name': 'Whitespace', 
+                    'desc': 'Let it breathe and keep it simple. Use whitespace to reduce friction and create focus.'
+                } %}
+            </div>
+            <div class="ds-whsp-rect w-100 dpr-1">
+                <div class="ds-demo-rect ds-whsp-rect1 w-100 h-100"></div>
+            </div>
+            <div class="d-flex flex-column w-100 ds-whsp-rect">
+                <div class="ds-demo-rect ds-whsp-rect21 h-100 smb-1"></div>
+                <div class="ds-demo-rect ds-whsp-rect22 h-100 smt-1"></div>
+            </div>
+            <div class="ds-whsp-rect w-100 dpl-1">
+                <div class="ds-demo-rect ds-whsp-rect3 w-100 h-100"></div>
             </div>
         </div>
     </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'later-anchors', 'id': 'dsScreen3' } 
+    %}
 </section>

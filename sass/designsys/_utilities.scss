@@ -50,15 +50,6 @@ $grid-breakpoints: (
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
 
-.accordion-button {
-  background-color: transparent;
-  border: 0;
-}
-
-.font-pd {
-    font-family: 'Playfair Display', serif;
-}
-
 .pe-label--single {
   font-size: 1rem;
   line-height: 1.29rem;
@@ -72,14 +63,6 @@ $grid-breakpoints: (
 .pe-title--small-new {
   font-size: 1.29rem;
   line-height: 1.71rem;
-}
-
-.ds-group-title {
-    font-size: 5rem;
-}
-
-.ds-section-title {
-    font-size: 2.57rem;
 }
 
 .text-purple {
@@ -98,25 +81,9 @@ $grid-breakpoints: (
   min-height: 100vh;
 }
 
-.screen-following-content.single, .section-following-content.single{
-  margin-top: 100px;
-}
-
-.screen-following-content.multi, .section-following-content.multi {
-  .part1, .parst2, .part3 {
-    margin-top: 48px;
-  } 
-}
-
-.ds-hidden-anchor {
+.img-center {
   display: block;
-  height: 0;
-  overflow: hidden;
-  margin-bottom: 53px;
-}
-
-section.scroll-panel .ds-hidden-anchor{
-  margin-bottom: 0;
+  margin: 0 auto; 
 }
 
 .pe-normal {
@@ -125,18 +92,6 @@ section.scroll-panel .ds-hidden-anchor{
 
 .bg-white-gray {
   background-color: $pe-color-white-gray;
-}
-
-.bg-pattern-grid {
-  background-color:#fff;
-  background-image: linear-gradient($pe-color-concrete 1px, transparent 1px),
-  linear-gradient(90deg, $pe-color-concrete 1px, transparent 1px);
-  background-size:10px 10px, 10px 10px;
-  background-position:-2px -2px, -2px -2px;
-}
-
-.ds-shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 
 .ds-grid {

@@ -1,5 +1,7 @@
-<section class="ds-screen1 on-screen position-relative">
-    <a class="ds-hidden-anchor dmb-7 dmt-0" href="#dsScreen2" id="dsScreen1">dsScreen1</a>
+<section class="ds-screen1 on-screen">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'first-anchor', 'id': 'dsScreen1' }
+    %}
     <div class="ds-container h-100">
         <div class="ds-grid h-100">
             <div class="ds-layout-grid d-flex flex-column-reverse">
@@ -44,15 +46,12 @@
         </div>
     </div>
     <div class="ds-container ds-screen-cover">
-        <div class="ds-grid position-fixed h-100">
+        <div class="ds-grid position-fixed">
             <div class="ds-main mx-auto text-center d-flex flex-column justify-content-center flex-align-center">
                 {% include '_includes/designSys/shared/levelOne' with 
-                    {'name': 'Layout', 
-                    'desc': 'The thoughtful arrangement of visuals and words that inspires users to seamlessly interact.'
+                    {'name': 'Layout',
+                    'desc': 'The careful arrangement of content on the screen that makes user actions obvious.'
                 } %}
-            </div>
-            <div class="ds-col-all text-right">
-                <a href="###" class="text-white">Feedback</a>
             </div>
         </div>
     </div>
