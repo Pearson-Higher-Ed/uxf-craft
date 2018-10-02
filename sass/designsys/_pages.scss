@@ -1,5 +1,6 @@
 .ds-main-content {
-    margin-top: 20px;
+    margin-top: 48px;
+    opacity: 0.5;
 }
 
 // section.scroll-panel .ds-main-content {
@@ -29,3 +30,58 @@
         z-index: 2;
     }
 }
+
+.bg-pattern-grid {
+    background-color:#fff;
+    background-image: linear-gradient($pe-color-concrete 1px, transparent 1px),
+    linear-gradient(90deg, $pe-color-concrete 1px, transparent 1px);
+    background-size:10px 10px, 10px 10px;
+    background-position:-2px -2px, -2px -2px;
+  }
+  
+.ds-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.ds-hidden-anchor.later-anchors {
+    position: absolute;
+    bottom: 120px;
+}
+
+.screen-following-content.single, .section-following-content.single{
+    margin-top: 48px;
+}
+  
+.screen-following-content.multi, .section-following-content.multi {
+    .part1, .part2, .part3, .part4 {
+        margin-top: 48px;
+    } 
+}
+
+.ds-hidden-anchor {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.ds-group-title {
+    font-size: 5rem;
+}
+
+.ds-section-title {
+    font-size: 2.29rem;
+    line-height: 2.71rem;
+    margin-top: 104px;
+}
+
+.accordion-button {
+    background-color: transparent;
+    border: 0;
+}
+
+.font-pd {
+    font-family: 'Playfair Display', serif;
+}
+  // section.scroll-panel .ds-hidden-anchor{
+//   margin-bottom: 0;
+// }

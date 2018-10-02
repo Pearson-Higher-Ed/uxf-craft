@@ -37,15 +37,12 @@ $(document).ready(function() {
     LevelTwoScenes[1].on("enter", function (event) {
         clearInterval(inter1);
         whiteMenu(false);
-        screenAnimation(2);
     });
 
     LevelTwoScenes[1].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
             coverAnimation();
-            $('.ds-sidebar li').removeClass('active');
         } else {
-            console.log('clearinterval');
             clearInterval(inter1);
         }
     });
@@ -61,6 +58,8 @@ $(document).ready(function() {
     function transitionAni(num, bol) {
         LevelTwoScenes[num].on("enter", function (event) {
             screenAnimation(num+1);
+            activeMenu(num+1);
+
             if (bol === true) {
                 LevelOneScenes[0].removePin(slides[0]);
             }
@@ -82,8 +81,12 @@ $(document).ready(function() {
             $('.ds-screen-cover').css('opacity', (windowheight/2-controller.scrollPos())/(windowheight/2));
             if (controller.scrollPos() >= (windowheight - 160)) {
                 $(".ds-sidebar").removeClass('text-white');
+                screenAnimation(2);
+                activeMenu(2);
+
             } else {
                 $(".ds-sidebar").addClass('text-white');
+                $('.ds-sidebar li').removeClass('active');
             }
         }, 80);
     }
@@ -91,17 +94,20 @@ $(document).ready(function() {
 
 var screenAnimation = function(num) {
     $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "0px", opacity: 1}, 800, "easeOutSine");
-    activeMenu(num);
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
+        console.log('dsscreen'+num);
         followingAni(num, true);
     }
     //check if additional animation is needed
-    let screenwani = [2, 4, 6, 7, 8];
+    var screenwani = [2, 3, 4, 5, 6, 7];
     if (screenwani.includes(num)) {
         console.log('screen additional animation'+num);
         additionalAni(num);
     }
+    // if (num == 2) {
+    //     additionalAni(num);
+    // }
 };
 
 //change menu and side bar color
@@ -115,7 +121,7 @@ var whiteMenu = function(bol) {
 
 var activeMenu = function(show) {
     $('.ds-sidebar li').removeClass('active');
-    $('a[href="#dsScreen'+show+'"]').parents('li').addClass('active');
+    $('a[href="#dsMenuScreen'+show+'"]').parents('li').addClass('active');
 };
 
 var followingAni = function(screennum, isScreen, sectionnum) {
@@ -125,17 +131,24 @@ var followingAni = function(screennum, isScreen, sectionnum) {
     if ($(prefix + target + 2).length) {
         ani(2);
     }
+    if ($(prefix + target + 3).length) {
+        ani(3);
+    }
 
     function ani(i) {
+        console.log('ani'+i);
         if ($(prefix + target + i).hasClass('single')) {
             setTimeout(function(){
-                $(prefix + target + i).animate({marginTop: "48px"}, 800, "easeOutSine");
+                $(prefix + target + i).animate({marginTop: "0px"}, 800, "easeOutSine");
             }, 300 + (i - 1) * 150);
         } else if ($(prefix + target + i).hasClass('multi')) {
             partAni(1);
             partAni(2);
             if ($(prefix + target + i + " .part3").length) {
                 partAni(3);
+            }
+            if ($(prefix + target + i + " .part4").length) {
+                partAni(4);
             }
         }
         function partAni(m) {

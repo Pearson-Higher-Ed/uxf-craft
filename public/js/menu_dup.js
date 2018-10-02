@@ -2,7 +2,7 @@ $('.ds-sidebar a').click(function() {
     $('.ds-sidebar li').removeClass('active');
     $(this).parents('li').addClass('active');
 
-    var num = parseInt($(this).attr('href').slice(9));
+    var num = parseInt($(this).attr('href').slice(13));
 
     if (num === 1) {
         whiteMenu(true);

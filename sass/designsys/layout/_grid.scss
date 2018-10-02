@@ -75,7 +75,7 @@
 
     .ds-bp-table {
         thead th:not(:first-child) {
-            width: 96px;
+            width: 108px;
         }
     }
 
@@ -106,20 +106,10 @@
                 background-color: $pe-color-digital-pearson-blue;
             }
         }
+}
 
-    .ds-screen6 {
-        figure {
-            margin: 0;
-        }
-    }
-
-    .ds-screen7 {
-        .flex-column {
-            img {
-                opacity: 0;
-            }
-        }
-    }
+.ds-structure-tag1, .ds-structure-tag2 {
+    opacity: 0;
 }
 
 .ds-scale-animation {

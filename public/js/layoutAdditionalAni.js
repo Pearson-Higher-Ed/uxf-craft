@@ -66,3 +66,10 @@ var followingAdditionlAni = function(num) {
         }
     }, 100);
 };
+
+var playVideo = function(id) {
+    var video = document.getElementById(id);
+    video.muted = true;
+    video.play();
+    setTimeout(function(){ video.pause(); }, 24000);
+};
