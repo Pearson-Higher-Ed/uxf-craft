@@ -17,66 +17,56 @@
         @extend .ds-grid-borderL;
     }
 
+    .ds-gray-border {
+       border-color: $pe-color-alto;
+       height: 0; 
+       opacity: 0.7;
+       width: 100%;
+    }
+
     .ds-screen2 {
         height: 835px !important;
         %gradientBorderBottom {
-            border-image: linear-gradient(to bottom, $ds-dark-purple, rgba(0, 0, 0, 0)) 1 100%;
-        }
-        %gradientBorderTop {
-            border-image: linear-gradient(to top, $ds-dark-purple, rgba(0, 0, 0, 0)) 1 100%;
+            border-image: linear-gradient(to bottom, $ds-purple, rgba(0, 0, 0, 0)) 1 100%;
         }
 
-        @mixin topBottom($bol) {
-            @if $bol {
-                @extend %gradientBorderTop;
-            } @else {
-                @extend %gradientBorderBottom;
-            }
-        }
-        @mixin gridBorder($n, $h1, $h2, $bol) {
+        @mixin gridBorder($n, $p, $h1, $h2) {
             .ds-layout-grid:nth-child(#{$n}) {
+                opacity: $p;
                 height: $h1;
-                @include topBottom($bol);
+                @extend %gradientBorderBottom;
                 @if $h2 {
                     &>div {
                         height: $h2;
-                        @include topBottom($bol);
+                        @extend %gradientBorderBottom;
                     }
                 }
             }
         }
 
-        @include gridBorder(1, 40%, false, false);
-        @include gridBorder(2, 80%, 80%, false);
-        @include gridBorder(3, 10%, false, false);
-        @include gridBorder(4, 8%, false, false);
-        @include gridBorder(6, 15%, 80%, true);
-        @include gridBorder(7, 16%, 60%, true);
-        @include gridBorder(8, 20%, 80%, true);
+        @include gridBorder(1, 0.4, 40%, 20%);
+        @include gridBorder(2, 0.6, 70%, 80%);
+        @include gridBorder(11, 0.8, 80%, 90%);
+        @include gridBorder(12, 0.6, 75%, 85%);
 
-        .ds-layout-grid:nth-child(4) {
-            @include colse(6, 7);
-        }
-
-        .ds-layout-grid:nth-child(5) {
-            border-image: linear-gradient(to bottom, $ds-dark-purple 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, $ds-dark-purple 100%);
-            border-image-slice: 1;
-        .ds-grid-borderR {
-            border-image: linear-gradient(to bottom, $ds-dark-purple 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 90%, $ds-dark-purple 100%);
-            border-image-slice: 1;
+        @mixin gridPartBorder($n, $p, $h) {
+            .ds-layout-grid:nth-child(#{$n}) {
+                &>div:first-child {
+                    height: $h;
+                    opacity: $p;
+                    @extend %gradientBorderBottom;
+                }
             }
         }
 
-        .ds-layout-grid:nth-child(9), .ds-layout-grid:nth-child(10) {
-            height: 100%; 
-            border-color: $ds-dark-purple;
-        }
-
-        .ds-layout-grid {
-            @extend .ds-grid-border;
-            border-color: $pe-color-alto;
-            height: 0;
-        }
+        @include gridPartBorder(3, 0.8, 15%);
+        @include gridPartBorder(6, 0.8, 10%);
+        @include gridPartBorder(7, 0.8, 20%);
+        // @include gridBorder(3, 1, 10%, false, false);
+        // @include gridBorder(4, 1, 8%, false, false);
+        // @include gridBorder(6, 15%, 80%, true);
+        // @include gridBorder(7, 16%, 60%, true);
+        // @include gridBorder(8, 20%, 80%, true);
 
         .ds-whsp-grid {
             box-sizing: border-box;

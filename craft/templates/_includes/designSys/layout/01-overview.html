@@ -15,25 +15,39 @@
                 <div class="ds-grid-borderR">
                 </div>
             </div>
-            <div class="ds-layout-grid ds-grid-border"></div>
-            <div class="ds-layout-grid ds-grid-borderR"></div>
+            <div class="ds-layout-grid d-flex flex-column justify-content-between">
+                <div class='ds-grid-border'></div>
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
+            <div class="ds-layout-grid d-flex align-items-end">
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
+            <div class="ds-layout-grid d-flex align-items-end">
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
+            <div class="ds-layout-grid d-flex flex-column justify-content-between">
+                <div class='ds-grid-borderR'></div>
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
             <div class="ds-layout-grid d-flex flex-column justify-content-between">
                 <div class="ds-grid-border"></div>
-                <div class="ds-grid-borderL d-flex flex-column-reverse">
-                    <div class="ds-grid-borderR"></div>
-                </div>
+                <div class='ds-grid-border ds-gray-border'></div>
             </div>
-            <div class="ds-layout-grid ds-grid-borderL align-self-end d-flex flex-column-reverse">
+            <div class="ds-layout-grid d-flex align-items-end">
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
+            <div class="ds-layout-grid d-flex align-items-end">
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
+            <div class="ds-layout-grid d-flex align-items-end">
+                <div class='ds-grid-border ds-gray-border'></div>
+            </div>
+            <div class="ds-layout-grid ds-grid-borderL">
                 <div class="ds-grid-borderR"></div>
             </div>
-            <div class="ds-layout-grid ds-grid-borderL align-self-end d-flex flex-column-reverse">
+            <div class="ds-layout-grid ds-grid-borderL">
                 <div class="ds-grid-borderR"></div>
             </div>
-            <div class="ds-layout-grid ds-grid-borderR align-self-end d-flex flex-column-reverse">
-                <div class="ds-grid-borderL"></div>
-            </div>
-            <div class="ds-layout-grid ds-grid-border"></div>
-            <div class="ds-layout-grid ds-grid-border"></div>
         </div>
         <div class="ds-whsp-grid position-absolute">
             <div class="ds-whsp-content ds-main-content dmb-10">
@@ -61,5 +75,8 @@
     </div>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'later-anchors', 'id': 'dsScreen3' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'menu-anchors', 'id': 'dsMenuScreen3' } 
     %}
 </section>
