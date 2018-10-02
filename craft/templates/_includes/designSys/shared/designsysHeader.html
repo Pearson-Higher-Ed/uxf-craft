@@ -12,7 +12,7 @@
                 <nav class="dmr-6">
                     <ul class="pe-list--unstyled list-inline dmy-0">
                         {% nav page in craft.entries.section('designsysGroups').parent('groups') %}
-                        <li class="pe-label--large list-inline-item dp-2{% if page.title == (entry.title | default('')) %} selected{% endif %}"><a class="nonedec" href="{{ siteUrl }}{{ page.uri }}">{{ page.title }}</a></li>
+                        <li class="pe-label--large list-inline-item dpy-2 dmx-2{% if page.title == (entry.title | default('')) %} selected{% endif %}"><a class="nonedec" href="{{ siteUrl }}{{ page.uri }}">{{ page.title }}</a></li>
                         {% endnav %}
                     </ul>
                 </nav>
