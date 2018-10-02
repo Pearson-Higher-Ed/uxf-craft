@@ -22,8 +22,8 @@ $(document).ready(function() {
         LevelTwoScenes[m] = new ScrollMagic.Scene({
             triggerElement: screens[m]
         })
-        .addTo(controller)
-        .addIndicators();
+        .addTo(controller);
+        //.addIndicators();
    }
 
     LevelOneScenes[0].on("enter", function (event) {
@@ -96,7 +96,6 @@ var screenAnimation = function(num) {
     $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "0px", opacity: 1}, 800, "easeOutSine");
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
-        console.log('dsscreen'+num);
         followingAni(num, true);
     }
     //check if additional animation is needed
@@ -105,9 +104,6 @@ var screenAnimation = function(num) {
         console.log('screen additional animation'+num);
         additionalAni(num);
     }
-    // if (num == 2) {
-    //     additionalAni(num);
-    // }
 };
 
 //change menu and side bar color
