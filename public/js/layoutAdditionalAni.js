@@ -9,6 +9,7 @@ var layoutScreen2Show = function() {
 
     setTimeout(function(){
         $(".ds-whsp-rect").animate({height: "258px", opacity: '0.5'}, 800, "easeOutSine");
+        $(".ds-gray-border").animate({ height: "55%" }, 800, "easeOutSine");
         $('.ds-whsp-rect:nth-child(2)').removeClass('dpr-1');
         $('.ds-whsp-rect:nth-child(2)').css('grid-column-end','10');
         $('.ds-whsp-rect:last-child').removeClass('dpl-1');

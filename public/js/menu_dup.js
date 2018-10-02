@@ -1,4 +1,4 @@
-$('.ds-sidebar a').click(function() {
+$('.ds-sidebar a').click(function(event) {
     $('.ds-sidebar li').removeClass('active');
     $(this).parents('li').addClass('active');
 
@@ -11,6 +11,5 @@ $('.ds-sidebar a').click(function() {
     } else {
         $(".ds-sidebar").removeClass('text-white');
     }
-
-    screenAnimation(num);
+    setTimeout(function(){location.href = '#dsMenuScreen' + num;}, 1000);
 });
