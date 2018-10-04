@@ -5,13 +5,14 @@
       <div class="heading">Redlines</div>
 {% endif %}
 
-      <div class="explanation">{{ chunk.redlineExplanation }}</div>
-      <div class="spec-image">
-        {% set image = chunk.redlineImage.first() %}
-        {% if image %}
+    {% set image = chunk.redlineImage.first() %}
+
+      <div class="explanation{% if not image %} only{% endif %}">{{ chunk.redlineExplanation }}</div>
+      {% if image %}
+        <div class="spec-image">
           <img srcset="{{ image.url }} 2x">
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
 
 {% if loop.last or entry.dsComponentContent[loop.index0+1].type != 'redlines' %}
     </div>
