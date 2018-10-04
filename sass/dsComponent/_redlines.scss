@@ -23,6 +23,11 @@
     clear: both;
     padding-right: 24px;
 
+    &.only {
+      width: 100%;
+      padding-right: 0;
+    }
+
     h3 {
       @extend .pe-label, .pe-bold;
       margin-bottom: 20px;
