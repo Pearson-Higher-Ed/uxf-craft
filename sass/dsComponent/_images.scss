@@ -7,11 +7,11 @@
     @include component-main;
 
     .title {
-      @extend .pe-label, .pe-label--large, .pe-bold;
+      @extend .pe-label,.pe-bold;
     }
 
     .caption, .caption p {
-      @extend .pe-label, .pe-label--large;
+      @extend .pe-label;
     }
 
     p {
@@ -55,7 +55,12 @@
       text-align: center;
     }
 
+    .title {
+      margin-bottom: 12px;
+    }
+
     .caption {
+      margin-top: 8px;
       caption-side: bottom;
     }
   }
