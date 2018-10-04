@@ -9,7 +9,7 @@
 
       <div class="explanation{% if not image %} only{% endif %}">{{ chunk.redlineExplanation }}</div>
       {% if image %}
-        <div class="spec-image">
+        <div class="spec-image bg-image-{{ chunk.imageBackground }}">
           <img srcset="{{ image.url }} 2x">
         </div>
       {% endif %}
