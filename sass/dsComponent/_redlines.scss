@@ -67,6 +67,10 @@
     background-image: url("/public/theme_assets/f6_grid.png");
     background-size: 84px 84px;
 
+    &.bg-image-transparent {
+      background: none;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
