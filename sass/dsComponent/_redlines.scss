@@ -41,13 +41,18 @@
 
       li {
         counter-increment: redline-counter;
+        @extend .pe-label;
+        padding-left: 20px;
+        position: relative;
 
         &:before {
           content: counter(redline-counter)".";
           @extend .pe-label, .pe-bold;
-          display: inline-block;
+
+          position: absolute;
+          left: 0;
+
           text-align: left;
-          line-height: 20px;
           width: 20px;
           height: 20px;
         }
