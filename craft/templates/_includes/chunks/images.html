@@ -5,7 +5,7 @@
         <div class="image">
           {% switch chunk.layoutType %}
             {% case "right" %}
-            <img srcset="{{ image.url }} 2x">
+            <img {% if image.imageBorder %}class="border"{% endif %}srcset="{{ image.url }} 2x">
             <div class="text">
               <div class="title">{{ image.imageTitle }}</div>
               <div class="caption">{{ image.imageCaption }}</div>
@@ -13,7 +13,7 @@
 
             {% default %}
             <div class="title">{{ image.imageTitle }}</div>
-            <img srcset="{{ image.url }} 2x">
+            <img {% if image.imageBorder %}class="border"{% endif %}srcset="{{ image.url }} 2x">
             <div class="caption">{{ image.imageCaption }}</div>
           {% endswitch %}
         </div>
