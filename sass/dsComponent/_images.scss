@@ -22,6 +22,11 @@
     p + p {
       margin-top: 12px;
     }
+
+    img.border {
+      border: 1px solid $pe-color-concrete;
+      border-radius: 2px;
+    }
   }
 
   &.images-right {
