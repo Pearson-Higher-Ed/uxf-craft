@@ -23,6 +23,11 @@
     clear: both;
     padding-right: 24px;
 
+    &.only {
+      width: 100%;
+      padding-right: 0;
+    }
+
     h3 {
       @extend .pe-label, .pe-bold;
       margin-bottom: 20px;
@@ -36,13 +41,18 @@
 
       li {
         counter-increment: redline-counter;
+        @extend .pe-label;
+        padding-left: 20px;
+        position: relative;
 
         &:before {
           content: counter(redline-counter)".";
           @extend .pe-label, .pe-bold;
-          display: inline-block;
+
+          position: absolute;
+          left: 0;
+
           text-align: left;
-          line-height: 20px;
           width: 20px;
           height: 20px;
         }
@@ -61,6 +71,10 @@
 
     background-image: url("/public/theme_assets/f6_grid.png");
     background-size: 84px 84px;
+
+    &.bg-image-transparent {
+      background: none;
+    }
 
     display: flex;
     justify-content: center;
