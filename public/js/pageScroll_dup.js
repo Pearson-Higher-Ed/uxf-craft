@@ -22,8 +22,8 @@ $(document).ready(function() {
         LevelTwoScenes[m] = new ScrollMagic.Scene({
             triggerElement: screens[m]
         })
-        .addTo(controller);
-        //.addIndicators();
+        .addTo(controller)
+        .addIndicators();
    }
 
     LevelOneScenes[0].on("enter", function (event) {

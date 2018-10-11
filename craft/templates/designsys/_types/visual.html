@@ -5,43 +5,72 @@
   {% include '_includes/designSys/shared/designsysSidebar' with
   {
     'mainLevel': [{
-      'href': 'dsScreen1',
+      'href': 'dsMenuScreen2',
       'label': 'Colors',
       'subLevel': [{
-        'href':'dsScreen2',
+        'href':'dsMenuScreen2',
+        'label': 'Best practices'
+      }, {
+        'href':'dsMenuScreen3',
+        'spacing': true,
         'label': 'Global system palette'
       }, {
-        'href':'dsScreen3',
+        'href':'dsMenuScreen4',
         'spacing': true,
         'label': 'Natual palette'
       }, {
-        'href':'dsScreen4',
+        'href':'dsMenuScreen5',
         'spacing': true,
         'label': 'Conditional palette'
       }, {
-        'href':'dsScreen5',
+        'href':'dsMenuScreen6',
         'spacing': true,
         'label': 'Theme palette'
-      }, {
-        'href':'dsScreen6',
-        'spacing': true,
-        'label': 'Color combining'
-      }, {
-        'href':'dsScreen7',
-        'spacing': true,
-        'label': 'Accessibility'
       }]
     }, {
-      'href': 'dsScreen8',
-      'label': 'Typography'
+      'href': 'dsMenuScreen7',
+      'label': 'Typography',
+      'subLevel': [{
+        'href':'dsMenuScreen7',
+        'label': 'Typeface'
+      }, {
+        'href':'dsMenuScreen8',
+        'spacing': true,
+        'label': 'Font styles'
+      }]
     }, {
-      'href': 'dsScreen9',
-      'label': 'Icons'
+      'href': 'dsMenuScreen9',
+      'label': 'Icons',
+      'subLevel': [{
+        'href':'dsMenuScreen9',
+        'label': 'Clarity'
+      }, {
+        'href':'dsMenuScreen10',
+        'spacing': true,
+        'label': 'Styles'
+      }, {
+        'href':'dsMenuScreen11',
+        'spacing': true,
+        'label': 'Hint text'
+      }]
     }, {
-      'href': 'dsScreen10',
-      'label': 'Illustrations'
+      'href': 'dsMenuScreen12',
+      'label': 'Illustrations',
+      'subLevel': [{
+        'href':'dsMenuScreen12',
+        'label': 'Style'
+      }, {
+        'href':'dsMenuScreen13',
+        'spacing': true,
+        'label': 'Types'
+      }, {
+        'href':'dsMenuScreen14',
+        'spacing': true,
+        'label': 'Color'
+      }]
     }]
   } %}
+  {% include '_includes/designSys/shared/designsysFeedback' %}
 {% endblock %}
 
 {% block content %}

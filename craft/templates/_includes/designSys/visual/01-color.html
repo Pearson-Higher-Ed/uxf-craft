@@ -1,59 +1,87 @@
-<div class="ds-screen2 bg-white">
-    <a class="ds-hidden-anchor" href="#dsScreen3" id="dsScreen2">dsScreen2</a>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'id': 'dsScreen2' } 
+%}
+<div class="ds-screen2 bg-white position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'id': 'dsMenuScreen2' } 
+    %}
     <div class="ds-container ds-grid">
         <div class="ds-main ds-main-content">
-            {% include '_includes/designSys/shared/levelTwo' with 
-                {   'color': 'text-darkblue',
-                    'name': 'Color', 
-                    'desc': 'Reflecting the Pearson brand through <b>meaningful</b> color usage.'
-            } %}
+            <h2 class="font-pd ds-section-title smb-5">Colors</h2>
+            <h3 class="pe-title pe-bold dmb-2 dmt-9">Best practices</h3>
             <div class='dmt-5 dmb-6 d-flex'>
-                <div class='dmr-5'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Embellish', 
-                    'desc': 'Use color to add to the meaning or to provide emphasis or contrast to user interface elements.'
-                } %}
-                </div>
                 <img src="/public/theme_assets/colorembellish.svg"/>
-            </div>
-            <div class='dmt-5 dmb-6 d-flex'>
-                <img src="/public/theme_assets/colorvibration.svg"/>
                 <div class='dml-5'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Avoid vibration', 
-                    'desc': 'Using too many colors at once can distract and overload users.'
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {'name': 'Embellish', 
+                    'desc': 'Think of color as an enhancement and not as the primary way to convey meaning. Sighted users benefit by the use of color and contrast to enhance meaning, provide additional emotional impact, or help them feel oriented within consistent color patterns.'
                 } %}
                 </div>
             </div>
             <div class='dmt-5 dmb-6 d-flex'>
-                <div class='dmr-5'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Color, meaning, and accessibility', 
-                    'desc': 'To make sure that blind users or users with low visual acuity can understand the meaning of your designs, think of color as an enhancement and not as the primary way to convey meaning. When you add color, use one of the Pearson color palettes.'
+                <img src="/public/theme_assets/colorlast.svg"/>
+                <div class='dml-5'>
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {'name': 'Add color last', 
+                    'desc': 'Besides button transactions, color should be the last thing added to the experience.'
                 } %}
                 </div>
-                <img src="/public/theme_assets/colormeaning.svg"/>
+            </div>
+            <div class='dmt-5 dmb-6 d-flex'>
+                <img src="/public/theme_assets/colorpalettes.svg"/>
+                <div class='dml-5'>
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {'name': 'Use Pearson palettes', 
+                    'desc': 'Use Pearson color palettes consistently in designs to ensure an overall unifying experience across Pearson products.'
+                } %}
+                </div>
+            </div>
+            <div class='dmt-5 dmb-6 d-flex'>
+                <img src="/public/theme_assets/coloraccessibility.svg"/>
+                <div class='dml-5'>
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {'name': 'Don’t use color for primary meaning', 
+                    'desc': 'Since color benefits only sighted users, it can never be used as the only way to convey meaning.'
+                } %}
+                </div>
+            </div>
+            <div class='dmt-5 dmb-6 d-flex'>
+                <img src="/public/theme_assets/colorvibrate.svg"/>
+                <div class='dml-5'>
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {'name': 'Don’t cause vibration', 
+                    'desc': 'Using too many colors at once can cause designs to appear like they’re vibrating. This can distract and overload users.'
+                } %}
+                </div>
             </div>
         </div>
     </div>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'later-anchors', 'id': 'dsScreen3' } 
+%}
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'menu-anchors', 'id': 'dsMenuScreen3' } 
+%}
 </div>
-<div class="ds-screen3">
+<div class="ds-screen3 position-relative">
     <div class="bg-white">
-        <a class="ds-hidden-anchor" href="#dsScreen4" id="dsScreen3">dsScreen3</a>
         <div class="ds-container ds-grid">
             <div class="ds-main ds-main-content">
                 <div class='dmb-6'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Global system palette', 
-                    'desc': 'Pearson Brand colors are utilized throughout the experience to convey signals and important feedback within the overall experience. They provide sharp contrast to the neutral palette and create brand harmony when used within a course theme color.'
-                } %}
+                    <h3 class="pe-title pe-bold dmb-2 dmt-9">Palettes</h3>
+                    {% include '_includes/designSys/shared/levelFour' with 
+                        {
+                            'topSpacing': true,
+                            'name': 'Global system palette', 
+                            'desc': 'Pearson Brand colors are used throughout the experience to convey signals and important feedback within the overall experience. They provide sharp contrast to the neutral palette and create brand harmony when used within a course theme color.'
+                    } %}
                 </div>
             </div>
         </div>
     </div>
     <div class="bg-white-gray">
         <div class="ds-container ds-grid ds-2rows dpt-6 dpb-2">
-            <div class="ds-left-main dmb-10">
+            <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
                     {'name': 'Pearson Blue', 
                     'color': 'bg-pearson-blue',
@@ -86,16 +114,23 @@
             </div>
         </div>
     </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'later-anchors', 'id': 'dsScreen4' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'menu-anchors', 'id': 'dsMenuScreen4' } 
+    %}
 </div>
-<div class="ds-screen4">
+<div class="ds-screen4 position-relative">
     <div class="bg-white">
-        <a class="ds-hidden-anchor" href="#dsScreen5" id="dsScreen4">dsScreen4</a>
         <div class="ds-container ds-grid">
             <div class="ds-main ds-main-content">
                 <div class='dmb-6'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Neutral palette', 
-                    'desc': 'High contrast tones are typically used for text and hollow button instances when communication is most important. Medium tones are used to create spatial organization and separation within the interface. Super light tones are used for dimension.'
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {
+                        'topSpacing': true,
+                        'name': 'Neutral palette', 
+                        'desc': 'High contrast tones are typically used for text and hollow button instances when communication is most important. Medium tones are used to create spatial organization and separation within the interface. Super light tones are used for dimension.'
                 } %}
                 </div>
             </div>
@@ -104,7 +139,7 @@
     <div class="bg-white-gray">
         <div class='ds-container ds-grid ds-7rows'>
             <div class="ds-main">
-                <h4  class="pe-title pe-bold dmb-3 dmt-6">High contrast tones</h4>
+                <h5  class="pe-title pe-bold dmb-3 dmt-6">High contrast tones</h5>
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
@@ -124,7 +159,7 @@
             </div>
             <div class="ds-main">
                 <hr class='dmb-0 dmt-2'/>
-                <h4  class="pe-title pe-bold dmb-3 dmt-6">Medium tones</h4>
+                <h5  class="pe-title pe-bold dmb-3 dmt-6">Medium tones</h5>
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
@@ -156,7 +191,7 @@
             </div>
             <div class="ds-main">
                 <hr class='dmb-0 dmt-2'/>
-                <h4  class="pe-title pe-bold dmb-3 dmt-6">Super light tones</h4>
+                <h5  class="pe-title pe-bold dmb-3 dmt-6">Super light tones</h5>
             </div>
             <div class="ds-left-main dmb-2">
                 {% include '_includes/designSys/atoms/singleColor' with 
@@ -185,16 +220,23 @@
             </div>
         </div>
     </div>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'later-anchors', 'id': 'dsScreen5' } 
+%}
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'menu-anchors', 'id': 'dsMenuScreen5' } 
+%}
 </div>
-<div class="ds-screen5">
+<div class="ds-screen5 position-relative">
     <div class="bg-white">
-        <a class="ds-hidden-anchor" href="#dsScreen6" id="dsScreen5">dsScreen5</a>
         <div class="ds-container ds-grid">
             <div class="ds-main ds-main-content">
                 <div class='dmb-6'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Conditional', 
-                    'desc': 'High contrast and accessible, reserved for outlined usage only. Correct, Incorrect signals in icons and supporting feedback text inside of content, notifications/badging in super global.'
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {
+                        'topSpacing': true,
+                        'name': 'Conditional', 
+                        'desc': 'High contrast and accessible, reserved for outlined usage only. Correct, Incorrect signals in icons and supporting feedback text inside of content, notifications/badging in super global.'
                 } %}
                 </div>
             </div>
@@ -233,21 +275,28 @@
             <div class="ds-main">
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <img src="/public/theme_assets/colorexample05.png">
-                    <img src="/public/theme_assets/colorexample03.png">
+                    <img src="/public/theme_assets/colorexample03.svg">
                 </div>
             </div>
         </div>
     </div>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'later-anchors', 'id': 'dsScreen6' } 
+%}
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'menu-anchors', 'id': 'dsMenuScreen6' } 
+%}
 </div>
-<div class="ds-screen6">
+<div class="ds-screen6 position-relative">
     <div class="bg-white">
-        <a class="ds-hidden-anchor" href="#dsScreen7" id="dsScreen6">dsScreen6</a>
         <div class="ds-container ds-grid">
             <div class="ds-main ds-main-content">
                 <div class='dmb-6'>
-                {% include '_includes/designSys/shared/levelThree' with 
-                    {'name': 'Theme palette', 
-                    'desc': 'Derived from the Pearson accent palette they were created to be used in conjunction with the global system palette. Consisting of a brilliant set of colors that are used as a scalable solution (as an abstract) for course identification (opposed to a book cover which does not scale). The colors provide energy and visual interest to the (simple) student experience. Themes afford the student a personalization option.'
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {
+                        'topSpacing': true,
+                        'name': 'Theme palette', 
+                        'desc': 'Derived from the Pearson accent palette they were created to be used in conjunction with the global system palette. Consisting of a brilliant set of colors that are used as a scalable solution (as an abstract) for course identification (opposed to a book cover which does not scale). The colors provide energy and visual interest to the (simple) student experience. Themes afford the student a personalization option.'
                 } %}
                 </div>
             </div>
@@ -329,4 +378,10 @@
             </div>
         </div>
     </div>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'later-anchors', 'id': 'dsScreen7' } 
+%}
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'menu-anchors', 'id': 'dsMenuScreen7' } 
+%}
 </div>
