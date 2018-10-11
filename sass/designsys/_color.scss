@@ -1,7 +1,6 @@
 .ds-visual-page {
     .ds-screen1 {
         background-image: url('/public/theme_assets/visual-bg.png');
-        padding-top: 53px;
     }
     
     .ds-color-card {
@@ -49,7 +48,12 @@
         white-gray: #F5F5F5,
         alert-red: #DB0020,
         confirm-green: #038238,
-        notification-pink: #DA0474
+        notification-pink: #DA0474,
+        rose: #EDC0F2,
+        pear: #ABDC3B,
+        aqua: #76D5D4,
+        seagrass: #D3EAE4,
+        canary: #F5C54C
     );
     @each $colorName, $color in $singlecolors {
         .bg-#{$colorName} {
@@ -138,6 +142,16 @@
                 font-size: 6rem;
                 line-height: 7rem;
             }
+        }
+    }
+    .ds-illustration-stroke {
+        hr {
+            width: calc(100% - 204px);
+            height: 1.5px;
+            color: $pe-color-medium-gray;
+        }
+        p {
+            line-height: 30px;
         }
     }
 }

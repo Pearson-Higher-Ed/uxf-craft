@@ -1,2 +1,2 @@
-<h2 class="font-pd ds-section-title smb-5">{{ name }}</h2>
+<h2 class="font-pd ds-section-title smb-5{% if textcolor is defined  %} {{textcolor}}{% endif %}">{{ name }}</h2>
 <p class="pe-label--large dmb-0{% if textcolor is defined  %} {{textcolor}}{% endif %}">{{ desc | raw }}</p>

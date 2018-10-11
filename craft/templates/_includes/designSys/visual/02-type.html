@@ -1,5 +1,4 @@
-<div class="ds-screen7 ds-visual">
-    <a class="ds-hidden-anchor" href="#dsScreen8" id="dsScreen7">dsScreen7</a>
+<div class="ds-screen7 ds-visual position-relative">
     <div class='ds-type-bg dpb-10 position-relative'>
         <div class='smt-9 position-absolute mx-auto'>
             <p class='xl-title pe-bold text-white text-center dmy-0'>HhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
@@ -12,11 +11,12 @@
         </div>
         <div class='ds-container ds-grid'>
             <div class='ds-main ds-main-content'>
-                {% include '_includes/designSys/shared/levelTwo' with 
-                    {   'color': 'text-white',
-                        'name': 'Typography', 
+                <h2 class="font-pd ds-section-title smb-5 text-white">Typography</h2>
+                {% include '_includes/designSys/shared/levelThree' with 
+                    {
+                        'name': 'Typeface', 
                         'textcolor': 'text-white',
-                        'desc': 'Following the Pearson global brand guidelines, our experience utilizes the sans serif font Open Sans. It provides a wide range of weights and maintains clarity at small screen sizes.'
+                        'desc': 'We use the Open Sans font for product designs. One of two Pearson’s global brand fonts, Open Sans provides a wide range of weights and maintains clarity at small screen sizes.<br><b>Note:</b> We do not use the other Pearson global brand font, Playfair, because it loses its integrity at small screen sizes'
                 } %}
                 <div class='ds-fontweight-demo dmt-5 d-flex justify-content-center'>
                     <div class='dpy-2 dpx-5 dmr-3'>
@@ -31,9 +31,14 @@
             </div>
         </div>
     </div>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'later-anchors', 'id': 'dsScreen8' } 
+%}
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'menu-anchors', 'id': 'dsMenuScreen8' } 
+%}
 </div>
-<div class='ds-screen8 dmb-10 ds-visual'>
-    <a class="ds-hidden-anchor" href="#dsScreen9" id="dsScreen8">dsScreen8</a>
+<div class='ds-screen8 ds-visual position-relative'>
     <div class='bg-white'>
         <div class='ds-container ds-grid'>
             <div class='ds-main ds-main-content'>
@@ -73,7 +78,11 @@
                     'tablebody': [
                         {
                             'class': 'pe-label--large',
-                            'td': '16px / 20px'
+                            'td': 'Single-Line | 16px / 20px'
+                        },
+                        {
+                            'class': 'pe-label--large',
+                            'td': 'Multi-Line | 16px / 24px'
                         },
                         {
                             'class': 'pe-label--single',
@@ -95,7 +104,17 @@
                         }]
                     } 
                 %}
+                <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
+                    <img src="/public/theme_assets/colorexample06.svg">
+                    <img src="/public/theme_assets/colorexample07.svg">
+                </div>
             </div>
         </div>
     </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'later-anchors', 'id': 'dsScreen9' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'menu-anchors', 'id': 'dsMenuScreen9' } 
+    %}
 </div>
