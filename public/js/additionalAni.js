@@ -17,17 +17,11 @@ var additionalAni = function(num) {
             }
             break;
         case 5:
-            // if ($('.ds-screen7').hasClass('ds-visual')) {
-            //     $(".ds-sidebar").removeClass('text-white');
-            // }
             if ($('.ds-screen5').hasClass('ds-layout')) {
                 followingAdditionlAni(5);
             }
             break;
         case 6:
-            // if ($('.ds-screen7').hasClass('ds-visual')) {
-            //     $(".ds-sidebar").addClass('text-white');
-            // }
             if ($('.ds-screen6').hasClass('ds-layout')) {
                 followingAdditionlAni(6);
             }
