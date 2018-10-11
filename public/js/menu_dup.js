@@ -4,12 +4,27 @@ $('.ds-sidebar a').click(function(event) {
 
     var num = parseInt($(this).attr('href').slice(13));
 
-    if (num === 1) {
-        whiteMenu(true);
-    } else if ($('.ds-screen' + num).has('.ds-type-bg').length) {
-        $(".ds-sidebar").addClass('text-white');
-    } else {
-        $(".ds-sidebar").removeClass('text-white');
+    switch(num) {
+        case 1:
+            whiteMenu(true);
+            break;
+        case 6:
+            if ($('.ds-screen6').hasClass('ds-visual')) {
+                whiteMenu(false);
+            }
+            break;
+        case 7:
+            if ($('.ds-screen7').hasClass('ds-visual')) {
+                whiteMenu(true);
+            }
+            break;
+        case 8:
+            if ($('.ds-screen8').hasClass('ds-visual')) {
+                whiteMenu(false);
+            }
+            break;
+        default:
+            return false;
     }
     setTimeout(function(){location.href = '#dsMenuScreen' + num;}, 1000);
 });

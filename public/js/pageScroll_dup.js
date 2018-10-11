@@ -22,8 +22,8 @@ $(document).ready(function() {
         LevelTwoScenes[m] = new ScrollMagic.Scene({
             triggerElement: screens[m]
         })
-        .addTo(controller)
-        .addIndicators();
+        .addTo(controller);
+        //.addIndicators();
    }
 
     LevelOneScenes[0].on("enter", function (event) {
@@ -99,9 +99,8 @@ var screenAnimation = function(num) {
         followingAni(num, true);
     }
     //check if additional animation is needed
-    var screenwani = [2, 3, 4, 5, 6, 7];
+    var screenwani = [2, 3, 4, 5, 6, 7, 8];
     if (screenwani.includes(num)) {
-        console.log('screen additional animation'+num);
         additionalAni(num);
     }
 };
@@ -118,6 +117,28 @@ var whiteMenu = function(bol) {
 var activeMenu = function(show) {
     $('.ds-sidebar li').removeClass('active');
     $('a[href="#dsMenuScreen'+show+'"]').parents('li').addClass('active');
+    switch(show) {
+        case 1:
+            whiteMenu(true);
+            break;
+        case 6:
+            if ($('.ds-screen6').hasClass('ds-visual')) {
+                whiteMenu(false);
+            }
+            break;
+        case 7:
+            if ($('.ds-screen7').hasClass('ds-visual')) {
+                whiteMenu(true);
+            }
+            break;
+        case 8:
+            if ($('.ds-screen8').hasClass('ds-visual')) {
+                whiteMenu(false);
+            }
+            break;
+        default:
+            return false;
+    }
 };
 
 var followingAni = function(screennum, isScreen, sectionnum) {
