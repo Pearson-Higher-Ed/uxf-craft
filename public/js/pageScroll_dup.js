@@ -93,7 +93,7 @@ $(document).ready(function() {
 });
 
 var screenAnimation = function(num) {
-    $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "0px", opacity: 1}, 800, "easeOutSine");
+    $(".ds-screen" + num + " .ds-main-content").animate({paddingTop: "0px", opacity: 1}, 800, "easeOutSine");
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
         followingAni(num, true);

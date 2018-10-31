@@ -1,13 +1,27 @@
 <div class="ds-screen9 bg-white position-relative">
     <div class='ds-container ds-grid'>
         <div class='ds-main ds-main-content'>
-            <h2 class="font-pd ds-section-title smb-5">Icons</h2>
-            {% include '_includes/designSys/shared/levelThree' with 
+            {% include '_includes/designSys/shared/levelTwo' with 
                 {
-                    'name': 'Clarity',
-                    'desc': 'Our family of icons should be clear and recognizable, designed with intent. They relay functionality and help users make choices. Balance is important as overuse of icons can increase cognitive load for users. Icons are meant for meaningful actions and states; never to be used as decoration.'
+                    'name': 'Icons',
+                    'desc': 'Our family of icons visually communicate core parts of our product. They can also convey available actions and act as wayfinding tools to help students and professors more easily understand where they are in the product.'
             } %}
             <img class="dmt-6 dmb-10" src="/public/theme_assets/iconclarity.svg">
+            {% include '_includes/designSys/shared/levelThree' with 
+                {
+                    'name': 'Icon considerations',
+                    'desc': 'Although icons can boost usability, they can also harm the user experience if they’re overused or if they’re just not clear.<br/><br/>Consider the following best-practices when using icons:'
+            } %}
+            <div class='dpt-3 dpb-10'>
+            {% include '_includes/designSys/atoms/practices' with 
+                    {
+                    'practices': 
+                    [{'text': 'Keep icons simple'}, 
+                    {'text': 'Use icons consistently'}, 
+                    {'text': 'Use whitespace around icons'},  
+                    {'text': 'Communicate with icons'}] 
+                } %}
+            </div>
         </div>
     </div>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
