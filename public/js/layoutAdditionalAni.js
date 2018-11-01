@@ -68,9 +68,19 @@ var followingAdditionlAni = function(num) {
     }, 100);
 };
 
-var playVideo = function(id) {
-    var video = document.getElementById(id);
-    video.muted = true;
-    video.play();
-    setTimeout(function(){ video.pause(); }, 24000);
+// var playVideo = function(id) {
+//     var video = document.getElementById(id);
+//     video.muted = true;
+//     video.play();
+//     setTimeout(function(){ video.pause(); }, 24000);
+// };
+
+var layoutScreen5 = function() {
+    setTimeout(SRanimation.play(), 600);
+    var siani = setInterval(function() {
+        if ($('.section-following-content.single.level3').css('margin-top') == '0px') {
+            SIanimation.play();
+            clearInterval(sinai);
+        }
+    }, 100);
 };

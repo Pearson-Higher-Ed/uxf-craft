@@ -99,7 +99,7 @@ var screenAnimation = function(num) {
         followingAni(num, true);
     }
     //check if additional animation is needed
-    var screenwani = [2, 3, 4, 5, 6, 7, 8];
+    var screenwani = [2, 3, 4, 5, 6, 7, 8, 10, 11, 14];
     if (screenwani.includes(num)) {
         additionalAni(num);
     }
