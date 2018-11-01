@@ -1,4 +1,4 @@
 {
 	"buttons": ["format","bold","italic","lists","link","horizontalrule"],
-	"plugins": ["fullscreen", "table"]
+	"plugins": ["source", "fullscreen", "table"]
 }
