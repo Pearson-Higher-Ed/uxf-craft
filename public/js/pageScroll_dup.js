@@ -93,13 +93,13 @@ $(document).ready(function() {
 });
 
 var screenAnimation = function(num) {
-    $(".ds-screen" + num + " .ds-main-content").animate({marginTop: "0px", opacity: 1}, 800, "easeOutSine");
+    $(".ds-screen" + num + " .ds-main-content").animate({paddingTop: "0px", opacity: 1}, 800, "easeOutSine");
 
     if ($(".ds-screen" + num).has(".screen-following-content").length) {
         followingAni(num, true);
     }
     //check if additional animation is needed
-    var screenwani = [2, 3, 4, 5, 6, 7, 8];
+    var screenwani = [2, 3, 4, 5, 6, 7, 8, 10, 11, 14];
     if (screenwani.includes(num)) {
         additionalAni(num);
     }
