@@ -1,19 +1,5 @@
-var SRanimation = bodymovin.loadAnimation({
-  container: document.getElementById('spacingRedlines'),
-  renderer: 'svg',
-  loop: false,
-  autoplay: false,
-  path: '/public/data/spacingRedlines.json'
-});
-
-var SIanimation = bodymovin.loadAnimation({
-    container: document.getElementById('spaceIncrement'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: '/public/data/spaceIncrement.json'
-});
-
+var SRanimation = createLottie('spacingRedlines');
+var SIanimation = createLottie('spaceIncrement');
 var CDD00animation = createLottie('colorDoDont00');
 var CDD01animation = createLottie('colorDoDont01');
 var CDD02animation = createLottie('colorDoDont02');
