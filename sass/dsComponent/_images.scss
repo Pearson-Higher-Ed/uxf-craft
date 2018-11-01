@@ -69,4 +69,29 @@
       caption-side: bottom;
     }
   }
+
+  &.images-leftAligned {
+    .image-grid {
+      margin: 0 -12px;
+    }
+
+    .image {
+      display: table;
+      float: left;
+      margin: 0 12px;
+    }
+
+    .title, .caption {
+      display: table-caption;
+    }
+
+    .title {
+      margin-bottom: 12px;
+    }
+
+    .caption {
+      margin-top: 8px;
+      caption-side: bottom;
+    }
+  }
 }
