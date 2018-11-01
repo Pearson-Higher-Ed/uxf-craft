@@ -8,6 +8,10 @@
 {% endblock %}
 
 {% block content %}
+<script type="text/javascript">
+  var iconFiles = {}
+</script>
+
 <div class="ds">
   <div class="intro">
     <h1>{{ entry.title }}</h1>
@@ -16,8 +20,167 @@
     </div>
   </div>
 
+  {% set icons = [] %}
   {% for chunk in entry.dsComponentContent %}
     {% include '_includes/chunks/' ~ chunk.type %}
+    {% if chunk.type == 'icon' %}
+      {% set icons = icons | merge([chunk]) %}
+    {% endif %}
   {% endfor %}
+
+  {% set iconsByCategory = icons | iconsGroupByCategory %}
+  <div class="chunk">
+    <div class="ds-icons">
+      <div class="icons">
+        {% for category, icons in iconsByCategory %}
+          <h3>{{ category }}</h3>
+          {% for icon in icons %}
+            <div class="icon">
+              <img src="{{ icon.iconAssets[0].url }}" alt="">
+              <p>{{ icon.iconName }}</p>
+
+              <template>
+                <div class="icon-detail">
+                  <button type="button" class="pe-icon--btn close">
+                    <svg role="img"
+                         aria-labelledby="r2"
+                         focusable="false"
+                         class="pe-icon--remove-sm-18">
+                      <title id="r2">Close dialog</title>
+                      <use xlink:href="#remove-sm-18"></use>
+                    </svg>
+                  </button>
+                  <h3>{{ icon.iconName }}</h3>
+                  <div class="description">
+                    {{ icon.iconDescription }}
+                  </div>
+
+                  <div class="illustrations">
+                    <div class="sizes">
+                      {% for size in icon.iconAssets %}
+                        <div class="size">
+                          <img src="{{ size.url }}" alt="">
+                          <span>{{ size.iconSize }} px</span>
+                        </div>
+                      {% endfor %}
+                    </div>
+
+                    <div class="hint-box">
+                      <img src="{{icon.iconAssets[0].url }}" alt="">
+                      <div class="hint">{{ icon.suggestedHintText }}</div>
+                    </div>
+                  </div>
+
+                  <div class="download">
+                    <script type="text/javascript">
+                      {
+                        var files = [
+                          {% for asset in icon.iconAssets %}
+                            ["{{ asset.title }}", "{{ asset.url }}"],
+                          {% endfor %}
+                        ]
+                        iconFiles["{{ icon.iconName }}"] = files
+                      }
+                    </script>
+                    <button type="button" name="download" data-iconName="{{ icon.iconName }}" class="download-btn">Download</button>
+                  </div>
+                </div>
+
+                <script type="text/javascript">
+                  var img = document.querySelector('.icon-detail .hint-box img')
+                  var svgUrl = img.src
+
+                  fetch(svgUrl)
+                    .then(function(res) {
+                      return res.text()
+                    })
+                    .then(function(text) {
+                      var parser = new DOMParser()
+                      var xmlDoc = parser.parseFromString(text, "text/xml")
+                      var svg = xmlDoc.getElementsByTagName('svg')[0]
+
+                      svg.removeAttribute('xmlns:a');
+
+                      // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+                      // if(!svg.getAttribute('viewBox') && svg.getAttribute('height') && svg.getAttribute('width')) {
+                      //     svg.setAttribute('viewBox', '0 0 ' + svg.getAttribute('height') + ' ' + svg.getAttribute('width'))
+                      // }
+
+                      // Replace image with new SVG
+                      img.parentNode.replaceChild(svg, img);
+                    })
+                </script>
+              </template>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript">
+var downloadAll = function(files) {
+  if (files.length === 0) return
+
+  var file = files.pop()
+  var anchor = document.createElement('a')
+  anchor.setAttribute('href', file[1])
+  anchor.setAttribute('download', file[0])
+  document.body.appendChild(anchor)
+
+  anchor.click()
+  anchor.remove()
+
+  downloadAll(files)
+}
+
+var removeAllDetails = function() {
+  document.querySelectorAll('.icon-detail').forEach(function(el){
+    el.remove()
+  })
+  document.querySelectorAll('.icon.selected').forEach(function(el) {
+    el.classList.remove('selected')
+  })
+}
+
+var showThisDetail = function(el) {
+  el.classList.add('selected')
+  var rowWidth = document
+    .querySelector('.icons')
+    .getBoundingClientRect()
+    .width
+  var iconWidth = el.getBoundingClientRect().width +
+                  (parseInt(window.getComputedStyle(el).marginLeft) * 2)
+
+  var numIcons = el.parentNode.children
+  var iconsPerRow = Math.floor(rowWidth / iconWidth)
+  var thisIndex = Array.from(el.parentNode.children).indexOf(el)
+
+  var targetRow = Math.floor(thisIndex / iconsPerRow) + 1 // 1 indexed
+  var naiveTargetIndex = targetRow * iconsPerRow
+  var targetIndex = naiveTargetIndex > numIcons ? numIcons : naiveTargetIndex
+
+  var icons = el.parentNode
+  var detail = document.importNode(el.querySelector('template').content, true)
+  icons.insertBefore(detail, icons.children[targetIndex + 1])
+
+  document
+    .querySelector('.icon-detail .close')
+    .addEventListener('click', removeAllDetails)
+
+  document
+    .querySelector('button.download-btn')
+    .addEventListener('click', function(e) {
+      downloadAll(iconFiles[this.dataset.iconname])
+    })
+}
+
+document.querySelectorAll('.icon').forEach(function(ic) {
+  ic.addEventListener('click', function(e) {
+    removeAllDetails()
+    showThisDetail(ic)
+  })
+})
+</script>
 {% endblock %}

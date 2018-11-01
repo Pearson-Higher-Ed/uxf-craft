@@ -1,0 +1,190 @@
+.ds-icons {
+  @extend .ds-grid, .ds-container;
+  margin: 0 auto;
+
+  > * {
+    @include component-main;
+  }
+
+  .icons {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  h3 {
+    margin: 0 12px;
+  }
+
+  .icon {
+    width: 104px;
+    height: 104px;
+    border: 1px solid $pe-color-moonlight;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.1s ease-in;
+    float: left;
+    margin: 12px;
+
+    img {
+      margin-top: 24px;
+    }
+
+    p {
+      margin-bottom: 24px;
+      @extend .pe-label;
+      color: $pe-color-medium-gray;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    &.selected {
+      background-color: $pe-color-white-gray;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top: 10px solid $pe-color-white-gray;
+        position: absolute;
+        bottom: -20px;
+        left: calc(50% - 10px);
+      }
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border: 12px solid transparent;
+        border-top: 12px solid $pe-color-moonlight;
+        position: absolute;
+        bottom: -24px;
+        left: calc(50% - 12px);
+      }
+    }
+  }
+
+  .icon-detail {
+    background-color: $pe-color-white-gray;
+    width: 100%;
+    position: relative;
+    margin: 12px 12px 12px 12px;
+    float: left;
+
+    overflow: hidden; // hack to fix parent/child collapsing margins
+
+    & > button {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      cursor: pointer;
+
+      svg {
+        color: $pe-color-medium-gray;
+      }
+    }
+
+    h3 {
+      margin-top: 24px;
+      margin-left: 32px;
+      @extend .pe-label, .pe-label--large, .pe-bold;
+    }
+
+    .description {
+      margin-top: 10px;
+      margin-left: 32px;
+      @extend .pe-copy;
+    }
+
+    .illustrations {
+      display: flex;
+
+      .hint-box {
+        width: 240px;
+        height: 80px;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-left: 1px solid $pe-color-concrete;
+
+        svg path {
+          fill: #047A9C;
+        }
+
+        .hint {
+          padding: 6px 24px;
+          background-color: $pe-color-charcoal;
+          border-radius: 4px;
+          color: $pe-color-white;
+          display: inline-block;
+          position: relative;
+          @extend .pe-label, .pe-label--small, .pe-bold;
+
+          &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-bottom: 6px solid $pe-color-charcoal;
+            position: absolute;
+            top: -12px;
+            left: calc(50% - 6px);
+          }
+        }
+      }
+
+      .sizes {
+        display: flex;
+        align-items: center;
+        margin-left: 32px;
+        width: calc(100% - 240px - 32px);
+
+        .size {
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-left: 8px;
+          }
+
+          & + .size {
+            margin-left: 24px;
+          }
+        }
+      }
+    }
+
+    .download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      margin-bottom: 24px;
+
+      & > button {
+        width: 128px;
+        height: 32px;
+        border: 1px solid $pe-color-medium-gray;
+        color: $pe-color-medium-gray;
+        @extend .pe-label;
+        background: transparent;
+        border-radius: 32px;
+
+        &:hover {
+          border-color: $pe-color-charcoal;
+          color: $pe-color-charcoal;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
