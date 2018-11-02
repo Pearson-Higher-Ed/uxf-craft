@@ -1,4 +1,6 @@
-//additional animations
+var SRanimation = createLottie('spacingRedlines');
+var SIanimation = createLottie('spaceIncrement');
+
 var layoutScreen2Show = function() {
 
     // setTimeout(function(){
@@ -80,7 +82,7 @@ var layoutScreen5 = function() {
     var siani = setInterval(function() {
         if ($('.section-following-content.single.level3').css('margin-top') == '0px') {
             SIanimation.play();
-            clearInterval(sinai);
+            clearInterval(siani);
         }
     }, 100);
 };
