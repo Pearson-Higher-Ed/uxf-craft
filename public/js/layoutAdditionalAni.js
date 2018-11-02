@@ -1,4 +1,6 @@
-//additional animations
+var SRanimation = createLottie('spacingRedlines');
+var SIanimation = createLottie('spaceIncrement');
+
 var layoutScreen2Show = function() {
 
     // setTimeout(function(){

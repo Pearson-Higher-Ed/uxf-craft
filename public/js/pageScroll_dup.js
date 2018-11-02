@@ -15,6 +15,7 @@ $(document).ready(function() {
            triggerElement: slides[i]
        })
        .setPin(slides[i])
+       .duration(10)
        .addTo(controller);
    }
 
