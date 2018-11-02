@@ -26,5 +26,5 @@ $('.ds-sidebar a').click(function(event) {
         default:
             return false;
     }
-    //setTimeout(function(){location.href = '#dsMenuScreen' + num;}, 1000);
+    setTimeout(function(){location.href = '#dsMenuScreen' + num;}, 1000);
 });
