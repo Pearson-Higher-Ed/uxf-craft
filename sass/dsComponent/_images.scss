@@ -72,14 +72,39 @@
   }
 
   &.images-leftAligned {
-    .image-grid {
-      margin: 0 -12px;
+    &.minimal-spacing {
+      .image-grid {
+        margin: 0 -12px;
+      }
+
+      .image {
+        margin: 0 12px;
+      }
+    }
+
+    &.medium-spacing {
+      .image-grid {
+        margin: 0 -16px;
+      }
+
+      .image {
+        margin: 0 16px;
+      }
+    }
+
+    &.large-spacing {
+      .image-grid {
+        margin: 0 -40px;
+      }
+
+      .image {
+        margin: 0 40px;
+      }
     }
 
     .image {
       display: table;
       float: left;
-      margin: 0 12px;
     }
 
     .title, .caption {
@@ -87,11 +112,12 @@
     }
 
     .title {
-      margin-bottom: 12px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      caption-side: bottom;
     }
 
     .caption {
-      margin-top: 8px;
       caption-side: bottom;
     }
   }
