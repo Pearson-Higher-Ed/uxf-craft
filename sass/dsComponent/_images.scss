@@ -7,11 +7,12 @@
     @include component-main;
 
     .title {
-      @extend .pe-label,.pe-bold;
+      @extend .pe-label;
     }
 
     .caption, .caption p {
       @extend .pe-label;
+      color: $pe-color-medium-gray;
     }
 
     p {
