@@ -1,0 +1,96 @@
+<div class="ds-screen9 bg-white position-relative">
+    <div class='ds-container ds-grid'>
+        <div class='ds-main ds-main-content'>
+            {% include '_includes/designSys/shared/levelTwo' with 
+                {
+                    'name': 'Icons',
+                    'desc': 'Our family of icons visually communicate core parts of our product. They can also convey available actions and act as wayfinding tools to help students and professors more easily understand where they are in the product.'
+            } %}
+            <img class="dmt-6" src="/public/theme_assets/iconclarity.svg">
+            {% include '_includes/designSys/shared/levelThree' with 
+                {
+                    'name': 'Icon considerations',
+                    'desc': 'Although icons can boost usability, they can also harm the user experience if they’re overused or if they’re just not clear.<br/><br/>Consider the following best-practices when using icons:'
+            } %}
+            <div class='dpt-3 dpb-10'>
+            {% include '_includes/designSys/atoms/practices' with 
+                    {
+                    'practices': 
+                    [{'text': 'Keep icons simple'}, 
+                    {'text': 'Use icons consistently'}, 
+                    {'text': 'Use whitespace around icons'},  
+                    {'text': 'Communicate with icons'}] 
+                } %}
+            </div>
+        </div>
+    </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'later-anchors', 'id': 'dsScreen10' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'menu-anchors', 'id': 'dsMenuScreen10' } 
+    %}
+</div>
+<div class="ds-screen10 ds-visual position-relative">
+    <div class='bg-white-gray'>
+        <div class='ds-container ds-grid'>
+            <div class='ds-main ds-main-content'>
+                <h3 class="pe-title pe-bold dmb-2 dmt-9">Styles</h3>
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {
+                        'topSpacing': true,
+                        'name': 'Filled',
+                        'desc': 'Filled icons are <b>only</b> used for the global header. The weight of this style compliments the Pearson logo and together they create a nice anchor at the top of our pages.'
+                } %}
+                <img class="dmt-6" src="/public/theme_assets/styleheader.svg">
+                {% include '_includes/designSys/shared/levelFour' with 
+                    {
+                        'topSpacing': true,
+                        'name': 'Outline',
+                        'desc': 'Hollow icons appear lighter. They were created for use primarily in the content area or toolbars where more than one exists.'
+                } %}
+                <img class="dmt-6 dmb-10" src="/public/theme_assets/styleoutline.svg">
+            </div>
+        </div>
+    </div>
+    <div class='bg-white'>
+        <div class='ds-container ds-grid'>
+            <div class='ds-main ds-main-content'>
+                <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
+                    <div id="icons00"></div>
+                    <div class='dmt-2' id="icons01"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'later-anchors', 'id': 'dsScreen11' } 
+%}
+{% include '_includes/designSys/atoms/hiddenAchor' with 
+{ 'class': 'menu-anchors', 'id': 'dsMenuScreen11' } 
+%}
+</div>
+<div class="ds-screen11 bg-white ds-visual position-relative">
+    <div class='ds-container ds-grid'>
+        <div class='ds-main ds-main-content'>
+            {% include '_includes/designSys/shared/levelThree' with 
+                {
+                    'name': 'Hint text',
+                    'desc': 'Even though our icons are highly recognizable, we go a step further to ensure clarity by incorporating a hint on hover. Every icon has a hover state with a label that informs the user of the action they are going to take. The label can appear above or below the icon depending on the interface layout.'
+            } %}
+            <div class='d-flex justify-content-center dmy-6'>
+                <img class='dmr-7' src="/public/theme_assets/hinttextbottom.svg">
+                <img src="/public/theme_assets/hinttexttop.svg">
+            </div>
+            <div class="bg-pattern-grid sp-7 dmt-6">
+                <div id="hintText"></div>
+            </div>
+        </div>
+    </div>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'later-anchors', 'id': 'dsScreen12' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    { 'class': 'menu-anchors', 'id': 'dsMenuScreen12' } 
+    %}
+</div>
