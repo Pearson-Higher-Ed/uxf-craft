@@ -89,7 +89,9 @@
   }
 
   .spec-image + .explanation,
-  .spec-image + .explanation + .spec-image {
+  .spec-image + .explanation + .spec-image
+  .explanation.only + .explanation,
+  .explanation.only + .explanation + .spec-image {
     margin-top: 40px;
   }
 }
