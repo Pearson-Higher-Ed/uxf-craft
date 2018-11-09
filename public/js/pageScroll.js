@@ -34,7 +34,7 @@ $(document).ready(function() {
             triggerElement: transitsScreen[m]
         })
         .setTween(tweensScreen[m])
-        .duration(36)
+        .duration(70)
         .addTo(controller)
         .addIndicators({name: "transition"+m});
    }
@@ -47,7 +47,7 @@ $(document).ready(function() {
             triggerElement: transitsSection[x]
         })
         .setTween(tweensSection[x])
-        .duration(36)
+        .duration(70)
         .addTo(controller)
         .addIndicators({name: "section transition"+x});
     }
