@@ -35,8 +35,8 @@ $(document).ready(function() {
         })
         .setTween(tweensScreen[m])
         .duration(36)
-        .addTo(controller);
-        //.addIndicators({name: "transition"+m});
+        .addTo(controller)
+        .addIndicators({name: "transition"+m});
    }
 
    for  (var x = 0; x < transitsSection.length; x++) {
@@ -48,16 +48,16 @@ $(document).ready(function() {
         })
         .setTween(tweensSection[x])
         .duration(36)
-        .addTo(controller);
-        //.addIndicators({name: "section transition"+x});
+        .addTo(controller)
+        .addIndicators({name: "section transition"+x});
     }
 
    for (var n = 0; n < animations.length; n++) {
         animationsScenes[n] = new ScrollMagic.Scene({
             triggerElement: animations[n]
         })
-        .addTo(controller);
-        //.addIndicators({name: "animation scene"+n});
+        .addTo(controller)
+        .addIndicators({name: "animation scene"+n});
     }
 
     slidesScenes[0].on("enter", function (event) {
