@@ -1,5 +1,5 @@
 {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'id': 'dsScreen2' } 
+    { 'class': 'ds-animation-trigger' } 
 %}
 <section class="ds-screen2 bg-white w-100 ds-layout position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="ds-whsp-grid position-absolute">
-            <div class="ds-whsp-content ds-main-content dmb-10">
+            <div class="ds-whsp-content ds-transition-content dmb-10" id='overviewContent'>
                 {% include '_includes/designSys/shared/levelTwo' with 
                     {   'color': 'text-purple',
                         'name': 'Overview', 
@@ -74,9 +74,6 @@
         </div>
     </div>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'later-anchors', 'id': 'dsScreen3' } 
-    %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'menu-anchors', 'id': 'dsMenuScreen3' } 
+        { 'class': 'ds-menu-anchor', 'id': 'dsMenuScreen3' } 
     %}
 </section>
