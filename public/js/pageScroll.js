@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 
     for  (var m = 0; m < transitsScreen.length; m++) {
-        tweensScreen[m]= TweenMax.to('#dsTransitScreen'+m, 1, {paddingTop:"0", opacity: 1, ease: Power3.easeOut});
+        tweensScreen[m]= TweenMax.to('#dsTransitScreen'+m, 1, {paddingTop:"0", opacity: 1, ease: Power4.easeOut});
 
         transitsScrScenes[m] = new ScrollMagic.Scene({
             triggerElement: transitsScreen[m]
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
    for  (var x = 0; x < transitsSection.length; x++) {
 
-        tweensSection[x]= TweenMax.to('#dsTransitSection'+x, 1, {paddingTop:"0", opacity: 1, ease: Power3.easeOut});
+        tweensSection[x]= TweenMax.to('#dsTransitSection'+x, 1, {paddingTop:"0", opacity: 1, ease: Power4.easeOut});
 
         transitsSecScenes[x] = new ScrollMagic.Scene({
             triggerElement: transitsSection[x]
@@ -76,14 +76,9 @@ $(document).ready(function() {
     animationsScenes[0].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
             coverAnimation();
-            squaresBig();
         } else {
             clearInterval(inter1);
         }
-    });
-
-    animationsScenes[0].on("enter", function (event) {
-        squaresSmall();
     });
     
     animationsScenes[1].on("enter", function (event) {
@@ -138,6 +133,7 @@ $(document).ready(function() {
 
             if (controller.scrollPos() >= (windowheight - 160)) {
                 $("#overviewContent").css({"padding-top": "0", "opacity": "1"});
+                squaresSmall();
                 whiteMenu(false);
                 activeMenu(2);
             } else {
