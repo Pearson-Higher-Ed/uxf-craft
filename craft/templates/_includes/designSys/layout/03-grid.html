@@ -1,6 +1,9 @@
 <section class="ds-screen3 bg-white-gray w-100 ds-layout position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class="ds-container ds-grid">
-        <div class="ds-main ds-main-content dmb-10">
+        <div class="ds-main ds-transition-content dmb-10" id='dsTransitScreen0'>
             {% include '_includes/designSys/shared/levelThree' with 
                 {'name': 'Grids', 
                 'desc': 'We use fixed grids which allow margins to be fluid while keeping content unchanged within each breakpoint range.'
@@ -13,15 +16,15 @@
         </div>
     </div>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'later-anchors', 'id': 'dsScreen4' } 
-    %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'menu-anchors', 'id': 'dsMenuScreen4' } 
+        { 'class': 'ds-menu-anchor', 'id': 'dsMenuScreen4' } 
     %}
 </section>
 <section class="ds-screen4 bg-white-gray w-100 ds-layout position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class="ds-container ds-grid">
-        <div class="ds-main ds-main-content dmb-10">
+        <div class="ds-main ds-transition-content dmb-10" id='dsTransitScreen1'>
             {% include '_includes/designSys/shared/levelThree' with 
                 {'name': 'Breakpoints', 
                 'desc': 'Breakpoints are the points at which your layout will respond when your design appears on different screen sizes.'
@@ -98,9 +101,6 @@
         </div>
     </div>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'later-anchors', 'id': 'dsScreen5' } 
-    %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'menu-anchors', 'id': 'dsMenuScreen5' } 
+        { 'class': 'ds-menu-anchor', 'id': 'dsMenuScreen5' } 
     %}
 </section>

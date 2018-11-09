@@ -1,14 +1,23 @@
+//cover animation
+$(document).ready(function() {  
+    var fillTheGrid = function(timeInter, numArray) {
+        setTimeout(function() {
+            $.each(numArray, function(index, item){
+                $('.ds-screen1 .ds-grid-fill'+item).addClass('ds-grid-opacity'+item);
+            });
+        }, timeInter);
+    };
+
+    fillTheGrid(200, [2, 8, 10, 12]);
+    fillTheGrid(400, [4, 6]);
+    fillTheGrid(600, [1, 3, 5, 7]);
+    fillTheGrid(800, [9, 11]);
+});
+
 var SRanimation = createLottie('spacingRedlines');
 var SIanimation = createLottie('spaceIncrement');
 
-var layoutScreen2Show = function() {
-
-    // setTimeout(function(){
-    //     for (var m = 1; m < 9; m++) {
-    //         $(".ds-screen2 .ds-layout-grid:nth-child("+ m + ")").animate({height: "70vh"}, 800, "easeOutSine");
-    //     }
-    // }, 500); 
-
+var squaresSmall = function() {
     setTimeout(function(){
         $(".ds-whsp-rect").animate({height: "258px", opacity: '0.5'}, 800, "easeOutSine");
         $(".ds-gray-border").animate({ height: "55%" }, 800, "easeOutSine");
@@ -23,7 +32,7 @@ var layoutScreen2Show = function() {
     }, 100);
 };
 
-var layoutScreen3Dis = function() {
+var squaresBig = function() {
     for (var m = 1; m < 9; m++) {
         $(".ds-screen2 .ds-layout-grid:nth-child("+ m + ")").css('height', '0');
     }
@@ -37,52 +46,4 @@ var layoutScreen3Dis = function() {
     $('.ds-whsp-rect21').removeClass('dmb-1');
     $('.ds-whsp-rect22').addClass('dmt-1');
     $('.ds-whsp-rect22').removeClass('dmt-1');
-};
-
-var followingAdditionlAni = function(num) {
-    var sections = [];
-    var n = num.toString();
-    for (var i = 1; i < 4; i ++) {
-        if ($("#dsSection" + n + i).length) {
-            sections[i-1] = $("#dsSection" + n + i).offset().top - 700;
-        }
-    }
-    
-    var interval1 = setInterval(function() {
-        if ( sections[0] <= $('html, body').scrollTop()) {
-            followingAni(num, false, 1);
-            clearInterval(interval1); 
-        }
-    }, 100);
-
-    var interval2 = setInterval(function() {
-        if ( sections[1] <= $('html, body').scrollTop() && $('html, body').scrollTop() < sections[2]) {
-            followingAni(num, false, 2); 
-            clearInterval(interval2);
-        }
-    }, 100);
-
-    var interval3 = setInterval(function() {
-        if ( sections[2] <= $('html, body').scrollTop()) {
-            followingAni(num, false, 3); 
-            clearInterval(interval3);
-        }
-    }, 100);
-};
-
-// var playVideo = function(id) {
-//     var video = document.getElementById(id);
-//     video.muted = true;
-//     video.play();
-//     setTimeout(function(){ video.pause(); }, 24000);
-// };
-
-var layoutScreen5 = function() {
-    setTimeout(SRanimation.play(), 600);
-    var siani = setInterval(function() {
-        if ($('.section-following-content.single.level3').css('margin-top') == '0px') {
-            SIanimation.play();
-            clearInterval(siani);
-        }
-    }, 100);
 };

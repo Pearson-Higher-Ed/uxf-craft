@@ -1,75 +1,129 @@
+var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+        triggerHook: 'onLeave'
+    }
+});
+var slides  = $('section.scroll-panel');
+var transitsScreen = $('a[class*="ds-transition-screen"]');
+var transitsSection = $('a[class*="ds-transition-section"]');
+var animations = $('.ds-animation-trigger');
+
+var slidesScenes = [];
+var transitsScrScenes = [];
+var transitsSecScenes = [];
+var animationsScenes = [];
+
+var tweensScreen = [];
+var tweensSection = [];
+var inter1;
+
 $(document).ready(function() {
-   var controller = new ScrollMagic.Controller({
-       globalSceneOptions: {
-           triggerHook: 'onLeave'
-       }
-   });
-   var slides  = $('section.scroll-panel');
-   var screens = $('a[id^="dsScreen"]');
-   var LevelOneScenes = [];
-   var LevelTwoScenes = [];
-   var inter1;
-   
    for (var i = 0; i < slides.length; i++) {
-        LevelOneScenes[i] = new ScrollMagic.Scene({
+        slidesScenes[i] = new ScrollMagic.Scene({
            triggerElement: slides[i]
        })
-       .setPin(slides[i])
-       .duration(10)
        .addTo(controller);
+       //.addIndicators({name: "slides scene"+i});
    }
 
-   for  (var m = 1; m < screens.length; m++) {
-        LevelTwoScenes[m] = new ScrollMagic.Scene({
-            triggerElement: screens[m]
+
+    for  (var m = 0; m < transitsScreen.length; m++) {
+        tweensScreen[m]= TweenMax.to('#dsTransitScreen'+m, 1, {paddingTop:"0", opacity: 1, ease: Power3.easeOut});
+
+        transitsScrScenes[m] = new ScrollMagic.Scene({
+            triggerElement: transitsScreen[m]
+        })
+        .setTween(tweensScreen[m])
+        .duration(36)
+        .addTo(controller);
+        //.addIndicators({name: "transition"+m});
+   }
+
+   for  (var x = 0; x < transitsSection.length; x++) {
+
+        tweensSection[x]= TweenMax.to('#dsTransitSection'+x, 1, {paddingTop:"0", opacity: 1, ease: Power3.easeOut});
+
+        transitsSecScenes[x] = new ScrollMagic.Scene({
+            triggerElement: transitsSection[x]
+        })
+        .setTween(tweensSection[x])
+        .duration(36)
+        .addTo(controller);
+        //.addIndicators({name: "section transition"+x});
+    }
+
+   for (var n = 0; n < animations.length; n++) {
+        animationsScenes[n] = new ScrollMagic.Scene({
+            triggerElement: animations[n]
         })
         .addTo(controller);
-        //.addIndicators();
-   }
+        //.addIndicators({name: "animation scene"+n});
+    }
 
-    LevelOneScenes[0].on("enter", function (event) {
+    slidesScenes[0].on("enter", function (event) {
         coverAnimation();
     });
 
-    LevelOneScenes[1].on("enter", function (event) {
-        LevelOneScenes[1].remove();
-    });
-
-    LevelTwoScenes[1].on("enter", function (event) {
+    slidesScenes[1].on("enter", function (event) {
         clearInterval(inter1);
-        whiteMenu(false);
     });
 
-    LevelTwoScenes[1].on("leave", function (event) {
+
+    transitsSecScenes[0].on("enter", function (event) {
+        clearInterval(inter1);
+    });
+
+    animationsScenes[0].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
             coverAnimation();
+            squaresBig();
         } else {
             clearInterval(inter1);
         }
     });
 
-    for  (var n = 2; n < screens.length; n++) {
-        if (n === screens.length - 1) {
-            transitionAni(n, true);
+    animationsScenes[0].on("enter", function (event) {
+        squaresSmall();
+    });
+    
+    animationsScenes[1].on("enter", function (event) {
+        SRanimation.play();
+    });
+    
+    animationsScenes[2].on("enter", function (event) {
+        SIanimation.play();
+    });
+    
+    animationsScenes[3].on("enter", function (event) {
+        setTimeout(function(){
+            $('.ds-structure-tag1').addClass('ds-scale-animation');
+        }, 100);
+        setTimeout(function(){
+            $('.ds-structure-tag2').addClass('ds-scale-animation');
+        }, 400);
+    });
+
+    for  (var y = 0; y < transitsScrScenes.length; y++) {
+        if (y === transitsScrScenes.length - 1) {
+            transitionAni(y, true);
         } else {
-            transitionAni(n, false);
+            transitionAni(y);
         }
     }
 
     function transitionAni(num, bol) {
-        LevelTwoScenes[num].on("enter", function (event) {
-            screenAnimation(num+1);
-            activeMenu(num+1);
+        transitsScrScenes[num].on("enter", function (event) {
+            activeMenu(num+3);
 
             if (bol === true) {
-                LevelOneScenes[0].removePin(slides[0]);
+                slidesScenes[0].removePin(slides[0]);
             }
         });
-        LevelTwoScenes[num].on("leave", function (event) {
+        transitsScrScenes[num].on("leave", function (event) {
             if (event.target.controller().info('scrollDirection') === 'REVERSE') {
-                activeMenu(num);
+                activeMenu(num+2);
                 if (bol === true) {
-                    LevelOneScenes[0].setPin(slides[0]);
+                    slidesScenes[0].setPin(slides[0]);
                 }
             }
         });
@@ -79,34 +133,23 @@ $(document).ready(function() {
         var windowheight = $(window).height();
     
         inter1 = setInterval(function(){
-            $('.ds-screen-cover').css('opacity', (windowheight/2-controller.scrollPos())/(windowheight/2));
-            if (controller.scrollPos() >= (windowheight - 160)) {
-                $(".ds-sidebar").removeClass('text-white');
-                screenAnimation(2);
-                activeMenu(2);
 
+            $('.ds-screen-cover').css('opacity', (windowheight/2-controller.scrollPos())/(windowheight/2));
+
+            if (controller.scrollPos() >= (windowheight - 160)) {
+                $("#overviewContent").css({"padding-top": "0", "opacity": "1"});
+                whiteMenu(false);
+                activeMenu(2);
             } else {
+                $("#overviewContent").css({"padding-top": "48px", "opacity": "0.5"});
                 $(".ds-sidebar").addClass('text-white');
-                $('.ds-sidebar li').removeClass('active');
+                $('.ds-sidebar li').removeClass('active');  
             }
         }, 80);
-    }
+    }  
 });
 
-var screenAnimation = function(num) {
-    $(".ds-screen" + num + " .ds-main-content").animate({paddingTop: "0px", opacity: 1}, 800, "easeOutSine");
-
-    if ($(".ds-screen" + num).has(".screen-following-content").length) {
-        followingAni(num, true);
-    }
-    //check if additional animation is needed
-    var screenwani = [2, 3, 4, 5, 6, 7, 8, 10, 11, 14];
-    if (screenwani.includes(num)) {
-        additionalAni(num);
-    }
-};
-
-//change menu and side bar color
+//change side bar color
 var whiteMenu = function(bol) {
     if (bol) {
         $(".ds-sidebar").addClass('text-white');
@@ -139,40 +182,5 @@ var activeMenu = function(show) {
             break;
         default:
             return false;
-    }
-};
-
-var followingAni = function(screennum, isScreen, sectionnum) {
-    var prefix = isScreen ? '.ds-screen'+ screennum : '.ds-screen'+ screennum + ' .ds-section' + sectionnum;
-    var target = isScreen ? ' .screen-following-content.level' : ' .section-following-content.level';
-    ani(1);
-    if ($(prefix + target + 2).length) {
-        ani(2);
-    }
-    if ($(prefix + target + 3).length) {
-        ani(3);
-    }
-
-    function ani(i) {
-        console.log('ani'+i);
-        if ($(prefix + target + i).hasClass('single')) {
-            setTimeout(function(){
-                $(prefix + target + i).animate({marginTop: "0px"}, 800, "easeOutSine");
-            }, 300 + (i - 1) * 150);
-        } else if ($(prefix + target + i).hasClass('multi')) {
-            partAni(1);
-            partAni(2);
-            if ($(prefix + target + i + " .part3").length) {
-                partAni(3);
-            }
-            if ($(prefix + target + i + " .part4").length) {
-                partAni(4);
-            }
-        }
-        function partAni(m) {
-            setTimeout(function(){
-                $(prefix + target + i + " .part" + m).animate({marginTop: "0px"}, 500, "easeOutSine");
-            }, 300 + (m - 1) * 100 + (i - 1) * 150);
-        }
     }
 };
