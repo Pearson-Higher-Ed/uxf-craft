@@ -7,11 +7,12 @@
     @include component-main;
 
     .title {
-      @extend .pe-label,.pe-bold;
+      @extend .pe-label;
     }
 
     .caption, .caption p {
       @extend .pe-label;
+      color: $pe-color-medium-gray;
     }
 
     p {
@@ -66,6 +67,57 @@
 
     .caption {
       margin-top: 8px;
+      caption-side: bottom;
+    }
+  }
+
+  &.images-leftAligned {
+    &.minimal-spacing {
+      .image-grid {
+        margin: 0 -12px;
+      }
+
+      .image {
+        margin: 0 12px;
+      }
+    }
+
+    &.medium-spacing {
+      .image-grid {
+        margin: 0 -16px;
+      }
+
+      .image {
+        margin: 0 16px;
+      }
+    }
+
+    &.large-spacing {
+      .image-grid {
+        margin: 0 -40px;
+      }
+
+      .image {
+        margin: 0 40px;
+      }
+    }
+
+    .image {
+      display: table;
+      float: left;
+    }
+
+    .title, .caption {
+      display: table-caption;
+    }
+
+    .title {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      caption-side: bottom;
+    }
+
+    .caption {
       caption-side: bottom;
     }
   }

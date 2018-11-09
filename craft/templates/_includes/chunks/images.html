@@ -1,5 +1,5 @@
 <div class="chunk">
-  <div class="ds-images images-{{ chunk.layoutType }}">
+  <div class="ds-images images-{{ chunk.layoutType }} {{chunk.layoutSpacing}}-spacing">
     <div class="image-grid">
       {% for image in chunk.images %}
         <div class="image">
@@ -10,6 +10,11 @@
               <div class="title">{{ image.imageTitle }}</div>
               <div class="caption">{{ image.imageCaption }}</div>
             </div>
+
+            {% case "leftAligned" %}
+            <img {% if image.imageBorder %}class="border"{% endif %}srcset="{{ image.url }} 2x">
+            <div class="title">{{ image.imageTitle }}</div>
+            <div class="caption">{{ image.imageCaption }}</div>
 
             {% default %}
             <div class="title">{{ image.imageTitle }}</div>
