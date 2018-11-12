@@ -74,6 +74,11 @@
     bottom: 53px;
 }
 
+.ds-hidden-anchor.ds-first-trigger {
+    position: absolute;
+    top: -54px;
+}
+
 .ds-hidden-anchor {
     display: block;
     height: 0;
