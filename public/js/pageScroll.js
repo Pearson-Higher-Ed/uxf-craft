@@ -68,9 +68,15 @@ $(document).ready(function() {
         clearInterval(inter1);
     });
 
-
     transitsSecScenes[0].on("enter", function (event) {
         clearInterval(inter1);
+    });
+
+    animationsScenes[0].on("enter", function (event) {
+        $("#overviewContent").css({"padding-top": "0", "opacity": "1"});
+        squaresSmall();
+        whiteMenu(false);
+        activeMenu(2);
     });
 
     animationsScenes[0].on("leave", function (event) {

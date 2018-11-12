@@ -1,9 +1,9 @@
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-animation-trigger' } 
-%}
 <section class="ds-screen2 bg-white w-100 ds-layout position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'id': 'dsMenuScreen2' } 
+        { 'class': 'ds-animation-trigger ds-first-trigger' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'name': 'dsMenuScreen2' } 
     %}
     <div class="ds-container position-relative h-100">
         <div class="ds-grid h-100">
@@ -74,6 +74,6 @@
         </div>
     </div>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'id': 'dsMenuScreen3' } 
+        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen3' } 
     %}
 </section>
