@@ -76,6 +76,10 @@
       background: none;
     }
 
+    &.bg-image-gray {
+      background-color: $pe-color-white-gray;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
