@@ -1,17 +1,13 @@
 {% block content %}
 {% include '_includes/designSys/shared/designsysHeader' %}
 <main class='ds-layout-page ds-page'>
-    <section class='scroll-panel'>
     {% include '_includes/designSys/layout/00-cover' %}
-    </section>
-    <section class='scroll-panel'>
     {% include '_includes/designSys/layout/01-overview' %}
     {% include '_includes/designSys/layout/03-grid' %}
     {% include '_includes/designSys/layout/04-spacing' %}
     {% include '_includes/designSys/layout/05-navigation' %}
     {% include '_includes/designSys/layout/06-structure' %}
     {% include '_includes/designSys/layout/07-patterns' %}
-    </section>
 </main>
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
@@ -27,6 +23,5 @@
 <script src="/public/js/layoutAdditionalAni.js" charset="utf-8"></script>
 <script src="/public/js/pageScroll.js" charset="utf-8"></script>
 <script src="/public/js/accordion.js" charset="utf-8"></script>
-
 
 {% endblock %}

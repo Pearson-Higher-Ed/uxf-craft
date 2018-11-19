@@ -3,7 +3,7 @@ $(document).ready(function() {
     var fillTheGrid = function(timeInter, numArray) {
         setTimeout(function() {
             $.each(numArray, function(index, item){
-                $('.ds-screen1 .ds-grid-fill'+item).addClass('ds-grid-opacity'+item);
+                $('.ds-cover .ds-grid-fill'+item).addClass('ds-grid-opacity'+item);
             });
         }, timeInter);
     };
@@ -34,7 +34,7 @@ var squaresSmall = function() {
 
 var squaresBig = function() {
     for (var m = 1; m < 9; m++) {
-        $(".ds-screen2 .ds-layout-grid:nth-child("+ m + ")").css('height', '0');
+        $(".ds-overview .ds-layout-grid:nth-child("+ m + ")").css('height', '0');
     }
     $(".ds-whsp-rect").css('height', '376px');
     $(".ds-whsp-rect").css('opacity', '1');

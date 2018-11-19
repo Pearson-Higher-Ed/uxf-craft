@@ -1,28 +1,26 @@
-<section class="ds-screen11 bg-white-gray w-100 position-relative">
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-transition-screen' }
-    %}
-    <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content' id='dsTransitScreen8'>
-            {% include '_includes/designSys/shared/levelTwo' with 
-                {   'color': 'text-purple',
-                    'name': 'Patterns', 
-                    'desc': "After choosing the page frame, you're ready to create the layout pattern in the content area. To get started, you can use one of the standard layout patterns for the content area. The layout pattern you select depends on what kind of hierarchy is needed (or not needed) in the user task."
-            } %}
-        </div>
-    </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen12' } 
-    %}
-</section>
-<section class="ds-screen12 bg-white-gray w-100 position-relative">
+<section class="bg-white-gray w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' }
     %}
     <div class="ds-container ds-grid">
         <div class='ds-main ds-transition-content' id='dsTransitScreen9'>
+            {% include '_includes/designSys/shared/levelTwo' with 
+                {   'name': 'dsMenuScreen10',
+                    'title': 'Patterns', 
+                    'desc': "After choosing the page frame, you're ready to create the layout pattern in the content area. To get started, you can use one of the standard layout patterns for the content area. The layout pattern you select depends on what kind of hierarchy is needed (or not needed) in the user task."
+            } %}
+        </div>
+    </div>
+</section>
+<section class="bg-white-gray w-100 position-relative">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' }
+    %}
+    <div class="ds-container ds-grid">
+        <div class='ds-main ds-transition-content' id='dsTransitScreen10'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Single column', 
+                {'name': 'dsMenuScreen11',
+                'title': 'Single column', 
                 'desc': 'A narrow single column creates one centralized block that can be effective for focusing users on a single action. The hierarchy in this pattern is typically sequential, from top to bottom.'
             } %}
             <div class='d-flex justify-content-between dmy-6'>
@@ -47,18 +45,16 @@
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen13' } 
-    %}
 </section>
-<section class="ds-screen13 bg-white-gray w-100 position-relative">
+<section class="bg-white-gray w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content' id='dsTransitScreen10'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen11'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Multiple column', 
+                {'name': 'dsMenuScreen12',
+                'title': 'Multiple column', 
                 'desc': 'A multiple column pattern groups columns into blocks and uses gutters and spacing to separate those blocks. This pattern can be effective for presenting multiple views on a single page. The hierarchy can be conveyed by block size, block placement, or other visual enhancements.'
             } %}
             <div class='d-flex justify-content-center dmt-6'>
@@ -77,18 +73,16 @@
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen14' } 
-    %}
 </section>
-<section class="ds-screen14 h-100vh bg-white-gray w-100 position-relative">
+<section class="h-100vh bg-white-gray w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content' id='dsTransitScreen11'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen12'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Modular', 
+                {'name': 'dsMenuScreen13',
+                'title': 'Modular', 
                 'desc': 'A modular pattern subdivides a page both vertically and horizontally into a grid of modules. This can be effective when you need to display many, equally-weighted items at once.'
             } %}
             <div class='d-flex justify-content-center dmy-6'>

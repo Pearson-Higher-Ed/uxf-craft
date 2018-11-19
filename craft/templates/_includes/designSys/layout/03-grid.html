@@ -1,11 +1,12 @@
-<section class="ds-screen3 bg-white-gray w-100 ds-layout position-relative">
+<section class="bg-white-gray w-100 ds-layout position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class="ds-main ds-transition-content dmb-10" id='dsTransitScreen0'>
+        <div class="ds-main ds-transition-content dmb-10" id='dsTransitScreen1'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Grids', 
+                {'name': 'dsMenuScreen2',
+                'title': 'Grids', 
                 'desc': 'We use fixed grids which allow margins to be fluid while keeping content unchanged within each breakpoint range.'
             } %}
             <div class="w-100 dmt-6">
@@ -15,20 +16,19 @@
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen4' } 
-    %}
 </section>
-<section class="ds-screen4 bg-white-gray w-100 ds-layout position-relative">
+<section class="bg-white-gray w-100 ds-layout position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class="ds-main ds-transition-content dmb-10" id='dsTransitScreen1'>
+        <div class="ds-main ds-transition-content dmb-10" id='dsTransitScreen2'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Breakpoints', 
-                'desc': 'Breakpoints are the points at which your layout will respond when your design appears on different screen sizes.'
-            } %}
+                {
+                    'name': 'dsMenuScreen3',
+                    'title': 'Breakpoints', 
+                    'desc': 'Breakpoints are the points at which your layout will respond when your design appears on different screen sizes.'
+                } %}
             <div class="w-100 dmy-6">
                 <video class='w-100' id='bp-video' controls>
                     <source src="/public/theme_assets/Breakpoints_v2.mp4" type="video/mp4">
@@ -100,7 +100,4 @@
     %}
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen5' } 
-    %}
 </section>

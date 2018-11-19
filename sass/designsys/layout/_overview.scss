@@ -2,21 +2,6 @@
 @import "../utilities";
 
 .ds-layout-page {
-    .ds-grid-borderL {
-        border-left-width: 1px;
-        border-left-style: solid; 
-    }
-
-    .ds-grid-borderR {
-        border-right-width: 1px;
-        border-right-style: solid;
-    }
-
-    .ds-grid-border {
-        @extend .ds-grid-borderR;
-        @extend .ds-grid-borderL;
-    }
-
     .ds-gray-border {
        border-color: $pe-color-alto;
        height: 0; 
@@ -24,7 +9,7 @@
        width: 100%;
     }
 
-    .ds-screen2 {
+    .ds-overview {
         height: 835px !important;
         %gradientBorderBottom {
             border-image: linear-gradient(to bottom, $ds-purple, rgba(0, 0, 0, 0)) 1 100%;
@@ -69,6 +54,7 @@
         // @include gridBorder(8, 20%, 80%, true);
 
         .ds-whsp-grid {
+            top: 0;
             box-sizing: border-box;
             display: grid;
             @mixin colSet($bp, $colSum, $col, $gap) {
@@ -109,8 +95,4 @@
             }
         }
     }
-}
-
-.ds-test {
-    opacity: 0;
 }
