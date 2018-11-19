@@ -1,12 +1,6 @@
 .ds-transition-content {
-    padding-top: 48px;
-    opacity: 0.5;
+    opacity: 0.3;
 }
-
-// section.scroll-panel .ds-transition-content {
-//         margin-top: 20px;
-//         opacity: 0.5;
-// }
 
 @for $i from 2 through 15 {
     .ds-screen#{$i} {
@@ -15,9 +9,12 @@
             top: 0;
         }
     }
+    .ds-overview {
+        z-index: 2;
+    }
 }
 
-.ds-screen1 {
+.ds-cover {
     background-position: center bottom;
     background-attachment: fixed;
     background-size: cover;
@@ -44,39 +41,20 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 }
 
-.ds-hidden-anchor.ds-transition-screen {
-    position: absolute;
-    top: -120px;
+h2 a:last-child {
+    top: -133px;
 }
 
-.ds-hidden-anchor.ds-transition-section {
-    position: absolute;
-    top: -320px;
+h2 .ds-menu-anchor {
+    top: -138px;
 }
 
-.ds-hidden-anchor.ds-transition-section-delay {
-    position: absolute;
-    top: -300px;
+h3 a:last-child {
+    top: -130px;
 }
 
-.ds-hidden-anchor.ds-transition-section-ddelay {
-    position: absolute;
-    top: -280px;
-}
-
-.ds-hidden-anchor.ds-transition-section-dddelay {
-    position: absolute;
-    top: -260px;
-}
-
-.ds-hidden-anchor.ds-menu-anchor {
-    position: absolute;
-    bottom: 53px;
-}
-
-.ds-hidden-anchor.ds-first-trigger {
-    position: absolute;
-    top: -54px;
+h3 .ds-menu-anchor {
+    top: -135px;
 }
 
 .ds-hidden-anchor {
@@ -103,6 +81,3 @@
 .font-pd {
     font-family: 'Playfair Display', serif;
 }
-  // section.scroll-panel .ds-hidden-anchor{
-//   margin-bottom: 0;
-// }

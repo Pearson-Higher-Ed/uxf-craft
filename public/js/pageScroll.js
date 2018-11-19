@@ -1,15 +1,22 @@
 var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
+        triggerHook: 0.8
+    }
+});
+
+var menuController = new ScrollMagic.Controller({
+    globalSceneOptions: {
         triggerHook: 'onLeave'
     }
 });
-var slides  = $('section.scroll-panel');
+
 var transitsScreen = $('a[class*="ds-transition-screen"]');
+var menuScreen = $('a[class*="ds-menu-anchor"]');
 var transitsSection = $('a[class*="ds-transition-section"]');
 var animations = $('.ds-animation-trigger');
 
-var slidesScenes = [];
 var transitsScrScenes = [];
+var menuScrScenes = [];
 var transitsSecScenes = [];
 var animationsScenes = [];
 
@@ -18,17 +25,11 @@ var tweensSection = [];
 var inter1;
 
 $(document).ready(function() {
-   for (var i = 0; i < slides.length; i++) {
-        slidesScenes[i] = new ScrollMagic.Scene({
-           triggerElement: slides[i]
-       })
-       .addTo(controller);
-       //.addIndicators({name: "slides scene"+i});
-   }
+    coverAnimation();
 
 
     for  (var m = 0; m < transitsScreen.length; m++) {
-        tweensScreen[m]= TweenMax.to('#dsTransitScreen'+m, 1, {paddingTop:"0", opacity: 1, ease: Power4.easeOut});
+        tweensScreen[m]= TweenMax.to('#dsTransitScreen'+m, 1, {opacity: 1, ease: Power4.easeOut});
 
         transitsScrScenes[m] = new ScrollMagic.Scene({
             triggerElement: transitsScreen[m]
@@ -37,11 +38,19 @@ $(document).ready(function() {
         .duration(100)
         .addTo(controller);
         //.addIndicators({name: "transition"+m});
-   }
+    }
+
+    for  (var z = 0; z < menuScreen.length; z++) {
+        menuScrScenes[z] = new ScrollMagic.Scene({
+            triggerElement: menuScreen[z]
+        })
+        .addTo(menuController);
+        //.addIndicators({name: "menu"+z});
+    }
 
    for  (var x = 0; x < transitsSection.length; x++) {
 
-        tweensSection[x]= TweenMax.to('#dsTransitSection'+x, 1, {paddingTop:"0", opacity: 1, ease: Power4.easeOut});
+        tweensSection[x]= TweenMax.to('#dsTransitSection'+x, 1, {opacity: 1, ease: Power4.easeOut});
 
         transitsSecScenes[x] = new ScrollMagic.Scene({
             triggerElement: transitsSection[x]
@@ -60,28 +69,16 @@ $(document).ready(function() {
         //.addIndicators({name: "animation scene"+n});
     }
 
-    slidesScenes[0].on("enter", function (event) {
-        coverAnimation();
-    });
-
-    slidesScenes[1].on("enter", function (event) {
-        clearInterval(inter1);
-    });
-
-    transitsSecScenes[0].on("enter", function (event) {
-        clearInterval(inter1);
-    });
-
     animationsScenes[0].on("enter", function (event) {
-        $("#overviewContent").css({"padding-top": "0", "opacity": "1"});
         squaresSmall();
         whiteMenu(false);
-        activeMenu(2);
+        clearInterval(inter1);
     });
 
     animationsScenes[0].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
             coverAnimation();
+            whiteMenu(true);
         } else {
             clearInterval(inter1);
         }
@@ -104,28 +101,17 @@ $(document).ready(function() {
         }, 400);
     });
 
-    for  (var y = 0; y < transitsScrScenes.length; y++) {
-        if (y === transitsScrScenes.length - 1) {
-            transitionAni(y, true);
-        } else {
-            transitionAni(y);
-        }
+    for  (var y = 0; y < menuScrScenes.length; y++) {
+        transitionAni(y);
     }
 
-    function transitionAni(num, bol) {
-        transitsScrScenes[num].on("enter", function (event) {
-            activeMenu(num+3);
-
-            if (bol === true) {
-                slidesScenes[0].removePin(slides[0]);
-            }
+    function transitionAni(num) {
+        menuScrScenes[num].on("enter", function (event) {
+            activeMenu(num);
         });
-        transitsScrScenes[num].on("leave", function (event) {
+        menuScrScenes[num].on("leave", function (event) {
             if (event.target.controller().info('scrollDirection') === 'REVERSE') {
-                activeMenu(num+2);
-                if (bol === true) {
-                    slidesScenes[0].setPin(slides[0]);
-                }
+                activeMenu(num-1);
             }
         });
     }
@@ -137,16 +123,6 @@ $(document).ready(function() {
 
             $('.ds-screen-cover').css('opacity', (windowheight/2-controller.scrollPos())/(windowheight/2));
 
-            if (controller.scrollPos() >= (windowheight - 160)) {
-                $("#overviewContent").css({"padding-top": "0", "opacity": "1"});
-                squaresSmall();
-                whiteMenu(false);
-                activeMenu(2);
-            } else {
-                $("#overviewContent").css({"padding-top": "48px", "opacity": "0.5"});
-                $(".ds-sidebar").addClass('text-white');
-                $('.ds-sidebar li').removeClass('active');  
-            }
         }, 80);
     }  
 });
@@ -164,9 +140,6 @@ var activeMenu = function(show) {
     $('.ds-sidebar li').removeClass('active');
     $('a[href="#dsMenuScreen'+show+'"]').parents('li').addClass('active');
     switch(show) {
-        case 1:
-            whiteMenu(true);
-            break;
         case 6:
             if ($('.ds-screen6').hasClass('ds-visual')) {
                 whiteMenu(false);

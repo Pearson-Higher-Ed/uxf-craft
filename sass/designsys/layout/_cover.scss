@@ -17,7 +17,7 @@
         @extend .ds-grid-borderL;
     }
 
-    .ds-screen1 {
+    .ds-cover {
         background-image: linear-gradient(302deg, $ds-purple, $ds-dark-purple), linear-gradient(56deg, rgba(242, 229, 241, 0), rgba(242, 229, 241, 0.4));
 
         @mixin gridBorderSimple($n, $h) {

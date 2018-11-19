@@ -1,13 +1,13 @@
-<section class="ds-screen7 ds-layout bg-white w-100 position-relative">
+<section class="ds-layout bg-white w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content dmb-10' id='dsTransitScreen4'>
+        <div class='ds-main ds-transition-content dmb-10' id='dsTransitScreen5'>
             {% include '_includes/designSys/shared/levelTwo' with 
                 {
-                    'color': 'text-purple',
-                    'name': 'Structure', 
+                    'name': 'dsMenuScreen6',
+                    'title': 'Structure', 
                     'desc': 'To provide a uniform user experience across products, we use page frames to form the outermost layer of the page structure.'
             } %}
             <div class='dmb-6 ds-transition-content position-relative' id='dsTransitSection18'>
@@ -28,20 +28,19 @@
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen8' } 
-    %}
 </section>
-<section class="ds-screen8 bg-white-gray w-100 position-relative">
+<section class="bg-white-gray w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content' id='dsTransitScreen5'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen6'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Primary page frame', 
-                'desc': 'Use a primary page frame when you want to display the root or top-level page.'
-            } %}
+                {
+                    'name': 'dsMenuScreen7',
+                    'title': 'Primary page frame', 
+                    'desc': 'Use a primary page frame when you want to display the root or top-level page.'
+                } %}
             <ol class='pe-label--large pe-list pe-styled-lists--ordered'>
                 <li>Global header</li>
                 <li>Product identifier (title)</li>
@@ -52,23 +51,21 @@
                     { 'class': 'ds-transition-section' } 
                 %}
                 <div class='dpt-6'>
-                    <img src="/public/theme_assets/primarypf.svg"/>
+                    <img class='img-fluid' src="/public/theme_assets/primarypf.png"/>
                 </div>
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen9' } 
-    %}
 </section>
-<section class="ds-screen9 bg-white-gray w-100 position-relative">
+<section class="bg-white-gray w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' }
     %}
     <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content' id='dsTransitScreen6'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen7'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Secondary page frame', 
+                {'name': 'dsMenuScreen8',
+                'title': 'Secondary page frame', 
                 'desc': "Use a secondary page frame when you can't fit all of your content on the primary page. The secondary page frame has a back button to convey that it's a branch of the primary page."
             } %}
             <div class='dmb-6 ds-transition-content position-relative' id='dsTransitSection20'>
@@ -76,23 +73,21 @@
                     { 'class': 'ds-transition-section' }
                 %}
                 <div class='dpt-6'>
-                    <img src="/public/theme_assets/secondarypf.svg"/>
+                    <img class='img-fluid' src="/public/theme_assets/secondarypf.svg"/>
                 </div>
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen10' } 
-    %}
 </section>
-<section class="ds-screen10 bg-white-gray w-100 position-relative">
+<section class="bg-white-gray w-100 position-relative">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' }
     %}
     <div class="ds-container ds-grid">
-        <div class='ds-main ds-transition-content' id='dsTransitScreen7'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen8'>
             {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'Modal page frames', 
+                {'name': 'dsMenuScreen9',
+                'title': 'Modal page frames', 
                 'desc': 'Use a modal page frame when you want to create a floating page that can be accessed from several locations or when you need to create a page with minimal distractions.'
             } %}
             <div class='dmb-6 ds-transition-content position-relative' id='dsTransitSection21'>
@@ -105,7 +100,4 @@
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen11' } 
-    %}
 </section>
