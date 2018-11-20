@@ -1,8 +1,19 @@
-<div class="ds-screen12 bg-white position-relative">
+<section class="bg-white">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='ds-container ds-grid'>
-        <div class='ds-main ds-transition-content'>
-            <h2 class="font-pd ds-section-title smb-5">Illustrations</h2>
-            <h3 class="pe-title pe-bold dmt-9">Style</h3>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen7'>
+            <h2 class="font-pd ds-section-title smb-5 position-relative">
+                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen10" aria-hidden='true' tabindex="-1">dsMenuScreen10</a>
+                Illustrations
+            </h2>
+            <h3 class="pe-title pe-bold dmt-9 position-relative">
+                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen11" aria-hidden='true' tabindex="-1">dsMenuScreen11</a>
+                Style
+            </h3>
             <div class='d-flex justify-content-center dmt-5'>
                 <div class="dpx-3 border-right text-center">
                     <img src="/public/theme_assets/styleunique.svg">
@@ -22,17 +33,18 @@
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen13' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen13' } 
-%}
-</div>
-<div class="ds-screen13 bg-white position-relative">
+</section>
+<section class="bg-white">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='ds-container ds-grid'>
-        <div class='ds-main ds-transition-content'>
-            <h3 class="pe-title pe-bold dmb-2 dmt-9">Types</h3>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen8'>
+            <h3 class="pe-title pe-bold dmb-2 dmt-9 position-relative">
+                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen12" aria-hidden='true' tabindex="-1">dsMenuScreen12</a>
+                Types
+            </h3>
             {% include '_includes/designSys/shared/levelFour' with 
                     {
                         'topSpacing': true,
@@ -57,20 +69,18 @@
             </div>
         </div>
     </div>
+</section>
+<section>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen14' } 
+        { 'class': 'ds-transition-screen' } 
     %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen14' } 
-    %}
-</div>
-<div class="ds-screen14 ds-visual">
     <div class='bg-white-gray'>
         <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
+            <div class='ds-main ds-transition-content' id='dsTransitScreen9'>
                 {% include '_includes/designSys/shared/levelThree' with 
                         {
-                            'name': 'Color',
+                            'name': 'dsMenuScreen13',
+                            'title': 'Color',
                             'desc': 'Spot illustrations should be limited to two primary colors unless otherwise noted. A primary color may be used with the secondary color. Scene illustrations are the exception to these color rules to provide more detail and focus.'
                     } %}
                 <h4 class="pe-title--small pe-bold dmb-5 dpt-6">Primary colors</h4>
@@ -131,6 +141,9 @@
     </div>
     <div class='bg-white'>
         <div class='ds-container ds-grid'>
+            {% include '_includes/designSys/atoms/hiddenAchor' with 
+                { 'class': 'ds-animation-trigger' } 
+            %}
             <div class='ds-main'>
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <div id="illustration"></div>
@@ -138,4 +151,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

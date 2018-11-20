@@ -1,5 +1,5 @@
 .ds-visual-page {
-    .ds-screen1 {
+    .ds-cover {
         background-image: url('/public/theme_assets/visual-bg.png');
     }
     
@@ -88,7 +88,7 @@
         }
     }
     
-    .ds-screen7 {
+    .ds-typography {
         .xl-title {
             font-size: 64px;
             line-height: 86px;
@@ -101,7 +101,7 @@
             background: url('/public/theme_assets/typebg.svg') center center fixed;
             background-size: cover;
             min-height: 644px;
-            .position-absolute {
+            .ds-type-text {
                 top: 0;
                 left: 0;
                 right: 0;

@@ -1,6 +1,9 @@
-<div class="ds-screen7 ds-visual position-relative">
+<section class="ds-typography">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='ds-type-bg dpb-10 position-relative'>
-        <div class='smt-9 position-absolute mx-auto'>
+        <div class='ds-type-text smt-9 position-absolute mx-auto'>
             <p class='xl-title pe-bold text-white text-center dmy-0'>HhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
             <p class='xl-title pe-bold text-white text-center dmy-0'>HhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
             <p class='xl-title pe-bold text-white text-center dmy-0'>HhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
@@ -10,14 +13,22 @@
             <p class='xl-title pe-bold text-white text-center dmy-0'>HhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
         </div>
         <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
-                <h2 class="font-pd ds-section-title smb-5 text-white">Typography</h2>
+            <div class='ds-main ds-transition-content' id='dsTransitScreen2'>
+                <h2 class="font-pd ds-section-title smb-5 text-white position-relative">
+                    <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                    <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen3" aria-hidden='true' tabindex="-1">dsMenuScreen3</a>
+                    Typography
+                </h2>
                 {% include '_includes/designSys/shared/levelThree' with 
                     {
-                        'name': 'Typeface', 
+                        'name': 'dsMenuScreen4',
+                        'title': 'Typeface', 
                         'textcolor': 'text-white',
                         'desc': 'We use the Open Sans font for product designs. One of two Pearson’s global brand fonts, Open Sans provides a wide range of weights and maintains clarity at small screen sizes.<br><br><b>Note:</b> We do not use the other Pearson global brand font, Playfair, because it loses its integrity at small screen sizes'
                 } %}
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-menu-transition' } 
+                %}
                 <div class='ds-fontweight-demo dmt-5 d-flex justify-content-center'>
                     <div class='dpy-2 dpx-5 dmr-3'>
                         <p class='text-white dmb-0 text-center'>Aa</p>
@@ -31,24 +42,25 @@
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen8' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen8' } 
-%}
-</div>
-<div class='ds-screen8 ds-visual position-relative'>
+</section>
+<section>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='bg-white'>
         <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
+            <div class='ds-main ds-transition-content' id='dsTransitScreen3'>
                 <div class='dmb-6'>
                     {% include '_includes/designSys/shared/levelThree' with 
                         {
-                            'name': 'Font styles', 
+                            'name': 'dsMenuScreen5',
+                            'title': 'Font styles', 
                             'desc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et mauris sed turpis accumsan hendrerit. Quisque vestibulum eget sem non dapibus. Donec posuere, ante ut cursus elementum, nunc dolor suscipit sapien, eget condimentum felis massa non massa.'
                     } %}
                 </div>
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-menu-transition' } 
+                %}
                 {% include '_includes/designSys/atoms/fontStyle' with 
                     {
                     'title': 'TITLE STYLE',
@@ -104,17 +116,17 @@
                         }]
                     } 
                 %}
-                <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-animation-trigger' } 
+                %}
+                <div class="bg-pattern-grid sp-7 dmt-6">
                     <div id="typography00"></div>
+                    {% include '_includes/designSys/atoms/hiddenAchor' with 
+                        { 'class': 'ds-animation-trigger' } 
+                    %}
                     <div class='dmt-2' id="typography01"></div>
                 </div>
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen9' } 
-    %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen9' } 
-    %}
 </div>

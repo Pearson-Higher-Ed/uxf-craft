@@ -10,6 +10,7 @@
     }
 
     .ds-overview {
+        z-index: 2;
         height: 835px !important;
         %gradientBorderBottom {
             border-image: linear-gradient(to bottom, $ds-purple, rgba(0, 0, 0, 0)) 1 100%;

@@ -80,7 +80,12 @@
 }
 }
 
-.ds-feedback {
+.ds-feedback.ds-page {
+  .pe-btn--btn_large, .pe-btn--btn_large:hover, .pe-btn--btn_large:focus {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border: 0;
+  }
   bottom:10rem;
   z-index: 10;
 

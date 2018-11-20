@@ -1,15 +1,20 @@
-<div class="ds-screen9 bg-white position-relative">
+<section class="bg-white">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='ds-container ds-grid'>
-        <div class='ds-main ds-transition-content'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen4'>
             {% include '_includes/designSys/shared/levelTwo' with 
                 {
-                    'name': 'Icons',
+                    'name': 'dsMenuScreen6',
+                    'title': 'Icons',
                     'desc': 'Our family of icons visually communicate core parts of our product. They can also convey available actions and act as wayfinding tools to help students and professors more easily understand where they are in the product.'
             } %}
             <img class="dmt-6" src="/public/theme_assets/iconclarity.svg">
             {% include '_includes/designSys/shared/levelThree' with 
                 {
-                    'name': 'Icon considerations',
+                    'name': 'dsMenuScreen7',
+                    'title': 'Icon considerations',
                     'desc': 'Although icons can boost usability, they can also harm the user experience if they’re overused or if they’re just not clear.<br/><br/>Consider the following best-practices when using icons:'
             } %}
             <div class='dpt-3 dpb-10'>
@@ -24,18 +29,19 @@
             </div>
         </div>
     </div>
+</section>
+<section>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen10' } 
+        { 'class': 'ds-transition-screen' } 
     %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen10' } 
-    %}
-</div>
-<div class="ds-screen10 ds-visual position-relative">
     <div class='bg-white-gray'>
         <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
-                <h3 class="pe-title pe-bold dmb-2 dmt-9">Styles</h3>
+            <div class='ds-main ds-transition-content' id='dsTransitScreen5'>
+                <h3 class="pe-title pe-bold dmb-2 dmt-9 position-relative">
+                    <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                    <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen8" aria-hidden='true' tabindex="-1">dsMenuScreen8</a>
+                    Styles
+                </h3>
                 {% include '_includes/designSys/shared/levelFour' with 
                     {
                         'topSpacing': true,
@@ -54,43 +60,44 @@
         </div>
     </div>
     <div class='bg-white'>
+        {% include '_includes/designSys/atoms/hiddenAchor' with 
+            { 'class': 'ds-transition-section ds-animation-trigger' } 
+        %}
         <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
+            <div class='ds-main ds-transition-content' id='dsTransitSection3'>
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <div id="icons00"></div>
+                    {% include '_includes/designSys/atoms/hiddenAchor' with 
+                        { 'class': 'ds-transition-section ds-animation-trigger' } 
+                    %}
                     <div class='dmt-2' id="icons01"></div>
                 </div>
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen11' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen11' } 
-%}
-</div>
-<div class="ds-screen11 bg-white ds-visual position-relative">
+</section>
+<section class="bg-white">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='ds-container ds-grid'>
-        <div class='ds-main ds-transition-content'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen6'>
             {% include '_includes/designSys/shared/levelThree' with 
                 {
-                    'name': 'Hint text',
+                    'name': 'dsMenuScreen9',
+                    'title': 'Hint text',
                     'desc': 'Even though our icons are highly recognizable, we go a step further to ensure clarity by incorporating a hint on hover. Every icon has a hover state with a label that informs the user of the action they are going to take. The label can appear above or below the icon depending on the interface layout.'
             } %}
             <div class='d-flex justify-content-center dmy-6'>
                 <img class='dmr-7' src="/public/theme_assets/hinttextbottom.svg">
                 <img src="/public/theme_assets/hinttexttop.svg">
             </div>
+            {% include '_includes/designSys/atoms/hiddenAchor' with 
+                { 'class': 'ds-animation-trigger' } 
+            %}
             <div class="bg-pattern-grid sp-7 dmt-6">
                 <div id="hintText"></div>
             </div>
         </div>
     </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen12' } 
-    %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen12' } 
-    %}
-</div>
+</section>

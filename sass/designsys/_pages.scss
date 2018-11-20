@@ -2,18 +2,6 @@
     opacity: 0.3;
 }
 
-@for $i from 2 through 15 {
-    .ds-screen#{$i} {
-        z-index: 2;
-        .position-absolute {
-            top: 0;
-        }
-    }
-    .ds-overview {
-        z-index: 2;
-    }
-}
-
 .ds-cover {
     background-position: center bottom;
     background-attachment: fixed;
@@ -80,4 +68,10 @@ h3 .ds-menu-anchor {
 
 .font-pd {
     font-family: 'Playfair Display', serif;
+}
+
+.ds-page {
+    .pe-label--large {
+        line-height: 1.5em;
+    }
 }

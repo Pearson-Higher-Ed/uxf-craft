@@ -1,18 +1,23 @@
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'id': 'dsScreen2' } 
-%}
-<div class="ds-screen2 bg-white position-relative">
+<section class="bg-white">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-        { 'name': 'dsMenuScreen2' } 
+        { 'class': 'ds-transition-screen' } 
     %}
     <div class="ds-container ds-grid">
-        <div class="ds-main ds-transition-content">
-            <h2 class="font-pd ds-section-title dmb-7">Colors</h2>
-            {% include '_includes/designSys/shared/levelFour' with 
-                {'name': 'Best practices', 
+        <div class="ds-main ds-transition-content" id='dsTransitScreen0'>
+            <h2 class="font-pd ds-section-title dmb-7 position-relative">
+                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen0" aria-hidden='true' tabindex="-1">dsMenuScreen0</a>
+                Colors
+            </h2>
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'dsMenuScreen1',
+                'title': 'Best practices', 
                 'desc': "Here's how we think about colors when designing Pearson products."
             } %}
             <div class='dmt-5 dpb-6 dmb-6 d-flex border-bottom'>
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-animation-trigger' } 
+                %}
                 <img src="/public/theme_assets/colorembellish.svg"/>
                 <div class='dml-5'>
                 {% include '_includes/designSys/shared/levelFour' with 
@@ -59,21 +64,19 @@
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen3' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen3' } 
-%}
-</div>
-<div class="ds-screen3 position-relative ds-visual">
+</section>
+<section>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class="bg-white-gray">
         <div class="ds-container ds-grid">
-            <div class="ds-main ds-transition-content">
+            <div class="ds-main ds-transition-content" id='dsTransitScreen1'>
                 {% include '_includes/designSys/shared/levelThree' with 
                     {
                         'topSpacing': true,
-                        'name': 'Palettes', 
+                        'name': 'dsMenuScreen2',
+                        'title': 'Palettes', 
                         'desc': 'Palettes provide a color system that ensures a consistent look and feel across our product designs.'
                 } %}
                 {% include '_includes/designSys/shared/levelFour' with 
@@ -110,24 +113,27 @@
     </div>
     <div class="bg-white">
         <div class="ds-container ds-grid">
+            {% include '_includes/designSys/atoms/hiddenAchor' with 
+                { 'class': 'ds-animation-trigger' } 
+            %}
             <div class="ds-main">
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <div id="colorDoDont00"></div>
+                    {% include '_includes/designSys/atoms/hiddenAchor' with 
+                        { 'class': 'ds-animation-trigger' } 
+                    %}
                     <div class='dmt-2' id="colorDoDont01"></div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+<section>
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen4' } 
+        { 'class': 'ds-transition-section' } 
     %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen4' } 
-    %}
-</div>
-<div class="ds-screen4 ds-visual position-relative">
     <div class="bg-white-gray">
-        <div class='ds-transition-content'>
+        <div class='ds-transition-content' id='dsTransitSection0'>
             <div class="ds-container ds-grid ds-8rows">
                 <div class="ds-main">
                     {% include '_includes/designSys/shared/levelFour' with 
@@ -224,6 +230,9 @@
     </div>
     <div class="bg-white">
         <div class="ds-container ds-grid">
+            {% include '_includes/designSys/atoms/hiddenAchor' with 
+                { 'class': 'ds-animation-trigger' } 
+            %}    
             <div class="ds-main">
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <div id="colorDoDont02"></div>
@@ -231,16 +240,13 @@
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen5' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen5' } 
-%}
-</div>
-<div class="ds-screen5 ds-visual position-relative">
+</section>
+<section>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-section' } 
+    %}
     <div class="bg-white-gray">
-        <div class="ds-transition-content">
+        <div class="ds-transition-content" id='dsTransitSection1'>
             <div class="ds-container ds-grid ds-3rows dpb-6">
                 <div class="ds-main dmb-5">
                     {% include '_includes/designSys/shared/levelFour' with 
@@ -279,25 +285,28 @@
     </div>
     <div class="bg-white">
         <div class="ds-container ds-grid">
+            {% include '_includes/designSys/atoms/hiddenAchor' with 
+                { 'class': 'ds-animation-trigger' } 
+            %}
             <div class="ds-main">
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <div id="colorDoDont03"></div>
+                    {% include '_includes/designSys/atoms/hiddenAchor' with 
+                        { 'class': 'ds-animation-trigger' } 
+                    %}
                     <div class='dmt-2'id="colorDoDont04"></div>
                 </div>
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen6' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen6' } 
-%}
-</div>
-<div class="ds-screen6 ds-visual position-relative">
+</section>
+<section>
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-section' } 
+    %}
     <div class="bg-white-gray">
         <div class="ds-container ds-grid">
-            <div class="ds-main ds-transition-content">
+            <div class="ds-main ds-transition-content" id='dsTransitSection2'>
                 {% include '_includes/designSys/shared/levelFour' with 
                     {
                         'topSpacing': true,
@@ -377,6 +386,9 @@
     </div>
     <div class="bg-white">
         <div class="ds-container ds-grid">
+            {% include '_includes/designSys/atoms/hiddenAchor' with 
+                { 'class': 'ds-animation-trigger' } 
+            %}
             <div class="ds-main">
                 <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
                     <div id="colorDoDont05"></div>
@@ -384,10 +396,4 @@
             </div>
         </div>
     </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen7' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen7' } 
-%}
-</div>
+</section>

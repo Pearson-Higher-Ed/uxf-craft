@@ -33,8 +33,8 @@ for  (var m = 0; m < transitsScreen.length; m++) {
     })
     .setTween(tweensScreen[m])
     .duration(100)
-    .addTo(controller);
-    //.addIndicators({name: "transition"+m});
+    .addTo(controller)
+    .addIndicators({name: "transition"+m});
 }
 
 for  (var z = 0; z < menuScreen.length; z++) {
