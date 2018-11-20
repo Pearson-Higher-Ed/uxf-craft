@@ -1,4 +1,4 @@
-<div class="ds-sidebar position-fixed text-white">
+<div id='dsSidebar' class="ds-sidebar position-fixed{% if white is defined  %} text-white{% endif %}">
     <div class="toc">
         <ul class="pe-list--unstyled main-level dml-1">
         {% for item in mainLevel %}

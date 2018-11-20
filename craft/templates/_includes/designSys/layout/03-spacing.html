@@ -1,4 +1,4 @@
-<section class="bg-white w-100 ds-layout position-relative">
+<section class="bg-white w-100">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
@@ -21,7 +21,7 @@
                         'desc': 'Use <b>8 pixel</b> increments to create larger spatial differences when positioning components on a page.'
                 } %}
             </div>
-            <div class="ds-transition-content position-relative" id='dsTransitSection1'>
+            <div class="ds-transition-content" id='dsTransitSection1'>
                 {% include '_includes/designSys/atoms/hiddenAchor' with 
                     { 'class': 'ds-transition-section' } 
                 %}
@@ -29,7 +29,7 @@
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                 </div>
             </div>
-            <div class="ds-transition-content position-relative" id='dsTransitSection2'>
+            <div class="ds-transition-content" id='dsTransitSection2'>
                 {% include '_includes/designSys/atoms/hiddenAchor' with 
                     { 'class': 'ds-transition-section ds-animation-trigger' } 
                 %}
@@ -39,38 +39,36 @@
                     </div>
                 </div>
             </div>
-            <div class='ds-section1'>
-                <div class='ds-transition-content position-relative' id='dsTransitSection3'>
-                    {% include '_includes/designSys/atoms/hiddenAchor' with 
-                        { 'class': 'ds-transition-section' } 
-                    %}
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {
-                        'topSpacing': true,
-                        'name': 'Small space increments', 
-                        'desc': 'Use <b>4 pixel</b> increments for smaller, more refined spacing situations, specifically within the context of a component'
-                } %}
+            <div class='ds-transition-content' id='dsTransitSection3'>
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-transition-section' } 
+                %}
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Small space increments', 
+                    'desc': 'Use <b>4 pixel</b> increments for smaller, more refined spacing situations, specifically within the context of a component'
+            } %}
+            </div>
+            <div class="ds-transition-content" id='dsTransitSection4'>
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-transition-section' } 
+                %}
+                <div class="d-flex justify-content-center align-items-end ds-spacing-demo4 dpy-6 border-bottom">
+                    <div class='dmr-4'></div>
+                    <div class='dmr-4'></div>
+                    <div class='dmr-4'></div>
+                    <div class='dmr-4'></div>
+                    <div></div>
                 </div>
-                <div class="ds-transition-content position-relative" id='dsTransitSection4'>
-                    {% include '_includes/designSys/atoms/hiddenAchor' with 
-                        { 'class': 'ds-transition-section' } 
-                    %}
-                    <div class="d-flex justify-content-center align-items-end ds-spacing-demo4 dpy-6 border-bottom">
-                        <div class='dmr-4'></div>
-                        <div class='dmr-4'></div>
-                        <div class='dmr-4'></div>
-                        <div class='dmr-4'></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div class="ds-transition-content position-relative" id='dsTransitSection5'>
-                    {% include '_includes/designSys/atoms/hiddenAchor' with 
-                        { 'class': 'ds-transition-section ds-animation-trigger' } 
-                    %}
-                    <div class='dpt-6'>
-                        <div class="bg-pattern-grid dpy-4 dpx-2">
-                            <div id="spaceIncrement"></div>
-                        </div>
+            </div>
+            <div class="ds-transition-content" id='dsTransitSection5'>
+                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                    { 'class': 'ds-transition-section ds-animation-trigger' } 
+                %}
+                <div class='dpt-6'>
+                    <div class="bg-pattern-grid dpy-4 dpx-2">
+                        <div id="spaceIncrement"></div>
                     </div>
                 </div>
             </div>

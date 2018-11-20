@@ -1,5 +1,5 @@
-//cover animation
-$(document).ready(function() {  
+$(document).ready(function() {
+    //cover animation
     var fillTheGrid = function(timeInter, numArray) {
         setTimeout(function() {
             $.each(numArray, function(index, item){
@@ -12,12 +12,43 @@ $(document).ready(function() {
     fillTheGrid(400, [4, 6]);
     fillTheGrid(600, [1, 3, 5, 7]);
     fillTheGrid(800, [9, 11]);
+    coverTransition();
+
+    animationsScenes[0].on("enter", function (event) {
+        squaresSmall();
+        whiteMenu(false);
+        clearInterval(coverInter);
+    });
+
+    animationsScenes[0].on("leave", function (event) {
+        if (event.target.controller().info('scrollDirection') === 'REVERSE') {
+            coverTransition();
+            whiteMenu(true);
+        } else {
+            clearInterval(coverInter);
+        }
+    });
+    
+    animationsScenes[1].on("enter", function (event) {
+        SRanimation.play();
+    });
+    
+    animationsScenes[2].on("enter", function (event) {
+        SIanimation.play();
+    });
+    
+    animationsScenes[3].on("enter", function (event) {
+        $('.ds-structure-tag1').addClass('ds-scale-animation');
+    });
+    animationsScenes[4].on("enter", function (event) {
+        $('.ds-structure-tag2').addClass('ds-scale-animation');
+    });
 });
 
 var SRanimation = createLottie('spacingRedlines');
 var SIanimation = createLottie('spaceIncrement');
 
-var squaresSmall = function() {
+function squaresSmall() {
     setTimeout(function(){
         $(".ds-whsp-rect").animate({height: "258px", opacity: '0.5'}, 800, "easeOutSine");
         $(".ds-gray-border").animate({ height: "55%" }, 800, "easeOutSine");
@@ -32,7 +63,7 @@ var squaresSmall = function() {
     }, 100);
 };
 
-var squaresBig = function() {
+function squaresBig() {
     for (var m = 1; m < 9; m++) {
         $(".ds-overview .ds-layout-grid:nth-child("+ m + ")").css('height', '0');
     }
