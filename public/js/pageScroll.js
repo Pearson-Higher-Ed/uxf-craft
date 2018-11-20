@@ -93,12 +93,10 @@ $(document).ready(function() {
     });
     
     animationsScenes[3].on("enter", function (event) {
-        setTimeout(function(){
-            $('.ds-structure-tag1').addClass('ds-scale-animation');
-        }, 100);
-        setTimeout(function(){
-            $('.ds-structure-tag2').addClass('ds-scale-animation');
-        }, 400);
+        $('.ds-structure-tag1').addClass('ds-scale-animation');
+    });
+    animationsScenes[4].on("enter", function (event) {
+        $('.ds-structure-tag2').addClass('ds-scale-animation');
     });
 
     for  (var y = 0; y < menuScrScenes.length; y++) {
@@ -108,6 +106,7 @@ $(document).ready(function() {
     function transitionAni(num) {
         menuScrScenes[num].on("enter", function (event) {
             activeMenu(num);
+            $('.ds-screen-cover').css('opacity', '0');
         });
         menuScrScenes[num].on("leave", function (event) {
             if (event.target.controller().info('scrollDirection') === 'REVERSE') {
