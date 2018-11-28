@@ -10,20 +10,20 @@ var menuController = new ScrollMagic.Controller({
     }
 });
 
-var transitsScreen = $('a[class*="ds-transition-screen"]');
-var menuScreen = $('a[class*="ds-menu-anchor"]');
-var transitsSection = $('a[class*="ds-transition-section"]');
-var animations = $('.ds-animation-trigger');
+var transitsScreen = $('a[class*="ds-transition-screen"]'),
+    menuScreen = $('a[class*="ds-menu-anchor"]'),
+    transitsSection = $('a[class*="ds-transition-section"]'),
+    animations = $('.ds-animation-trigger');
 
-var transitsScrScenes = [];
-var menuScrScenes = [];
-var transitsSecScenes = [];
-var animationsScenes = [];
+var transitsScrScenes = [],
+    menuScrScenes = [],
+    transitsSecScenes = [],
+    animationsScenes = [];
 
-var tweensScreen = [];
-var tweensSection = [];
+var tweensScreen = [],
+    tweensSection = [];
+
 var coverInter;
-
 
 for  (var m = 0; m < transitsScreen.length; m++) {
     tweensScreen[m]= TweenMax.to('#dsTransitScreen'+m, 1, {opacity: 1, ease: Power4.easeOut});
@@ -33,8 +33,8 @@ for  (var m = 0; m < transitsScreen.length; m++) {
     })
     .setTween(tweensScreen[m])
     .duration(100)
-    .addTo(controller)
-    .addIndicators({name: "transition"+m});
+    .addTo(controller);
+    //.addIndicators({name: "transition"+m});
 }
 
 for  (var z = 0; z < menuScreen.length; z++) {

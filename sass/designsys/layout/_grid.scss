@@ -17,7 +17,15 @@
                         content: '#{$n * $i}';
                         position: relative;
                         top: $n * $i + $i + 0px;
-                        left: 0.5 * $n * $i - 0.5 * $i - 1px;
+                        @if ($m <= 2) {
+                            @if ($i == 8) {
+                                left: 0;
+                            } @else {
+                                left: -2px;
+                            }
+                        } @else {
+                            left: 0.5 * $n * $i - 8px;
+                        }
                     }
                 }
             }
