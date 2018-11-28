@@ -1,0 +1,26 @@
+{% block content %}
+{% include '_includes/designSys/shared/designsysHeader' %}
+<main class='ds-writing-page ds-page'>
+    <section class='scroll-panel'>
+    {% include '_includes/designSys/writing/00-cover' %}
+    </section>
+    <section class='scroll-panel'>
+    {% include '_includes/designSys/writing/01-practices' %}
+    {% include '_includes/designSys/writing/02-voice' %}
+    {% include '_includes/designSys/writing/03-grammar' %}
+    {% include '_includes/designSys/writing/04-terms' %}
+    {% include '_includes/designSys/writing/05-error' %}
+    </section>
+</main>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js" charset="utf-8"></script>
+<script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js" charset="utf-8"></script>
+
+<script src="/public/js/jQueryEasingPlugin.js" charset="utf-8"></script>
+<script src="/public/js/bodymovin.js" charset="utf-8"></script>
+<script src="/public/js/lottie.js" charset="utf-8"></script>
+<script src="/public/js/pageScroll.js" charset="utf-8"></script>
+<script src="/public/js/writingScroll.js" charset="utf-8"></script>
+{% endblock %}

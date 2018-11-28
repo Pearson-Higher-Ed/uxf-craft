@@ -1,0 +1,64 @@
+{% if block.features is defined %}
+  {% set features = block.features %}
+{% endif %}
+
+{% for feature in features %}
+  {% if block.features is defined %}
+    {% set feature = feature.featureName %}
+  {% endif %}
+  {% set feature_id %}{{ entry.parent.title | kebab }}--{{ feature | kebab }}{% endset %}
+  <div class="feature" id="{{feature_id}}">
+    {{feature}} <span id="{{feature_id}}-ddown"></span>
+  </div>
+  <script type="text/javascript">
+
+    var redlineLink =
+      '#{{ feature_id }}-redlines'
+
+
+    var handleFeatureDropdown = function(featureID) {
+      return function(clicked) {
+        var redlineHash = '#{{feature_id}}-redlines'
+
+        switch (clicked.item) {
+          case 'Dev docs':
+            break;
+          case 'Redlines':
+            break;
+          case 'Copy link':
+            copyToClipboard('{{ entry.url }}#{{feature_id}}')
+          default:
+        }
+      }
+    }
+
+    var links = [
+      React.createElement(
+        DropdownItem,
+        {label: 'Copy link', type: 'button'}
+      )
+    ]
+
+    {% if entry['no_redlines'] is defined and entry.no_redlines == true %}
+    {% else %}
+      links.unshift(React.createElement(
+        DropdownItem,
+        {label: 'Redlines', type: 'link', url: redlineLink}
+      ))
+    {% endif %}
+
+    var el = React.createElement(
+      Dropdown,
+      {
+        mobileTitle: 'Links for this feature',
+        type: 'icon',
+        label: 'icon text',
+        id: 'fakeid',
+        changeHandler: handleFeatureDropdown('{{feature_id}}')
+      },
+      links
+    )
+
+    ReactDOM.render(el, document.getElementById('{{feature_id}}-ddown'))
+  </script>
+{% endfor %}

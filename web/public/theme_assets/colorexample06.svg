@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="699" height="232" viewBox="0 0 699 232">
+  <defs>
+    <rect id="colorexample06-a" width="691" height="190" y="17" rx="4"/>
+    <filter id="colorexample06-b" width="102%" height="107.4%" x="-1%" y="-2.6%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(4 -3)">
+    <g transform="translate(0 22)">
+      <mask id="colorexample06-c" fill="#fff">
+        <use xlink:href="#colorexample06-a"/>
+      </mask>
+      <use fill="#000" filter="url(#colorexample06-b)" xlink:href="#colorexample06-a"/>
+      <use fill="#FFF" xlink:href="#colorexample06-a"/>
+      <rect width="450" height="10" x="99" y="144" fill="#E9E9E9" mask="url(#colorexample06-c)" rx="5"/>
+      <path stroke="#D9D9D9" stroke-linecap="square" d="M79.25,17 L79.25,97" mask="url(#colorexample06-c)"/>
+      <polygon fill="#76D5D4" points="0 17 4 17 4 207 0 207" mask="url(#colorexample06-c)"/>
+      <rect width="45" height="22" x="18" y="32" fill="#DA0474" fill-opacity=".1" fill-rule="nonzero"/>
+      <rect width="193" height="32" x="93" y="35" fill="#DA0474" fill-opacity=".1" fill-rule="nonzero"/>
+      <rect width="290" height="28" x="93" y="75" fill="#DA0474" fill-opacity=".1" fill-rule="nonzero"/>
+      <rect width="45" height="26" x="18" y="56" fill="#DA0474" fill-opacity=".1" fill-rule="nonzero"/>
+      <rect width="79" height="18" x="474" y="163" fill="#DA0474" fill-opacity=".1" fill-rule="nonzero"/>
+      <text fill="#6A7070" font-family="OpenSans, Open Sans" font-size="12">
+        <tspan x="471.979" y="176">0</tspan> <tspan x="479.939" y="176" font-size="10">%</tspan> <tspan x="487.072" y="176"> complete</tspan>
+      </text>
+      <path stroke="#DA0474" stroke-linecap="square" d="M40 32L40 0M18.5 32.5L62.5 32.5M319.5 51.25L286.5 51.25M286.25 35.5L286.25 66.5M416.5 89.25L383.5 89.25M383.25 75.5L383.25 102.5M62.5 82.25L18.5 82.25M40.2083333 82.5L40.2083333 157.5M473.5 172.25L440.5 172.25M474.25 163.5L474.25 180.5"/>
+      <g fill="#252525" transform="translate(24 34)">
+        <text font-family="OpenSans, Open Sans" font-size="14">
+          <tspan x="0" y="15">MAR</tspan>
+        </text>
+        <text font-family="OpenSans-Semibold, Open Sans" font-size="24" font-weight="500">
+          <tspan x="0" y="46">10</tspan>
+        </text>
+      </g>
+      <text fill="#252525" font-family="OpenSans-Semibold, Open Sans" font-size="20" font-weight="500">
+        <tspan x="99" y="58">The Hearing Sense</tspan>
+      </text>
+      <text fill="#252525" font-family="OpenSans, Open Sans" font-size="14">
+        <tspan x="99" y="95">0 out of 70 points earned | Due at 8:00pm</tspan>
+      </text>
+      <text fill="#DA0474" font-family="OpenSans-Semibold, Open Sans" font-size="14" font-weight="500">
+        <tspan x="324" y="57">Heading (Semibold) </tspan> <tspan x="459.577" y="57.014" font-family="OpenSans, Open Sans" font-weight="normal">20px / 26px</tspan>
+      </text>
+      <text fill="#DA0474" font-family="OpenSans-Semibold, Open Sans" font-size="14" font-weight="500">
+        <tspan x="421" y="95">Body copy </tspan> <tspan x="494.206" y="95.014" font-family="OpenSans, Open Sans" font-weight="normal">14px / 18px</tspan>
+      </text>
+    </g>
+    <text fill="#DA0474" font-family="OpenSans-Semibold, Open Sans" font-size="14" font-weight="500">
+      <tspan x="286" y="199">Meta Data </tspan> <tspan x="360.382" y="199.014" font-family="OpenSans, Open Sans" font-weight="normal">12px / 16px</tspan>
+    </text>
+    <text fill="#DA0474" font-family="OpenSans-Semibold, Open Sans" font-size="14" font-weight="500">
+      <tspan x="20" y="15">Body copy </tspan> <tspan x="93.206" y="15.014" font-family="OpenSans, Open Sans" font-weight="normal">14px / 18px</tspan>
+    </text>
+    <text fill="#DA0474" font-family="OpenSans-Semibold, Open Sans" font-size="14" font-weight="500">
+      <tspan x="20" y="199">Title (Semibold) </tspan> <tspan x="128.876" y="199.014" font-family="OpenSans, Open Sans" font-weight="normal">24px / 28px</tspan>
+    </text>
+  </g>
+</svg>

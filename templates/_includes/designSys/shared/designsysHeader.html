@@ -1,0 +1,33 @@
+{% set invisible = invisible | default(false) %}
+  
+<div class="ds-ultimate-header position-fixed w-100{% if invisible %} invisible{% endif %}">
+    <div class="ds-container">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                {% if not invisible %}<img class="" src='/node_modules/@pearson-components/elements-sdk/src/styles/assets/images/PearsonLogo.svg'>{% endif %}
+            </div>
+    
+            {% if not invisible %}
+            <div class="d-flex align-items-center">
+                <nav class="dmr-6">
+                    <ul class="pe-list--unstyled list-inline dmy-0">
+                        {% nav page in craft.entries.section('designsysGroups').parent('groups') %}
+                        <li class="pe-label--large list-inline-item dpy-2 dmx-2{% if page.title == (entry.title | default('')) %} selected{% endif %}"><a class="nonedec" href="{{ siteUrl }}{{ page.uri }}">{{ page.title }}</a></li>
+                        {% endnav %}
+                    </ul>
+                </nav>
+                    <button class="pe-icon--btn dpx-4 dml-6" title="Search the component library">
+                        <span><svg role="img"
+                            focusable="false"
+                            aria-hidden="true"
+                            class="pe-icon--search-sm-24">
+                            <use xlink:href="#search-sm-24"></use>
+                        </svg></span>
+                    </button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+
+  

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="554" height="437" viewBox="0 0 554 437">
+  <defs>
+    <rect id="structure-b" width="353" height="56" x="100" y="136" rx="4"/>
+    <filter id="structure-a" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="structure-d" width="353" height="56" x="100" y="208" rx="4"/>
+    <filter id="structure-c" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="structure-f" width="353" height="56" x="100" y="280" rx="4"/>
+    <filter id="structure-e" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <path id="structure-h" d="M105,352 L450,352 C452.209139,352 454,353.790861 454,356 L454,403.6 C454,406.030053 452.030053,408 449.6,408 L105.4,408 C102.969947,408 101,406.030053 101,403.6 L101,356 C101,353.790861 102.790861,352 105,352 Z"/>
+    <filter id="structure-g" width="103.7%" height="123.2%" x="-1.8%" y="-9.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+    <rect width="551" height="319" x=".5" y=".5" fill="#EEE" stroke="#E9E9E9" transform="translate(0 116)"/>
+    <rect width="552" height="107" fill="#633FC5" stroke="#D9D9D9"/>
+    <rect width="177.181" height="19.77" x="186.779" y="46.769" fill="#FFF" rx="9.885"/>
+    <rect width="59.06" height="8" x="139.53" y="88.308" fill="#FFF" rx="4"/>
+    <rect width="59.06" height="8" x="210.403" y="88.308" fill="#FFF" rx="4"/>
+    <rect width="59.06" height="8" x="281.275" y="88.308" fill="#FFF" rx="4"/>
+    <rect width="59.06" height="8" x="352.148" y="88.308" fill="#FFF" rx="4"/>
+    <g fill="#FFF" transform="translate(17 9)">
+      <rect width="70.744" height="17.5" x=".686" y=".75" rx="8.75"/>
+      <ellipse cx="505.471" cy="9.5" rx="8.843" ry="8.75"/>
+      <ellipse cx="481.89" cy="9.5" rx="8.843" ry="8.75"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#structure-a)" xlink:href="#structure-b"/>
+      <use fill="#FFF" xlink:href="#structure-b"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#structure-c)" xlink:href="#structure-d"/>
+      <use fill="#FFF" xlink:href="#structure-d"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#structure-e)" xlink:href="#structure-f"/>
+      <use fill="#FFF" xlink:href="#structure-f"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#structure-g)" xlink:href="#structure-h"/>
+      <use fill="#FFF" xlink:href="#structure-h"/>
+    </g>
+  </g>
+</svg>

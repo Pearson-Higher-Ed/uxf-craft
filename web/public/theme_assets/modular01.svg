@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220" height="188" viewBox="0 0 220 188">
+  <defs>
+    <rect id="modular01-b" width="52" height="42" x="27" y="27" rx="2"/>
+    <filter id="modular01-a" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-d" width="52" height="42" x="83" y="27" rx="2"/>
+    <filter id="modular01-c" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-f" width="52" height="42" x="139" y="27" rx="2"/>
+    <filter id="modular01-e" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-h" width="52" height="42" x="27" y="73" rx="2"/>
+    <filter id="modular01-g" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-j" width="52" height="42" x="83" y="73" rx="2"/>
+    <filter id="modular01-i" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-l" width="52" height="42" x="139" y="73" rx="2"/>
+    <filter id="modular01-k" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-n" width="52" height="42" x="27" y="119" rx="2"/>
+    <filter id="modular01-m" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-p" width="52" height="42" x="83" y="119" rx="2"/>
+    <filter id="modular01-o" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="modular01-r" width="52" height="42" x="140" y="119" rx="2"/>
+    <filter id="modular01-q" width="125%" height="131%" x="-12.5%" y="-13.1%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="220" height="188" fill="#D9D9D9"/>
+    <use fill="#000" filter="url(#modular01-a)" xlink:href="#modular01-b"/>
+    <use fill="#FFF" xlink:href="#modular01-b"/>
+    <use fill="#000" filter="url(#modular01-c)" xlink:href="#modular01-d"/>
+    <use fill="#FFF" xlink:href="#modular01-d"/>
+    <use fill="#000" filter="url(#modular01-e)" xlink:href="#modular01-f"/>
+    <use fill="#FFF" xlink:href="#modular01-f"/>
+    <use fill="#000" filter="url(#modular01-g)" xlink:href="#modular01-h"/>
+    <use fill="#FFF" xlink:href="#modular01-h"/>
+    <use fill="#000" filter="url(#modular01-i)" xlink:href="#modular01-j"/>
+    <use fill="#FFF" xlink:href="#modular01-j"/>
+    <g>
+      <use fill="#000" filter="url(#modular01-k)" xlink:href="#modular01-l"/>
+      <use fill="#FFF" xlink:href="#modular01-l"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#modular01-m)" xlink:href="#modular01-n"/>
+      <use fill="#FFF" xlink:href="#modular01-n"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#modular01-o)" xlink:href="#modular01-p"/>
+      <use fill="#FFF" xlink:href="#modular01-p"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#modular01-q)" xlink:href="#modular01-r"/>
+      <use fill="#FFF" xlink:href="#modular01-r"/>
+    </g>
+  </g>
+</svg>

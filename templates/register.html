@@ -1,0 +1,57 @@
+{% set pageTitle = "Create an account" %}
+
+{% extends "_default" %}
+
+{% block sidebar %}
+  {% include "_includes/sidebar" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="registration_container">
+  <h1 class="pe-title">Create an account</h1>
+
+  <p>An account allows you to contribute documentation to the UX Framework.</p>
+
+  <form method="post" accept-charset="UTF-8">
+      {{ getCsrfInput() }}
+      <input type="hidden" name="action" value="users/saveUser">
+      <input type="hidden" name="redirect" value="">
+
+      {% macro errorList(errors) %}
+        {% if errors %}
+          {% for error in errors %}
+              <p class="pe-input--error_message">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endmacro %}
+
+      {% from _self import errorList %}
+
+      <label class="pe-textLabelInput__label" for="username">Username</label>
+      <input class="pe-textInput--basic" id="username" type="text" name="username"
+          {%- if account is defined %} value="{{ account.username }}"{% endif -%}>
+
+      {% if account is defined %}
+          {{ errorList(account.getErrors('username')) }}
+      {% endif %}
+
+      <label class="pe-textLabelInput__label" for="email">Email</label>
+      <input class="pe-textInput--basic" id="email" type="text" name="email"
+          {%- if account is defined %} value="{{ account.email }}"{% endif %}>
+
+      {% if account is defined %}
+          {{ errorList(account.getErrors('email')) }}
+      {% endif %}
+
+      <label class="pe-textLabelInput__label" for="password">Password</label>
+      <input class="pe-textInput--basic" id="password" type="password" name="password">
+
+      {% if account is defined %}
+          {{ errorList(account.getErrors('password')) }}
+      {% endif %}
+
+      <button class="pe-btn pe-btn__primary">Register</button>
+  </form>
+</div>
+{% endblock %}

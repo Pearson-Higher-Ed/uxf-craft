@@ -1,0 +1,263 @@
+.ds-visual-page {
+    .ds-cover {
+        background-image: url('/public/theme_assets/visual-bg.svg');
+        .ds-cover-waves {
+            width: 100%;
+            height: auto;
+            left: 0;
+            &:first-child {
+                bottom: -5%; 
+            }
+            &:nth-child(2) {
+                bottom: -10%; 
+            }
+            &:nth-child(3) {
+                bottom: -15%; 
+            }
+        }
+
+        .ds-wave-animation00 {
+            animation: wave00 3s ease-out;
+        }
+
+        .ds-wave-animation01 {
+            animation: wave01 3s ease-out 0.2s;
+        }
+
+        .ds-wave-animation02 {
+            animation: wave02 3s ease-out;
+        }
+
+        @keyframes wave00 {
+            0% {
+                bottom: -5%;
+            }
+            25% {
+                bottom: -8%;
+            }
+            50% {
+                bottom: -6%;
+            }
+            75% {
+                bottom: -2%;
+            }
+            100% {
+                bottom: -5%;
+            }
+        }
+
+        @keyframes wave01 {
+            0% {
+                bottom: -10%;
+            }
+            25% {
+                bottom: -8%;
+            }
+            50% {
+                bottom: -7%;
+            }
+            75% {
+                bottom: -9%;
+            }
+            100% {
+                bottom: -10%;
+            }
+        }
+        @keyframes wave02 {
+            0% {
+                bottom: -15%;
+            }
+            25% {
+                bottom: -13%;
+            }
+            50% {
+                bottom: -12%;
+            }
+            75% {
+                bottom: -14%;
+            }
+            100% {
+                bottom: -15%;
+            }
+        }
+    }
+    
+    .ds-color-card {
+        border-radius: 4px;
+    }
+    
+    .ds-color-rect {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px 0 0 4px;
+    }
+    
+    .ds-colors-rects {
+        width: 102px;
+        div:first-child {
+            border-radius: 4px 0 0 0; 
+        }
+        div:last-child {
+            border-radius: 0 0 0 4px; 
+        }
+    }
+    
+    .ds-colors-rects, .ds-hex-labels {
+        div:first-child, div:last-child {
+            height: 48px;
+            line-height: 48px;
+        }
+        div:nth-child(2) {
+            height: 80px;
+            line-height: 80px;
+        }
+    }
+    
+    $singlecolors: (
+        pearson-blue: #047A9C,
+        white: #FFFFFF,
+        sunshine-yellow: #FFB81C,
+        charcoal: #252525,
+        medium-gray: #6A7070,
+        steel: #A9A9A9,
+        concrete: #C7C7C7,
+        alto: #D9D9D9,
+        moonlight: #E9E9E9,
+        stainless: #EEEEEE,
+        white-gray: #F5F5F5,
+        alert-red: #DB0020,
+        confirm-green: #038238,
+        notification-pink: #DA0474,
+        rose: #EDC0F2,
+        pear: #ABDC3B,
+        aqua: #76D5D4,
+        seagrass: #D3EAE4,
+        canary: #F5C54C
+    );
+    @each $colorName, $color in $singlecolors {
+        .bg-#{$colorName} {
+            background-color: $color;
+        } 
+    }
+    $multicolors: (
+        aqua: (#CAEFEE, #76D5D4, #19A5A3),
+        violet:  (#F2E5F1, #895B9A, #633673),
+        chartreuse:  (#F6F8CC, #D2DB0E, #B0B718),
+        indigo:  (#D9E6F1, #356286, #1E496C),
+        lime:  (#DFF5D5, #66BE3E, #288500),
+        sky:  (#D6ECF4, #80C5DD, #46A9CB),
+        canary:  (#FAEBC3, #F5C54C, #DEA30D)
+    );
+    @each $colorName, $color in $multicolors {
+        .bg-#{$colorName} {
+            div:first-child {
+                background-color: nth($color, 1);
+            }
+            div:nth-child(2) {
+                background-color: nth($color, 2);
+            }
+            div:last-child {
+                background-color: nth($color, 3);
+            }
+        } 
+    }
+    .ds-color-card {
+        .bg-white {
+            @extend .border-right;
+        }
+    }
+    
+    .ds-typography {
+        .xl-title {
+            font-size: 64px;
+            line-height: 86px;
+        }
+        .l-title {
+            font-size: 40px;
+            line-height: 48px;
+        }
+        .ds-type-bg {
+            background: url('/public/theme_assets/type-bg.svg') center center fixed;
+            background-size: cover;
+            min-height: 644px;
+            .ds-type-text {
+                top: 0;
+                z-index: 1;
+                p {
+                    opacity: 0;
+                    transition: all 0.8s ease-out;
+                    height: 86px;
+                    overflow-y: hidden;
+                    word-wrap: break-word;
+                }
+                
+            }
+            .ds-type-animation {
+                p:nth-child(4) {
+                    opacity: 0.1;
+                }
+                @for $i from 1 through 3 {
+                    p:nth-child(#{$i}), p:nth-child(#{8-$i}) {
+                        opacity: 0.02 * $i;
+                        left: 0;
+                    }
+                }
+                p:nth-child(3) {
+                    animation: moveright 0.8s ease-out 0.8s;
+                }
+                p:nth-child(4) {
+                    animation: moveleft 0.8s ease-out 0.8s;
+                }
+
+                @keyframes moveright {
+                    0% {
+                        left: 0;
+                    }
+                    100% {
+                        left: 10%;
+                    }
+                }
+                @keyframes moveleft {
+                    0% {
+                        left: 0;
+                    }
+                    100% {
+                        left: -10%;
+                    }
+                }
+            }
+            .ds-container {
+                z-index: 2;
+            }
+        }
+    }
+
+    .ds-fontweight-demo {
+        div {
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        div:first-child {
+            p:first-child {
+                font-size: 6rem;
+                line-height: 7rem;
+            }
+        }
+        div:last-child {
+            p:first-child {
+                font-size: 6rem;
+                line-height: 7rem;
+            }
+        }
+    }
+    .ds-illustration-stroke {
+        hr {
+            width: calc(100% - 220px);
+            height: 1.5px;
+            color: $pe-color-medium-gray;
+        }
+        p {
+            line-height: 30px;
+        }
+    }
+}

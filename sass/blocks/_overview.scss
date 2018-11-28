@@ -1,0 +1,219 @@
+&.overview {
+
+  @include pe-responsive-breakpoint(md) {
+    padding-bottom: 60px;
+  }
+
+  .tagline {
+    width: 100%;
+    margin: 12px 0 0 0;
+
+    @include pe-responsive-breakpoint(md) {
+      margin-top: 28px;
+    }
+
+    ul {
+      @extend .pe-list, .pe-styled-lists--unordered;
+
+      ul {
+        @extend .pe-list, .pe-styled-lists--unordered;
+      }
+
+      ol {
+        @extend .pe-list, .pe-styled-lists--ordered;
+      }
+
+      & + p {
+        margin-top: 12px;
+      }
+    }
+
+    ol {
+      @extend .pe-list, .pe-styled-lists--ordered;
+
+      ol {
+        @extend .pe-list, .pe-styled-lists--ordered;
+      }
+
+      ul {
+        @extend .pe-list, .pe-styled-lists--unordered;
+      }
+
+      & + p {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 28px;
+
+    a + a {
+      margin-left: 16px;
+    }
+
+    a + button {
+      margin-left: 16px;
+    }
+
+    a.sketch {
+      svg {
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    a.code {
+      svg {
+        width: 22px;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    @include pe-responsive-breakpoint(md) {
+      display: none;
+    }
+  }
+
+  .usage_guidelines {
+    margin-top: 60px;
+
+    ul {
+      @extend .pe-list, .pe-styled-lists--unordered;
+
+      ul {
+        @extend .pe-list, .pe-styled-lists--unordered;
+      }
+
+      ol {
+        @extend .pe-list, .pe-styled-lists--ordered;
+      }
+
+      & + p {
+        margin-top: 12px;
+      }
+    }
+
+    ol {
+      @extend .pe-list, .pe-styled-lists--ordered;
+
+      ol {
+        @extend .pe-list, .pe-styled-lists--ordered;
+      }
+
+      ul {
+        @extend .pe-list, .pe-styled-lists--unordered;
+      }
+
+      & + p {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .toc {
+    margin-top: 60px;
+
+    padding-bottom: 80px;
+    border-bottom: 2px solid $pe-color-alto;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      @extend .pe-title;
+
+      a {
+        text-decoration: none;
+      }
+
+      li + li {
+        margin-top: 16px;
+      }
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  @include pe-responsive-breakpoint(xl) {
+    @include make-grid-parent;
+
+    .left {
+      @include make-grid-child(7);
+      float: left;
+    }
+
+    .right {
+      @include make-grid-child(4);
+      float: left;
+      margin-left: calc-grid-col-px(1);
+    }
+  }
+
+
+  @mixin four-col-metadata {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 0 10px;
+    float: left;
+  }
+
+  @include pe-responsive-breakpoint(md to lg) {
+    .right {
+      @include make-grid-parent;
+    }
+  }
+
+  .features {
+    margin-top: 60px;
+
+    @include pe-responsive-breakpoint(md to lg) {
+      @include make-grid-child(6);
+      float: left;
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      margin-top: 28px;
+    }
+  }
+
+  .dependencies {
+    margin-top: 40px;
+
+    @include pe-responsive-breakpoint(md to lg) {
+      margin-top: 60px;
+      @include make-grid-child(3);
+      float: left;
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      margin-top: 24px;
+    }
+  }
+
+  .other {
+    margin-top: 40px;
+
+    padding-bottom: 60px;
+
+    @include pe-responsive-breakpoint(md to lg) {
+      margin-top: 60px;
+      @include make-grid-child(3);
+      float: left;
+    }
+
+    @include pe-responsive-breakpoint(md) {
+      border: none;
+      padding-bottom: 0;
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      margin-top: 24px;
+    }
+  }
+}

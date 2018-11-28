@@ -1,0 +1,11 @@
+.ds-ultimate-header {
+    li.selected {
+        border-bottom: 2px solid $pe-color-charcoal;
+    }
+    top: 0;
+    z-index: 20;
+    span, a, button {
+        color: $pe-color-charcoal;
+    }
+    background-color: $pe-color-white;
+}

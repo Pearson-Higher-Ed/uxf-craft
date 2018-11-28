@@ -1,0 +1,33 @@
+.home.nightly {
+  .top {
+    background: none;
+    background-image:
+      url("/public/theme_assets/stars_left.svg"),
+      url("/public/theme_assets/stars_right.svg"),
+      linear-gradient(-180deg, #252525 0%, #0C1F32 73%);
+    background-position:
+      top 0px left -100px,
+      top 0px right 0px,
+      top 0px left 0px;
+    background-repeat: no-repeat;
+
+    .pearson {
+      display: none;
+    }
+
+    h1 {
+      font: 600 24px/28px 'Open Sans';
+    }
+
+    .edition {
+      font-style: italic;
+      font-weight: 300;
+      @extend .pe-page-title;
+      color: $pe-color-white;
+    }
+  }
+
+  .main-heroes .dev-hero a {
+    position: static;
+  }
+}

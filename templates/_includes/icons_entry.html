@@ -1,0 +1,152 @@
+{% set iconsByCategory = entry.icons | iconsGroupByCategory %}
+
+
+<div class="top-level-content icons">
+  <header>
+    <div class="left">
+      <h1>{{ entry.parent.title }}</h1>
+      <p>v{{ entry.version }} &bull; {{ entry.postDate | date("M j, Y") }}</p>
+    </div>
+    <div class="right">
+      <a href-"#">Request Icon</a>
+      <a href="#how-to-use">How to Use</a>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="toc">
+      <ul>
+        {% for category, icons in iconsByCategory %}
+          <li><a href="#{{ category | kebab }}">{{ category }}</a></li>
+        {% endfor %}
+          <li class="divider"><a href="#how-to-use">How to Use</a></li>
+          <li><a href="#changelog">Changelog</a></li>
+      </ul>
+    </div>
+
+    <div class="icons">
+    {% for category, icons in iconsByCategory %}
+      <div class="icons-container">
+        <h2 id="{{ category | kebab }}">{{ category }}</h2>
+        {% for icon in icons %}
+          <div class="icon">
+            <img src="{{ icon.sizes[0].url }}" height="36px" />
+            <p>{{ icon.iconName }}</p>
+            <template>
+              <div class="icon-detail">
+                <div class="close">
+                  <button type="button" class="pe-icon--btn">
+                    <svg role="img"
+                         aria-labelledby="r2"
+                         focusable="false"
+                         class="pe-icon--remove-sm-18">
+                      <title id="r2">Close dialog</title>
+                      <use xlink:href="#remove-sm-18"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="image-zone">
+                  <div class="image">
+                    <img src="{{ icon.sizes[1].url }}" />
+                  </div>
+                  <h3 class="pe-title pe-title--small pe-bold">{{ icon.iconName }}</h3>
+                </div>
+                <div class="details">
+                  <h3>{{ icon.iconName }}</h3>
+                  <div class="description">
+                    {{ icon.iconDescription }}
+                  </div>
+                  <p>Categories: {% for category in icon.categories %}<a href="#{{ category.title | kebab }}">{{ category.title }}</a>{% if not loop.last %},{% endif %}{% endfor %}</p>
+                </div>
+                <div class="sizes">
+                  <p>Prefer the 18px size as a default</p>
+                  <div class="list">
+                    {% for size in icon.sizes %}
+                      <a href="{{ size.url }}" download>
+                        <div>
+                          <img src="{{ size.url }}" />
+                        </div>
+                        <div>
+                          <pre>{{ size.title | lower | kebab }}</pre>
+                        </div>
+                        <div>
+                          <svg style="vertical-align:baseline"
+                               aria-hidden="true"
+                               focusable="false"
+                               class="pe-icon--download-18">
+                            <use xlink:href="#download-18"></use>
+                          </svg>
+                          SVG
+                        </div>
+                      </a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+      <div class="text" id="how-to-use">
+        {{ entry.iconText }}
+      </div>
+
+      <div class="block changelog">
+        <h2 class="pe-title pe-bold" id="changelog">Changelog</h2>
+        {% for change in entry.changelog %}
+          {% if change.version != entry.version %}
+            <h3 class="pe-title"><a href="{{ siteUrl }}c/{{ entry.parent.title | kebab }}/v{{ change.version }}">{{ change.version }}</a></h3>
+          {% else %}
+            <h3 class="pe-title">{{ change.version }}</h3>
+          {% endif %}
+          {% if change.changeAuthor.first() %}
+            <p class="pe-label pe-label--small">{{ change.changeAuthor.first().fullName }}</p>
+          {% endif %}
+          {{ change.changes }}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var removeAllDetails = function() {
+    document.querySelectorAll('.icon-detail').forEach(function(el){
+      el.remove()
+    })
+    document.querySelectorAll('.icon.active').forEach(function(el) {
+      el.classList.remove('active')
+    })
+  }
+  var showThisDetail = function(el) {
+    el.classList.add('active')
+    var rowWidth = document
+      .querySelector('.icons-container')
+      .getBoundingClientRect()
+      .width
+    var iconWidth = el.getBoundingClientRect().width +
+                    (parseInt(window.getComputedStyle(el).marginLeft) * 2)
+
+    var iconsPerRow = Math.floor(rowWidth / iconWidth)
+    var thisIndex = Array.from(el.parentNode.children).indexOf(el) - 1
+
+    var targetIndex = thisIndex - (thisIndex % iconsPerRow)
+
+    var icons = el.parentNode
+    var detail = document.importNode(el.querySelector('template').content, true)
+    icons.insertBefore(detail, icons.children[targetIndex + 1])
+
+    document
+      .querySelector('.icon-detail .close')
+      .addEventListener('click', removeAllDetails)
+  }
+
+  document.querySelectorAll('.icon').forEach(function(ic) {
+    ic.addEventListener('click', function(e) {
+      removeAllDetails()
+      showThisDetail(ic)
+    })
+  })
+</script>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1240" height="766" viewBox="0 0 1240 766">
+  <defs>
+    <linearGradient id="buttonbg-a" x1="36.333%" x2="86.748%" y1="24.203%" y2="89.912%">
+      <stop offset="0%" stop-color="#A36819"/>
+      <stop offset="100%" stop-color="#EBD45E"/>
+    </linearGradient>
+    <linearGradient id="buttonbg-c" x1="0%" x2="71.586%" y1="85.018%" y2="-5.805%">
+      <stop offset="1.748%" stop-color="#F49F35"/>
+      <stop offset="100%" stop-color="#FFB250" stop-opacity="0"/>
+    </linearGradient>
+    <polygon id="buttonbg-b" points="0 0 1240 0 1240 766 0 694.008"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="url(#buttonbg-a)" xlink:href="#buttonbg-b"/>
+    <use fill="url(#buttonbg-c)" xlink:href="#buttonbg-b"/>
+  </g>
+</svg>

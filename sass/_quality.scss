@@ -1,0 +1,326 @@
+.quality {
+  margin-top: 140px;
+  position: relative;
+
+  &:before {
+    content: ' ';
+    display: block;
+    border-bottom: 1px solid $pe-color-concrete;
+    width: 100%;
+    position: absolute;
+    top: 252px;
+    z-index: -1;
+
+    @include pe-responsive-breakpoint(md) {
+      top: 200px;
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      top: 152px;
+    }
+  }
+
+  .parent {
+    margin: 10px auto 0;
+
+    @include pe-responsive-breakpoint(md) {
+      width: 760px;
+    }
+
+    @include pe-responsive-breakpoint(lg) {
+      width: 960px;
+    }
+
+    @include pe-responsive-breakpoint(xl) {
+      width: 1150px;
+    }
+  }
+
+  header {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 80px;
+
+    @include pe-responsive-breakpoint(sm) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @include pe-responsive-breakpoint(md) {
+      padding: 0;
+      @include grid-offset(1);
+    }
+
+    @include pe-responsive-breakpoint(lg) {
+      @include grid-offset(2);
+    }
+
+    h1 {
+      margin-bottom: 16px;
+      @extend .pe-page-title;
+
+      @include pe-responsive-breakpoint(xl) {
+        margin-bottom: 0;
+      }
+    }
+
+    .top {
+      @include pe-responsive-breakpoint(xl) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include make-grid-child(10);
+        margin-left: -10px;
+      }
+
+      h1 {
+        margin-right: 20px;
+      }
+
+      a {
+        flex-shrink: 0;
+      }
+    }
+
+    p {
+      margin-top: 16px;
+      @extend .pe-label, .pe-label--small;
+      color: $pe-color-medium-gray;
+    }
+  }
+
+  .tabs {
+    margin-top: 40px;
+
+
+    a {
+      text-decoration: none;
+      color: $pe-color-medium-gray;
+      padding: 8px 0;
+      margin: 0 16px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        color: $pe-color-charcoal;
+        border-bottom: 3px solid $pe-color-charcoal;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .tab-pane {
+    display: none;
+    @include make-grid-parent;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .toc {
+    @include make-grid-child(2, 12, true);
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    top: 329px;
+    left: 50%;
+    margin-left: 1150px/2 * -1;
+    display: none;
+
+    @include pe-responsive-breakpoint(xl) {
+      display: block;
+    }
+
+    @media (min-width: 1460px) {
+      margin-left: 1150px/2 * -1 + 120;
+    }
+
+    ul {
+      margin-top: 40px;
+      padding-bottom: 60px;
+      padding-left: 0;
+
+      & > ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      &, & ul {
+        list-style-type: none;
+      }
+
+      li + li,
+      li > ul {
+        margin-top: 16px;
+      }
+
+      & > li > ul {
+        @extend .pe-label, .pe-label--large;
+        padding: 0;
+      }
+
+
+      @extend .pe-label;
+
+      a {
+        text-decoration: none;
+        color: $pe-color-medium-gray;
+
+        &:hover {
+          color: $pe-color-ink-blue;
+          text-decoration: underline;
+        }
+
+        &.active {
+          @extend .pe-label--bold;
+          color: $pe-color-digital-pearson-blue;
+        }
+      }
+    }
+  }
+
+  .reqs {
+    margin: 0 auto 200px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include pe-responsive-breakpoint(sm) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @include pe-responsive-breakpoint(md) {
+      @include make-grid-child(10);
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include pe-responsive-breakpoint(lg) {
+      @include make-grid-child(8);
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      padding-top: 100px;
+      margin-top: -100px;
+    }
+
+    .req + h2 {
+      margin-top: -20px;
+      padding-top: 100px;
+    }
+  }
+
+  .req {
+    border-top: 1px solid $pe-color-alto;
+    border-bottom: 1px solid $pe-color-alto;
+    padding: 18px 0;
+
+    &.detailed:hover {
+      background-color: white;
+    }
+
+    &.detailed .header {
+      cursor: pointer;
+    }
+
+    & + .req {
+      border-top: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .label {
+      width: 34px;
+      height: 24px;
+      @extend .pe-label, .pe-label--bold, .pe-label--small;
+      text-align: center;
+      border-radius: 3px;
+      background-color: #FFF2CC;
+      line-height: 24px;
+      margin-right: 20px;
+      margin-left: 8px;
+      flex-shrink: 0;
+      flex-grow: 0;
+
+      &.color2 {
+        background-color: #D9EAD3;
+      }
+
+      &.color3 {
+        background-color: #C9DAF8;
+      }
+
+      &.color4 {
+        background-color: #D9D2E9;
+      }
+
+      &.color5 {
+        background-color: #F4CCCC;
+      }
+
+      &.color6 {
+        background-color: #FFE599;
+      }
+    }
+
+    .reqText {
+      margin: 0;
+      flex-grow: 1;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    button {
+      color: $pe-color-medium-gray;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+
+    .explanation {
+      max-width: 660px;
+      margin-left: 62px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-right: 40px;
+      display: none;
+
+      @include pe-responsive-breakpoint(md) {
+        margin-right: 0;
+      }
+
+      p {
+        @extend .pe-copy;
+      }
+    }
+
+    &.open {
+      .explanation {
+        display: block;
+      }
+
+      button {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

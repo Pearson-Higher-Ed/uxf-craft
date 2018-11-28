@@ -1,0 +1,124 @@
+.ds-images {
+  @extend .ds-container, .ds-grid;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  .image-grid {
+    @include component-main;
+
+    .title {
+      @extend .pe-label;
+    }
+
+    .caption, .caption p {
+      @extend .pe-label;
+      color: $pe-color-medium-gray;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+
+    img.border {
+      border: 1px solid $pe-color-concrete;
+      border-radius: 2px;
+    }
+  }
+
+  &.images-right {
+    .image {
+      display: flex;
+      align-items: center;
+
+      & + .image {
+        margin-top: 24px;
+      }
+
+      img {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &.images-centered {
+    .image-grid {
+      margin: 0 -12px;
+    }
+
+    .image {
+      display: table;
+      float: left;
+      margin: 0 12px;
+    }
+
+    .title, .caption {
+      display: table-caption;
+      text-align: center;
+    }
+
+    .title {
+      margin-bottom: 12px;
+    }
+
+    .caption {
+      margin-top: 8px;
+      caption-side: bottom;
+    }
+  }
+
+  &.images-leftAligned {
+    &.minimal-spacing {
+      .image-grid {
+        margin: 0 -12px;
+      }
+
+      .image {
+        margin: 0 12px;
+      }
+    }
+
+    &.medium-spacing {
+      .image-grid {
+        margin: 0 -16px;
+      }
+
+      .image {
+        margin: 0 16px;
+      }
+    }
+
+    &.large-spacing {
+      .image-grid {
+        margin: 0 -40px;
+      }
+
+      .image {
+        margin: 0 40px;
+      }
+    }
+
+    .image {
+      display: table;
+      float: left;
+    }
+
+    .title, .caption {
+      display: table-caption;
+    }
+
+    .title {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      caption-side: bottom;
+    }
+
+    .caption {
+      caption-side: bottom;
+    }
+  }
+}

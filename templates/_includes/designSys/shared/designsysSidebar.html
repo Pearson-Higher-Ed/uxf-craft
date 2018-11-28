@@ -1,0 +1,16 @@
+<div id='dsSidebar' class="ds-sidebar position-fixed{% if white is defined  %} text-white{% endif %}">
+    <div class="toc">
+        <ul class="pe-list--unstyled main-level dml-1">
+        {% for item in mainLevel %}
+        <li class="dmt-2{% if item.active is defined  %} active{% endif %}"><a href="#{{ item.href }}" class="nonedec">{{ item.label }}</a>
+            {% if item.subLevel is defined  %}
+            <ul class="pe-list--unstyled sub-level">
+                {% for it in item.subLevel %}
+                <li{% if it.spacing is defined %} class="dmt-1"{% endif %}><a href="#{{ it.href }}" class="nonedec">{{ it.label }}</a>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+</div>

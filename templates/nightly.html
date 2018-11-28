@@ -1,0 +1,55 @@
+{% extends "_default" %}
+
+{% set pageTitle = "UXF Nightly Edition" %}
+
+{% block sidebar %}
+  {% include '_includes/nightlySidebar' with {'narrowShow': true, 'invisible': true} %}
+{% endblock %}
+
+{% block searchData %}
+  {% include '_includes/nightlySearchData' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="top-level-content narrow-show home nightly">
+  <div class="top">
+    <div class="content">
+      <p class="pearson">Pearson</p>
+      <h1>UX Framework</h1>
+
+      <p class="edition">Nightly Edition</p>
+
+      <div class="search-container">
+        <input type="text" name="search" class="pe-textInput--basic" placeholder="Search for components..."autocomplete="off">
+        <svg role="img"
+             aria-labelledby="r2"
+             focusable="false"
+             class="pe-icon--search-sm-18">
+          <title id="r2">Search the component library</title>
+          <use xlink:href="#search-sm-18"></use>
+        </svg>
+        <div class="dropdown"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-heroes">
+    <div class="design-hero">
+      <h2>What is this?</h2>
+      <p>The Nightly Edition of the UX Framework collects the latest in-progress designs in one place for easy discussion and collaboration</p>
+    </div>
+
+    <div class="dev-hero">
+      <h2>Prefer stability?</h2>
+
+      <p>Head back to the <a href="/">main UXF Library</a> for components with finalized designs.</p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  initDropdown(document.querySelector('.top .search-container'))
+</script>
+
+{% endblock %}

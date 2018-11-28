@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="318" height="344" viewBox="0 0 318 344">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="317.1" height="248.545" x=".45" y="95.005" fill="#EEE" stroke="#EEE" stroke-width=".9"/>
+    <g transform="translate(17.116 110.764)">
+      <rect width="86.482" height="68.44" x=".45" y="1.351" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="86.482" height="68.44" x=".45" y="83.298" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="86.482" height="68.44" x="98.643" y="1.351" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="86.482" height="68.44" x="98.643" y="83.298" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="86.482" height="68.44" x="196.835" y=".45" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="86.482" height="68.44" x="196.835" y="82.398" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="53.15" height="5.403" x="17.116" y="48.628" fill="#047A9C" rx="2.702"/>
+      <rect width="53.15" height="5.403" x="17.116" y="130.576" fill="#047A9C" rx="2.702"/>
+      <rect width="53.15" height="5.403" x="114.408" y="48.628" fill="#047A9C" rx="2.702"/>
+      <rect width="53.15" height="5.403" x="114.408" y="130.576" fill="#047A9C" rx="2.702"/>
+      <rect width="53.15" height="5.403" x="213.501" y="48.628" fill="#047A9C" rx="2.702"/>
+      <rect width="53.15" height="5.403" x="213.501" y="130.576" fill="#047A9C" rx="2.702"/>
+    </g>
+    <rect width="317.1" height="94.555" x=".45" y=".45" fill="#FFF" stroke="#E9E9E9" stroke-width=".9"/>
+    <rect width="45.042" height="10.806" x="15.932" y="9.681" fill="#E9E9E9"/>
+    <ellipse cx="295.704" cy="13.674" fill="#E9E9E9" rx="5.63" ry="5.569"/>
+    <ellipse cx="275.885" cy="13.674" fill="#E9E9E9" rx="5.63" ry="5.569"/>
+    <rect width="159.614" height="12.607" x="79.275" y="42.325" fill="#E9E9E9"/>
+    <rect width="44.961" height="5.403" x="56.754" y="76.545" fill="#898989" rx="2.702"/>
+    <rect width="44.961" height="5.403" x="109.904" y="76.545" fill="#047A9C" rx="2.702"/>
+    <rect width="44.961" height="5.403" x="163.955" y="76.545" fill="#898989" rx="2.702"/>
+    <rect width="44.961" height="5.403" x="218.006" y="76.545" fill="#898989" rx="2.702"/>
+  </g>
+</svg>

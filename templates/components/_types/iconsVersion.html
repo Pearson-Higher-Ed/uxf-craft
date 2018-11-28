@@ -1,0 +1,7 @@
+{% extends "_default" %}
+
+{% set pageTitle = entry.parent.title %}
+
+{% block content %}
+  {% include '_includes/icons_entry' with {'entry': entry} only %}
+{% endblock %}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1240" height="1243" viewBox="0 0 1240 1243">
+  <defs>
+    <linearGradient id="typebg-a" x1="23.097%" y1="14.375%" y2="100%">
+      <stop offset="0%" stop-color="#0F80B6"/>
+      <stop offset="100%" stop-color="#1A085B"/>
+    </linearGradient>
+    <linearGradient id="typebg-c" x1="0%" x2="39.582%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#0DF1F4"/>
+      <stop offset="54.394%" stop-color="#0DF1F4" stop-opacity=".286"/>
+      <stop offset="100%" stop-color="#0DF1F4" stop-opacity="0"/>
+    </linearGradient>
+    <rect id="typebg-b" width="1240" height="1243" x="282"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-282)">
+    <use fill="url(#typebg-a)" xlink:href="#typebg-b"/>
+    <use fill="url(#typebg-c)" xlink:href="#typebg-b"/>
+  </g>
+</svg>

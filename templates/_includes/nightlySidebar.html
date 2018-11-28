@@ -1,0 +1,115 @@
+<div class="sidebar nightly{% if (narrowShow | default(false)) %} narrow-show{% endif %}">
+  <a href="{{ siteUrl }}nightly">
+    <header>
+      <img src="{{ siteUrl }}public/theme_assets/stars.svg">
+      <span>UXF Nightly</span>
+
+      <button data-sidebar-closer="true">
+        <svg style="vertical-align:baseline"
+          aria-hidden="true"
+          focusable="false"
+          class="pe-icon--remove-lg-18">
+            <use xlink:href="#remove-lg-18"></use>
+        </svg>
+      </button>
+    </header>
+  </a>
+
+  <div class="sidebar-toc">
+    <div class="back">
+      &larr; <a href="/">Back to UXF Stable</a>
+    </div>
+    <ul>
+
+      {% nav page in craft.entries.section('nightlyArticles') %}
+        <li {% if page.title == (entry.title | default("")) %}class="selected"{% endif %}>
+          {% if page.type.handle == 'static' %}
+            {{ page.title }}
+          {% else %}
+            <a href="{{ siteUrl }}{{ page.uri }}">{{ page.title }}</a>
+          {% endif %}
+          {% ifchildren %}
+            <ul {% if 'Kit' in page.title %}style="display: none;"{% endif %}>
+              {% children %}
+            </ul>
+          {% endifchildren %}
+        </li>
+      {% endnav %}
+
+      <li>
+        Components
+        <ul>
+          {% for component in craft.entries.section('components').type('component') | hasNightly %}
+            <li {% if component.title == (entry.title | default("")) %}class="selected"{% endif %}>
+              <a href="{{ siteUrl }}nightly/{{ component.slug }}">
+                  {{ component.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% set invisible = invisible | default(false) %}
+
+<div class="ultimate-header nightly {% if invisible %}invisible{% endif %}">
+  <div class="left">
+    <img class="burger" src="{{ siteUrl }}public/theme_assets/burger.svg"> {% if not invisible %}{{ headerTitle | default(pageTitle) }}{% endif %}
+  </div>
+
+  {% if not invisible %}
+    <div class="right">
+      <div class="search-container">
+        <input type="text" name="search" class="pe-textInput--basic" placeholder="Search for components..."autocomplete="off">
+        <svg role="img"
+             aria-labelledby="r2"
+             focusable="false"
+             class="pe-icon--search-sm-18">
+          <title id="r2">Search the component library</title>
+          <use xlink:href="#search-sm-18"></use>
+        </svg>
+        <div class="dropdown"></div>
+      </div>
+
+      <div class="back-container">
+        <div class="words">
+          <div class="title">Nightly Edition</div>
+          <div class="link">&larr; <a href="/">Back to UXF Stable</a></div>
+        </div>
+        <img src="{{ siteUrl }}public/theme_assets/stars.svg" alt="">
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="overlay" data-sidebar-closer="true"></div>
+
+<script type="text/javascript">
+  {% if not invisible %}
+  initDropdown(document.querySelector('.ultimate-header .search-container'))
+  {% endif %}
+
+  var sidebar = document.querySelector('.sidebar')
+    , overlay = document.querySelector('.overlay');
+  var closeSidebar = function() {
+    sidebar.classList.remove('open')
+    overlay.classList.remove('open')
+  };
+  var openSidebar = function() {
+    sidebar.classList.add('open')
+    overlay.classList.add('open')
+  }
+
+  document.querySelector('.burger').addEventListener('click', function(event) {
+    openSidebar()
+  })
+
+  document.querySelectorAll('[data-sidebar-closer]').forEach(function(closer) {
+    closer.addEventListener('click', function(event) {
+      event.preventDefault()
+      closeSidebar()
+    })
+  });
+</script>

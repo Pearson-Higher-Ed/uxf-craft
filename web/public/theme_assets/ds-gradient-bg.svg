@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1240" height="766" viewBox="0 0 1240 766">
+  <defs>
+    <linearGradient id="ds-gradient-bg-a" x1="2.312%" y1="2.312%" y2="100%">
+      <stop offset="0%" stop-color="#161D7C"/>
+      <stop offset="100%" stop-color="#3C8EBE"/>
+    </linearGradient>
+    <linearGradient id="ds-gradient-bg-c" x1="0%" x2="64.96%" y1="100%" y2="22.877%">
+      <stop offset="0%" stop-color="#633FC5"/>
+      <stop offset="100%" stop-color="#633FC5" stop-opacity="0"/>
+    </linearGradient>
+    <rect id="ds-gradient-bg-b" width="1240" height="766"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="url(#ds-gradient-bg-a)" xlink:href="#ds-gradient-bg-b"/>
+    <use fill="url(#ds-gradient-bg-c)" xlink:href="#ds-gradient-bg-b"/>
+  </g>
+</svg>

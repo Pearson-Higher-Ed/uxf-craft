@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="318" height="344" viewBox="0 0 318 344">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="317.1" height="248.545" x=".45" y="95.005" fill="#EEE" stroke="#D9D9D9" stroke-width=".9"/>
+    <g transform="translate(38.737 122.471)">
+      <rect width="247.735" height="45.927" x=".45" y=".45" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="116.21" height="3.602" x="9.008" y="10.806" fill="#047A9C"/>
+      <rect width="183.773" height="1.801" x="9.008" y="25.215" fill="#D9D9D9"/>
+      <rect width="183.773" height="1.801" x="9.008" y="30.618" fill="#D9D9D9"/>
+      <ellipse cx="233.771" cy="11.257" stroke="#047A9C" stroke-width=".9" rx="4.054" ry="4.052"/>
+      <ellipse cx="220.258" cy="11.257" stroke="#047A9C" stroke-width=".9" rx="4.054" ry="4.052"/>
+    </g>
+    <g transform="translate(38.737 180.105)">
+      <rect width="247.735" height="45.927" x=".45" y=".45" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="116.21" height="3.602" x="9.008" y="10.806" fill="#047A9C"/>
+      <rect width="183.773" height="1.801" x="9.008" y="25.215" fill="#D9D9D9"/>
+      <rect width="183.773" height="1.801" x="9.008" y="30.618" fill="#D9D9D9"/>
+      <ellipse cx="233.771" cy="11.257" stroke="#047A9C" stroke-width=".9" rx="4.054" ry="4.052"/>
+      <ellipse cx="220.258" cy="11.257" stroke="#047A9C" stroke-width=".9" rx="4.054" ry="4.052"/>
+    </g>
+    <g transform="translate(38.737 237.738)">
+      <rect width="247.735" height="45.927" x=".45" y=".45" fill="#FFF" stroke="#D9D9D9" stroke-width=".9" rx="3.6"/>
+      <rect width="116.21" height="3.602" x="9.008" y="10.806" fill="#047A9C"/>
+      <rect width="183.773" height="1.801" x="9.008" y="25.215" fill="#D9D9D9"/>
+      <rect width="183.773" height="1.801" x="9.008" y="30.618" fill="#D9D9D9"/>
+      <ellipse cx="233.771" cy="11.257" stroke="#047A9C" stroke-width=".9" rx="4.054" ry="4.052"/>
+      <ellipse cx="220.258" cy="11.257" stroke="#047A9C" stroke-width=".9" rx="4.054" ry="4.052"/>
+    </g>
+    <rect width="317.1" height="94.555" x=".45" y=".45" fill="#FFF" stroke="#E9E9E9" stroke-width=".9"/>
+    <rect width="45.042" height="10.806" x="15.932" y="9.681" fill="#E9E9E9"/>
+    <ellipse cx="295.704" cy="13.674" fill="#E9E9E9" rx="5.63" ry="5.569"/>
+    <ellipse cx="275.885" cy="13.674" fill="#E9E9E9" rx="5.63" ry="5.569"/>
+    <rect width="159.614" height="12.607" x="79.275" y="40.524" fill="#E9E9E9"/>
+    <rect width="44.961" height="5.403" x="56.754" y="76.545" fill="#898989" rx="2.702"/>
+    <rect width="44.961" height="5.403" x="109.904" y="76.545" fill="#047A9C" rx="2.702"/>
+    <rect width="44.961" height="5.403" x="163.955" y="76.545" fill="#898989" rx="2.702"/>
+    <rect width="44.961" height="5.403" x="218.006" y="76.545" fill="#898989" rx="2.702"/>
+  </g>
+</svg>

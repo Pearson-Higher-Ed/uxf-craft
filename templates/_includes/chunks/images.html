@@ -1,0 +1,28 @@
+<div class="chunk">
+  <div class="ds-images images-{{ chunk.layoutType }} {{chunk.layoutSpacing}}-spacing">
+    <div class="image-grid">
+      {% for image in chunk.images %}
+        <div class="image">
+          {% switch chunk.layoutType %}
+            {% case "right" %}
+            <img {% if image.imageBorder %}class="border"{% endif %}srcset="{{ image.url }} 2x">
+            <div class="text">
+              <div class="title">{{ image.imageTitle }}</div>
+              <div class="caption">{{ image.imageCaption }}</div>
+            </div>
+
+            {% case "leftAligned" %}
+            <img {% if image.imageBorder %}class="border"{% endif %}srcset="{{ image.url }} 2x">
+            <div class="title">{{ image.imageTitle }}</div>
+            <div class="caption">{{ image.imageCaption }}</div>
+
+            {% default %}
+            <div class="title">{{ image.imageTitle }}</div>
+            <img {% if image.imageBorder %}class="border"{% endif %}srcset="{{ image.url }} 2x">
+            <div class="caption">{{ image.imageCaption }}</div>
+          {% endswitch %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
