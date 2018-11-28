@@ -1,8 +1,0 @@
-{% set parent = craft.entries({
-  'section': 'articles',
-  'type': 'uiKitParent'
-}).first() %}
-
-{% set latest = parent.children.first() %}
-
-<a class="pe-btn__{{ type | default('primary') }}--btn_{{ btn_size | default('large') }}" href="{{ latest.uiKitDownload.first().url }}">Download UI Kit v{{ latest.version }}</a>
