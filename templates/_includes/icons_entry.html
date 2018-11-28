@@ -101,8 +101,8 @@
           {% else %}
             <h3 class="pe-title">{{ change.version }}</h3>
           {% endif %}
-          {% if change.changeAuthor.first() %}
-            <p class="pe-label pe-label--small">{{ change.changeAuthor.first().fullName }}</p>
+          {% if change.changeAuthor.one() %}
+            <p class="pe-label pe-label--small">{{ change.changeAuthor.one().fullName }}</p>
           {% endif %}
           {{ change.changes }}
         {% endfor %}

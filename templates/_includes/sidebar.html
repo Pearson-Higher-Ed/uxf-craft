@@ -17,7 +17,7 @@
   <div class="sidebar-toc">
     <ul>
 
-      {% nav page in craft.entries.section('articles') %}
+      {% nav page in craft.entries.section('articles').all() %}
         <li {% if page.title == (entry.title | default("")) %}class="selected"{% endif %}>
           {% if page.type.handle == 'static' %}
             {{ page.title }}
@@ -39,7 +39,7 @@
             section: 'components',
             type: 'component',
             with: ['children']
-          }) %}
+          }).all() %}
             {% if component.children | length != 1 or
                (component.children[0].version | lower) != 'nightly' %}
 

@@ -21,7 +21,7 @@
     </div>
     <ul>
 
-      {% nav page in craft.entries.section('nightlyArticles') %}
+      {% nav page in craft.entries.section('nightlyArticles').all() %}
         <li {% if page.title == (entry.title | default("")) %}class="selected"{% endif %}>
           {% if page.type.handle == 'static' %}
             {{ page.title }}

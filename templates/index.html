@@ -28,9 +28,9 @@
 {% set parent = craft.entries({
   'section': 'articles',
   'type': 'uiKitParent'
-}).first() %}
+}).one() %}
 
-{% set latestUiKit = parent.children.first() %}
+{% set latestUiKit = parent.children.one() %}
 
 <div class="top-level-content narrow-show home">
   <div class="top">
@@ -78,7 +78,7 @@
       <h2>Components</h2>
       <div class="button-container"><a href="{{ latestUiKit.previewLink }}" target="_blank" class="pe-btn__primary--btn_large">View Fullscreen</a></div>
     </div>
-    <img src="{{ latestUiKit.previewImage.first().url }}" alt="Components available in the library">
+    <img src="{{ latestUiKit.previewImage.one().url }}" alt="Components available in the library">
   </section>
 
   <section class="contact">

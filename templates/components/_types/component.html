@@ -2,7 +2,7 @@
 {% set pageTitle = entry.title %}
 
 {% block content %}
-  {% set latest = (entry.getChildren().find() | latestApproved) %}
+  {% set latest = (entry.getChildren().all() | latestApproved) %}
 
   {% if 'icons' in (entry.title | lower) %}
     {% include '_includes/icons_entry' with {'entry': latest} only %}

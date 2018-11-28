@@ -16,7 +16,7 @@
 {% block content %}
 	<h1>News</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
+	{% for entry in craft.entries.section('news').all() %}
 		<article>
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>

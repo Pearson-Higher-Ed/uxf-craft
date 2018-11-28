@@ -1,7 +1,7 @@
 <div class="chunk">
   <div class="ds-images images-{{ chunk.layoutType }} {{chunk.layoutSpacing}}-spacing">
     <div class="image-grid">
-      {% for image in chunk.images %}
+      {% for image in chunk.images.all() %}
         <div class="image">
           {% switch chunk.layoutType %}
             {% case "right" %}

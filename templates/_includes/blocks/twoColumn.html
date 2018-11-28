@@ -5,7 +5,7 @@
     {% include '_includes/featureLinks' %}
   </div>
   <div class="content">
-    {% for asset in block.media %}
+    {% for asset in block.media.all() %}
       {% switch asset.mediaType %}
 
       {% case 'wideImage' %}

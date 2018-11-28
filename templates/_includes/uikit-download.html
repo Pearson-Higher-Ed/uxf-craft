@@ -1,8 +1,8 @@
 {% set parent = craft.entries({
   'section': 'articles',
   'type': 'uiKitParent'
-}).first() %}
+}).one() %}
 
-{% set latest = parent.children.first() %}
+{% set latest = parent.children.one() %}
 
-<a class="pe-btn__{{ type | default('primary') }}--btn_{{ btn_size | default('large') }}" href="{{ latest.uiKitDownload.first().url }}">Download UI Kit v{{ latest.version }}</a>
+<a class="pe-btn__{{ type | default('primary') }}--btn_{{ btn_size | default('large') }}" href="{{ latest.uiKitDownload.one().url }}">Download UI Kit v{{ latest.version }}</a>

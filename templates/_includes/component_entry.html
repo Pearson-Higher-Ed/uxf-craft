@@ -75,7 +75,7 @@
 
       <div class="toc">
         <ul>
-          {% for block in entry.blocks %}
+          {% for block in entry.blocks.all() %}
             {% if block.type == "sectionName" and entry.type != "colorsVersion" %}
               <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
             {% endif %}
@@ -102,7 +102,7 @@
 
       <div class="dependencies">
         <p><span class="pe-label pe-label--bold">Dependencies</span></p>
-        {% for dependency in entry.dependencies %}
+        {% for dependency in entry.dependencies.all() %}
           <p>
             <a href="{{ siteUrl }}components/{{ dependency.parent.title | kebab }}/v{{ dependency.version }}">
               {{ dependency.parent.title }} v{{ dependency.version }}
@@ -124,8 +124,8 @@
           <p><a href="{{ entry.quality_checklist }}"></a></p>
         {% endif %}
 
-        {% if entry.sketchFile.first() %}
-          <p><a href="{{ entry.sketchFile.first().url }}">Documentation Assets (Sketch)</a></p>
+        {% if entry.sketchFile.one() %}
+          <p><a href="{{ entry.sketchFile.one().url }}">Documentation Assets (Sketch)</a></p>
         {% endif %}
       </div>
 
@@ -133,7 +133,7 @@
   </div>
 
   {% if entry.type == 'version' %}
-    {% for block in entry.blocks %}
+    {% for block in entry.blocks.all() %}
       <div class="block">
         {% include '_includes/blocks/' ~ block.type %}
       </div>
@@ -146,14 +146,14 @@
 
   <div class="block changelog">
     <h2 class="pe-title pe-bold" id="changelog">Changelog</h2>
-    {% for change in entry.changelog %}
+    {% for change in entry.changelog.all() %}
       {% if change.version != entry.version %}
         <h3 class="pe-title"><a href="{{ siteUrl }}c/{{ entry.parent.title | kebab }}/v{{ change.version }}">{{ change.version }}</a></h3>
       {% else %}
         <h3 class="pe-title">{{ change.version }}</h3>
       {% endif %}
-      {% if change.changeAuthor.first() %}
-        <p class="pe-label pe-label--small">{{ change.changeAuthor.first().fullName }}</p>
+      {% if change.changeAuthor.one() %}
+        <p class="pe-label pe-label--small">{{ change.changeAuthor.one().fullName }}</p>
       {% endif %}
       {{ change.changes }}
     {% endfor %}

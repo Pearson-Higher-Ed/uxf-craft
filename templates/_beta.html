@@ -5,7 +5,7 @@
 {% set entry = craft.entries({
   slug: slug,
   section: 'components'
-}).first().children.find() | latestOverall %}
+}).one().children.all() | latestOverall %}
 
 {% block content %}
   {% include '_includes/component_entry' with {'entry': entry} only %}

@@ -18,7 +18,7 @@
 
   <div class="toc">
     <ul>
-    {% for example in entry.contentExamples %}
+    {% for example in entry.contentExamples.all() %}
       {% if example.type == 'contentExample' %}
         <li><a href="#{{ example.exampleName | kebab }}">{{ example.exampleName }}</a></li>
       {% endif %}
@@ -31,7 +31,7 @@
     <p class="date pe-label pe-label--small">{{ entry.postDate | date("M j, Y") }}</p>
 
     <div class="inline-toc">
-      {% for example in entry.contentExamples %}
+      {% for example in entry.contentExamples.all() %}
         {% if example.type == 'contentExample' %}
           <li><a href="#{{ example.exampleName | kebab }}">{{ example.exampleName }}</a></li>
         {% endif %}

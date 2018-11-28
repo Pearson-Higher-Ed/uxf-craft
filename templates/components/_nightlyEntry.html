@@ -1,4 +1,4 @@
-{% set entry = craft.entries.section('components').type('component').slug(component|lower).first() %}
+{% set entry = craft.entries.section('components').type('component').slug(component|lower).one() %}
 
 {% extends "_default" %}
 {% set pageTitle = entry.title %}
@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-  {% set latest = (entry.getChildren().find() | getNightly) %}
+  {% set latest = (entry.getChildren().all() | getNightly) %}
 
   {% if 'icons' in (entry.title | lower) %}
     {% include '_includes/icons_entry' with {'entry': latest} only %}

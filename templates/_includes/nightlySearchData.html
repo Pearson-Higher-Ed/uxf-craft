@@ -2,7 +2,7 @@
   var componentData = [
     {% for component in craft.entries.section('components').type('component') | hasNightly %}
 
-    {% set latestVersion = component.getChildren().version('*ightly').first() %}
+    {% set latestVersion = component.getChildren().version('*ightly').one() %}
     {% if latestVersion %}
       {
         name: '{{ latestVersion.parent.title }}',

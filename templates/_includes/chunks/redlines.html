@@ -5,7 +5,7 @@
       <div class="heading">Redlines</div>
 {% endif %}
 
-    {% set image = chunk.redlineImage.first() %}
+    {% set image = chunk.redlineImage.one() %}
 
       <div class="explanation{% if not image %} only{% endif %}">{{ chunk.redlineExplanation }}</div>
       {% if image %}

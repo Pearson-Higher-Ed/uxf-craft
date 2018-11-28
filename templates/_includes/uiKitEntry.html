@@ -4,28 +4,28 @@
       <h1>{{ entry.parent.title }} v{{ entry.version }}</h1>
 
       <div class="uikit-buttons">
-        <a class="pe-btn__cta--btn_xlarge" href="{{ entry.uiKitDownload.first().url }}">Download UI Kit v{{ entry.version }}</a>
+        <a class="pe-btn__cta--btn_xlarge" href="{{ entry.uiKitDownload.one().url }}">Download UI Kit v{{ entry.version }}</a>
         <a class="pe-btn--btn_xlarge" href="{{ entry.previewLink }}" target="_blank">Preview</a>
       </div>
 
       <p>{{ entry.postDate | date("M j, Y") }}</p>
 
-      {{ entry.changelog.first().changes }}
+      {{ entry.changelog.one().changes }}
 
       {{ entry.uiKitDescription }}
 
-      <img src="{{ entry.previewImage.first().url }}" class="wide" />
+      <img src="{{ entry.previewImage.one().url }}" class="wide" />
 
       <h2>Download previous versions</h2>
 
       {% for change in entry.parent.children %}
         {% if loop.first %}
         {% else %}
-        <h3><a href="{{ change.uiKitDownload.first().url }}">{{ change.version }}</a></h3>
+        <h3><a href="{{ change.uiKitDownload.one().url }}">{{ change.version }}</a></h3>
 
         <p>{{ change.postDate | date("M j, Y") }}</p>
 
-        {{ change.changelog.first().changes }}
+        {{ change.changelog.one().changes }}
         {% endif %}
       {% endfor %}
     </article>
