@@ -45,8 +45,8 @@ $(document).ready(function() {
     });
 });
 
-var SRanimation = createLottie('spacingRedlines');
-var SIanimation = createLottie('spaceIncrement');
+var SRanimation = createLottie('spacingRedlines'),
+    SIanimation = createLottie('spaceIncrement');
 
 function squaresSmall() {
     setTimeout(function(){

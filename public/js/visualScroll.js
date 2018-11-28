@@ -11,11 +11,16 @@ for  (var o = 0; o < menuBW.length; o++) {
     })
     .setTween(menuTween[o])
     .duration(200)
-    .addTo(controller)
-    .addIndicators({name: "transition"+m});
+    .addTo(controller);
+    //.addIndicators({name: "transition"+o});
 }
 
 $(document).ready(function() {
+    //cover animation
+    $('.ds-cover-waves:first-child').addClass('ds-wave-animation00');
+    $('.ds-cover-waves:nth-child(2)').addClass('ds-wave-animation01');
+    $('.ds-cover-waves:nth-child(3)').addClass('ds-wave-animation02');
+
     animationsScenes[0].on("enter", function (event) {
         whiteMenu(false);
         clearInterval(coverInter);
@@ -49,34 +54,37 @@ $(document).ready(function() {
         CDD05animation.play();
     });
     animationsScenes[7].on("enter", function (event) {
-        typo00animation.play();
+        $('.ds-type-text').addClass('ds-type-animation');
     });
     animationsScenes[8].on("enter", function (event) {
-        typo01animation.play();
+        typo00animation.play();
     });
     animationsScenes[9].on("enter", function (event) {
-        icons00animation.play();
+        typo01animation.play();
     });
     animationsScenes[10].on("enter", function (event) {
-        icons01animation.play();
+        icons00animation.play();
     });
     animationsScenes[11].on("enter", function (event) {
-        HTanimation.play();
+        icons01animation.play();
     });
     animationsScenes[12].on("enter", function (event) {
+        HTanimation.play();
+    });
+    animationsScenes[13].on("enter", function (event) {
         illusAnimation.play();
     });
 });
-var CDD00animation = createLottie('colorDoDont00');
-var CDD01animation = createLottie('colorDoDont01');
-var CDD02animation = createLottie('colorDoDont02');
-var CDD03animation = createLottie('colorDoDont03');
-var CDD04animation = createLottie('colorDoDont04');
-var CDD05animation = createLottie('colorDoDont05');
-var HTanimation = createLottie('hintText');
-var illusAnimation = createLottie('illustration');
-var icons00animation = createLottie('icons00');
-var icons01animation = createLottie('icons01');
-var typo00animation = createLottie('typography00');
-var typo01animation = createLottie('typography01');
+var CDD00animation = createLottie('colorDoDont00'),
+    CDD01animation = createLottie('colorDoDont01'),
+    CDD02animation = createLottie('colorDoDont02'),
+    CDD03animation = createLottie('colorDoDont03'),
+    CDD04animation = createLottie('colorDoDont04'),
+    CDD05animation = createLottie('colorDoDont05'),
+    HTanimation = createLottie('hintText'),
+    illusAnimation = createLottie('illustration'),
+    icons00animation = createLottie('icons00'),
+    icons01animation = createLottie('icons01'),
+    typo00animation = createLottie('typography00'),
+    typo01animation = createLottie('typography01');
 

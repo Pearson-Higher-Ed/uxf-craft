@@ -1,6 +1,85 @@
 .ds-visual-page {
     .ds-cover {
-        background-image: url('/public/theme_assets/visual-bg.png');
+        background-image: url('/public/theme_assets/visual-bg.svg');
+        .ds-cover-waves {
+            width: 100%;
+            height: auto;
+            left: 0;
+            &:first-child {
+                bottom: -5%; 
+            }
+            &:nth-child(2) {
+                bottom: -10%; 
+            }
+            &:nth-child(3) {
+                bottom: -15%; 
+            }
+        }
+
+        .ds-wave-animation00 {
+            animation: wave00 3s ease-out;
+        }
+
+        .ds-wave-animation01 {
+            animation: wave01 3s ease-out 0.2s;
+        }
+
+        .ds-wave-animation02 {
+            animation: wave02 3s ease-out;
+        }
+
+        @keyframes wave00 {
+            0% {
+                bottom: -5%;
+            }
+            25% {
+                bottom: -8%;
+            }
+            50% {
+                bottom: -6%;
+            }
+            75% {
+                bottom: -2%;
+            }
+            100% {
+                bottom: -5%;
+            }
+        }
+
+        @keyframes wave01 {
+            0% {
+                bottom: -10%;
+            }
+            25% {
+                bottom: -8%;
+            }
+            50% {
+                bottom: -7%;
+            }
+            75% {
+                bottom: -9%;
+            }
+            100% {
+                bottom: -10%;
+            }
+        }
+        @keyframes wave02 {
+            0% {
+                bottom: -15%;
+            }
+            25% {
+                bottom: -13%;
+            }
+            50% {
+                bottom: -12%;
+            }
+            75% {
+                bottom: -14%;
+            }
+            100% {
+                bottom: -15%;
+            }
+        }
     }
     
     .ds-color-card {
@@ -98,28 +177,55 @@
             line-height: 48px;
         }
         .ds-type-bg {
-            background: url('/public/theme_assets/typebg.svg') center center fixed;
+            background: url('/public/theme_assets/type-bg.svg') center center fixed;
             background-size: cover;
             min-height: 644px;
             .ds-type-text {
                 top: 0;
-                left: 0;
-                right: 0;
                 z-index: 1;
+                p {
+                    opacity: 0;
+                    transition: all 0.8s ease-out;
+                    height: 86px;
+                    overflow-y: hidden;
+                    word-wrap: break-word;
+                }
+                
+            }
+            .ds-type-animation {
                 p:nth-child(4) {
                     opacity: 0.1;
                 }
                 @for $i from 1 through 3 {
                     p:nth-child(#{$i}), p:nth-child(#{8-$i}) {
                         opacity: 0.02 * $i;
+                        left: 0;
                     }
                 }
-                p {
-                    height: 86px;
-                    overflow-y: hidden;
-                    word-wrap: break-word;
+                p:nth-child(3) {
+                    animation: moveright 0.8s ease-out 0.8s;
                 }
-            } 
+                p:nth-child(4) {
+                    animation: moveleft 0.8s ease-out 0.8s;
+                }
+
+                @keyframes moveright {
+                    0% {
+                        left: 0;
+                    }
+                    100% {
+                        left: 10%;
+                    }
+                }
+                @keyframes moveleft {
+                    0% {
+                        left: 0;
+                    }
+                    100% {
+                        left: -10%;
+                    }
+                }
+            }
             .ds-container {
                 z-index: 2;
             }
