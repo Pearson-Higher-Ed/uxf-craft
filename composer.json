@@ -8,7 +8,9 @@
   "autoload": {
     "psr-4": {
       "modules\\": "modules/",
-      "modules\\gravityutilsmodule\\": "modules/gravityutilsmodule/src/"
+      "modules\\gravityutilsmodule\\": "modules/gravityutilsmodule/src/",
+      "modules\\tocgenmodule\\": "modules/tocgenmodule/src/",
+      "modules\\TOC\\": "modules/tocgenmodule/src/"
     }
   },
   "config": {
