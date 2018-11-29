@@ -23,6 +23,9 @@ return [
         'gravity-utils-module' => [
             'class' => \modules\gravityutilsmodule\GravityUtilsModule::class,
         ],
+        'toc-gen-module' => [
+            'class' => \modules\tocgenmodule\TocGenModule::class,
+        ]
     ],
-    'bootstrap' => ['my-module', 'gravity-utils-module'],
+    'bootstrap' => ['my-module', 'gravity-utils-module', 'toc-gen-module'],
 ];

@@ -1,16 +1,17 @@
 <?php
 /**
- * Gravity Utils module for Craft CMS 3.x
+ * Toc Gen module for Craft CMS 3.x
  *
- * Handy extensions for the Gravity website.
+ * Generator a TOC from html headings
  *
  * @link      google.com
- * @copyright Copyright (c) 2018 Parker Malenke
+ * @copyright Copyright (c) 2018 Parker
  */
 
 namespace modules\tocgenmodule;
 
-use modules\tocgenmodule\twigextensions\TocTwigExtension;
+use modules\tocgenmodule\assetbundles\tocgenmodule\TocGenModuleAsset;
+use modules\tocgenmodule\twigextensions\TocGenModuleTwigExtension;
 
 use Craft;
 use craft\events\RegisterTemplateRootsEvent;
@@ -32,8 +33,8 @@ use yii\base\Module;
  *
  * https://craftcms.com/docs/plugins/introduction
  *
- * @author    Parker Malenke
- * @package   GravityUtilsModule
+ * @author    Parker
+ * @package   TocGenModule
  * @since     1.0.0
  *
  */
@@ -44,9 +45,9 @@ class TocGenModule extends Module
 
     /**
      * Static property that is an instance of this module class so that it can be accessed via
-     * GravityUtilsModule::$instance
+     * TocGenModule::$instance
      *
-     * @var GravityUtilsModule
+     * @var TocGenModule
      */
     public static $instance;
 
@@ -60,6 +61,19 @@ class TocGenModule extends Module
     {
         Craft::setAlias('@modules/tocgenmodule', $this->getBasePath());
         $this->controllerNamespace = 'modules\tocgenmodule\controllers';
+
+        // Translation category
+        $i18n = Craft::$app->getI18n();
+        /** @noinspection UnSafeIsSetOverArrayInspection */
+        if (!isset($i18n->translations[$id]) && !isset($i18n->translations[$id.'*'])) {
+            $i18n->translations[$id] = [
+                'class' => PhpMessageSource::class,
+                'sourceLanguage' => 'en-US',
+                'basePath' => '@modules/tocgenmodule/translations',
+                'forceTranslation' => true,
+                'allowOverrides' => true,
+            ];
+        }
 
         // Base template directory
         Event::on(View::class, View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function (RegisterTemplateRootsEvent $e) {
@@ -76,7 +90,7 @@ class TocGenModule extends Module
 
     /**
      * Set our $instance static property to this class so that it can be accessed via
-     * GravityUtilsModule::$instance
+     * TocGenModule::$instance
      *
      * Called after the module class is instantiated; do any one-time initialization
      * here such as hooks and events.
@@ -90,8 +104,28 @@ class TocGenModule extends Module
         parent::init();
         self::$instance = $this;
 
+        require __DIR__ . '/vendor/autoload.php';
+
+        // Load our AssetBundle
+        if (Craft::$app->getRequest()->getIsCpRequest()) {
+            Event::on(
+                View::class,
+                View::EVENT_BEFORE_RENDER_TEMPLATE,
+                function (TemplateEvent $event) {
+                    try {
+                        Craft::$app->getView()->registerAssetBundle(TocGenModuleAsset::class);
+                    } catch (InvalidConfigException $e) {
+                        Craft::error(
+                            'Error registering AssetBundle - '.$e->getMessage(),
+                            __METHOD__
+                        );
+                    }
+                }
+            );
+        }
+
         // Add in our Twig extensions
-        Craft::$app->view->registerTwigExtension(new TocTwigExtension());
+        Craft::$app->view->registerTwigExtension(new TocGenModuleTwigExtension());
 
 /**
  * Logging in Craft involves using one of the following methods:

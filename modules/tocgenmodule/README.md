@@ -1,6 +1,6 @@
-# Gravity Utils module for Craft CMS 3.x
+# Toc Gen module for Craft CMS 3.x
 
-Handy extensions for the Gravity website.
+Generator a TOC from html headings
 
 ## Requirements
 
@@ -14,18 +14,18 @@ First, you'll need to add the contents of the `app.php` file to your `config/app
 ```
 return [
     'modules' => [
-        'gravity-utils-module' => [
-            'class' => \modules\gravityutilsmodule\GravityUtilsModule::class,
+        'toc-gen-module' => [
+            'class' => \modules\tocgenmodule\TocGenModule::class,
         ],
     ],
-    'bootstrap' => ['gravity-utils-module'],
+    'bootstrap' => ['toc-gen-module'],
 ];
 ```
 You'll also need to make sure that you add the following to your project's `composer.json` file so that Composer can find your module:
 
     "autoload": {
         "psr-4": {
-          "modules\\gravityutilsmodule\\": "modules/gravityutilsmodule/src/"
+          "modules\\tocgenmodule\\": "modules/tocgenmodule/src/"
         }
     },
 
@@ -35,18 +35,18 @@ After you have added this, you will need to do:
  
  …from the project’s root directory, to rebuild the Composer autoload map. This will happen automatically any time you do a `composer install` or `composer update` as well.
 
-## Gravity Utils Overview
+## Toc Gen Overview
 
 -Insert text here-
 
-## Using Gravity Utils
+## Using Toc Gen
 
 -Insert text here-
 
-## Gravity Utils Roadmap
+## Toc Gen Roadmap
 
 Some things to do, and ideas for potential features:
 
 * Release it
 
-Brought to you by [Parker Malenke](google.com)
+Brought to you by [Parker](google.com)
