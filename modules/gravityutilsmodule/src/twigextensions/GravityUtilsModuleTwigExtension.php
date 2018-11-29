@@ -60,7 +60,7 @@ class GravityUtilsModuleTwigExtension extends \Twig_Extension
               'latestOverall', [$this, 'latestOverall']
             ),
             new \Twig_SimpleFilter(
-              'groupByCategory', [$this, 'groupByCategory']
+              'groupByCategory', [$this, 'groupBy']
             ),
             new \Twig_SimpleFilter(
               'iconsGroupByCategory', [$this, 'iconsGroupBy']
