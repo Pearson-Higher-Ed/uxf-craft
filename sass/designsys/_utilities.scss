@@ -1,5 +1,5 @@
-@import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
+@import "../../web/node_modules/bootstrap/scss/functions";
+@import "../../web/node_modules/bootstrap/scss/variables";
 
 $grid-breakpoints: (
   xs: 0,
@@ -9,46 +9,46 @@ $grid-breakpoints: (
   xl: 1280px
 );
 
-@import "../../node_modules/bootstrap/scss/mixins/background-variant";
-@import "../../node_modules/bootstrap/scss/mixins/border-radius";
-@import "../../node_modules/bootstrap/scss/mixins/box-shadow";
-@import "../../node_modules/bootstrap/scss/mixins/gradients";
-@import "../../node_modules/bootstrap/scss/mixins/transition";
-@import "../../node_modules/bootstrap/scss/mixins/clearfix";
-@import "../../node_modules/bootstrap/scss/mixins/float";
+@import "../../web/node_modules/bootstrap/scss/mixins/background-variant";
+@import "../../web/node_modules/bootstrap/scss/mixins/border-radius";
+@import "../../web/node_modules/bootstrap/scss/mixins/box-shadow";
+@import "../../web/node_modules/bootstrap/scss/mixins/gradients";
+@import "../../web/node_modules/bootstrap/scss/mixins/transition";
+@import "../../web/node_modules/bootstrap/scss/mixins/clearfix";
+@import "../../web/node_modules/bootstrap/scss/mixins/float";
 
-@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../../node_modules/bootstrap/scss/mixins/lists";
-@import "../../node_modules/bootstrap/scss/mixins/hover";
-@import "../../node_modules/bootstrap/scss/mixins/image";
-@import "../../node_modules/bootstrap/scss/mixins/badge";
-@import "../../node_modules/bootstrap/scss/mixins/resize";
-@import "../../node_modules/bootstrap/scss/mixins/screen-reader";
-@import "../../node_modules/bootstrap/scss/mixins/size";
-@import "../../node_modules/bootstrap/scss/mixins/reset-text";
-@import "../../node_modules/bootstrap/scss/mixins/text-emphasis";
-@import "../../node_modules/bootstrap/scss/mixins/text-hide";
-@import "../../node_modules/bootstrap/scss/mixins/text-truncate";
-@import "../../node_modules/bootstrap/scss/mixins/visibility";
+@import "../../web/node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../web/node_modules/bootstrap/scss/mixins/lists";
+@import "../../web/node_modules/bootstrap/scss/mixins/hover";
+@import "../../web/node_modules/bootstrap/scss/mixins/image";
+@import "../../web/node_modules/bootstrap/scss/mixins/badge";
+@import "../../web/node_modules/bootstrap/scss/mixins/resize";
+@import "../../web/node_modules/bootstrap/scss/mixins/screen-reader";
+@import "../../web/node_modules/bootstrap/scss/mixins/size";
+@import "../../web/node_modules/bootstrap/scss/mixins/reset-text";
+@import "../../web/node_modules/bootstrap/scss/mixins/text-emphasis";
+@import "../../web/node_modules/bootstrap/scss/mixins/text-hide";
+@import "../../web/node_modules/bootstrap/scss/mixins/text-truncate";
+@import "../../web/node_modules/bootstrap/scss/mixins/visibility";
 
-@import "../../node_modules/bootstrap/scss/utilities/align";
-@import "../../node_modules/bootstrap/scss/utilities/align";
-@import "../../node_modules/bootstrap/scss/utilities/background";
-@import "../../node_modules/bootstrap/scss/utilities/borders";
-@import "../../node_modules/bootstrap/scss/utilities/clearfix";
-@import "../../node_modules/bootstrap/scss/utilities/display";
-@import "../../node_modules/bootstrap/scss/utilities/embed";
-@import "../../node_modules/bootstrap/scss/utilities/flex";
-@import "../../node_modules/bootstrap/scss/utilities/float";
-@import "../../node_modules/bootstrap/scss/utilities/position";
-@import "../../node_modules/bootstrap/scss/utilities/screenreaders";
-@import "../../node_modules/bootstrap/scss/utilities/shadows";
-@import "../../node_modules/bootstrap/scss/utilities/sizing";
-@import "../../node_modules/bootstrap/scss/utilities/text";
-@import "../../node_modules/bootstrap/scss/utilities/visibility";
+@import "../../web/node_modules/bootstrap/scss/utilities/align";
+@import "../../web/node_modules/bootstrap/scss/utilities/align";
+@import "../../web/node_modules/bootstrap/scss/utilities/background";
+@import "../../web/node_modules/bootstrap/scss/utilities/borders";
+@import "../../web/node_modules/bootstrap/scss/utilities/clearfix";
+@import "../../web/node_modules/bootstrap/scss/utilities/display";
+@import "../../web/node_modules/bootstrap/scss/utilities/embed";
+@import "../../web/node_modules/bootstrap/scss/utilities/flex";
+@import "../../web/node_modules/bootstrap/scss/utilities/float";
+@import "../../web/node_modules/bootstrap/scss/utilities/position";
+@import "../../web/node_modules/bootstrap/scss/utilities/screenreaders";
+@import "../../web/node_modules/bootstrap/scss/utilities/shadows";
+@import "../../web/node_modules/bootstrap/scss/utilities/sizing";
+@import "../../web/node_modules/bootstrap/scss/utilities/text";
+@import "../../web/node_modules/bootstrap/scss/utilities/visibility";
 
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
+@import "../../web/node_modules/bootstrap/scss/type";
+@import "../../web/node_modules/bootstrap/scss/images";
 
 .pe-label--single {
   font-size: 1rem;
@@ -83,7 +83,7 @@ $grid-breakpoints: (
 
 .img-center {
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .pe-normal {
@@ -111,7 +111,7 @@ $grid-breakpoints: (
     @include colSet(887px, 12, 48px, 24px);
     @include colSet(983px, 12, 56px, 24px);
     @include colSet(1079px, 12, 64px, 24px);
-    @include colSet(1175px, 12, 72px, 24px); 
+    @include colSet(1175px, 12, 72px, 24px);
 }
 .ds-container {
     box-sizing: border-box;
@@ -130,7 +130,7 @@ $grid-breakpoints: (
     @include xmargin(887px, 24px);
     @include xmargin(983px, 24px);
     @include xmargin(1079px, 24px);
-    @include xmargin(1175px, 24px); 
+    @include xmargin(1175px, 24px);
 }
 
 @mixin colse($a, $b) {
@@ -189,10 +189,10 @@ $sspacers: map-merge((1: $sspacer, 3: $sspacer * 3, 5: $sspacer * 5, 7: $sspacer
 @each $breakpoint in map-keys($grid-breakpoints) {
     @include media-breakpoint-up($breakpoint) {
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-  
+
       @each $prop, $abbrev in (margin: dm, padding: dp) {
         @each $size, $length in $spacers {
-  
+
           .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length; }
           .#{$abbrev}t#{$infix}-#{$size},
           .#{$abbrev}y#{$infix}-#{$size} {
@@ -212,7 +212,7 @@ $sspacers: map-merge((1: $sspacer, 3: $sspacer * 3, 5: $sspacer * 5, 7: $sspacer
           }
         }
       }
-  
+
       // Some special margin utils
       .m#{$infix}-auto { margin: auto; }
       .mt#{$infix}-auto,
@@ -237,10 +237,10 @@ $sspacers: map-merge((1: $sspacer, 3: $sspacer * 3, 5: $sspacer * 5, 7: $sspacer
   @each $breakpoint in map-keys($grid-breakpoints) {
     @include media-breakpoint-up($breakpoint) {
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-  
+
       @each $prop, $abbrev in (margin: sm, padding: sp) {
         @each $size, $length in $sspacers {
-  
+
           .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length; }
           .#{$abbrev}t#{$infix}-#{$size},
           .#{$abbrev}y#{$infix}-#{$size} {
