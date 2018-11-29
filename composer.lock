@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4927a1532c75a8367fada141cfeb392b",
+    "content-hash": "8fc4a800dece0d8b891b32020bee003a",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -296,6 +296,56 @@
                 "validator"
             ],
             "time": "2018-11-01T09:45:54+00:00"
+        },
+        {
+            "name": "craftcms/anchors",
+            "version": "2.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/anchors/zipball/41e940f20ee4438918610e253c7ce5aab12093b0",
+                "reference": "41e940f20ee4438918610e253c7ce5aab12093b0",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.27"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Anchors",
+                "handle": "anchors",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/anchors/v2/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/anchors/archive/v2.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\anchors\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Add anchor links to headings in your Craft CMS website content.",
+            "keywords": [
+                "anchors",
+                "cms",
+                "craftcms",
+                "html",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/anchors/issues?state=open",
+                "source": "https://github.com/craftcms/anchors",
+                "docs": "https://github.com/craftcms/anchors",
+                "rss": "https://github.com/craftcms/anchors/commits/v2.atom"
+            },
+            "time": "2018-07-16T23:29:32+00:00"
         },
         {
             "name": "craftcms/cms",
