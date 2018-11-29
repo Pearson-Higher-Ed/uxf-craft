@@ -1,10 +1,9 @@
 # Craft recommended folders to ignore
-craft/storage/backups/
-craft/storage/runtime/
-craft/storage/userphotos/
+/.env
+/.idea
+/vendor
 
 # Config files with passwords
-/craft/config/db.php
 /scripts/.env.sh
 
 # OS files

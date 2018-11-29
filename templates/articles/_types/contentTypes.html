@@ -1,0 +1,101 @@
+{% extends "_default" %}
+
+{% set pageTitle = entry.title %}
+
+{% block content %}
+<div class="top-level-content content-types">
+  <div class="back2top">
+    <button type="button" class="pe-icon--btn">
+      <svg role="img"
+           aria-labelledby="r2"
+           focusable="false"
+           class="pe-icon--dropdown-close-sm-24">
+        <title id="r2">Close dialog</title>
+        <use xlink:href="#dropdown-close-sm-24"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="toc">
+    <ul>
+    {% for example in entry.contentExamples.all() %}
+      {% if example.type == 'contentExample' %}
+        <li><a href="#{{ example.exampleName | kebab }}">{{ example.exampleName }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>{{ entry.title }}</h1>
+    <p class="date pe-label pe-label--small">{{ entry.postDate | date("M j, Y") }}</p>
+
+    <div class="inline-toc">
+      {% for example in entry.contentExamples.all() %}
+        {% if example.type == 'contentExample' %}
+          <li><a href="#{{ example.exampleName | kebab }}">{{ example.exampleName }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="intro">
+      {{ entry.contentTypesIntro }}
+    </div>
+
+    {% for example in entry.contentExamples %}
+      {% switch example.type %}
+
+        {% case 'contentExample' %}
+          {% if not loop.first %}
+            </div>
+          {% endif %}
+          <div class="example">
+            <h2 id="{{ example.exampleName | kebab }}">{{ example.exampleName }}</h2>
+
+            <div class="description">
+              {{ example.exampleDescription }}
+            </div>
+
+        {% case 'dosAndDonts' %}
+            <div class="dosdonts">
+              <div class="do">
+                <div class="name">Do</div>
+                <div class="card">
+                  {{ example.doText }}
+                </div>
+                <div class="caption">
+                  {{ example.doCaption }}
+                </div>
+              </div>
+              <div class="dont">
+                <div class="name">Don't</div>
+                <div class="card">
+                  {{ example.dontText }}
+                </div>
+                <div class="caption">
+                  {{ example.dontCaption }}
+                </div>
+              </div>
+            </div>
+        {% default %}
+      {% endswitch %}
+
+      {% if loop.last %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.querySelector('.back2top').addEventListener('click', function(e) {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+  })
+</script>
+
+<script type="text/javascript">
+  document.querySelectorAll('.dosdonts .card a').forEach(function(a) {
+    a.removeAttribute('href')
+  })
+</script>
+{% endblock %}

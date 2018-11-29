@@ -1,0 +1,65 @@
+{% for feature in block.describedFeatures %}
+<div id="{{ entry.parent.title | kebab }}--{{ feature.feature | kebab }}-redlines"></div>
+{% endfor %}
+
+<div class="two_column">
+  <div class="text redlines">
+    {{ block.explanation }}
+  </div>
+
+  <div class="content">
+    {% for asset in block.illustrations.all() %}
+      {% switch asset.mediaType %}
+
+      {% case 'wideImage' %}
+      <div class="image wide">
+        <div class="media {% if asset.border %}border{% endif %}">
+          <img src="{{ asset.url }}" />
+        </div>
+        {% if asset.caption %}<div class="caption">{{ asset.caption | markdown }}</div>{% endif %}
+      </div>
+
+      {% case 'narrowImage' %}
+      <div class="image narrow">
+        <div class="media {% if asset.border %}border{% endif %}">
+          <img src="{{ asset.url }}" />
+        </div>
+        {% if asset.caption %}<div class="caption">{{ asset.caption | markdown }}</div>{% endif %}
+      </div>
+
+      {% case 'ios image' or 'ios_image' or 'iOS image' or 'iOS_image' %}
+      <div class="image ios">
+        <div class="media {% if item.border %}border{% endif %}">
+          <img src="{% if include.beta or include.in_dir %}../{% endif %}v{{page.version}}/{{item.src}}" />
+        </div>
+        {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
+      </div>
+
+      {% case 'android image' or 'android_image' %}
+      <div class="image android">
+        <div class="media {% if item.border %}border{% endif %}">
+          <img src="{% if include.beta or include.in_dir %}../{% endif %}v{{page.version}}/{{item.src}}" />
+        </div>
+        {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
+      </div>
+
+      {% case 'wide video' %}
+      <div class="image wide">
+        <div class="media {% if item.border %}border{% endif %}">
+          <video src="{% if include.beta or include.in_dir %}../{% endif %}v{{page.version}}/{{item.src}}" loop controls/>
+        </div>
+        {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
+      </div>
+
+      {% case 'narrow video' %}
+      <div class="image narrow">
+        <div class="media {% if item.border %}border{% endif %}">
+          <video src="{% if include.beta or include.in_dir %}../{% endif %}v{{page.version}}/{{item.src}}" loop controls/>
+        </div>
+        {% if item.caption %}<div class="caption">{{item.caption | markdown}}</div>{% endif %}
+      </div>
+
+      {% endswitch %}
+    {% endfor %}
+  </div>
+</div>

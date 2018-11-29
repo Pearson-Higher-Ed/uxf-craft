@@ -1,0 +1,8 @@
+{% extends "_default" %}
+
+{% set pageTitle = "UI Kit" %}
+
+{% block content %}
+{% set latest = (entry.getChildren().all() | latestApproved) %}
+{% include '_includes/uiKitEntry' with {'entry': latest} only %}
+{% endblock %}
