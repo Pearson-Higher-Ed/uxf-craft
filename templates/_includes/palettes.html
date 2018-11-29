@@ -1,10 +1,10 @@
 {% set colors = {} %}
 
-{% for color in entry.colors %}
+{% for color in entry.colors.all() %}
   {% set colors = colors | merge({(color.colorName): color}) %}
 {% endfor %}
 
-{% for palette in entry.palettes %}
+{% for palette in entry.palettes.all() %}
   <div class="block">
     <div class="section">
       <h2 class="pe-title pe-bold" id="{{ palette.paletteName | kebab }}">{{ palette.paletteName }}</h2>

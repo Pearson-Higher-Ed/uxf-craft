@@ -42,7 +42,7 @@
       {{ entry.contentTypesIntro }}
     </div>
 
-    {% for example in entry.contentExamples %}
+    {% for example in entry.contentExamples.all() %}
       {% switch example.type %}
 
         {% case 'contentExample' %}

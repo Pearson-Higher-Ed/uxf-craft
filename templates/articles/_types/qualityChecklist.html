@@ -19,8 +19,8 @@
       </div>
     </header>
 
-    {% set grouped = entry.designReqs | groupByCategory  %}
-    {% set devGrouped = entry.developmentReqs | groupByCategory %}
+    {% set grouped = entry.designReqs.all() | groupByCategory  %}
+    {% set devGrouped = entry.developmentReqs.all() | groupByCategory %}
 
     <div class="tab-pane active" data-target="design">
       <div class="toc">

@@ -18,7 +18,7 @@
 
       <h2>Download previous versions</h2>
 
-      {% for change in entry.parent.children %}
+      {% for change in entry.parent.children.all() %}
         {% if loop.first %}
         {% else %}
         <h3><a href="{{ change.uiKitDownload.one().url }}">{{ change.version }}</a></h3>

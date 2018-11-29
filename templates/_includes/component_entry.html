@@ -81,10 +81,11 @@
                 <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
               {% endif %}
             {% endfor %}
+          {% else %}
+            {% for palette in entry.palettes.all() %}
+              <li><a href="#{{ palette.paletteName | kebab }}">{{ palette.paletteName }}</a></li>
+            {% endfor %}
           {% endif %}
-          {% for palette in entry.palettes %}
-            <li><a href="#{{ palette.paletteName | kebab }}">{{ palette.paletteName }}</a></li>
-          {% endfor %}
           <li><a href="#changelog">Changelog</a></li>
         </ul>
       </div>
