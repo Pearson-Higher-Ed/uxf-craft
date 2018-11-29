@@ -1,7 +1,7 @@
 $baseurl: "{{site.baseurl}}";
 
 $pe-fonts-path: "../node_modules/@pearson-components/elements-sdk/build/fonts/";
-@import "../node_modules/@pearson-components/elements-sdk/src/styles/elements";
+@import "../web/node_modules/@pearson-components/elements-sdk/src/styles/elements";
 
 @import "utility";
 
