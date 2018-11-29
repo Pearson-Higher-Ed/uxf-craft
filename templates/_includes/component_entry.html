@@ -75,11 +75,13 @@
 
       <div class="toc">
         <ul>
-          {% for block in entry.blocks.all() %}
-            {% if block.type == "sectionName" and entry.type != "colorsVersion" %}
-              <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
-            {% endif %}
-          {% endfor %}
+          {% if entry.type != "colorsVersion" %}
+            {% for block in entry.blocks.all() %}
+              {% if block.type == "sectionName" %}
+                <li><a href="#{{ block.nameOfSection | kebab }}">{{ block.nameOfSection }}</a></li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
           {% for palette in entry.palettes %}
             <li><a href="#{{ palette.paletteName | kebab }}">{{ palette.paletteName }}</a></li>
           {% endfor %}
@@ -102,14 +104,18 @@
 
       <div class="dependencies">
         <p><span class="pe-label pe-label--bold">Dependencies</span></p>
-        {% for dependency in entry.dependencies.all() %}
-          <p>
-            <a href="{{ siteUrl }}components/{{ dependency.parent.title | kebab }}/v{{ dependency.version }}">
-              {{ dependency.parent.title }} v{{ dependency.version }}
-            </a>
-          </p>
-        {% endfor %}
-        {% if entry.dependencies | length == 0 %}
+        {% if entry.dependencies %}
+          {% for dependency in entry.dependencies.all() %}
+            <p>
+              <a href="{{ siteUrl }}components/{{ dependency.parent.title | kebab }}/v{{ dependency.version }}">
+                {{ dependency.parent.title }} v{{ dependency.version }}
+              </a>
+            </p>
+          {% endfor %}
+          {% if entry.dependencies | length == 0 %}
+            <p>None</p>
+          {% endif %}
+        {% else %}
           <p>None</p>
         {% endif %}
       </div>
@@ -124,7 +130,7 @@
           <p><a href="{{ entry.quality_checklist }}"></a></p>
         {% endif %}
 
-        {% if entry.sketchFile.one() %}
+        {% if entry.sketchFile and entry.sketchfile.one() %}
           <p><a href="{{ entry.sketchFile.one().url }}">Documentation Assets (Sketch)</a></p>
         {% endif %}
       </div>

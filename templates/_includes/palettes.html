@@ -40,13 +40,11 @@
                 <h5>Primary Uses</h5>
                 <div class="uses">{% if color_data.primaryUses is defined %}{{color_data.primaryUses}}{% endif %}</div>
 
-                {{ fourFiveContrasty('123123', '122122') }}
-
                 <h5>A11y Complements</h5>
                 <div class="complements">
                   {% set complement_found = false %}
                   {% for complement in colors if complement.hex != color_data.hex %}
-                    {% if fourFiveContrasty(color_data.hex, complement.hex) %}
+                    {% if fourFiveContrasty(color_data.hex.getHex(), complement.hex.getHex()) %}
                       {% set complement_found = true %}
                       <div class="complement">
                         <div class="complement_swatch {% if complement.useBorder %}border{% endif %}" style="background-color: {{complement.hex}}"></div>
