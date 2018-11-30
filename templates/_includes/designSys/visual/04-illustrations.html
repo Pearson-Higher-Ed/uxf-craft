@@ -4,16 +4,16 @@
     %}
     <div class='ds-container ds-grid'>
         <div class='ds-main ds-transition-content' id='dsTransitScreen7'>
-            <h2 class="font-pd ds-section-title smb-5 position-relative">
-                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen10" aria-hidden='true' tabindex="-1">dsMenuScreen10</a>
-                Illustrations
-            </h2>
-            <h3 class="pe-title pe-bold dmt-9 position-relative">
-                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen11" aria-hidden='true' tabindex="-1">dsMenuScreen11</a>
-                Style
-            </h3>
+            {% include '_includes/designSys/shared/levelTwo' with 
+                {'name': 'dsMenuScreen13',
+                'title': 'Illustrations', 
+                'desc': "Illustrations provide the opportunity to weave our brand personality into the user interface. Like all visual elements, illustrations must convey something meaningful to users."
+            } %}
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'dsMenuScreen14',
+                'title': 'Illustration style', 
+                'desc': "Our friendly, hand-crafted illustration style contrasts nicely with our more geometrical grid style."
+            } %}
             <div class='d-flex justify-content-center dmt-5'>
                 <div class="dpx-3 border-right text-center">
                     <img src="/public/theme_assets/styleunique.svg">
@@ -40,16 +40,16 @@
     %}
     <div class='ds-container ds-grid'>
         <div class='ds-main ds-transition-content' id='dsTransitScreen8'>
-            <h3 class="pe-title pe-bold dmb-2 dmt-9 position-relative">
-                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen12" aria-hidden='true' tabindex="-1">dsMenuScreen12</a>
-                Types
-            </h3>
+            {% include '_includes/designSys/shared/levelThree' with 
+                {'name': 'dsMenuScreen15',
+                'title': 'Illustration types', 
+                'desc': "We use either spot illustrations or scene illustrations, depending on what the user might be doing or feeling at that point in the user interface."
+            } %}
             {% include '_includes/designSys/shared/levelFour' with 
                     {
                         'topSpacing': true,
                         'name': 'Spot illustrations',
-                        'desc': 'Spot illustrations are used to promote specific features or guide the user in times of confusion.'
+                        'desc': 'Use spot illustrations to promote useful features or to guide users through a complex process.'
                 } %}
             <div class='d-flex justify-content-between dmt-5'>
                 <img src="/public/theme_assets/spotillustrations00.svg">
@@ -61,7 +61,7 @@
                     {
                         'topSpacing': true,
                         'name': 'Scene illustrations',
-                        'desc': 'We expand on illustrations as needed, typically for empty pages or when the user is required to take an action to get started. Only in this case do we break the color rules to provide more detail and focus while keeping a consistent style.'
+                        'desc': 'Use scene illustrations for situations where users are between actions, such as empty states or getting started on a new task.'
                 } %}
             <div class='d-flex justify-content-between dmt-5 dmb-10'>
                 <img src="/public/theme_assets/sceneillustrations00.svg">
@@ -79,9 +79,9 @@
             <div class='ds-main ds-transition-content' id='dsTransitScreen9'>
                 {% include '_includes/designSys/shared/levelThree' with 
                         {
-                            'name': 'dsMenuScreen13',
-                            'title': 'Color',
-                            'desc': 'Spot illustrations should be limited to two primary colors unless otherwise noted. A primary color may be used with the secondary color. Scene illustrations are the exception to these color rules to provide more detail and focus.'
+                            'name': 'dsMenuScreen16',
+                            'title': 'Color in Illustrations',
+                            'desc': 'The color in spot illustrations is best when limited to two primary colors or a primary and secondary color. The color for scene illustrations can use more than two primary colors.'
                     } %}
                 <h4 class="pe-title--small pe-bold dmb-5 dpt-6">Primary colors</h4>
             </div>

@@ -4,62 +4,57 @@
     %}
     <div class="ds-container ds-grid">
         <div class="ds-main ds-transition-content" id='dsTransitScreen0'>
-            <h2 class="font-pd ds-section-title dmb-7 position-relative">
-                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen0" aria-hidden='true' tabindex="-1">dsMenuScreen0</a>
-                Colors
-            </h2>
-            {% include '_includes/designSys/shared/levelThree' with 
-                {'name': 'dsMenuScreen1',
-                'title': 'Best practices', 
-                'desc': "Here's how we think about colors when designing Pearson products."
+            {% include '_includes/designSys/shared/levelTwo' with 
+                {'name': 'dsMenuScreen0',
+                'title': 'Color palettes', 
+                'desc': "Using color palettes in a consistent way can benefit sighted users by providing them with additional emotional impact or enhance meaning, or a general sense of orientation within a product.<br><br>Here is how we think about colors:"
             } %}
             <div class='dmt-5 dpb-6 dmb-6 d-flex border-bottom'>
                 {% include '_includes/designSys/atoms/hiddenAchor' with 
                     { 'class': 'ds-animation-trigger' } 
                 %}
-                <img src="/public/theme_assets/colorembellish.svg"/>
+                <div class='ds-colorpalettes-img text-center dpt-1'>
+                    <img src="/public/theme_assets/colorembellish.svg"/>
+                </div>
                 <div class='dml-5'>
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {'name': 'Embellish', 
-                    'desc': 'Think of color as an enhancement and not as the primary way to convey meaning. Sighted users benefit by the use of color and contrast to enhance meaning, provide additional emotional impact, or help them feel oriented within consistent color patterns.'
-                } %}
+                    <p class="pe-title--small pe-bold smb-3">Embellish</p>
+                    <p class="pe-label--large dmb-0">Think of color as an enhancement and not as the primary way to convey meaning. Sighted users benefit by the use of color and contrast to enhance meaning, provide additional emotional impact, or help them feel oriented within consistent color patterns.</p>
                 </div>
             </div>
             <div class='dmt-5 dpb-6 dmb-6 d-flex border-bottom'>
-                <img src="/public/theme_assets/colorlast.svg" alt=''/>
+                <div class='ds-colorpalettes-img text-center dpt-1'>
+                    <img src="/public/theme_assets/colorlast.svg" alt=''/>
+                </div>
                 <div class='dml-5'>
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {'name': 'Add color last', 
-                    'desc': 'Besides button transactions, color should be the last thing added to the experience.'
-                } %}
+                    <p class="pe-title--small pe-bold smb-3">Add color last</p>
+                    <p class="pe-label--large dmb-0">Besides button transactions, color should be the last thing added to the experience.</p>
                 </div>
             </div>
             <div class='dmt-5 dpb-6 dmb-6 d-flex border-bottom'>
-                <img src="/public/theme_assets/colorpalettes.svg"/>
+                <div class='ds-colorpalettes-img text-center dpt-1'>
+                    <img src="/public/theme_assets/colorpalettes.svg"/>
+                </div>
                 <div class='dml-5'>
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {'name': 'Use Pearson palettes', 
-                    'desc': 'Use Pearson color palettes consistently in designs to ensure an overall unifying experience across Pearson products.'
-                } %}
+                    <p class="pe-title--small pe-bold smb-3">Use Pearson palettes</p>
+                    <p class="pe-label--large dmb-0">Use Pearson color palettes consistently in designs to ensure an overall unifying experience across Pearson products.</p>
                 </div>
             </div>
             <div class='dmt-5 dpb-6 dmb-6 d-flex border-bottom'>
-                <img src="/public/theme_assets/coloraccessibility.svg"/>
+                <div class='ds-colorpalettes-img text-center dpt-1'>
+                    <img src="/public/theme_assets/coloraccessibility.svg"/>
+                </div>
                 <div class='dml-5'>
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {'name': 'Don’t use color for primary meaning', 
-                    'desc': 'Since color benefits only sighted users, it can never be used as the only way to convey meaning.'
-                } %}
+                    <p class="pe-title--small pe-bold smb-3">Don't use color for primary meaning</p>
+                    <p class="pe-label--large dmb-0">Since color benefits only sighted users, it can never be used as the only way to convey meaning.</p>
                 </div>
             </div>
             <div class='dmt-5 dmb-10 d-flex'>
-                <img src="/public/theme_assets/colorvibrate.svg"/>
+                <div class='ds-colorpalettes-img text-center dpt-1'>
+                    <img src="/public/theme_assets/colorvibrate.svg"/>
+                </div>
                 <div class='dml-5'>
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {'name': 'Don’t cause vibration', 
-                    'desc': 'Using too many colors at once can cause designs to appear like they’re vibrating. This can distract and overload users.'
-                } %}
+                    <p class="pe-title--small pe-bold smb-3">Don't cause vibration</p>
+                    <p class="pe-label--large dmb-0">Using too many colors at once can cause designs to appear like they’re vibrating. This can distract and overload users.</p>
                 </div>
             </div>
         </div>
@@ -75,15 +70,9 @@
                 {% include '_includes/designSys/shared/levelThree' with 
                     {
                         'topSpacing': true,
-                        'name': 'dsMenuScreen2',
-                        'title': 'Palettes', 
-                        'desc': 'Palettes provide a color system that ensures a consistent look and feel across our product designs.'
-                } %}
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {
-                        'topSpacing': true,
-                        'name': 'Global system palette', 
-                        'desc': 'Pearson Brand colors are used throughout the experience to convey signals and important feedback within the overall experience. They provide sharp contrast to the neutral palette and create brand harmony when used within a course theme color.'
+                        'name': 'dsMenuScreen1',
+                        'title': 'Global system palette', 
+                        'desc': 'The global system palette uses Pearson brand colors to provide important signals and feedback to users. It also creates brand harmony when used within a course theme colors.'
                 } %}
             </div>
         </div>
@@ -136,10 +125,11 @@
         <div class='ds-transition-content' id='dsTransitSection0'>
             <div class="ds-container ds-grid ds-8rows">
                 <div class="ds-main">
-                    {% include '_includes/designSys/shared/levelFour' with 
+                    {% include '_includes/designSys/shared/levelThree' with 
                         {
                             'topSpacing': true,
-                            'name': 'Neutral palette', 
+                            'name': 'dsMenuScreen2',
+                            'title': 'Neutral palette', 
                             'desc': 'The neutral palette provides contrast to the global system palette. We use different levels of contrast to convey different meanings to users.'
                     } %}
                 </div>
@@ -156,7 +146,7 @@
                         {'name': 'Charcoal', 
                         'color': 'bg-charcoal',
                         'hex': '252525',
-                        'note': 'Use for primary information and body copy'
+                        'note': 'Use for body copy and other primary information'
                     } %}
                 </div>
                 <div class="ds-right-main">
@@ -164,7 +154,7 @@
                         {'name': 'Medium Gray', 
                         'color': 'bg-medium-gray',
                         'hex': '6A7070', 
-                        'note': 'Use for secondary information'
+                        'note': 'Use for secondary information, such as hollow buttons'
                     } %}
                 </div>
                 <div class="ds-main dmt-2 dmb-5">
@@ -249,11 +239,12 @@
         <div class="ds-transition-content" id='dsTransitSection1'>
             <div class="ds-container ds-grid ds-3rows dpb-6">
                 <div class="ds-main dmb-5">
-                    {% include '_includes/designSys/shared/levelFour' with 
+                    {% include '_includes/designSys/shared/levelThree' with 
                         {
                             'topSpacing': true,
-                            'name': 'Conditional Palette', 
-                            'desc': 'High contrast and accessible, reserved for outlined usage only. Correct, Incorrect signals in icons and supporting feedback text inside of content, notifications/badging in super global.'
+                            'name': 'dsMenuScreen3',
+                            'title': 'Conditional Palette', 
+                            'desc': 'We use a conditional palette to indicate alerts, confirmations, and notifications. Our conditional palette is high-contrast and fully accessible and works best when used with a light touch. Too much conditional color can make the user interface feel blocky or loud.'
                     } %}
                 </div>
                 <div class="ds-left-main">
@@ -261,7 +252,7 @@
                         {'name': 'Alert Red', 
                         'color': 'bg-alert-red',
                         'hex': 'DB0020',
-                        'note': 'Use for incorrect signal or indication'
+                        'note': 'Use when something is incorrect, negative, or stopped'
                     } %}
                 </div>
                 <div class="ds-right-main">
@@ -269,7 +260,7 @@
                         {'name': 'Confirm Green', 
                         'color': 'bg-confirm-green',
                         'hex': '038238',
-                        'note': 'Use for correct signal or indication'
+                        'note': 'Use when something is correct, positive, or started'
                     } %}
                 </div>
                 <div class="ds-left-main">
@@ -277,7 +268,7 @@
                         {'name': 'Notification Pink', 
                         'color': 'bg-notification-pink',
                         'hex': 'DA0474',
-                        'note': 'Use for notifications'
+                        'note': 'Use as a notification'
                     } %}
                 </div>
             </div>
@@ -307,11 +298,12 @@
     <div class="bg-white-gray">
         <div class="ds-container ds-grid">
             <div class="ds-main ds-transition-content" id='dsTransitSection2'>
-                {% include '_includes/designSys/shared/levelFour' with 
+                {% include '_includes/designSys/shared/levelThree' with 
                     {
                         'topSpacing': true,
-                        'name': 'Theme palette', 
-                        'desc': 'Derived from the Pearson accent palette they were created to be used in conjunction with the global system palette. Consisting of a brilliant set of colors that are used as a scalable solution (as an abstract) for course identification (opposed to a book cover which does not scale). The colors provide energy and visual interest to the (simple) student experience. Themes afford the student a personalization option.'
+                        'name': 'dsMenuScreen4',
+                        'title': 'Theme palette', 
+                        'desc': 'Our theme palettes were derived from the Pearson accent palette so that all of them  pair nicely when used in conjunction with the global system palette. Theme colors give students and instructors the ability to personalize their experience with our products.'
                 } %}
             </div>
         </div>

@@ -1,2 +1,2 @@
-<h1 class="font-pd ds-group-title pe-bold text-white dmb-6">{{ name }}</h1>
-<p class="pe-title text-white dmb-0">{{ desc }}</p>
+<h1 class="font-pd ds-group-title pe-bold dmb-6{% if white is defined  %} text-white{% endif %}">{{ name }}</h1>
+<p class="pe-title dmb-0{% if white is defined  %} text-white{% endif %}">{{ desc }}</p>

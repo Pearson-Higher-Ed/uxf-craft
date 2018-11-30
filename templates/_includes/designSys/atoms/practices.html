@@ -1,6 +1,8 @@
 {% for item in practices %}
-<div class='d-flex align-items-center dmb-2'>
-    <img src='/public/theme_assets/do.svg'>
-    <p class='pe-label--large dmb-0 dml-2'>{{ item.text }}</p>
+<div class='d-flex dmb-2'>
+    <div>
+        <img src='/public/theme_assets/do.svg'>
+    </div>
+    <p class='pe-label--large dmb-0 dml-2'>{{ item.text | raw }}</p>
 </div>
 {% endfor %}

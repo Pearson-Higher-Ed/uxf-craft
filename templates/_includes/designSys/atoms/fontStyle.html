@@ -1,16 +1,27 @@
-<table class='border-bottom dmb-6'>
-    <caption class='pe-label pe-bold text-darkblue text-left dmb-2'>{{ title }}</caption>
-    <thead class='sr-only'>
-        <tr>
-            <th>Demo</th>
-            <th>Font size and line height</th>
+<table>
+    <thead>
+        <tr class='border-bottom'>
+            <th class='pe-label pe-label--secondary font-weight-normal dpy-2' scope='col'>Font style</th>
+            <th class='pe-label pe-label--secondary font-weight-normal dpy-2' scope='col'>Size</th>
+            <th class='pe-label pe-label--secondary font-weight-normal dpy-2' scope='col'>Line height</th>
+            <th class='pe-label pe-label--secondary font-weight-normal dpy-2 text-center' scope='col'>Weight</th>
         </tr>
     </thead>
     <tbody>
         {% for item in tablebody %}
-        <tr>
-            <th class="{{ item.class }} dpl-0 font-weight-normal">Learning without limits</th>
-            <td class="{{ item.class }} text-right dpr-0">{{ item.td }}</td>
+        <tr class='border-bottom'>
+            <th class="{{ item.class }} dpy-5" scope='row'>{{ item.name }}</th>
+            <td class="pe-label--large dpy-5">{{ item.size }}</td>
+            <td class="pe-label--large dpy-5">{{ item.lh }}</td>
+            {% if item.rns is defined  %}
+            <td class="pe-label--large dpy-5 text-center">Regular or <span class='pe-bold'>Semibold</span></td>
+            {% endif %}
+            {% if item.r is defined  %}
+            <td class="pe-label--large dpy-5 text-center">Regular</td>
+            {% endif %}
+            {% if item.s is defined  %}
+            <td class="pe-label--large pe-bold dpy-5 text-center">Semibold</td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

@@ -50,19 +50,24 @@ $grid-breakpoints: (
 @import "../../web/node_modules/bootstrap/scss/type";
 @import "../../web/node_modules/bootstrap/scss/images";
 
-.pe-label--single {
+.pe-title--small {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.pe-title--xsmall {
+  @extend .pe-label--large;
+  font-weight: 600;
+}
+
+.pe-label--large--multi {
   font-size: 1rem;
-  line-height: 1.29rem;
+  line-height: 1.5rem;
 }
 
 .pe-label--multi {
-  font-size: 1rem;
-  line-height: 1.43rem;
-}
-
-.pe-title--small-new {
-  font-size: 1.29rem;
-  line-height: 1.71rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-purple {

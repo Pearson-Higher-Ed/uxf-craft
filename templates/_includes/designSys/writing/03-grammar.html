@@ -1,96 +1,116 @@
-<div class="ds-screen9 bg-white position-relative">
+<section class="bg-white">
+    {% include '_includes/designSys/atoms/hiddenAchor' with 
+        { 'class': 'ds-transition-screen' } 
+    %}
     <div class='ds-container ds-grid'>
-        <div class='ds-main ds-transition-content'>
-            {% include '_includes/designSys/shared/levelTwo' with 
-                {
-                    'name': 'Icons',
-                    'desc': 'Our family of icons visually communicate core parts of our product. They can also convey available actions and act as wayfinding tools to help students and professors more easily understand where they are in the product.'
-            } %}
-            <img class="dmt-6" src="/public/theme_assets/iconclarity.svg">
+        <div class='ds-main ds-transition-content' id='dsTransitScreen2'>
+            <h2 class="font-pd ds-section-title dmb-7">
+                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen10" aria-hidden='true' tabindex="-1">dsMenuScreen10</a>
+                Grammar and mechanics
+            </h2>
             {% include '_includes/designSys/shared/levelThree' with 
                 {
-                    'name': 'Icon considerations',
-                    'desc': 'Although icons can boost usability, they can also harm the user experience if they’re overused or if they’re just not clear.<br/><br/>Consider the following best-practices when using icons:'
+                    'name': 'dsMenuScreen11',
+                    'title': 'Capitalization',
+                    'desc': 'Use sentence case (capitalize the first letter of the first word) in headings, subheadings, and labels, except for proper nouns.'
             } %}
-            <div class='dpt-3 dpb-10'>
-            {% include '_includes/designSys/atoms/practices' with 
-                    {
-                    'practices': 
-                    [{'text': 'Keep icons simple'}, 
-                    {'text': 'Use icons consistently'}, 
-                    {'text': 'Use whitespace around icons'},  
-                    {'text': 'Communicate with icons'}] 
-                } %}
+            <div class='border ds-writing-grammar dpy-4 dpx-6 dmb-5'>
+                <h4 class='pe-title pe-bold'>Good example of sentence case</h4>
+                <p class='pe-label--secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, mi at tincidunt sodales, turpis risus luctus ante, quis pulvinar purus nunc a nunc. Quisque nisl tortor, vehicula eu volutpat sed, malesuada sit amet odio.</p>
             </div>
-        </div>
-    </div>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen10' } 
-    %}
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen10' } 
-    %}
-</div>
-<div class="ds-screen10 ds-visual position-relative">
-    <div class='bg-white-gray'>
-        <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
-                <h3 class="pe-title pe-bold dmb-2 dmt-9">Styles</h3>
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {
-                        'topSpacing': true,
-                        'name': 'Filled',
-                        'desc': 'Filled icons are <b>only</b> used for the global header. The weight of this style compliments the Pearson logo and together they create a nice anchor at the top of our pages.'
-                } %}
-                <img class="dmt-6" src="/public/theme_assets/styleheader.svg">
-                {% include '_includes/designSys/shared/levelFour' with 
-                    {
-                        'topSpacing': true,
-                        'name': 'Outline',
-                        'desc': 'Hollow icons appear lighter. They were created for use primarily in the content area or toolbars where more than one exists.'
-                } %}
-                <img class="dmt-6 dmb-10" src="/public/theme_assets/styleoutline.svg">
-            </div>
-        </div>
-    </div>
-    <div class='bg-white'>
-        <div class='ds-container ds-grid'>
-            <div class='ds-main ds-transition-content'>
-                <div class="bg-pattern-grid sp-7 dmt-6 dmb-10">
-                    <div id="icons00"></div>
-                    <div class='dmt-2' id="icons01"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'later-anchors', 'id': 'dsScreen11' } 
-%}
-{% include '_includes/designSys/atoms/hiddenAchor' with 
-{ 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen11' } 
-%}
-</div>
-<div class="ds-screen11 bg-white ds-visual position-relative">
-    <div class='ds-container ds-grid'>
-        <div class='ds-main ds-transition-content'>
+            <p class='pe-label--large'>Exception: In vertical formats such as cards, use the three character abbreviation for the month in ALL CAPS.</p>
             {% include '_includes/designSys/shared/levelThree' with 
                 {
-                    'name': 'Hint text',
-                    'desc': 'Even though our icons are highly recognizable, we go a step further to ensure clarity by incorporating a hint on hover. Every icon has a hover state with a label that informs the user of the action they are going to take. The label can appear above or below the icon depending on the interface layout.'
+                    'name': 'dsMenuScreen12',
+                    'title': 'Contractions',
+                    'desc': 'Use contractions to set a more conversational, casual tone, and to make text easier to read.'
             } %}
-            <div class='d-flex justify-content-center dmy-6'>
-                <img class='dmr-7' src="/public/theme_assets/hinttextbottom.svg">
-                <img src="/public/theme_assets/hinttexttop.svg">
+            <div class='dpy-5 border-y d-flex justify-content-between'>
+                <p class='pe-label--large'>We've created this guide to help you with UX writing.</p>
+                <img class='dmx-4' src="/public/theme_assets/vs.svg">
+                <p class='pe-label--large'>We have created this guide to help you with UX writing.</p>
             </div>
-            <div class="bg-pattern-grid sp-7 dmt-6">
-                <div id="hintText"></div>
-            </div>
+            <p class='pe-label--large'>Use contractions thoughtfully, but don't overuse them.</p>
+            <p class='pe-label--large'>Don't mix contractions and their spelled-out equivalents in UI text.</p>
         </div>
     </div>
+</section>
+<section class="bg-white">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'later-anchors', 'id': 'dsScreen12' } 
+        { 'class': 'ds-transition-screen' } 
     %}
+    <div class='ds-container ds-grid'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen3'>
+            <h3 class="pe-title pe-bold dmb-2 dmt-9">
+                <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen13" aria-hidden='true' tabindex="-1">dsMenuScreen13</a>
+                Dates and times
+            </h3>
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Year',
+                    'desc': 'Use the US date format when including the year.'
+            } %}
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Month',
+                    'desc': "Spell out the name of the month in horizontal formats such as calendars, email, and other UI elements where there's enough space."
+            } %}
+            <p class='pe-label--large'>In vertical formats such as cards, use the three character abbreviation for the month in ALL CAPS.</p>
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Times',
+                    'desc': 'Keep the following best practices in mind when writing about time:
+                    '
+            } %}
+            <ul class='pe-list pe-styled-lists--unordered'>
+                <li>Use the 12-hour clock, followed by am or pm.</li>
+                <li>Don't put a space after the last number, as in 7:00 am. Write it as 7:00am.</li>
+                <li>Specify noon or midnight for 12:00 in parentheses for clarity, as in 12:00 (midnight).</li>
+            </ul>
+            <p class='pe-label--large'>When it's necessary to indicate a time zone, use the time zone abbreviation after am or pm.</p>
+            <p class='pe-label--large'>To indicate a time range, use an <strong>en dash</strong> with spaces around it and include am/pm after both times.</p>
+            <p class='pe-label--large'>Use the browser time of the logged in user.</p>
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Abbreviations for days, hours, and minutes',
+                    'desc': "Use the following abbreviations for days, hours, and minutes:"
+            } %}
+            <p class='pe-label--large'><b>d</b> = day/days</p>
+            <p class='pe-label--large'><b>h</b> = hour/hours</p>
+            <p class='pe-label--large'><b>min</b> = minute/minutes</p>
+        </div>
+    </div>
+</section>
+<section class="bg-white">
     {% include '_includes/designSys/atoms/hiddenAchor' with 
-    { 'class': 'ds-menu-anchor', 'name': 'dsMenuScreen12' } 
+        { 'class': 'ds-transition-screen' } 
     %}
-</div>
+    <div class='ds-container ds-grid'>
+        <div class='ds-main ds-transition-content' id='dsTransitScreen4'>
+            {% include '_includes/designSys/shared/levelThree' with 
+            {
+                'name': 'dsMenuScreen14',
+                'title': 'Headings',
+                'desc': 'Headings are often the first-and only-written content that users notice in the UI.'
+            } %}
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Write for scanning and accessibility',
+                    'desc': 'Organizing the layout of content with headings gives users a sense of organization and structure at-a-glance. Treat headings like microcontent-short text fragments that can be scanned by readers or screen readers and still give users a clear idea of the underlying information on the page or screen. For more information see <a href="">Accessibility</a>.'
+            } %}
+            {% include '_includes/designSys/shared/levelFour' with 
+                {
+                    'topSpacing': true,
+                    'name': 'Use parallel structure',
+                    'desc': 'Headings written in parallel structure (with the same grammatical pattern) make content easier to follow.'
+            } %}
+        </div>
+    </div>
+</section>
