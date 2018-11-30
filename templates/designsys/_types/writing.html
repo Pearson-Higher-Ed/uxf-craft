@@ -5,77 +5,51 @@
   {% include '_includes/designSys/shared/designsysSidebar' with
   {
     'mainLevel': [{
-      'href': 'dsMenuScreen2',
-      'label': 'UX writing best practices'
-    }, {
-      'href': 'dsMenuScreen3',
-      'label': 'Voice and tone',
+      'href': 'dsMenuScreen0',
+      'label': 'Best practices',
       'subLevel': [{
+        'href':'dsMenuScreen1',
+        'label': 'Put users first'
+      }, {
+        'href':'dsMenuScreen2',
+        'spacing': true,
+        'label': 'Make actions easy'
+      }, {
         'href':'dsMenuScreen3',
-        'label': 'The difference'
+        'spacing': true,
+        'label': 'Be clear, then be brief'
       }, {
         'href':'dsMenuScreen4',
         'spacing': true,
-        'label': 'Voice'
+        'label': 'Consider your context'
       }, {
         'href':'dsMenuScreen5',
         'spacing': true,
-        'label': 'Tone'
+        'label': 'Focus on headings'
       }]
     }, {
       'href': 'dsMenuScreen6',
+      'label': 'Voice and tone'
+    }, {
+      'href': 'dsMenuScreen7',
       'label': 'Grammar and mechanics',
       'subLevel': [{
-        'href':'dsMenuScreen6',
-        'label': 'Capitalization'
-      }, {
-        'href':'dsMenuScreen7',
-        'spacing': true,
-        'label': 'Contractions'
-      }, {
         'href':'dsMenuScreen8',
-        'spacing': true,
-        'label': 'Dates and times'
+        'label': 'Capitalization'
       }, {
         'href':'dsMenuScreen9',
         'spacing': true,
-        'label': 'Headings'
+        'label': 'Contractions'
       }, {
         'href':'dsMenuScreen10',
         'spacing': true,
-        'label': 'Labels'
-      }]
-    }, {
-      'href': 'dsMenuScreen12',
-      'label': 'Terms and words',
-      'subLevel': [{
-        'href':'dsMenuScreen12',
-        'label': 'Style'
+        'label': 'Dates and times'
       }, {
-        'href':'dsMenuScreen13',
+        'href':'dsMenuScreen11',
         'spacing': true,
-        'label': 'Types'
-      }, {
-        'href':'dsMenuScreen14',
-        'spacing': true,
-        'label': 'Color'
+        'label': 'Headings'
       }]
-    }, {
-        'href': 'dsMenuScreen12',
-        'label': 'Error messages',
-        'subLevel': [{
-          'href':'dsMenuScreen12',
-          'label': 'Style'
-        }, {
-          'href':'dsMenuScreen13',
-          'spacing': true,
-          'label': 'Types'
-        }, {
-          'href':'dsMenuScreen14',
-          'spacing': true,
-          'label': 'Color'
-        }]
-      }]
+    }]
   } %}
   {% include '_includes/designSys/shared/designsysFeedback' %}
 {% endblock %}

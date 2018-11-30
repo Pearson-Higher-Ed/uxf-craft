@@ -14,17 +14,19 @@
         </div>
         <div class='ds-container ds-grid'>
             <div class='ds-main ds-transition-content' id='dsTransitScreen2'>
-                <h2 class="font-pd ds-section-title smb-5 text-white position-relative">
-                    <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                    <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen3" aria-hidden='true' tabindex="-1">dsMenuScreen3</a>
-                    Typography
-                </h2>
+                {% include '_includes/designSys/shared/levelTwo' with 
+                    {
+                        'name': 'dsMenuScreen5',
+                        'title': 'Typography', 
+                        'textcolor': 'text-white',
+                        'desc': 'Use typography to create clear hierarchies and useful organizations that guide users through the product experience.'
+                } %}
                 {% include '_includes/designSys/shared/levelThree' with 
                     {
-                        'name': 'dsMenuScreen4',
-                        'title': 'Typeface', 
+                        'name': 'dsMenuScreen6',
+                        'title': 'Web fonts', 
                         'textcolor': 'text-white',
-                        'desc': 'We use the Open Sans font for product designs. One of two Pearson’s global brand fonts, Open Sans provides a wide range of weights and maintains clarity at small screen sizes.<br><br><b>Note:</b> We do not use the other Pearson global brand font, Playfair, because it loses its integrity at small screen sizes'
+                        'desc': "We use the <strong>Open Sans</strong> font for product designs. One of two Pearson's global brand fonts, Open Sans provides a wide range of weights and maintains clarity at small screen sizes.<br><br><b>Note:</b> We don't use <strong>Playfair</strong>, Pearson's other global brand font, because it loses its integrity at small screen sizes."
                 } %}
                 {% include '_includes/designSys/atoms/hiddenAchor' with 
                     { 'class': 'ds-menu-transition' } 
@@ -42,6 +44,13 @@
                         <p class='pe-bold pe-label text-white'>Open Sans Regular</p>
                     </div>
                 </div>
+                {% include '_includes/designSys/shared/levelThree' with 
+                    {
+                        'name': 'dsMenuScreen7',
+                        'title': 'Mobile fonts', 
+                        'textcolor': 'text-white',
+                        'desc': 'For mobile devices, we use the native fonts San Francisco for iOS and Roboto for Android. These fonts support dynamic type and ensure faster loading time for mobile apps. Dynamic type is a mobile device feature that allows users to select a preferred text size to display on apps that support it.'
+                } %}
             </div>
         </div>
     </div>
@@ -56,9 +65,9 @@
                 <div class='dmb-6'>
                     {% include '_includes/designSys/shared/levelThree' with 
                         {
-                            'name': 'dsMenuScreen5',
-                            'title': 'Font styles', 
-                            'desc': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et mauris sed turpis accumsan hendrerit. Quisque vestibulum eget sem non dapibus. Donec posuere, ante ut cursus elementum, nunc dolor suscipit sapien, eget condimentum felis massa non massa.'
+                            'name': 'dsMenuScreen8',
+                            'title': 'Font styles and weights', 
+                            'desc': "Choose from the following font styles. For additional details, see the <a href='https://uxframework.pearson.com/c/typography' target='_blank'>Typography component</a>."
                     } %}
                 </div>
                 {% include '_includes/designSys/atoms/hiddenAchor' with 
@@ -66,56 +75,69 @@
                 %}
                 {% include '_includes/designSys/atoms/fontStyle' with 
                     {
-                    'title': 'TITLE STYLE',
-                    'tablebody': [{
-                            'class': 'pe-title--large dpb-6',
-                            'td': '24px / 28px'
-                        }]
-                    } 
-                %}
-                {% include '_includes/designSys/atoms/fontStyle' with 
-                    {
-                    'title': 'HEADING STYLES',
                     'tablebody': [
                         {
-                            'class': 'pe-title',
-                            'td': '20px / 26px'
+                            'class': 'pe-title--large pe-bold',
+                            'name': 'Heading 24',
+                            'size': '24px',
+                            'lh': '28px',
+                            'rns': true
                         },
                         {
-                            'class': 'pe-title--small-new dpb-6',
-                            'td': '18px / 24px'
-                        }]
-                    } 
-                %}
-                {% include '_includes/designSys/atoms/fontStyle' with 
-                    {
-                    'title': 'BODY COPY STYLES',
-                    'tablebody': [
-                        {
-                            'class': 'pe-label--large',
-                            'td': 'Single-Line | 16px / 20px'
+                            'class': 'pe-title pe-bold',
+                            'name': 'Heading 20',
+                            'size': '20px',
+                            'lh': '26px',
+                            'rns': true
                         },
                         {
-                            'class': 'pe-label--large',
-                            'td': 'Multi-Line | 16px / 24px'
+                            'class': 'pe-title--small pe-bold',
+                            'name': 'Heading 18',
+                            'size': '18px',
+                            'lh': '24px',
+                            'rns': true
                         },
                         {
-                            'class': 'pe-label--single',
-                            'td': 'Single-Line | 14px / 18px'
+                            'class': 'pe-title--xsmall pe-bold',
+                            'name': 'Heading 16',
+                            'size': '16px',
+                            'lh': '20px',
+                            's': true
                         },
                         {
-                            'class': 'pe-label--multi dpb-6',
-                            'td': 'Multi-Line | 14px / 20px'
-                    }]
-                    } 
-                %}
-                {% include '_includes/designSys/atoms/fontStyle' with 
-                    {
-                    'title': 'META DATA STYLE',
-                    'tablebody': [
+                            'class': 'pe-label--large font-weight-normal',
+                            'name': 'Body 16 (Single-line)',
+                            'size': '16px',
+                            'lh': '20px',
+                            'rns': true
+                        },
                         {
-                            'class': 'pe-label--small dpb-6',
-                            'td': '12px / 16px'
+                            'class': 'pe-label--large--multi font-weight-normal',
+                            'name': 'Body 16 (Multi-line)',
+                            'size': '16px',
+                            'lh': '24px',
+                            'r': true
+                        },
+                        {
+                            'class': 'pe-label font-weight-normal',
+                            'name': 'Body 14 (Single-line)',
+                            'size': '14px',
+                            'lh': '18px',
+                            'rns': true
+                        },
+                        {
+                            'class': 'pe-label--multi font-weight-normal',
+                            'name': 'Body 14 (Multi-line)',
+                            'size': '14px',
+                            'lh': '20px',
+                            'r': true
+                        },
+                        {
+                            'class': 'pe-label--small font-weight-normal',
+                            'name': 'Metadata',
+                            'size': '12px',
+                            'lh': '16px',
+                            'rns': true
                         }]
                     } 
                 %}

@@ -1,5 +1,58 @@
 .ds-writing-page {
-    .ds-screen1 {
+    .ds-cover {
         background-image: url('/public/theme_assets/writing-bg.png');
+    }
+
+    .ds-writing-practices {
+        p {
+            width: 50%;
+            @media (max-width: 592px) {
+                width: 100%; 
+            }
+        }
+        p:first-child::after {
+            content: '1';
+        }
+        p:nth-child(2)::after {
+            content: '4';
+        }
+        p:nth-child(3)::after {
+            content: '2';
+        }
+        p:nth-child(4)::after {
+            content: '5';
+        }
+        p:last-child::after {
+            content: '3';
+        }
+        p::after {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            background-color: $pe-color-white-gray;
+            left: 0;
+            top: 0;
+            padding-top: 11px;
+            padding-left: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 18px;
+            color: $pe-color-medium-gray;
+        }
+    }
+
+    .ds-writing-tone {
+        width: 50%;
+        ul li {
+            width: 50%;
+            flex: 0 0 auto;
+        }
+    }
+    .ds-writing-voice {
+        width: 50%;
+        svg {
+            color: $pe-color-digital-grass-green;
+        }
     }
 }

@@ -1,10 +1,10 @@
 .ds-visual-page {
     .ds-cover {
         background-image: url('/public/theme_assets/visual-bg.svg');
+        overflow: hidden;
         .ds-cover-waves {
             width: 100%;
             height: auto;
-            left: 0;
             &:first-child {
                 bottom: -5%; 
             }
@@ -80,6 +80,11 @@
                 bottom: -15%;
             }
         }
+    }
+
+    .ds-colorpalettes-img {
+        width: 96px;
+        flex: 0 0 auto;
     }
     
     .ds-color-card {
@@ -253,8 +258,7 @@
     .ds-illustration-stroke {
         hr {
             width: calc(100% - 220px);
-            height: 1.5px;
-            color: $pe-color-medium-gray;
+            border-top: 1.5px solid #6a7070;
         }
         p {
             line-height: 30px;

@@ -11,7 +11,7 @@
             <div class="d-flex align-items-center">
                 <nav class="dmr-6">
                     <ul class="pe-list--unstyled list-inline dmy-0">
-                        {% nav page in craft.entries.section('designsysGroups').one().parent('groups') %}
+                        {% nav page in craft.entries.section('designsysGroups').all()%}
                         <li class="pe-label--large list-inline-item dpy-2 dmx-2{% if page.title == (entry.title | default('')) %} selected{% endif %}"><a class="nonedec" href="{{ siteUrl }}{{ page.uri }}">{{ page.title }}</a></li>
                         {% endnav %}
                     </ul>
