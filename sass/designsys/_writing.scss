@@ -46,7 +46,7 @@
         width: 50%;
         ul li {
             width: 50%;
-            display: inline-block;
+            flex: 0 0 auto;
         }
     }
     .ds-writing-voice {

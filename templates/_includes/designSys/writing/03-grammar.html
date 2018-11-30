@@ -4,35 +4,34 @@
     %}
     <div class='ds-container ds-grid'>
         <div class='ds-main ds-transition-content' id='dsTransitScreen2'>
-            <h2 class="font-pd ds-section-title dmb-7">
+            <h2 class="font-pd ds-section-title dmb-7 position-relative">
                 <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen10" aria-hidden='true' tabindex="-1">dsMenuScreen10</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen7" aria-hidden='true' tabindex="-1">dsMenuScreen7</a>
                 Grammar and mechanics
             </h2>
             {% include '_includes/designSys/shared/levelThree' with 
                 {
-                    'name': 'dsMenuScreen11',
+                    'name': 'dsMenuScreen8',
                     'title': 'Capitalization',
                     'desc': 'Use sentence case (capitalize the first letter of the first word) in headings, subheadings, and labels, except for proper nouns.'
             } %}
-            <div class='border ds-writing-grammar dpy-4 dpx-6 dmb-5'>
-                <h4 class='pe-title pe-bold'>Good example of sentence case</h4>
-                <p class='pe-label--secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, mi at tincidunt sodales, turpis risus luctus ante, quis pulvinar purus nunc a nunc. Quisque nisl tortor, vehicula eu volutpat sed, malesuada sit amet odio.</p>
+            <div class="bg-pattern-grid sp-7 dmy-5">
+                <img class='img-fluid' src='/public/theme_assets/writing-dodont02.png' alt=''>
             </div>
             <p class='pe-label--large'>Exception: In vertical formats such as cards, use the three character abbreviation for the month in ALL CAPS.</p>
             {% include '_includes/designSys/shared/levelThree' with 
                 {
-                    'name': 'dsMenuScreen12',
+                    'name': 'dsMenuScreen9',
                     'title': 'Contractions',
-                    'desc': 'Use contractions to set a more conversational, casual tone, and to make text easier to read.'
+                    'desc': "Use contractions to set a more conversational, casual tone, and to make text easier to read. Use contractions thoughtfully, but don't overuse them."
             } %}
-            <div class='dpy-5 border-y d-flex justify-content-between'>
-                <p class='pe-label--large'>We've created this guide to help you with UX writing.</p>
-                <img class='dmx-4' src="/public/theme_assets/vs.svg">
-                <p class='pe-label--large'>We have created this guide to help you with UX writing.</p>
+            <div class="bg-pattern-grid sp-7 dmy-5">
+                <img class='img-fluid' src='/public/theme_assets/writing-dodont03.png' alt=''>
             </div>
-            <p class='pe-label--large'>Use contractions thoughtfully, but don't overuse them.</p>
             <p class='pe-label--large'>Don't mix contractions and their spelled-out equivalents in UI text.</p>
+            <div class="bg-pattern-grid sp-7 dmt-5">
+                <img class='img-fluid' src='/public/theme_assets/writing-dodont04.png' alt=''>
+            </div>
         </div>
     </div>
 </section>
@@ -42,9 +41,9 @@
     %}
     <div class='ds-container ds-grid'>
         <div class='ds-main ds-transition-content' id='dsTransitScreen3'>
-            <h3 class="pe-title pe-bold dmb-2 dmt-9">
+            <h3 class="pe-title pe-bold dmb-2 dmt-9 position-relative">
                 <a class="ds-hidden-anchor ds-menu-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
-                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen13" aria-hidden='true' tabindex="-1">dsMenuScreen13</a>
+                <a class="ds-hidden-anchor position-absolute" href="###" name="dsMenuScreen10" aria-hidden='true' tabindex="-1">dsMenuScreen10</a>
                 Dates and times
             </h3>
             {% include '_includes/designSys/shared/levelFour' with 
@@ -53,13 +52,18 @@
                     'name': 'Year',
                     'desc': 'Use the US date format when including the year.'
             } %}
+            <div class='border dpy-4 dpx-5 dmt-5'>
+                <p class='pe-title--small'>August 1, 2018</p>
+            </div>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
                     'topSpacing': true,
                     'name': 'Month',
-                    'desc': "Spell out the name of the month in horizontal formats such as calendars, email, and other UI elements where there's enough space."
+                    'desc': "Spell out the name of the month in horizontal formats such as calendars, email, and other UI elements where there's enough space.<br><br>In vertical formats such as cards, use the three character abbreviation for the month in ALL CAPS."
             } %}
-            <p class='pe-label--large'>In vertical formats such as cards, use the three character abbreviation for the month in ALL CAPS.</p>
+            <div class="dmy-5">
+                <img class='img-fluid text-center' src='/public/theme_assets/writing-card.png' alt=''>
+            </div>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
                     'topSpacing': true,
@@ -67,13 +71,22 @@
                     'desc': 'Keep the following best practices in mind when writing about time:
                     '
             } %}
-            <ul class='pe-list pe-styled-lists--unordered'>
-                <li>Use the 12-hour clock, followed by am or pm.</li>
-                <li>Don't put a space after the last number, as in 7:00 am. Write it as 7:00am.</li>
-                <li>Specify noon or midnight for 12:00 in parentheses for clarity, as in 12:00 (midnight).</li>
+            <ul class='pe-styled-lists--unordered'>
+                <li class='pe-label--large'>Use the 12-hour clock, followed by am or pm.</li>
+                <li class='pe-label--large'>Don't put a space after the last number, as in 7:00 am. Write it as 7:00am.</li>
+                <li class='pe-label--large'>Specify noon or midnight for 12:00 in parentheses for clarity, as in 12:00 (midnight).</li>
             </ul>
+            <div class="bg-pattern-grid sp-7 dmy-5">
+                <img class='img-fluid' src='/public/theme_assets/writing-dodont05.png' alt=''>
+            </div>
             <p class='pe-label--large'>When it's necessary to indicate a time zone, use the time zone abbreviation after am or pm.</p>
+            <div class='border dpy-4 dpx-5 dmy-5'>
+                <p class='pe-title--small'>4:30 PM GMT</p>
+            </div>
             <p class='pe-label--large'>To indicate a time range, use an <strong>en dash</strong> with spaces around it and include am/pm after both times.</p>
+            <div class='border dpy-4 dpx-5 dmy-5'>
+                <p class='pe-title--small'>3:30 PM - 4:30 PM</p>
+            </div>
             <p class='pe-label--large'>Use the browser time of the logged in user.</p>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
@@ -81,9 +94,13 @@
                     'name': 'Abbreviations for days, hours, and minutes',
                     'desc': "Use the following abbreviations for days, hours, and minutes:"
             } %}
+            <br>
             <p class='pe-label--large'><b>d</b> = day/days</p>
             <p class='pe-label--large'><b>h</b> = hour/hours</p>
             <p class='pe-label--large'><b>min</b> = minute/minutes</p>
+            <div class="dmy-5">
+                <img class='img-fluid' src='/public/theme_assets/writing-abbr.png' alt=''>
+            </div>
         </div>
     </div>
 </section>
@@ -95,9 +112,9 @@
         <div class='ds-main ds-transition-content' id='dsTransitScreen4'>
             {% include '_includes/designSys/shared/levelThree' with 
             {
-                'name': 'dsMenuScreen14',
+                'name': 'dsMenuScreen11',
                 'title': 'Headings',
-                'desc': 'Headings are often the first-and only-written content that users notice in the UI.'
+                'desc': 'Headings are often the first--and only--written content that users notice in the UI.'
             } %}
             {% include '_includes/designSys/shared/levelFour' with 
                 {
@@ -111,6 +128,9 @@
                     'name': 'Use parallel structure',
                     'desc': 'Headings written in parallel structure (with the same grammatical pattern) make content easier to follow.'
             } %}
+            <div class="bg-pattern-grid sp-7 dmt-5 dmb-10">
+                <img class='img-fluid' src='/public/theme_assets/writing-dodont06.png' alt=''>
+            </div>
         </div>
     </div>
 </section>
