@@ -20,12 +20,38 @@
     </div>
   </div>
 
+  {% set children = entry.children.all() %}
+  {% if children | length > 0 %}
+    <div class="tabs-wrapper">
+      <div class="tabs">
+        <div class="tab active" data-value={{ entry.tabName }}>
+          <span>{{ entry.tabName }}</span>
+        </div>
+        {% for child in children %}
+          <div class="tab" data-value="{{ child.tabName }}">
+            <span>{{ child.tabName }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
   {% set icons = [] %}
-  {% for chunk in entry.dsComponentContent.all() %}
-    {% include '_includes/chunks/' ~ chunk.type %}
-    {% if chunk.type == 'icon' %}
-      {% set icons = icons | merge([chunk]) %}
-    {% endif %}
+  <div data-tab="{{ entry.tabName }}" class="tab-content active">
+    {% for chunk in entry.dsComponentContent.all() %}
+      {% include '_includes/chunks/' ~ chunk.type %}
+      {% if chunk.type == 'icon' %}
+        {% set icons = icons | merge([chunk]) %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% for child in children %}
+  <div data-tab="{{ child.tabName }}" class="tab-content">
+    {% for chunk in child.dsComponentContent.all() %}
+      {% include '_includes/chunks/' ~ chunk.type %}
+    {% endfor %}
+  </div>
   {% endfor %}
 
   {% set iconsByCategory = icons | iconsGroupByCategory %}
@@ -101,11 +127,6 @@
 
                       svg.removeAttribute('xmlns:a');
 
-                      // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-                      // if(!svg.getAttribute('viewBox') && svg.getAttribute('height') && svg.getAttribute('width')) {
-                      //     svg.setAttribute('viewBox', '0 0 ' + svg.getAttribute('height') + ' ' + svg.getAttribute('width'))
-                      // }
-
                       // Replace image with new SVG
                       img.parentNode.replaceChild(svg, img);
                     })
@@ -120,6 +141,7 @@
 </div>
 
 <script type="text/javascript">
+// function for downloading multiple icon files with a single button.
 var downloadAll = function(files) {
   if (files.length === 0) return
 
@@ -135,6 +157,7 @@ var downloadAll = function(files) {
   downloadAll(files)
 }
 
+// function for clearing icon detail panels
 var removeAllDetails = function() {
   document.querySelectorAll('.icon-detail').forEach(function(el){
     el.remove()
@@ -144,6 +167,7 @@ var removeAllDetails = function() {
   })
 }
 
+// function for showing individual icon detail panels
 var showThisDetail = function(el) {
   el.classList.add('selected')
   var rowWidth = document
@@ -176,10 +200,31 @@ var showThisDetail = function(el) {
     })
 }
 
+// add listeners for icon detail display
 document.querySelectorAll('.icon').forEach(function(ic) {
   ic.addEventListener('click', function(e) {
     removeAllDetails()
     showThisDetail(ic)
+  })
+})
+
+var activateTab = function(tab) {
+  document.querySelectorAll('.tab.active').forEach(function(tab) {
+    tab.classList.remove('active')
+  })
+  tab.classList.add('active')
+
+  document.querySelectorAll('.tab-content.active').forEach(function(tc) {
+    tc.classList.remove('active')
+  })
+  document
+    .querySelector('[data-tab="' + tab.dataset.value +'"]')
+    .classList.add('active')
+}
+
+document.querySelectorAll('.tab').forEach(function(tab) {
+  tab.addEventListener('click', function(e) {
+    activateTab(tab)
   })
 })
 </script>
