@@ -11,8 +11,8 @@ for  (var o = 0; o < menuBW.length; o++) {
     })
     .setTween(menuTween[o])
     .duration(200)
-    .addTo(controller)
-    .addIndicators({name: "transition"+o});
+    .addTo(menuController);
+    //addIndicators({name: "transition"+o});
 }
 
 $(document).ready(function() {
