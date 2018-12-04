@@ -11,14 +11,5 @@
 
 {% set selectedTab = "Components" %}
 {% include "_includes/designSys/shared/designsysHeader.html" %}
-<div class="ds-components">
-  <ul class="toc">
-    {% for component in craft.entries.section('dsComponents').level('1').all() %}
-      <li><a href="{{ component.url }}">{{ component.title }}</a></li>
-    {% endfor %}
-  </ul>
-
-  <h1>Components</h1>
-</div>
 
 {% endblock %}
