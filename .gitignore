@@ -11,8 +11,13 @@
 
 # JS related ignores
 /node_modules/
+/web/node_modules/
 
 # User generated content
 /assets/
 /ds/images/*
+!/ds/images/.gitkeep
+
+/web/assets/
+/web/ds/images/*
 !/ds/images/.gitkeep
