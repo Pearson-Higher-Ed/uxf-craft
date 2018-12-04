@@ -36,6 +36,57 @@ body {
     }
   }
 
+  .tabs-wrapper {
+    @extend .ds-container, .ds-grid;
+
+    > * {
+      @include component-main;
+    }
+
+    .tabs {
+      margin-bottom: 40px;
+      border-bottom: 1px solid $pe-color-concrete;
+      padding-bottom: 0;
+    }
+
+    .tab {
+      padding: 0 4px 17px;
+      margin: 0 16px -1px;
+      float: left;
+      @extend .pe-title, .pe-title--small;
+      position: relative;
+
+      span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.active {
+        @extend .pe-bold;
+        border-bottom: 2px solid $pe-color-charcoal;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &::before {
+        content: attr(data-value);
+        @extend .pe-title, .pe-title--small, .pe-bold;
+        opacity: 0;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
   @import "./dsComponent/heading";
   @import "./dsComponent/text";
   @import "./dsComponent/images";
