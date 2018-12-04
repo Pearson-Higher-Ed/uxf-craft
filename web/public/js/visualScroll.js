@@ -57,21 +57,15 @@ $(document).ready(function() {
         $('.ds-type-text').addClass('ds-type-animation');
     });
     animationsScenes[8].on("enter", function (event) {
-        typo00animation.play();
-    });
-    animationsScenes[9].on("enter", function (event) {
-        typo01animation.play();
-    });
-    animationsScenes[10].on("enter", function (event) {
         icons00animation.play();
     });
-    animationsScenes[11].on("enter", function (event) {
+    animationsScenes[9].on("enter", function (event) {
         icons01animation.play();
     });
-    animationsScenes[12].on("enter", function (event) {
+    animationsScenes[10].on("enter", function (event) {
         HTanimation.play();
     });
-    animationsScenes[13].on("enter", function (event) {
+    animationsScenes[11].on("enter", function (event) {
         illusAnimation.play();
     });
 });

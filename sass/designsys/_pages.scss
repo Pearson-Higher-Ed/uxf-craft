@@ -20,8 +20,8 @@
 
     .bg-pattern-grid {
         background-color:#fff;
-        background-image: linear-gradient($pe-color-concrete 1px, transparent 1px),
-        linear-gradient(90deg, $pe-color-concrete 1px, transparent 1px);
+        background-image: linear-gradient($pe-color-alto 1px, transparent 1px),
+        linear-gradient(90deg, $pe-color-alto 1px, transparent 1px);
         background-size:10px 10px, 10px 10px;
         background-position:-2px -2px, -2px -2px;
     }
@@ -53,7 +53,7 @@
     }
 
     .ds-group-title {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .ds-section-title {
@@ -71,7 +71,7 @@
         font-family: 'Playfair Display', serif;
     }
 
-    .pe-label--large {
-        line-height: 1.5em;
+    .ds-short-cover {
+        max-width: 550px;
     }
 }
