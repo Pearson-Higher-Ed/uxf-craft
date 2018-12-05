@@ -107,3 +107,12 @@ $(document).ready(function() {
         menuTransition(y);
     } 
 });
+
+//remove focus outline on anchors
+$('#dsSidebar a').click(function() {
+    let target = $(this).attr('href').slice(1);
+    console.log('clicked');
+    setTimeout(() => {
+        $(".ds-menu-position-anchor[name='"+target+"']").blur();  
+    }, 100);
+});
