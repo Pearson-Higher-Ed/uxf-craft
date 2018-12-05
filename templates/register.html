@@ -14,8 +14,8 @@
   <p>An account allows you to contribute documentation to the UX Framework.</p>
 
   <form method="post" accept-charset="UTF-8">
-      {{ getCsrfInput() }}
-      <input type="hidden" name="action" value="users/saveUser">
+      {{ csrfInput() }}
+      <input type="hidden" name="action" value="users/save-user">
       <input type="hidden" name="redirect" value="">
 
       {% macro errorList(errors) %}
