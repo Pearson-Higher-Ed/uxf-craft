@@ -1,5 +1,8 @@
-<section class="ds-typography">
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
+<section class="ds-typography position-relative">
+    {% include '_includes/designSys/atoms/hiddenAnchor' with 
+        { 'class': 'ds-menu-transition ds-type-menu-turn-white' } 
+    %}
+    {% include '_includes/designSys/atoms/hiddenAnchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class='ds-type-bg dpb-10 position-relative'>
@@ -28,7 +31,7 @@
                         'textcolor': 'text-white',
                         'desc': "We use the <strong>Open Sans</strong> font for product designs. One of two Pearson's global brand fonts, Open Sans provides a wide range of weights and maintains clarity at small screen sizes.<br><br><b>Note:</b> We don't use <strong>Playfair</strong>, Pearson's other global brand font, because it loses its integrity at small screen sizes."
                 } %}
-                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                {% include '_includes/designSys/atoms/hiddenAnchor' with 
                     { 'class': 'ds-animation-trigger' } 
                 %}
                 <div class='ds-fontweight-demo dmt-5 d-flex justify-content-center'>
@@ -41,7 +44,7 @@
                         <p class='pe-bold pe-label text-white'>Open Sans Regular</p>
                     </div>
                 </div>
-                {% include '_includes/designSys/atoms/hiddenAchor' with 
+                {% include '_includes/designSys/atoms/hiddenAnchor' with 
                     { 'class': 'ds-menu-transition' } 
                 %}
                 {% include '_includes/designSys/shared/levelThree' with 
@@ -56,7 +59,7 @@
     </div>
 </section>
 <section>
-    {% include '_includes/designSys/atoms/hiddenAchor' with 
+    {% include '_includes/designSys/atoms/hiddenAnchor' with 
         { 'class': 'ds-transition-screen' } 
     %}
     <div class='bg-white'>

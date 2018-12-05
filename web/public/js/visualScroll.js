@@ -1,19 +1,29 @@
 var menuBW = $('a[class*="ds-menu-transition"]'),
-    menuTween= [],
     menuTranScenes = [];
-
-menuTween[0] = TweenMax.to('#dsSidebar', 1, {className: '+=text-white', ease: Power4.easeOut});
-menuTween[1] = TweenMax.to('#dsSidebar', 1, {className: '-=text-white', ease: Power4.easeOut});
 
 for  (var o = 0; o < menuBW.length; o++) {
     menuTranScenes[o] = new ScrollMagic.Scene({
         triggerElement: menuBW[o]
     })
-    .setTween(menuTween[o])
-    .duration(200)
-    .addTo(menuController);
-    //addIndicators({name: "transition"+o});
+    .addTo(menuController)
+    .addIndicators({name: "transition"+o});
 }
+
+menuTranScenes[0].on("enter", function (event) {
+    $('#dsSidebar').addClass('text-white');
+});
+
+menuTranScenes[0].on("leave", function (event) {
+    $('#dsSidebar').removeClass('text-white');
+});
+
+menuTranScenes[1].on("enter", function (event) {
+    $('#dsSidebar').removeClass('text-white');
+});
+
+menuTranScenes[1].on("leave", function (event) {
+    $('#dsSidebar').addClass('text-white');
+});
 
 $(document).ready(function() {
     //cover animation
