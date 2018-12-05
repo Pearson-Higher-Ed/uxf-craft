@@ -9,13 +9,22 @@
   font-size: 16px;
   line-height: 24px;
 
-  p, h3 {
+  h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  p, h4 {
     font-size: 16px;
     line-height: 24px;
   }
 
-  h3 {
+  h3, h4 {
     @extend .pe-bold;
+  }
+
+  h4 {
+    margin-bottom: 0;
   }
 
   ul.checks {

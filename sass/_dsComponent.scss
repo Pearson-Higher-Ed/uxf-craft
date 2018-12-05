@@ -9,7 +9,11 @@ body {
 }
 
 .ds {
+  margin-top: 51px;
+
   .intro {
+    margin-top: 104px;
+
     @extend .ds-container, .ds-grid;
 
     > * {
@@ -26,9 +30,7 @@ body {
     }
 
     > div {
-      margin: 16px 0 48px 0;
-      padding: 0 0 40px 0;
-      border-bottom: 1px solid $pe-color-alto;
+      margin: 20px 0 56px 0;
     }
 
     > div, p {
@@ -59,6 +61,7 @@ body {
       span {
         position: absolute;
         left: 50%;
+        top: 0;
         transform: translateX(-50%);
       }
 
@@ -84,6 +87,10 @@ body {
 
     &.active {
       display: block;
+    }
+
+    .chunk:nth-of-type(1) .ds-heading {
+      margin-top: 0;
     }
   }
 
