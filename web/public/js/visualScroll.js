@@ -5,8 +5,8 @@ for  (var o = 0; o < menuBW.length; o++) {
     menuTranScenes[o] = new ScrollMagic.Scene({
         triggerElement: menuBW[o]
     })
-    .addTo(menuController)
-    .addIndicators({name: "transition"+o});
+    .addTo(menuController);
+    //.addIndicators({name: "transition"+o});
 }
 
 menuTranScenes[0].on("enter", function (event) {
@@ -88,7 +88,5 @@ var CDD00animation = createLottie('colorDoDont00'),
     HTanimation = createLottie('hintText'),
     illusAnimation = createLottie('illustration'),
     icons00animation = createLottie('icons00'),
-    icons01animation = createLottie('icons01'),
-    typo00animation = createLottie('typography00'),
-    typo01animation = createLottie('typography01');
+    icons01animation = createLottie('icons01');
 
