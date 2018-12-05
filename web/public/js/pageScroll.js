@@ -70,13 +70,21 @@ for (var n = 0; n < animations.length; n++) {
 function menuTransition(num) {
     menuScrScenes[num].on("enter", function (event) {
         activeMenu(num);
-        $('.ds-screen-cover').css('opacity', '0');
+        $('.ds-screen-cover').css({'opacity': '0', 'display': 'none'});
+        clearInterval(coverInter);
     });
     menuScrScenes[num].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
-            activeMenu(num-1);
+            if (num==0) {
+                $('.ds-sidebar li').removeClass('active');
+                $('.ds-screen-cover').css('display', 'block'); 
+                coverTransition();
+            } else {
+                activeMenu(num-1);
+            }
         }
     });
+    
 }
 
 function coverTransition() {
