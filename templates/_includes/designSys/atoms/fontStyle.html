@@ -1,9 +1,9 @@
-<table>
+<table class='ds-font-table'>
     <thead>
         <tr class='border-bottom'>
             <th class='pe-label pe-label--secondary font-weight-normal dpy-2' scope='col'>Font style</th>
-            <th class='pe-label pe-label--secondary font-weight-normal dpy-2' scope='col'>Size</th>
-            <th class='pe-label pe-label--secondary font-weight-normal dpy-2' scope='col'>Line height</th>
+            <th class='pe-label pe-label--secondary font-weight-normal dpy-2 text-center' scope='col'>Size</th>
+            <th class='pe-label pe-label--secondary font-weight-normal dpy-2 text-center' scope='col'>Line height</th>
             <th class='pe-label pe-label--secondary font-weight-normal dpy-2 text-center' scope='col'>Weight</th>
         </tr>
     </thead>
@@ -11,8 +11,8 @@
         {% for item in tablebody %}
         <tr class='border-bottom'>
             <th class="{{ item.class }} dpy-5" scope='row'>{{ item.name }}</th>
-            <td class="pe-label--large dpy-5">{{ item.size }}</td>
-            <td class="pe-label--large dpy-5">{{ item.lh }}</td>
+            <td class="pe-label--large dpy-5 text-center">{{ item.size }}</td>
+            <td class="pe-label--large dpy-5 text-center">{{ item.lh }}</td>
             {% if item.rns is defined  %}
             <td class="pe-label--large dpy-5 text-center">Regular or <span class='pe-bold'>Semibold</span></td>
             {% endif %}

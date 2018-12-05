@@ -30,20 +30,12 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     }
 
-    h2 a:last-child {
-        top: -200px;
-    }
-
-    h2 .ds-menu-anchor {
+    .ds-menu-active-anchor {
         top: -205px;
     }
 
-    h3 a:last-child {
-        top: -200px;
-    }
-
-    h3 .ds-menu-anchor {
-        top: -205px;
+    .ds-menu-position-anchor {
+        top: -130px;
     }
 
     .ds-hidden-anchor {

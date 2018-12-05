@@ -11,7 +11,7 @@ var menuController = new ScrollMagic.Controller({
 });
 
 var transitsScreen = $('a[class*="ds-transition-screen"]'),
-    menuScreen = $('a[class*="ds-menu-anchor"]'),
+    menuScreen = $('a[class*="ds-menu-active-anchor"]'),
     transitsSection = $('a[class*="ds-transition-section"]'),
     animations = $('.ds-animation-trigger');
 
