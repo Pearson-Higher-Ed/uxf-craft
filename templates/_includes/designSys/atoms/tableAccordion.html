@@ -15,14 +15,14 @@
             <thead>
                 <tr>
                     {% for item in tablehead %}
-                    <th class="pe-label pe-label--secondary pe-normal dpt-3">{{ item.th }}</th>
+                    <th class="pe-label pe-label--secondary pe-normal dpt-3" scope='col'>{{ item.th }}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody>
                 {% for item in tablebody %}
                 <tr>
-                    <th class="pe-label--large p-1 pe-normal">{{ item.th }}<span class="pe-label--secondary">{{ item.thspan }}</span></th>
+                    <th class="pe-label--large p-1 pe-normal" scope='row'>{{ item.th }}<span class="pe-label--secondary">{{ item.thspan }}</span></th>
                     {% for it in item.cell %}
                     <td class="pe-label--large p-1 text-center">{{ it.td }}</td>
                     {% endfor %}

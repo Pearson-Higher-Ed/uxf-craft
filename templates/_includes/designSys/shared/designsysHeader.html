@@ -4,7 +4,7 @@
     <div class="ds-container">
         <div class="d-flex align-items-center justify-content-between">
             <div>
-                {% if not invisible %}<img class="" src='/node_modules/@pearson-components/elements-sdk/src/styles/assets/images/PearsonLogo.svg'>{% endif %}
+                {% if not invisible %}<img src='/node_modules/@pearson-components/elements-sdk/src/styles/assets/images/PearsonLogo.svg' alt='pearson logo'>{% endif %}
             </div>
 
             {% if not invisible %}
@@ -17,12 +17,7 @@
                     </ul>
                 </nav>
                     <button class="pe-icon--btn dpx-4 dml-6" title="Search the component library">
-                        <span><svg role="img"
-                            focusable="false"
-                            aria-hidden="true"
-                            class="pe-icon--search-sm-24">
-                            <use xlink:href="#search-sm-24"></use>
-                        </svg></span>
+                        <img src="/public/theme_assets/search-24.svg" alt=''>
                     </button>
             </div>
             {% endif %}
