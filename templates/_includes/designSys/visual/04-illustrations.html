@@ -47,7 +47,6 @@
             } %}
             {% include '_includes/designSys/shared/levelFour' with 
                     {
-                        'topSpacing': true,
                         'name': 'Spot illustrations',
                         'desc': 'Use spot illustrations to promote useful features or to guide users through a complex process.'
                 } %}
@@ -59,7 +58,6 @@
             </div>
             {% include '_includes/designSys/shared/levelFour' with 
                     {
-                        'topSpacing': true,
                         'name': 'Scene illustrations',
                         'desc': 'Use scene illustrations for situations where users are between actions, such as empty states or getting started on a new task.'
                 } %}
@@ -83,45 +81,54 @@
                             'title': 'Color in Illustrations',
                             'desc': 'The color in spot illustrations is best when limited to two primary colors or a primary and secondary color. The color for scene illustrations can use more than two primary colors.'
                     } %}
-                <h4 class="pe-title--small pe-bold dmb-5 dpt-6">Primary colors</h4>
+                <h4 class="pe-title--small pe-bold dmb-5 dmt-6">Primary colors</h4>
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Rose', 
-                    'color': 'bg-rose',
-                    'hex': 'EDC0F2'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'Rose', 
+                        'color': 'bg-rose',
+                        'hex': 'EDC0F2'
                 } %}
             </div>
             <div class="ds-right-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Pear', 
-                    'color': 'bg-pear',
-                    'hex': 'ABDC3B'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'Pear', 
+                        'color': 'bg-pear',
+                        'hex': 'ABDC3B'
                 } %}
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Aqua', 
-                    'color': 'bg-aqua',
-                    'hex': '76D5D4'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'Aqua', 
+                        'color': 'bg-aqua',
+                        'hex': '76D5D4'
                 } %}
             </div>
             <div class="ds-right-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Seagrass', 
-                    'color': 'bg-seagrass',
-                    'hex': 'D3EAE4'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'Seagrass', 
+                        'color': 'bg-seagrass',
+                        'hex': 'D3EAE4'
                 } %}
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Canary', 
-                    'color': 'bg-canary',
-                    'hex': 'F5C54C'
+                    {
+                        'name': 'Canary', 
+                        'color': 'bg-canary',
+                        'hex': 'F5C54C'
                 } %}
             </div>
             <div class='ds-main'>
-                <h4 class="pe-title--small pe-bold dmb-5 dpt-6">Secondary color</h4>
+                <h4 class="pe-title--small pe-bold dmb-5 dmt-6">Secondary color</h4>
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
@@ -131,7 +138,7 @@
                 } %}
             </div>
             <div class='ds-main'>
-                <h4 class="pe-title--small pe-bold dmb-5 dpt-6">Stroke</h4>
+                <h4 class="pe-title--small pe-bold dmb-5 dmt-6">Stroke</h4>
                 <div class='d-flex ds-illustration-stroke dmb-10'>
                     <hr>
                     <p class='pe-label--large dml-2'>1.5px weight, Medium Gray</p>

@@ -32,10 +32,16 @@
 
     .ds-menu-active-anchor {
         top: -205px;
+        &.ds-short-content {
+            top: -305px;
+        }
     }
 
     .ds-menu-position-anchor {
         top: -130px;
+        &.ds-short-content {
+            top: -230px;
+        }
     }
 
     .ds-hidden-anchor {
