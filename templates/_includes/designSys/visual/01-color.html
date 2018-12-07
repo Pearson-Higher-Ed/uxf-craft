@@ -79,23 +79,29 @@
         <div class="ds-container ds-grid ds-2rows dpt-5 dpb-2">
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Pearson Blue', 
-                    'color': 'bg-pearson-blue',
-                    'hex': '047A9C'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'Pearson Blue', 
+                        'color': 'bg-pearson-blue',
+                        'hex': '047A9C'
                 } %}
             </div>
             <div class="ds-right-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'White', 
-                    'color': 'bg-white',
-                    'hex': 'FFFFFF'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'White', 
+                        'color': 'bg-white',
+                        'hex': 'FFFFFF'
                 } %}
             </div>
             <div class="ds-left-main">
                 {% include '_includes/designSys/atoms/singleColor' with 
-                    {'name': 'Sunshine Yellow', 
-                    'color': 'bg-sunshine-yellow',
-                    'hex': 'FFB81C'
+                    {
+                        'bottomSpacing': true,
+                        'name': 'Sunshine Yellow', 
+                        'color': 'bg-sunshine-yellow',
+                        'hex': 'FFB81C'
                 } %}
             </div>
         </div>
@@ -136,28 +142,29 @@
                 <div class="ds-main dmb-5">
                     {% include '_includes/designSys/shared/levelFour' with 
                         {
-                            'topSpacing': true,
                             'name': 'High contrast tones', 
                             'desc': 'Use high-contrast tones when communication is most important.'
                     } %}
                 </div>
                 <div class="ds-left-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Charcoal', 
-                        'color': 'bg-charcoal',
-                        'hex': '252525',
-                        'note': 'Use for body copy and other primary information'
+                        {
+                            'name': 'Charcoal', 
+                            'color': 'bg-charcoal',
+                            'hex': '252525',
+                            'note': 'Use for body copy and other primary information'
                     } %}
                 </div>
                 <div class="ds-right-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Medium Gray', 
-                        'color': 'bg-medium-gray',
-                        'hex': '6A7070', 
-                        'note': 'Use for secondary information, such as hollow buttons'
+                        {
+                            'name': 'Medium Gray', 
+                            'color': 'bg-medium-gray',
+                            'hex': '6A7070', 
+                            'note': 'Use for secondary information, such as hollow buttons'
                     } %}
                 </div>
-                <div class="ds-main dmt-2 dmb-5">
+                <div class="ds-main dmb-5">
                     {% include '_includes/designSys/shared/levelFour' with 
                         {
                             'name': 'Medium tones', 
@@ -166,33 +173,39 @@
                 </div>
                 <div class="ds-left-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Steel', 
-                        'color': 'bg-steel',
-                        'hex': 'A9A9A9'
+                        {
+                            'bottomSpacing': true,
+                            'name': 'Steel', 
+                            'color': 'bg-steel',
+                            'hex': 'A9A9A9'
                     } %}
                 </div>
                 <div class="ds-right-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Concrete', 
-                        'color': 'bg-concrete',
-                        'hex': 'C7C7C7'
+                        {
+                            'bottomSpacing': true,
+                            'name': 'Concrete', 
+                            'color': 'bg-concrete',
+                            'hex': 'C7C7C7'
                     } %}
                 </div>
                 <div class="ds-left-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Alto', 
-                        'color': 'bg-alto',
-                        'hex': 'D9D9D9'
+                        {
+                            'name': 'Alto', 
+                            'color': 'bg-alto',
+                            'hex': 'D9D9D9'
                     } %}
                 </div>
                 <div class="ds-right-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Moonlight', 
-                        'color': 'bg-moonlight',
-                        'hex': 'E9E9E9'
+                        {
+                            'name': 'Moonlight', 
+                            'color': 'bg-moonlight',
+                            'hex': 'E9E9E9'
                     } %}
                 </div>
-                <div class="ds-main dmt-2 dmb-5">
+                <div class="ds-main dmb-5">
                     {% include '_includes/designSys/shared/levelFour' with 
                         {
                             'name': 'Super light tones', 
@@ -201,18 +214,20 @@
                 </div>
                 <div class="ds-left-main dmb-6">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Stainless', 
-                        'color': 'bg-stainless',
-                        'hex': 'EEEEEE',
-                        'note': 'Use for default hover state'
+                        {
+                            'name': 'Stainless', 
+                            'color': 'bg-stainless',
+                            'hex': 'EEEEEE',
+                            'note': 'Use for default hover state'
                     } %}
                 </div>
                 <div class="ds-right-main dmb-6">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'White Gray', 
-                        'color': 'bg-white-gray',
-                        'hex': 'F5F5F5',
-                        'note': 'Use for application background (canvas area)'
+                        {
+                            'name': 'White Gray', 
+                            'color': 'bg-white-gray',
+                            'hex': 'F5F5F5',
+                            'note': 'Use for application background (canvas area)'
                     } %}
                 </div>
             </div>
@@ -249,18 +264,22 @@
                 </div>
                 <div class="ds-left-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Alert Red', 
-                        'color': 'bg-alert-red',
-                        'hex': 'DB0020',
-                        'note': 'Use when something is incorrect, negative, or stopped'
+                        {
+                            'bottomSpacing': true,
+                            'name': 'Alert Red', 
+                            'color': 'bg-alert-red',
+                            'hex': 'DB0020',
+                            'note': 'Use when something is incorrect, negative, or stopped'
                     } %}
                 </div>
                 <div class="ds-right-main">
                     {% include '_includes/designSys/atoms/singleColor' with 
-                        {'name': 'Confirm Green', 
-                        'color': 'bg-confirm-green',
-                        'hex': '038238',
-                        'note': 'Use when something is correct, positive, or started'
+                        {
+                            'bottomSpacing': true,
+                            'name': 'Confirm Green', 
+                            'color': 'bg-confirm-green',
+                            'hex': '038238',
+                            'note': 'Use when something is correct, positive, or started'
                     } %}
                 </div>
                 <div class="ds-left-main">

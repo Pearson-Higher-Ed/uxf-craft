@@ -41,14 +41,13 @@
     %}
     <div class='ds-container ds-grid'>
         <div class='ds-main ds-transition-content' id='dsTransitScreen3'>
-            <h3 class="pe-title pe-bold dmb-2 dmt-9 position-relative">
+            <h3 class="pe-title pe-bold dmb-0 dmt-9 position-relative">
                 <a class="ds-hidden-anchor ds-menu-active-anchor position-absolute" href="###" aria-hidden='true' tabindex="-1">menu anchor</a>
                 <a class="ds-hidden-anchor ds-menu-position-anchor position-absolute" href="###" name="dsMenuScreen10" aria-hidden='true' tabindex="-1">dsMenuScreen10</a>
                 Dates and times
             </h3>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
-                    'topSpacing': true,
                     'name': 'Year',
                     'desc': 'Use the US date format when including the year.'
             } %}
@@ -57,16 +56,14 @@
             </div>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
-                    'topSpacing': true,
                     'name': 'Month',
                     'desc': "Spell out the name of the month in horizontal formats such as calendars, email, and other UI elements where there's enough space.<br><br>In vertical formats such as cards, use the three character abbreviation for the month in ALL CAPS."
             } %}
-            <div class="dmy-5">
+            <div class="dmt-5">
                 <img class='img-fluid d-block mx-auto' src='/public/theme_assets/writing-card.png' alt=''>
             </div>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
-                    'topSpacing': true,
                     'name': 'Times',
                     'desc': 'Keep the following best practices in mind when writing about time:
                     '
@@ -88,10 +85,9 @@
             <div class='border rounded dpy-4 dpx-5 dmy-5'>
                 <p class='pe-title--small dmb-0'>3:30 PM - 4:30 PM</p>
             </div>
-            <p class='pe-label--large'>Use the browser time of the logged in user.</p>
+            <p class='pe-label--large dmb-0'>Use the browser time of the logged in user.</p>
             {% include '_includes/designSys/shared/levelFour' with 
                 {
-                    'topSpacing': true,
                     'name': 'Abbreviations for days, hours, and minutes',
                     'desc': "Use the following abbreviations for days, hours, and minutes:"
             } %}
@@ -99,7 +95,7 @@
             <p class='pe-label--large--multi'><b>d</b> = day/days</p>
             <p class='pe-label--large--multi'><b>h</b> = hour/hours</p>
             <p class='pe-label--large--multi'><b>min</b> = minute/minutes</p>
-            <div class="dmy-5">
+            <div class="dmt-5">
                 <img class='img-fluid' src='/public/theme_assets/writing-abbr.png' alt=''>
             </div>
         </div>
@@ -119,13 +115,11 @@
             } %}
             {% include '_includes/designSys/shared/levelFour' with 
                 {
-                    'topSpacing': true,
                     'name': 'Write for scanning and accessibility',
                     'desc': 'Organizing the layout of content with headings gives users a sense of organization and structure at-a-glance. Treat headings like microcontent-short text fragments that can be scanned by readers or screen readers and still give users a clear idea of the underlying information on the page or screen. For more information see <a href="">Accessibility</a>.'
             } %}
             {% include '_includes/designSys/shared/levelFour' with 
                 {
-                    'topSpacing': true,
                     'name': 'Use parallel structure',
                     'desc': 'Headings written in parallel structure (with the same grammatical pattern) make content easier to follow.'
             } %}
