@@ -17,15 +17,11 @@ $(document).ready(function() {
     animationsScenes[0].on("enter", function (event) {
         squaresSmall();
         whiteMenu(false);
-        clearInterval(coverInter);
     });
 
     animationsScenes[0].on("leave", function (event) {
         if (event.target.controller().info('scrollDirection') === 'REVERSE') {
-            coverTransition();
             whiteMenu(true);
-        } else {
-            clearInterval(coverInter);
         }
     });
     

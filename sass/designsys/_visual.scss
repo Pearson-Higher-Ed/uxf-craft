@@ -1,7 +1,7 @@
 .ds-visual-page {
     .ds-cover {
         background-image: url('/public/theme_assets/visual-bg.svg');
-        overflow: hidden;
+        background-size: cover;
         .ds-cover-waves {
             width: 100%;
             height: auto;
