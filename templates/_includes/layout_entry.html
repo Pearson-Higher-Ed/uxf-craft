@@ -1,5 +1,63 @@
 {% block content %}
 {% include '_includes/designSys/shared/designsysHeader' %}
+{% include '_includes/designSys/shared/designsysSidebar' with
+  {
+    'white': true,
+    'mainLevel': [{
+      'href': 'dsMenuScreen0',
+      'label': 'Overview',
+      'subLevel': [{
+        'href':'dsMenuScreen1',
+        'label': 'WhiteSpace'
+      }, {
+        'href':'dsMenuScreen2',
+        'spacing': true,
+        'label': 'Grids'
+      }, {
+        'href':'dsMenuScreen3',
+        'spacing': true,
+        'label': 'Breakpoints'
+      }, {
+        'href':'dsMenuScreen4',
+        'spacing': true,
+        'label': 'Spacing'
+      }, {
+        'href':'dsMenuScreen5',
+        'spacing': true,
+        'label': 'Navigation'
+      }]
+    }, {
+      'href': 'dsMenuScreen6',
+      'label': 'Structure',
+      'subLevel': [{
+        'href':'dsMenuScreen7',
+        'label': 'Primary page frame'
+      }, {
+        'href':'dsMenuScreen8',
+        'spacing': true,
+        'label': 'Secondary page frame'
+      }, {
+        'href':'dsMenuScreen9',
+        'spacing': true,
+        'label': 'Modal page frame'
+      }]
+    }, {
+      'href': 'dsMenuScreen10',
+      'label': 'Patterns',
+      'subLevel': [{
+        'href':'dsMenuScreen11',
+        'label': 'Single column'
+      }, {
+        'href':'dsMenuScreen12',
+        'spacing': true,
+        'label': 'Multiple column'
+      }, {
+        'href':'dsMenuScreen13',
+        'spacing': true,
+        'label': 'Modular'
+      }]
+    }]
+  } %}
 <main class='ds-layout-page ds-page'>
     {% include '_includes/designSys/layout/00-cover' %}
     {% include '_includes/designSys/layout/01-overview' %}
@@ -9,6 +67,7 @@
     {% include '_includes/designSys/layout/05-structure' %}
     {% include '_includes/designSys/layout/06-patterns' %}
 </main>
+{% include '_includes/designSys/shared/designsysFeedback' %}
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
 <script src="/node_modules/gsap/src/minified/TweenMax.min.js" charset="utf-8"></script>
@@ -23,5 +82,5 @@
 <script src="/public/js/pageScroll.js" charset="utf-8"></script>
 <script src="/public/js/layoutScroll.js" charset="utf-8"></script>
 <script src="/public/js/accordion.js" charset="utf-8"></script>
-
+<script src="/public/js/tabFocus.js" charset="utf-8"></script>
 {% endblock %}

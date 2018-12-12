@@ -19,10 +19,6 @@
   }
   .main-level {
     &>li.active {
-      .sub-level {
-        margin-top: 16px;
-        max-height: 10em;
-      }
       &>a {
         font-weight: 600;
         &::before {
@@ -56,6 +52,11 @@
         color: $pe-color-charcoal;
       }
     }
+  }
+
+  .main-level a:focus+.sub-level, .main-level>li.active .sub-level, .sub-level:focus-within {
+    margin-top: 16px;
+    max-height: 10em;
   }
 }
 

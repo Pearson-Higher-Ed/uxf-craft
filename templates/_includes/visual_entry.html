@@ -1,5 +1,74 @@
 {% block content %}
 {% include '_includes/designSys/shared/designsysHeader' %}
+{% include '_includes/designSys/shared/designsysSidebar' with
+  {
+    'white': true,
+    'mainLevel': [{
+      'href': 'dsMenuScreen0',
+      'label': 'Color palettes',
+      'subLevel': [{
+        'href':'dsMenuScreen1',
+        'label': 'Global system palette'
+      }, {
+        'href':'dsMenuScreen2',
+        'spacing': true,
+        'label': 'Neutral palette'
+      }, {
+        'href':'dsMenuScreen3',
+        'spacing': true,
+        'label': 'Conditional palette'
+      }, {
+        'href':'dsMenuScreen4',
+        'spacing': true,
+        'label': 'Theme palette'
+      }]
+    }, {
+      'href': 'dsMenuScreen5',
+      'label': 'Typography',
+      'subLevel': [{
+        'href':'dsMenuScreen6',
+        'label': 'Web fonts',
+      }, {
+        'href':'dsMenuScreen7',
+        'spacing': true,
+        'label': 'Mobile fonts',
+      }, {
+        'href':'dsMenuScreen8',
+        'spacing': true,
+        'label': 'Font styles and weights'
+      }]
+    }, {
+      'href': 'dsMenuScreen9',
+      'label': 'Icons',
+      'subLevel': [{
+        'href':'dsMenuScreen10',
+        'label': 'Icon considerations'
+      }, {
+        'href':'dsMenuScreen11',
+        'spacing': true,
+        'label': 'Icon styles'
+      }, {
+        'href':'dsMenuScreen12',
+        'spacing': true,
+        'label': 'Tooltips for icons'
+      }]
+    }, {
+      'href': 'dsMenuScreen13',
+      'label': 'Illustrations',
+      'subLevel': [{
+        'href':'dsMenuScreen14',
+        'label': 'Illustration style'
+      }, {
+        'href':'dsMenuScreen15',
+        'spacing': true,
+        'label': 'Illustration types'
+      }, {
+        'href':'dsMenuScreen16',
+        'spacing': true,
+        'label': 'Color in Illustrations'
+      }]
+    }]
+  } %}
 <main class='ds-visual-page ds-page'>
     {% include '_includes/designSys/visual/00-cover' %}
     {% include '_includes/designSys/visual/01-color' %}
@@ -7,6 +76,7 @@
     {% include '_includes/designSys/visual/03-icons' %}
     {% include '_includes/designSys/visual/04-illustrations' %}
 </main>
+{% include '_includes/designSys/shared/designsysFeedback' %}
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
 <script src="/node_modules/gsap/src/minified/TweenMax.min.js" charset="utf-8"></script>
@@ -20,5 +90,5 @@
 <script src="/public/js/lottie.js" charset="utf-8"></script>
 <script src="/public/js/pageScroll.js" charset="utf-8"></script>
 <script src="/public/js/visualScroll.js" charset="utf-8"></script>
-
+<script src="/public/js/tabFocus.js" charset="utf-8"></script>
 {% endblock %}

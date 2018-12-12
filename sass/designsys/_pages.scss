@@ -73,3 +73,18 @@
         max-width: 550px;
     }
 }
+
+.ds-jump-anchor {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    &.position-absolute {
+        right: 0;
+        bottom: 0;
+    }
+    &:focus {
+        height: 18px;
+        opacity: 1;
+    }
+}
