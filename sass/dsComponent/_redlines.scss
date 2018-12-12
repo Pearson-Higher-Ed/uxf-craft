@@ -81,6 +81,12 @@
       background-color: $pe-color-white-gray;
     }
 
+    &.bg-image-border {
+      background: none;
+      border: 1px solid $pe-color-moonlight;
+      border-radius: 4px;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
