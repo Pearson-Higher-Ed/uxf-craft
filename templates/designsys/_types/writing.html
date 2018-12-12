@@ -2,56 +2,6 @@
 {% set pageTitle = "Writing" %}
 
 {% block sidebar %}
-  {% include '_includes/designSys/shared/designsysSidebar' with
-  {
-    'mainLevel': [{
-      'href': 'dsMenuScreen0',
-      'label': 'Best practices',
-      'subLevel': [{
-        'href':'dsMenuScreen1',
-        'label': 'Put users first'
-      }, {
-        'href':'dsMenuScreen2',
-        'spacing': true,
-        'label': 'Make actions easy'
-      }, {
-        'href':'dsMenuScreen3',
-        'spacing': true,
-        'label': 'Be clear, then be brief'
-      }, {
-        'href':'dsMenuScreen4',
-        'spacing': true,
-        'label': 'Consider your context'
-      }, {
-        'href':'dsMenuScreen5',
-        'spacing': true,
-        'label': 'Focus on headings'
-      }]
-    }, {
-      'href': 'dsMenuScreen6',
-      'label': 'Voice and tone'
-    }, {
-      'href': 'dsMenuScreen7',
-      'label': 'Grammar and mechanics',
-      'subLevel': [{
-        'href':'dsMenuScreen8',
-        'label': 'Capitalization'
-      }, {
-        'href':'dsMenuScreen9',
-        'spacing': true,
-        'label': 'Contractions'
-      }, {
-        'href':'dsMenuScreen10',
-        'spacing': true,
-        'label': 'Dates and times'
-      }, {
-        'href':'dsMenuScreen11',
-        'spacing': true,
-        'label': 'Headings'
-      }]
-    }]
-  } %}
-  {% include '_includes/designSys/shared/designsysFeedback' %}
 {% endblock %}
 
 {% block content %}
